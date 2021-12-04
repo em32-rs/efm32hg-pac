@@ -263,7 +263,7 @@ impl<'a> LPFMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PRESC_A {
-    #[doc = "0: \"\""]
+    #[doc = "0: `0`"]
     NODIVISION = 0,
 }
 impl From<PRESC_A> for u8 {
@@ -309,7 +309,7 @@ impl<'a> PRESC_W<'a> {
     pub fn variant(self, variant: PRESC_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn nodivision(self) -> &'a mut W {
         self.variant(PRESC_A::NODIVISION)

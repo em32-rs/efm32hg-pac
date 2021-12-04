@@ -38,9 +38,9 @@ impl From<crate::W<DTLOCK_SPEC>> for W {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u16)]
 pub enum LOCKKEY_A {
-    #[doc = "0: \"\""]
+    #[doc = "0: `0`"]
     UNLOCKED = 0,
-    #[doc = "1: \"\""]
+    #[doc = "1: `1`"]
     LOCKED = 1,
 }
 impl From<LOCKKEY_A> for u16 {
@@ -92,12 +92,12 @@ impl<'a> LOCKKEY_W<'a> {
     pub fn variant(self, variant: LOCKKEY_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
         self.variant(LOCKKEY_A::UNLOCKED)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn locked(self) -> &'a mut W {
         self.variant(LOCKKEY_A::LOCKED)

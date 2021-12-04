@@ -17,12 +17,14 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 #![no_std]
-#[cfg(feature = "rt")]
-pub use self::Interrupt as interrupt;
 use core::marker::PhantomData;
 use core::ops::Deref;
+#[doc = r"Number available in the NVIC for configuring priority"]
+pub const NVIC_PRIO_BITS: u8 = 3;
+#[cfg(feature = "rt")]
+pub use self::Interrupt as interrupt;
 pub use cortex_m::peripheral::Peripherals as CorePeripherals;
-pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, FPU, ITM, MPU, NVIC, SCB, SYST, TPIU};
+pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, ITM, MPU, NVIC, SCB, SYST, TPIU};
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
 #[allow(unused_imports)]

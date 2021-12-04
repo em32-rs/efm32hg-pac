@@ -308,7 +308,7 @@ impl<'a> PERFRINT_W<'a> {
         self.w
     }
 }
-#[doc = "Field `ERRATICINTMSK` reader - \"\""]
+#[doc = "Field `ERRATICINTMSK` reader - "]
 pub struct ERRATICINTMSK_R(crate::FieldReader<bool, bool>);
 impl ERRATICINTMSK_R {
     pub(crate) fn new(bits: bool) -> Self {
@@ -322,7 +322,7 @@ impl core::ops::Deref for ERRATICINTMSK_R {
         &self.0
     }
 }
-#[doc = "Field `ERRATICINTMSK` writer - \"\""]
+#[doc = "Field `ERRATICINTMSK` writer - "]
 pub struct ERRATICINTMSK_W<'a> {
     w: &'a mut W,
 }
@@ -396,7 +396,7 @@ impl R {
     pub fn perfrint(&self) -> PERFRINT_R {
         PERFRINT_R::new(((self.bits >> 11) & 0x03) as u8)
     }
-    #[doc = "Bit 15 - \"\""]
+    #[doc = "Bit 15"]
     #[inline(always)]
     pub fn erraticintmsk(&self) -> ERRATICINTMSK_R {
         ERRATICINTMSK_R::new(((self.bits >> 15) & 0x01) != 0)
@@ -433,7 +433,7 @@ impl W {
     pub fn perfrint(&mut self) -> PERFRINT_W {
         PERFRINT_W { w: self }
     }
-    #[doc = "Bit 15 - \"\""]
+    #[doc = "Bit 15"]
     #[inline(always)]
     pub fn erraticintmsk(&mut self) -> ERRATICINTMSK_W {
         ERRATICINTMSK_W { w: self }

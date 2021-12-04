@@ -82,7 +82,7 @@ pub enum SOURCESEL_A {
     TIMER1 = 25,
     #[doc = "26: Timer 2"]
     TIMER2 = 26,
-    #[doc = "48: \"\""]
+    #[doc = "48: `110000`"]
     MSC = 48,
     #[doc = "49: Advanced Encryption Standard Accelerator"]
     AES = 49,
@@ -235,7 +235,7 @@ impl<'a> SOURCESEL_W<'a> {
     pub fn timer2(self) -> &'a mut W {
         self.variant(SOURCESEL_A::TIMER2)
     }
-    #[doc = "\"\""]
+    #[doc = "`110000`"]
     #[inline(always)]
     pub fn msc(self) -> &'a mut W {
         self.variant(SOURCESEL_A::MSC)
