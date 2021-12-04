@@ -1,17 +1,102 @@
-#[doc = "Reader of register RXDOUBLEXP"]
-pub type R = crate::R<u32, super::RXDOUBLEXP>;
-#[doc = "Reader of field `RXDATAP0`"]
-pub type RXDATAP0_R = crate::R<u16, u16>;
-#[doc = "Reader of field `PERRP0`"]
-pub type PERRP0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `FERRP0`"]
-pub type FERRP0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXDATAP1`"]
-pub type RXDATAP1_R = crate::R<u16, u16>;
-#[doc = "Reader of field `PERRP1`"]
-pub type PERRP1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `FERRP1`"]
-pub type FERRP1_R = crate::R<bool, bool>;
+#[doc = "Register `RXDOUBLEXP` reader"]
+pub struct R(crate::R<RXDOUBLEXP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RXDOUBLEXP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RXDOUBLEXP_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RXDOUBLEXP_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RXDATAP0` reader - RX Data 0 Peek"]
+pub struct RXDATAP0_R(crate::FieldReader<u16, u16>);
+impl RXDATAP0_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        RXDATAP0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXDATAP0_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PERRP0` reader - Data Parity Error 0 Peek"]
+pub struct PERRP0_R(crate::FieldReader<bool, bool>);
+impl PERRP0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PERRP0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PERRP0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FERRP0` reader - Data Framing Error 0 Peek"]
+pub struct FERRP0_R(crate::FieldReader<bool, bool>);
+impl FERRP0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FERRP0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FERRP0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXDATAP1` reader - RX Data 1 Peek"]
+pub struct RXDATAP1_R(crate::FieldReader<u16, u16>);
+impl RXDATAP1_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        RXDATAP1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXDATAP1_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PERRP1` reader - Data Parity Error 1 Peek"]
+pub struct PERRP1_R(crate::FieldReader<bool, bool>);
+impl PERRP1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PERRP1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PERRP1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FERRP1` reader - Data Framing Error 1 Peek"]
+pub struct FERRP1_R(crate::FieldReader<bool, bool>);
+impl FERRP1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FERRP1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FERRP1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:8 - RX Data 0 Peek"]
     #[inline(always)]
@@ -42,5 +127,21 @@ impl R {
     #[inline(always)]
     pub fn ferrp1(&self) -> FERRP1_R {
         FERRP1_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+}
+#[doc = "RX Buffer Double Data Extended Peek Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdoublexp](index.html) module"]
+pub struct RXDOUBLEXP_SPEC;
+impl crate::RegisterSpec for RXDOUBLEXP_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [rxdoublexp::R](R) reader structure"]
+impl crate::Readable for RXDOUBLEXP_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets RXDOUBLEXP to value 0"]
+impl crate::Resettable for RXDOUBLEXP_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

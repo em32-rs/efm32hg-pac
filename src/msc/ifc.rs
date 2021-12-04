@@ -1,14 +1,25 @@
-#[doc = "Writer for register IFC"]
-pub type W = crate::W<u32, super::IFC>;
-#[doc = "Register IFC `reset()`'s with value 0"]
-impl crate::ResetValue for super::IFC {
-    type Type = u32;
+#[doc = "Register `IFC` writer"]
+pub struct W(crate::W<IFC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IFC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `ERASE`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<IFC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<IFC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ERASE` writer - Erase Done Interrupt Clear"]
 pub struct ERASE_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> ERASE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `WRITE`"]
+#[doc = "Field `WRITE` writer - Write Done Interrupt Clear"]
 pub struct WRITE_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> WRITE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `CHOF`"]
+#[doc = "Field `CHOF` writer - Cache Hits Overflow Interrupt Clear"]
 pub struct CHOF_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> CHOF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `CMOF`"]
+#[doc = "Field `CMOF` writer - Cache Misses Overflow Interrupt Clear"]
 pub struct CMOF_W<'a> {
     w: &'a mut W,
 }
@@ -92,7 +103,7 @@ impl<'a> CMOF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -116,5 +127,27 @@ impl W {
     #[inline(always)]
     pub fn cmof(&mut self) -> CMOF_W {
         CMOF_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifc](index.html) module"]
+pub struct IFC_SPEC;
+impl crate::RegisterSpec for IFC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [ifc::W](W) writer structure"]
+impl crate::Writable for IFC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets IFC to value 0"]
+impl crate::Resettable for IFC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

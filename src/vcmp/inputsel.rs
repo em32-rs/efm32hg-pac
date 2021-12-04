@@ -1,18 +1,54 @@
-#[doc = "Reader of register INPUTSEL"]
-pub type R = crate::R<u32, super::INPUTSEL>;
-#[doc = "Writer for register INPUTSEL"]
-pub type W = crate::W<u32, super::INPUTSEL>;
-#[doc = "Register INPUTSEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::INPUTSEL {
-    type Type = u32;
+#[doc = "Register `INPUTSEL` reader"]
+pub struct R(crate::R<INPUTSEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INPUTSEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TRIGLEVEL`"]
-pub type TRIGLEVEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TRIGLEVEL`"]
+impl From<crate::R<INPUTSEL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<INPUTSEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `INPUTSEL` writer"]
+pub struct W(crate::W<INPUTSEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INPUTSEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<INPUTSEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<INPUTSEL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TRIGLEVEL` reader - Trigger Level"]
+pub struct TRIGLEVEL_R(crate::FieldReader<u8, u8>);
+impl TRIGLEVEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TRIGLEVEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TRIGLEVEL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TRIGLEVEL` writer - Trigger Level"]
 pub struct TRIGLEVEL_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> TRIGLEVEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
         self.w
     }
 }
-#[doc = "Reader of field `LPREF`"]
-pub type LPREF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LPREF`"]
+#[doc = "Field `LPREF` reader - Low Power Reference"]
+pub struct LPREF_R(crate::FieldReader<bool, bool>);
+impl LPREF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LPREF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LPREF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LPREF` writer - Low Power Reference"]
 pub struct LPREF_W<'a> {
     w: &'a mut W,
 }
@@ -44,7 +92,7 @@ impl<'a> LPREF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -70,5 +118,31 @@ impl W {
     #[inline(always)]
     pub fn lpref(&mut self) -> LPREF_W {
         LPREF_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Input Selection Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inputsel](index.html) module"]
+pub struct INPUTSEL_SPEC;
+impl crate::RegisterSpec for INPUTSEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [inputsel::R](R) reader structure"]
+impl crate::Readable for INPUTSEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [inputsel::W](W) writer structure"]
+impl crate::Writable for INPUTSEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets INPUTSEL to value 0"]
+impl crate::Resettable for INPUTSEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

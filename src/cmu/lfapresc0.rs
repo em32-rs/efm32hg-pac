@@ -1,77 +1,88 @@
-#[doc = "Reader of register LFAPRESC0"]
-pub type R = crate::R<u32, super::LFAPRESC0>;
-#[doc = "Writer for register LFAPRESC0"]
-pub type W = crate::W<u32, super::LFAPRESC0>;
-#[doc = "Register LFAPRESC0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::LFAPRESC0 {
-    type Type = u32;
+#[doc = "Register `LFAPRESC0` reader"]
+pub struct R(crate::R<LFAPRESC0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LFAPRESC0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<LFAPRESC0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<LFAPRESC0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LFAPRESC0` writer"]
+pub struct W(crate::W<LFAPRESC0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LFAPRESC0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LFAPRESC0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LFAPRESC0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Real-Time Counter Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RTC_A {
     #[doc = "0: LFACLKRTC = LFACLK"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: LFACLKRTC = LFACLK/2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: LFACLKRTC = LFACLK/4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: LFACLKRTC = LFACLK/8"]
-    DIV8,
+    DIV8 = 3,
     #[doc = "4: LFACLKRTC = LFACLK/16"]
-    DIV16,
+    DIV16 = 4,
     #[doc = "5: LFACLKRTC = LFACLK/32"]
-    DIV32,
+    DIV32 = 5,
     #[doc = "6: LFACLKRTC = LFACLK/64"]
-    DIV64,
+    DIV64 = 6,
     #[doc = "7: LFACLKRTC = LFACLK/128"]
-    DIV128,
+    DIV128 = 7,
     #[doc = "8: LFACLKRTC = LFACLK/256"]
-    DIV256,
+    DIV256 = 8,
     #[doc = "9: LFACLKRTC = LFACLK/512"]
-    DIV512,
+    DIV512 = 9,
     #[doc = "10: LFACLKRTC = LFACLK/1024"]
-    DIV1024,
+    DIV1024 = 10,
     #[doc = "11: LFACLKRTC = LFACLK/2048"]
-    DIV2048,
+    DIV2048 = 11,
     #[doc = "12: LFACLKRTC = LFACLK/4096"]
-    DIV4096,
+    DIV4096 = 12,
     #[doc = "13: LFACLKRTC = LFACLK/8192"]
-    DIV8192,
+    DIV8192 = 13,
     #[doc = "14: LFACLKRTC = LFACLK/16384"]
-    DIV16384,
+    DIV16384 = 14,
     #[doc = "15: LFACLKRTC = LFACLK/32768"]
-    DIV32768,
+    DIV32768 = 15,
 }
 impl From<RTC_A> for u8 {
     #[inline(always)]
     fn from(variant: RTC_A) -> Self {
-        match variant {
-            RTC_A::DIV1 => 0,
-            RTC_A::DIV2 => 1,
-            RTC_A::DIV4 => 2,
-            RTC_A::DIV8 => 3,
-            RTC_A::DIV16 => 4,
-            RTC_A::DIV32 => 5,
-            RTC_A::DIV64 => 6,
-            RTC_A::DIV128 => 7,
-            RTC_A::DIV256 => 8,
-            RTC_A::DIV512 => 9,
-            RTC_A::DIV1024 => 10,
-            RTC_A::DIV2048 => 11,
-            RTC_A::DIV4096 => 12,
-            RTC_A::DIV8192 => 13,
-            RTC_A::DIV16384 => 14,
-            RTC_A::DIV32768 => 15,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `RTC`"]
-pub type RTC_R = crate::R<u8, RTC_A>;
+#[doc = "Field `RTC` reader - Real-Time Counter Prescaler"]
+pub struct RTC_R(crate::FieldReader<u8, RTC_A>);
 impl RTC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RTC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTC_A {
@@ -98,85 +109,92 @@ impl RTC_R {
     #[doc = "Checks if the value of the field is `DIV1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == RTC_A::DIV1
+        **self == RTC_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == RTC_A::DIV2
+        **self == RTC_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == RTC_A::DIV4
+        **self == RTC_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == RTC_A::DIV8
+        **self == RTC_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        *self == RTC_A::DIV16
+        **self == RTC_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
     #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        *self == RTC_A::DIV32
+        **self == RTC_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
     #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        *self == RTC_A::DIV64
+        **self == RTC_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
     #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        *self == RTC_A::DIV128
+        **self == RTC_A::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
     #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        *self == RTC_A::DIV256
+        **self == RTC_A::DIV256
     }
     #[doc = "Checks if the value of the field is `DIV512`"]
     #[inline(always)]
     pub fn is_div512(&self) -> bool {
-        *self == RTC_A::DIV512
+        **self == RTC_A::DIV512
     }
     #[doc = "Checks if the value of the field is `DIV1024`"]
     #[inline(always)]
     pub fn is_div1024(&self) -> bool {
-        *self == RTC_A::DIV1024
+        **self == RTC_A::DIV1024
     }
     #[doc = "Checks if the value of the field is `DIV2048`"]
     #[inline(always)]
     pub fn is_div2048(&self) -> bool {
-        *self == RTC_A::DIV2048
+        **self == RTC_A::DIV2048
     }
     #[doc = "Checks if the value of the field is `DIV4096`"]
     #[inline(always)]
     pub fn is_div4096(&self) -> bool {
-        *self == RTC_A::DIV4096
+        **self == RTC_A::DIV4096
     }
     #[doc = "Checks if the value of the field is `DIV8192`"]
     #[inline(always)]
     pub fn is_div8192(&self) -> bool {
-        *self == RTC_A::DIV8192
+        **self == RTC_A::DIV8192
     }
     #[doc = "Checks if the value of the field is `DIV16384`"]
     #[inline(always)]
     pub fn is_div16384(&self) -> bool {
-        *self == RTC_A::DIV16384
+        **self == RTC_A::DIV16384
     }
     #[doc = "Checks if the value of the field is `DIV32768`"]
     #[inline(always)]
     pub fn is_div32768(&self) -> bool {
-        *self == RTC_A::DIV32768
+        **self == RTC_A::DIV32768
     }
 }
-#[doc = "Write proxy for field `RTC`"]
+impl core::ops::Deref for RTC_R {
+    type Target = crate::FieldReader<u8, RTC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTC` writer - Real-Time Counter Prescaler"]
 pub struct RTC_W<'a> {
     w: &'a mut W,
 }
@@ -184,9 +202,7 @@ impl<'a> RTC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTC_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "LFACLKRTC = LFACLK"]
     #[inline(always)]
@@ -271,7 +287,7 @@ impl<'a> RTC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
@@ -287,5 +303,31 @@ impl W {
     #[inline(always)]
     pub fn rtc(&mut self) -> RTC_W {
         RTC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Low Frequency A Prescaler Register 0 (Async Reg)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lfapresc0](index.html) module"]
+pub struct LFAPRESC0_SPEC;
+impl crate::RegisterSpec for LFAPRESC0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [lfapresc0::R](R) reader structure"]
+impl crate::Readable for LFAPRESC0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lfapresc0::W](W) writer structure"]
+impl crate::Writable for LFAPRESC0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LFAPRESC0 to value 0"]
+impl crate::Resettable for LFAPRESC0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

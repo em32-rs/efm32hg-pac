@@ -1,18 +1,54 @@
-#[doc = "Reader of register DTCTRL"]
-pub type R = crate::R<u32, super::DTCTRL>;
-#[doc = "Writer for register DTCTRL"]
-pub type W = crate::W<u32, super::DTCTRL>;
-#[doc = "Register DTCTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::DTCTRL {
-    type Type = u32;
+#[doc = "Register `DTCTRL` reader"]
+pub struct R(crate::R<DTCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DTCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DTEN`"]
-pub type DTEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DTEN`"]
+impl From<crate::R<DTCTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DTCTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DTCTRL` writer"]
+pub struct W(crate::W<DTCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DTCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DTCTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DTCTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DTEN` reader - DTI Enable"]
+pub struct DTEN_R(crate::FieldReader<bool, bool>);
+impl DTEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DTEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DTEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTEN` writer - DTI Enable"]
 pub struct DTEN_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> DTEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `DTDAS`"]
-pub type DTDAS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DTDAS`"]
+#[doc = "Field `DTDAS` reader - DTI Automatic Start-up Functionality"]
+pub struct DTDAS_R(crate::FieldReader<bool, bool>);
+impl DTDAS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DTDAS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DTDAS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTDAS` writer - DTI Automatic Start-up Functionality"]
 pub struct DTDAS_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> DTDAS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `DTIPOL`"]
-pub type DTIPOL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DTIPOL`"]
+#[doc = "Field `DTIPOL` reader - DTI Inactive Polarity"]
+pub struct DTIPOL_R(crate::FieldReader<bool, bool>);
+impl DTIPOL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DTIPOL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DTIPOL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTIPOL` writer - DTI Inactive Polarity"]
 pub struct DTIPOL_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> DTIPOL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `DTCINV`"]
-pub type DTCINV_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DTCINV`"]
+#[doc = "Field `DTCINV` reader - DTI Complementary Output Invert."]
+pub struct DTCINV_R(crate::FieldReader<bool, bool>);
+impl DTCINV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DTCINV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DTCINV_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTCINV` writer - DTI Complementary Output Invert."]
 pub struct DTCINV_W<'a> {
     w: &'a mut W,
 }
@@ -102,88 +174,91 @@ impl<'a> DTCINV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
 #[doc = "DTI PRS Source Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DTPRSSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5,
+    PRSCH5 = 5,
 }
 impl From<DTPRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DTPRSSEL_A) -> Self {
-        match variant {
-            DTPRSSEL_A::PRSCH0 => 0,
-            DTPRSSEL_A::PRSCH1 => 1,
-            DTPRSSEL_A::PRSCH2 => 2,
-            DTPRSSEL_A::PRSCH3 => 3,
-            DTPRSSEL_A::PRSCH4 => 4,
-            DTPRSSEL_A::PRSCH5 => 5,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `DTPRSSEL`"]
-pub type DTPRSSEL_R = crate::R<u8, DTPRSSEL_A>;
+#[doc = "Field `DTPRSSEL` reader - DTI PRS Source Channel Select"]
+pub struct DTPRSSEL_R(crate::FieldReader<u8, DTPRSSEL_A>);
 impl DTPRSSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DTPRSSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DTPRSSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DTPRSSEL_A> {
         match self.bits {
-            0 => Val(DTPRSSEL_A::PRSCH0),
-            1 => Val(DTPRSSEL_A::PRSCH1),
-            2 => Val(DTPRSSEL_A::PRSCH2),
-            3 => Val(DTPRSSEL_A::PRSCH3),
-            4 => Val(DTPRSSEL_A::PRSCH4),
-            5 => Val(DTPRSSEL_A::PRSCH5),
-            i => Res(i),
+            0 => Some(DTPRSSEL_A::PRSCH0),
+            1 => Some(DTPRSSEL_A::PRSCH1),
+            2 => Some(DTPRSSEL_A::PRSCH2),
+            3 => Some(DTPRSSEL_A::PRSCH3),
+            4 => Some(DTPRSSEL_A::PRSCH4),
+            5 => Some(DTPRSSEL_A::PRSCH5),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == DTPRSSEL_A::PRSCH0
+        **self == DTPRSSEL_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == DTPRSSEL_A::PRSCH1
+        **self == DTPRSSEL_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == DTPRSSEL_A::PRSCH2
+        **self == DTPRSSEL_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == DTPRSSEL_A::PRSCH3
+        **self == DTPRSSEL_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == DTPRSSEL_A::PRSCH4
+        **self == DTPRSSEL_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == DTPRSSEL_A::PRSCH5
+        **self == DTPRSSEL_A::PRSCH5
     }
 }
-#[doc = "Write proxy for field `DTPRSSEL`"]
+impl core::ops::Deref for DTPRSSEL_R {
+    type Target = crate::FieldReader<u8, DTPRSSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTPRSSEL` writer - DTI PRS Source Channel Select"]
 pub struct DTPRSSEL_W<'a> {
     w: &'a mut W,
 }
@@ -226,13 +301,25 @@ impl<'a> DTPRSSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `DTPRSEN`"]
-pub type DTPRSEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DTPRSEN`"]
+#[doc = "Field `DTPRSEN` reader - DTI PRS Source Enable"]
+pub struct DTPRSEN_R(crate::FieldReader<bool, bool>);
+impl DTPRSEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DTPRSEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DTPRSEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTPRSEN` writer - DTI PRS Source Enable"]
 pub struct DTPRSEN_W<'a> {
     w: &'a mut W,
 }
@@ -250,7 +337,7 @@ impl<'a> DTPRSEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -316,5 +403,31 @@ impl W {
     #[inline(always)]
     pub fn dtprsen(&mut self) -> DTPRSEN_W {
         DTPRSEN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "DTI Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtctrl](index.html) module"]
+pub struct DTCTRL_SPEC;
+impl crate::RegisterSpec for DTCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dtctrl::R](R) reader structure"]
+impl crate::Readable for DTCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dtctrl::W](W) writer structure"]
+impl crate::Writable for DTCTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DTCTRL to value 0"]
+impl crate::Resettable for DTCTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

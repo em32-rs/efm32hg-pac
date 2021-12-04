@@ -1,18 +1,54 @@
-#[doc = "Reader of register USHFRCOCTRL"]
-pub type R = crate::R<u32, super::USHFRCOCTRL>;
-#[doc = "Writer for register USHFRCOCTRL"]
-pub type W = crate::W<u32, super::USHFRCOCTRL>;
-#[doc = "Register USHFRCOCTRL `reset()`'s with value 0x000f_f040"]
-impl crate::ResetValue for super::USHFRCOCTRL {
-    type Type = u32;
+#[doc = "Register `USHFRCOCTRL` reader"]
+pub struct R(crate::R<USHFRCOCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<USHFRCOCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x000f_f040
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TUNING`"]
-pub type TUNING_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TUNING`"]
+impl From<crate::R<USHFRCOCTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<USHFRCOCTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `USHFRCOCTRL` writer"]
+pub struct W(crate::W<USHFRCOCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<USHFRCOCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<USHFRCOCTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<USHFRCOCTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TUNING` reader - USHFRCO frequency adjust"]
+pub struct TUNING_R(crate::FieldReader<u8, u8>);
+impl TUNING_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TUNING_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TUNING_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TUNING` writer - USHFRCO frequency adjust"]
 pub struct TUNING_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> TUNING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | ((value as u32) & 0x7f);
+        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
         self.w
     }
 }
-#[doc = "Reader of field `DITHEN`"]
-pub type DITHEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DITHEN`"]
+#[doc = "Field `DITHEN` reader - USHFRCO dither enable"]
+pub struct DITHEN_R(crate::FieldReader<bool, bool>);
+impl DITHEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DITHEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DITHEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DITHEN` writer - USHFRCO dither enable"]
 pub struct DITHEN_W<'a> {
     w: &'a mut W,
 }
@@ -44,13 +92,25 @@ impl<'a> DITHEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `SUSPEND`"]
-pub type SUSPEND_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SUSPEND`"]
+#[doc = "Field `SUSPEND` reader - USHFRCO suspend"]
+pub struct SUSPEND_R(crate::FieldReader<bool, bool>);
+impl SUSPEND_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUSPEND_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SUSPEND_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUSPEND` writer - USHFRCO suspend"]
 pub struct SUSPEND_W<'a> {
     w: &'a mut W,
 }
@@ -68,13 +128,25 @@ impl<'a> SUSPEND_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `TIMEOUT`"]
-pub type TIMEOUT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TIMEOUT`"]
+#[doc = "Field `TIMEOUT` reader - USHFRCO Timeout"]
+pub struct TIMEOUT_R(crate::FieldReader<u8, u8>);
+impl TIMEOUT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TIMEOUT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TIMEOUT_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TIMEOUT` writer - USHFRCO Timeout"]
 pub struct TIMEOUT_W<'a> {
     w: &'a mut W,
 }
@@ -82,7 +154,7 @@ impl<'a> TIMEOUT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 12)) | (((value as u32) & 0xff) << 12);
+        self.w.bits = (self.w.bits & !(0xff << 12)) | ((value as u32 & 0xff) << 12);
         self.w
     }
 }
@@ -128,5 +200,31 @@ impl W {
     #[inline(always)]
     pub fn timeout(&mut self) -> TIMEOUT_W {
         TIMEOUT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USHFRCO Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ushfrcoctrl](index.html) module"]
+pub struct USHFRCOCTRL_SPEC;
+impl crate::RegisterSpec for USHFRCOCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ushfrcoctrl::R](R) reader structure"]
+impl crate::Readable for USHFRCOCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ushfrcoctrl::W](W) writer structure"]
+impl crate::Writable for USHFRCOCTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets USHFRCOCTRL to value 0x000f_f040"]
+impl crate::Resettable for USHFRCOCTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x000f_f040
     }
 }

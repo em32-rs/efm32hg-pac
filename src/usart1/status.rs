@@ -1,31 +1,200 @@
-#[doc = "Reader of register STATUS"]
-pub type R = crate::R<u32, super::STATUS>;
-#[doc = "Reader of field `RXENS`"]
-pub type RXENS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXENS`"]
-pub type TXENS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MASTER`"]
-pub type MASTER_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXBLOCK`"]
-pub type RXBLOCK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXTRI`"]
-pub type TXTRI_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXC`"]
-pub type TXC_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXBL`"]
-pub type TXBL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXDATAV`"]
-pub type RXDATAV_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXFULL`"]
-pub type RXFULL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXBDRIGHT`"]
-pub type TXBDRIGHT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXBSRIGHT`"]
-pub type TXBSRIGHT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXDATAVRIGHT`"]
-pub type RXDATAVRIGHT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXFULLRIGHT`"]
-pub type RXFULLRIGHT_R = crate::R<bool, bool>;
+#[doc = "Register `STATUS` reader"]
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RXENS` reader - Receiver Enable Status"]
+pub struct RXENS_R(crate::FieldReader<bool, bool>);
+impl RXENS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXENS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXENS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXENS` reader - Transmitter Enable Status"]
+pub struct TXENS_R(crate::FieldReader<bool, bool>);
+impl TXENS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXENS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXENS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MASTER` reader - SPI Master Mode"]
+pub struct MASTER_R(crate::FieldReader<bool, bool>);
+impl MASTER_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MASTER_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MASTER_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXBLOCK` reader - Block Incoming Data"]
+pub struct RXBLOCK_R(crate::FieldReader<bool, bool>);
+impl RXBLOCK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXBLOCK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXBLOCK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXTRI` reader - Transmitter Tristated"]
+pub struct TXTRI_R(crate::FieldReader<bool, bool>);
+impl TXTRI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXTRI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXTRI_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXC` reader - TX Complete"]
+pub struct TXC_R(crate::FieldReader<bool, bool>);
+impl TXC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBL` reader - TX Buffer Level"]
+pub struct TXBL_R(crate::FieldReader<bool, bool>);
+impl TXBL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXDATAV` reader - RX Data Valid"]
+pub struct RXDATAV_R(crate::FieldReader<bool, bool>);
+impl RXDATAV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXDATAV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXDATAV_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXFULL` reader - RX FIFO Full"]
+pub struct RXFULL_R(crate::FieldReader<bool, bool>);
+impl RXFULL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXFULL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXFULL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBDRIGHT` reader - TX Buffer Expects Double Right Data"]
+pub struct TXBDRIGHT_R(crate::FieldReader<bool, bool>);
+impl TXBDRIGHT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBDRIGHT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBDRIGHT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBSRIGHT` reader - TX Buffer Expects Single Right Data"]
+pub struct TXBSRIGHT_R(crate::FieldReader<bool, bool>);
+impl TXBSRIGHT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBSRIGHT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBSRIGHT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXDATAVRIGHT` reader - RX Data Right"]
+pub struct RXDATAVRIGHT_R(crate::FieldReader<bool, bool>);
+impl RXDATAVRIGHT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXDATAVRIGHT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXDATAVRIGHT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXFULLRIGHT` reader - RX Full of Right Data"]
+pub struct RXFULLRIGHT_R(crate::FieldReader<bool, bool>);
+impl RXFULLRIGHT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXFULLRIGHT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXFULLRIGHT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Receiver Enable Status"]
     #[inline(always)]
@@ -91,5 +260,21 @@ impl R {
     #[inline(always)]
     pub fn rxfullright(&self) -> RXFULLRIGHT_R {
         RXFULLRIGHT_R::new(((self.bits >> 12) & 0x01) != 0)
+    }
+}
+#[doc = "USART Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets STATUS to value 0x40"]
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x40
     }
 }

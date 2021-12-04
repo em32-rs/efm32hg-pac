@@ -1,18 +1,54 @@
-#[doc = "Reader of register TRACECTRL"]
-pub type R = crate::R<u32, super::TRACECTRL>;
-#[doc = "Writer for register TRACECTRL"]
-pub type W = crate::W<u32, super::TRACECTRL>;
-#[doc = "Register TRACECTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::TRACECTRL {
-    type Type = u32;
+#[doc = "Register `TRACECTRL` reader"]
+pub struct R(crate::R<TRACECTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TRACECTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TSTARTEN`"]
-pub type TSTARTEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TSTARTEN`"]
+impl From<crate::R<TRACECTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TRACECTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TRACECTRL` writer"]
+pub struct W(crate::W<TRACECTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TRACECTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TRACECTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TRACECTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TSTARTEN` reader - PRS TSTART Enable"]
+pub struct TSTARTEN_R(crate::FieldReader<bool, bool>);
+impl TSTARTEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTARTEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTARTEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTARTEN` writer - PRS TSTART Enable"]
 pub struct TSTARTEN_W<'a> {
     w: &'a mut W,
 }
@@ -30,88 +66,91 @@ impl<'a> TSTARTEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
 #[doc = "MTB TSTART PRS select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSTART_A {
     #[doc = "0: PRS ch 0 is controlling TSTART."]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS ch 1 is controlling TSTART."]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS ch 2 is controlling TSTART."]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS ch 3 is controlling TSTART."]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS ch 4 is controlling TSTART."]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS ch 5 is controlling TSTART."]
-    PRSCH5,
+    PRSCH5 = 5,
 }
 impl From<TSTART_A> for u8 {
     #[inline(always)]
     fn from(variant: TSTART_A) -> Self {
-        match variant {
-            TSTART_A::PRSCH0 => 0,
-            TSTART_A::PRSCH1 => 1,
-            TSTART_A::PRSCH2 => 2,
-            TSTART_A::PRSCH3 => 3,
-            TSTART_A::PRSCH4 => 4,
-            TSTART_A::PRSCH5 => 5,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `TSTART`"]
-pub type TSTART_R = crate::R<u8, TSTART_A>;
+#[doc = "Field `TSTART` reader - MTB TSTART PRS select"]
+pub struct TSTART_R(crate::FieldReader<u8, TSTART_A>);
 impl TSTART_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TSTART_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TSTART_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TSTART_A> {
         match self.bits {
-            0 => Val(TSTART_A::PRSCH0),
-            1 => Val(TSTART_A::PRSCH1),
-            2 => Val(TSTART_A::PRSCH2),
-            3 => Val(TSTART_A::PRSCH3),
-            4 => Val(TSTART_A::PRSCH4),
-            5 => Val(TSTART_A::PRSCH5),
-            i => Res(i),
+            0 => Some(TSTART_A::PRSCH0),
+            1 => Some(TSTART_A::PRSCH1),
+            2 => Some(TSTART_A::PRSCH2),
+            3 => Some(TSTART_A::PRSCH3),
+            4 => Some(TSTART_A::PRSCH4),
+            5 => Some(TSTART_A::PRSCH5),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == TSTART_A::PRSCH0
+        **self == TSTART_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == TSTART_A::PRSCH1
+        **self == TSTART_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == TSTART_A::PRSCH2
+        **self == TSTART_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == TSTART_A::PRSCH3
+        **self == TSTART_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == TSTART_A::PRSCH4
+        **self == TSTART_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == TSTART_A::PRSCH5
+        **self == TSTART_A::PRSCH5
     }
 }
-#[doc = "Write proxy for field `TSTART`"]
+impl core::ops::Deref for TSTART_R {
+    type Target = crate::FieldReader<u8, TSTART_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTART` writer - MTB TSTART PRS select"]
 pub struct TSTART_W<'a> {
     w: &'a mut W,
 }
@@ -154,13 +193,25 @@ impl<'a> TSTART_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 1)) | (((value as u32) & 0x07) << 1);
+        self.w.bits = (self.w.bits & !(0x07 << 1)) | ((value as u32 & 0x07) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `TSTOPEN`"]
-pub type TSTOPEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TSTOPEN`"]
+#[doc = "Field `TSTOPEN` reader - PRS TSTOP Enable"]
+pub struct TSTOPEN_R(crate::FieldReader<bool, bool>);
+impl TSTOPEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTOPEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTOPEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTOPEN` writer - PRS TSTOP Enable"]
 pub struct TSTOPEN_W<'a> {
     w: &'a mut W,
 }
@@ -178,88 +229,91 @@ impl<'a> TSTOPEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
 #[doc = "MTB TSTOP PRS select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSTOP_A {
     #[doc = "0: PRS ch 0 is controlling TSTOP."]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS ch 1 is controlling TSTOP."]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS ch 2 is controlling TSTOP."]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS ch 3 is controlling TSTOP."]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS ch 4 is controlling TSTOP."]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS ch 5 is controlling TSTOP."]
-    PRSCH5,
+    PRSCH5 = 5,
 }
 impl From<TSTOP_A> for u8 {
     #[inline(always)]
     fn from(variant: TSTOP_A) -> Self {
-        match variant {
-            TSTOP_A::PRSCH0 => 0,
-            TSTOP_A::PRSCH1 => 1,
-            TSTOP_A::PRSCH2 => 2,
-            TSTOP_A::PRSCH3 => 3,
-            TSTOP_A::PRSCH4 => 4,
-            TSTOP_A::PRSCH5 => 5,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `TSTOP`"]
-pub type TSTOP_R = crate::R<u8, TSTOP_A>;
+#[doc = "Field `TSTOP` reader - MTB TSTOP PRS select"]
+pub struct TSTOP_R(crate::FieldReader<u8, TSTOP_A>);
 impl TSTOP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TSTOP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TSTOP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TSTOP_A> {
         match self.bits {
-            0 => Val(TSTOP_A::PRSCH0),
-            1 => Val(TSTOP_A::PRSCH1),
-            2 => Val(TSTOP_A::PRSCH2),
-            3 => Val(TSTOP_A::PRSCH3),
-            4 => Val(TSTOP_A::PRSCH4),
-            5 => Val(TSTOP_A::PRSCH5),
-            i => Res(i),
+            0 => Some(TSTOP_A::PRSCH0),
+            1 => Some(TSTOP_A::PRSCH1),
+            2 => Some(TSTOP_A::PRSCH2),
+            3 => Some(TSTOP_A::PRSCH3),
+            4 => Some(TSTOP_A::PRSCH4),
+            5 => Some(TSTOP_A::PRSCH5),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == TSTOP_A::PRSCH0
+        **self == TSTOP_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == TSTOP_A::PRSCH1
+        **self == TSTOP_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == TSTOP_A::PRSCH2
+        **self == TSTOP_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == TSTOP_A::PRSCH3
+        **self == TSTOP_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == TSTOP_A::PRSCH4
+        **self == TSTOP_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == TSTOP_A::PRSCH5
+        **self == TSTOP_A::PRSCH5
     }
 }
-#[doc = "Write proxy for field `TSTOP`"]
+impl core::ops::Deref for TSTOP_R {
+    type Target = crate::FieldReader<u8, TSTOP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTOP` writer - MTB TSTOP PRS select"]
 pub struct TSTOP_W<'a> {
     w: &'a mut W,
 }
@@ -302,7 +356,7 @@ impl<'a> TSTOP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 9)) | (((value as u32) & 0x07) << 9);
+        self.w.bits = (self.w.bits & !(0x07 << 9)) | ((value as u32 & 0x07) << 9);
         self.w
     }
 }
@@ -348,5 +402,31 @@ impl W {
     #[inline(always)]
     pub fn tstop(&mut self) -> TSTOP_W {
         TSTOP_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "MTB Trace Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tracectrl](index.html) module"]
+pub struct TRACECTRL_SPEC;
+impl crate::RegisterSpec for TRACECTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [tracectrl::R](R) reader structure"]
+impl crate::Readable for TRACECTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [tracectrl::W](W) writer structure"]
+impl crate::Writable for TRACECTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TRACECTRL to value 0"]
+impl crate::Resettable for TRACECTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

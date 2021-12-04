@@ -2,180 +2,93 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Control Register"]
-    pub ctrl: CTRL,
+    pub ctrl: crate::Reg<ctrl::CTRL_SPEC>,
     #[doc = "0x04 - Command Register"]
-    pub cmd: CMD,
+    pub cmd: crate::Reg<cmd::CMD_SPEC>,
     #[doc = "0x08 - State Register"]
-    pub state: STATE,
+    pub state: crate::Reg<state::STATE_SPEC>,
     #[doc = "0x0c - Status Register"]
-    pub status: STATUS,
+    pub status: crate::Reg<status::STATUS_SPEC>,
     #[doc = "0x10 - Clock Division Register"]
-    pub clkdiv: CLKDIV,
+    pub clkdiv: crate::Reg<clkdiv::CLKDIV_SPEC>,
     #[doc = "0x14 - Slave Address Register"]
-    pub saddr: SADDR,
+    pub saddr: crate::Reg<saddr::SADDR_SPEC>,
     #[doc = "0x18 - Slave Address Mask Register"]
-    pub saddrmask: SADDRMASK,
+    pub saddrmask: crate::Reg<saddrmask::SADDRMASK_SPEC>,
     #[doc = "0x1c - Receive Buffer Data Register"]
-    pub rxdata: RXDATA,
+    pub rxdata: crate::Reg<rxdata::RXDATA_SPEC>,
     #[doc = "0x20 - Receive Buffer Data Peek Register"]
-    pub rxdatap: RXDATAP,
+    pub rxdatap: crate::Reg<rxdatap::RXDATAP_SPEC>,
     #[doc = "0x24 - Transmit Buffer Data Register"]
-    pub txdata: TXDATA,
+    pub txdata: crate::Reg<txdata::TXDATA_SPEC>,
     #[doc = "0x28 - Interrupt Flag Register"]
-    pub if_: IF,
+    pub if_: crate::Reg<if_::IF_SPEC>,
     #[doc = "0x2c - Interrupt Flag Set Register"]
-    pub ifs: IFS,
+    pub ifs: crate::Reg<ifs::IFS_SPEC>,
     #[doc = "0x30 - Interrupt Flag Clear Register"]
-    pub ifc: IFC,
+    pub ifc: crate::Reg<ifc::IFC_SPEC>,
     #[doc = "0x34 - Interrupt Enable Register"]
-    pub ien: IEN,
+    pub ien: crate::Reg<ien::IEN_SPEC>,
     #[doc = "0x38 - I/O Routing Register"]
-    pub route: ROUTE,
+    pub route: crate::Reg<route::ROUTE_SPEC>,
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
-pub type CTRL = crate::Reg<u32, _CTRL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CTRL;
-#[doc = "`read()` method returns [ctrl::R](ctrl::R) reader structure"]
-impl crate::Readable for CTRL {}
-#[doc = "`write(|w| ..)` method takes [ctrl::W](ctrl::W) writer structure"]
-impl crate::Writable for CTRL {}
+#[doc = "CTRL register accessor: an alias for `Reg<CTRL_SPEC>`"]
+pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "Control Register"]
 pub mod ctrl;
-#[doc = "Command Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmd](cmd) module"]
-pub type CMD = crate::Reg<u32, _CMD>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CMD;
-#[doc = "`write(|w| ..)` method takes [cmd::W](cmd::W) writer structure"]
-impl crate::Writable for CMD {}
+#[doc = "CMD register accessor: an alias for `Reg<CMD_SPEC>`"]
+pub type CMD = crate::Reg<cmd::CMD_SPEC>;
 #[doc = "Command Register"]
 pub mod cmd;
-#[doc = "State Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [state](state) module"]
-pub type STATE = crate::Reg<u32, _STATE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STATE;
-#[doc = "`read()` method returns [state::R](state::R) reader structure"]
-impl crate::Readable for STATE {}
+#[doc = "STATE register accessor: an alias for `Reg<STATE_SPEC>`"]
+pub type STATE = crate::Reg<state::STATE_SPEC>;
 #[doc = "State Register"]
 pub mod state;
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status](status) module"]
-pub type STATUS = crate::Reg<u32, _STATUS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STATUS;
-#[doc = "`read()` method returns [status::R](status::R) reader structure"]
-impl crate::Readable for STATUS {}
+#[doc = "STATUS register accessor: an alias for `Reg<STATUS_SPEC>`"]
+pub type STATUS = crate::Reg<status::STATUS_SPEC>;
 #[doc = "Status Register"]
 pub mod status;
-#[doc = "Clock Division Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clkdiv](clkdiv) module"]
-pub type CLKDIV = crate::Reg<u32, _CLKDIV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CLKDIV;
-#[doc = "`read()` method returns [clkdiv::R](clkdiv::R) reader structure"]
-impl crate::Readable for CLKDIV {}
-#[doc = "`write(|w| ..)` method takes [clkdiv::W](clkdiv::W) writer structure"]
-impl crate::Writable for CLKDIV {}
+#[doc = "CLKDIV register accessor: an alias for `Reg<CLKDIV_SPEC>`"]
+pub type CLKDIV = crate::Reg<clkdiv::CLKDIV_SPEC>;
 #[doc = "Clock Division Register"]
 pub mod clkdiv;
-#[doc = "Slave Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [saddr](saddr) module"]
-pub type SADDR = crate::Reg<u32, _SADDR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SADDR;
-#[doc = "`read()` method returns [saddr::R](saddr::R) reader structure"]
-impl crate::Readable for SADDR {}
-#[doc = "`write(|w| ..)` method takes [saddr::W](saddr::W) writer structure"]
-impl crate::Writable for SADDR {}
+#[doc = "SADDR register accessor: an alias for `Reg<SADDR_SPEC>`"]
+pub type SADDR = crate::Reg<saddr::SADDR_SPEC>;
 #[doc = "Slave Address Register"]
 pub mod saddr;
-#[doc = "Slave Address Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [saddrmask](saddrmask) module"]
-pub type SADDRMASK = crate::Reg<u32, _SADDRMASK>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SADDRMASK;
-#[doc = "`read()` method returns [saddrmask::R](saddrmask::R) reader structure"]
-impl crate::Readable for SADDRMASK {}
-#[doc = "`write(|w| ..)` method takes [saddrmask::W](saddrmask::W) writer structure"]
-impl crate::Writable for SADDRMASK {}
+#[doc = "SADDRMASK register accessor: an alias for `Reg<SADDRMASK_SPEC>`"]
+pub type SADDRMASK = crate::Reg<saddrmask::SADDRMASK_SPEC>;
 #[doc = "Slave Address Mask Register"]
 pub mod saddrmask;
-#[doc = "Receive Buffer Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rxdata](rxdata) module"]
-pub type RXDATA = crate::Reg<u32, _RXDATA>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RXDATA;
-#[doc = "`read()` method returns [rxdata::R](rxdata::R) reader structure"]
-impl crate::Readable for RXDATA {}
+#[doc = "RXDATA register accessor: an alias for `Reg<RXDATA_SPEC>`"]
+pub type RXDATA = crate::Reg<rxdata::RXDATA_SPEC>;
 #[doc = "Receive Buffer Data Register"]
 pub mod rxdata;
-#[doc = "Receive Buffer Data Peek Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rxdatap](rxdatap) module"]
-pub type RXDATAP = crate::Reg<u32, _RXDATAP>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RXDATAP;
-#[doc = "`read()` method returns [rxdatap::R](rxdatap::R) reader structure"]
-impl crate::Readable for RXDATAP {}
+#[doc = "RXDATAP register accessor: an alias for `Reg<RXDATAP_SPEC>`"]
+pub type RXDATAP = crate::Reg<rxdatap::RXDATAP_SPEC>;
 #[doc = "Receive Buffer Data Peek Register"]
 pub mod rxdatap;
-#[doc = "Transmit Buffer Data Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [txdata](txdata) module"]
-pub type TXDATA = crate::Reg<u32, _TXDATA>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TXDATA;
-#[doc = "`write(|w| ..)` method takes [txdata::W](txdata::W) writer structure"]
-impl crate::Writable for TXDATA {}
+#[doc = "TXDATA register accessor: an alias for `Reg<TXDATA_SPEC>`"]
+pub type TXDATA = crate::Reg<txdata::TXDATA_SPEC>;
 #[doc = "Transmit Buffer Data Register"]
 pub mod txdata;
-#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [if_](if_) module"]
-pub type IF = crate::Reg<u32, _IF>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IF;
-#[doc = "`read()` method returns [if_::R](if_::R) reader structure"]
-impl crate::Readable for IF {}
+#[doc = "IF register accessor: an alias for `Reg<IF_SPEC>`"]
+pub type IF = crate::Reg<if_::IF_SPEC>;
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
-#[doc = "Interrupt Flag Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ifs](ifs) module"]
-pub type IFS = crate::Reg<u32, _IFS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IFS;
-#[doc = "`write(|w| ..)` method takes [ifs::W](ifs::W) writer structure"]
-impl crate::Writable for IFS {}
+#[doc = "IFS register accessor: an alias for `Reg<IFS_SPEC>`"]
+pub type IFS = crate::Reg<ifs::IFS_SPEC>;
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
-#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ifc](ifc) module"]
-pub type IFC = crate::Reg<u32, _IFC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IFC;
-#[doc = "`write(|w| ..)` method takes [ifc::W](ifc::W) writer structure"]
-impl crate::Writable for IFC {}
+#[doc = "IFC register accessor: an alias for `Reg<IFC_SPEC>`"]
+pub type IFC = crate::Reg<ifc::IFC_SPEC>;
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ien](ien) module"]
-pub type IEN = crate::Reg<u32, _IEN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IEN;
-#[doc = "`read()` method returns [ien::R](ien::R) reader structure"]
-impl crate::Readable for IEN {}
-#[doc = "`write(|w| ..)` method takes [ien::W](ien::W) writer structure"]
-impl crate::Writable for IEN {}
+#[doc = "IEN register accessor: an alias for `Reg<IEN_SPEC>`"]
+pub type IEN = crate::Reg<ien::IEN_SPEC>;
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
-#[doc = "I/O Routing Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [route](route) module"]
-pub type ROUTE = crate::Reg<u32, _ROUTE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _ROUTE;
-#[doc = "`read()` method returns [route::R](route::R) reader structure"]
-impl crate::Readable for ROUTE {}
-#[doc = "`write(|w| ..)` method takes [route::W](route::W) writer structure"]
-impl crate::Writable for ROUTE {}
+#[doc = "ROUTE register accessor: an alias for `Reg<ROUTE_SPEC>`"]
+pub type ROUTE = crate::Reg<route::ROUTE_SPEC>;
 #[doc = "I/O Routing Register"]
 pub mod route;

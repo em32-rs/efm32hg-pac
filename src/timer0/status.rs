@@ -1,29 +1,186 @@
-#[doc = "Reader of register STATUS"]
-pub type R = crate::R<u32, super::STATUS>;
-#[doc = "Reader of field `RUNNING`"]
-pub type RUNNING_R = crate::R<bool, bool>;
-#[doc = "Reader of field `DIR`"]
-pub type DIR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TOPBV`"]
-pub type TOPBV_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CCVBV0`"]
-pub type CCVBV0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CCVBV1`"]
-pub type CCVBV1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CCVBV2`"]
-pub type CCVBV2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ICV0`"]
-pub type ICV0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ICV1`"]
-pub type ICV1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ICV2`"]
-pub type ICV2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CCPOL0`"]
-pub type CCPOL0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CCPOL1`"]
-pub type CCPOL1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CCPOL2`"]
-pub type CCPOL2_R = crate::R<bool, bool>;
+#[doc = "Register `STATUS` reader"]
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RUNNING` reader - Running"]
+pub struct RUNNING_R(crate::FieldReader<bool, bool>);
+impl RUNNING_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RUNNING_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RUNNING_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIR` reader - Direction"]
+pub struct DIR_R(crate::FieldReader<bool, bool>);
+impl DIR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DIR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DIR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TOPBV` reader - TOPB Valid"]
+pub struct TOPBV_R(crate::FieldReader<bool, bool>);
+impl TOPBV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TOPBV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TOPBV_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CCVBV0` reader - CC0 CCVB Valid"]
+pub struct CCVBV0_R(crate::FieldReader<bool, bool>);
+impl CCVBV0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CCVBV0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CCVBV0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CCVBV1` reader - CC1 CCVB Valid"]
+pub struct CCVBV1_R(crate::FieldReader<bool, bool>);
+impl CCVBV1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CCVBV1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CCVBV1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CCVBV2` reader - CC2 CCVB Valid"]
+pub struct CCVBV2_R(crate::FieldReader<bool, bool>);
+impl CCVBV2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CCVBV2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CCVBV2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ICV0` reader - CC0 Input Capture Valid"]
+pub struct ICV0_R(crate::FieldReader<bool, bool>);
+impl ICV0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ICV0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ICV0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ICV1` reader - CC1 Input Capture Valid"]
+pub struct ICV1_R(crate::FieldReader<bool, bool>);
+impl ICV1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ICV1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ICV1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ICV2` reader - CC2 Input Capture Valid"]
+pub struct ICV2_R(crate::FieldReader<bool, bool>);
+impl ICV2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ICV2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ICV2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CCPOL0` reader - CC0 Polarity"]
+pub struct CCPOL0_R(crate::FieldReader<bool, bool>);
+impl CCPOL0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CCPOL0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CCPOL0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CCPOL1` reader - CC1 Polarity"]
+pub struct CCPOL1_R(crate::FieldReader<bool, bool>);
+impl CCPOL1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CCPOL1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CCPOL1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CCPOL2` reader - CC2 Polarity"]
+pub struct CCPOL2_R(crate::FieldReader<bool, bool>);
+impl CCPOL2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CCPOL2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CCPOL2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Running"]
     #[inline(always)]
@@ -84,5 +241,21 @@ impl R {
     #[inline(always)]
     pub fn ccpol2(&self) -> CCPOL2_R {
         CCPOL2_R::new(((self.bits >> 26) & 0x01) != 0)
+    }
+}
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets STATUS to value 0"]
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

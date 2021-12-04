@@ -1,13 +1,74 @@
-#[doc = "Reader of register IF"]
-pub type R = crate::R<u32, super::IF>;
-#[doc = "Reader of field `ERASE`"]
-pub type ERASE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WRITE`"]
-pub type WRITE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CHOF`"]
-pub type CHOF_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CMOF`"]
-pub type CMOF_R = crate::R<bool, bool>;
+#[doc = "Register `IF` reader"]
+pub struct R(crate::R<IF_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IF_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<IF_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IF_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `ERASE` reader - Erase Done Interrupt Read Flag"]
+pub struct ERASE_R(crate::FieldReader<bool, bool>);
+impl ERASE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERASE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ERASE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WRITE` reader - Write Done Interrupt Read Flag"]
+pub struct WRITE_R(crate::FieldReader<bool, bool>);
+impl WRITE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WRITE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WRITE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHOF` reader - Cache Hits Overflow Interrupt Flag"]
+pub struct CHOF_R(crate::FieldReader<bool, bool>);
+impl CHOF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHOF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CHOF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CMOF` reader - Cache Misses Overflow Interrupt Flag"]
+pub struct CMOF_R(crate::FieldReader<bool, bool>);
+impl CMOF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CMOF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CMOF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Erase Done Interrupt Read Flag"]
     #[inline(always)]
@@ -28,5 +89,21 @@ impl R {
     #[inline(always)]
     pub fn cmof(&self) -> CMOF_R {
         CMOF_R::new(((self.bits >> 3) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](index.html) module"]
+pub struct IF_SPEC;
+impl crate::RegisterSpec for IF_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [if_::R](R) reader structure"]
+impl crate::Readable for IF_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets IF to value 0"]
+impl crate::Resettable for IF_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

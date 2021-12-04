@@ -1,18 +1,54 @@
-#[doc = "Reader of register CH1_CTRL"]
-pub type R = crate::R<u32, super::CH1_CTRL>;
-#[doc = "Writer for register CH1_CTRL"]
-pub type W = crate::W<u32, super::CH1_CTRL>;
-#[doc = "Register CH1_CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CH1_CTRL {
-    type Type = u32;
+#[doc = "Register `CH1_CTRL` reader"]
+pub struct R(crate::R<CH1_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CH1_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SIGSEL`"]
-pub type SIGSEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SIGSEL`"]
+impl From<crate::R<CH1_CTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CH1_CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CH1_CTRL` writer"]
+pub struct W(crate::W<CH1_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CH1_CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CH1_CTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CH1_CTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SIGSEL` reader - Signal Select"]
+pub struct SIGSEL_R(crate::FieldReader<u8, u8>);
+impl SIGSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SIGSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SIGSEL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SIGSEL` writer - Signal Select"]
 pub struct SIGSEL_W<'a> {
     w: &'a mut W,
 }
@@ -20,133 +56,131 @@ impl<'a> SIGSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SOURCESEL_A {
     #[doc = "0: No source selected"]
-    NONE,
+    NONE = 0,
     #[doc = "8: Analog to Digital Converter 0"]
-    ADC0,
+    ADC0 = 8,
     #[doc = "12: Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
-    USART0,
+    USART0 = 12,
     #[doc = "13: Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
-    USART1,
+    USART1 = 13,
     #[doc = "16: Low Energy UART 0"]
-    LEUART0,
+    LEUART0 = 16,
     #[doc = "20: I2C 0"]
-    I2C0,
+    I2C0 = 20,
     #[doc = "24: Timer 0"]
-    TIMER0,
+    TIMER0 = 24,
     #[doc = "25: Timer 1"]
-    TIMER1,
+    TIMER1 = 25,
     #[doc = "26: Timer 2"]
-    TIMER2,
+    TIMER2 = 26,
     #[doc = "48: \"\""]
-    MSC,
+    MSC = 48,
     #[doc = "49: Advanced Encryption Standard Accelerator"]
-    AES,
+    AES = 49,
 }
 impl From<SOURCESEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SOURCESEL_A) -> Self {
-        match variant {
-            SOURCESEL_A::NONE => 0,
-            SOURCESEL_A::ADC0 => 8,
-            SOURCESEL_A::USART0 => 12,
-            SOURCESEL_A::USART1 => 13,
-            SOURCESEL_A::LEUART0 => 16,
-            SOURCESEL_A::I2C0 => 20,
-            SOURCESEL_A::TIMER0 => 24,
-            SOURCESEL_A::TIMER1 => 25,
-            SOURCESEL_A::TIMER2 => 26,
-            SOURCESEL_A::MSC => 48,
-            SOURCESEL_A::AES => 49,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `SOURCESEL`"]
-pub type SOURCESEL_R = crate::R<u8, SOURCESEL_A>;
+#[doc = "Field `SOURCESEL` reader - Source Select"]
+pub struct SOURCESEL_R(crate::FieldReader<u8, SOURCESEL_A>);
 impl SOURCESEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SOURCESEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SOURCESEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SOURCESEL_A> {
         match self.bits {
-            0 => Val(SOURCESEL_A::NONE),
-            8 => Val(SOURCESEL_A::ADC0),
-            12 => Val(SOURCESEL_A::USART0),
-            13 => Val(SOURCESEL_A::USART1),
-            16 => Val(SOURCESEL_A::LEUART0),
-            20 => Val(SOURCESEL_A::I2C0),
-            24 => Val(SOURCESEL_A::TIMER0),
-            25 => Val(SOURCESEL_A::TIMER1),
-            26 => Val(SOURCESEL_A::TIMER2),
-            48 => Val(SOURCESEL_A::MSC),
-            49 => Val(SOURCESEL_A::AES),
-            i => Res(i),
+            0 => Some(SOURCESEL_A::NONE),
+            8 => Some(SOURCESEL_A::ADC0),
+            12 => Some(SOURCESEL_A::USART0),
+            13 => Some(SOURCESEL_A::USART1),
+            16 => Some(SOURCESEL_A::LEUART0),
+            20 => Some(SOURCESEL_A::I2C0),
+            24 => Some(SOURCESEL_A::TIMER0),
+            25 => Some(SOURCESEL_A::TIMER1),
+            26 => Some(SOURCESEL_A::TIMER2),
+            48 => Some(SOURCESEL_A::MSC),
+            49 => Some(SOURCESEL_A::AES),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == SOURCESEL_A::NONE
+        **self == SOURCESEL_A::NONE
     }
     #[doc = "Checks if the value of the field is `ADC0`"]
     #[inline(always)]
     pub fn is_adc0(&self) -> bool {
-        *self == SOURCESEL_A::ADC0
+        **self == SOURCESEL_A::ADC0
     }
     #[doc = "Checks if the value of the field is `USART0`"]
     #[inline(always)]
     pub fn is_usart0(&self) -> bool {
-        *self == SOURCESEL_A::USART0
+        **self == SOURCESEL_A::USART0
     }
     #[doc = "Checks if the value of the field is `USART1`"]
     #[inline(always)]
     pub fn is_usart1(&self) -> bool {
-        *self == SOURCESEL_A::USART1
+        **self == SOURCESEL_A::USART1
     }
     #[doc = "Checks if the value of the field is `LEUART0`"]
     #[inline(always)]
     pub fn is_leuart0(&self) -> bool {
-        *self == SOURCESEL_A::LEUART0
+        **self == SOURCESEL_A::LEUART0
     }
     #[doc = "Checks if the value of the field is `I2C0`"]
     #[inline(always)]
     pub fn is_i2c0(&self) -> bool {
-        *self == SOURCESEL_A::I2C0
+        **self == SOURCESEL_A::I2C0
     }
     #[doc = "Checks if the value of the field is `TIMER0`"]
     #[inline(always)]
     pub fn is_timer0(&self) -> bool {
-        *self == SOURCESEL_A::TIMER0
+        **self == SOURCESEL_A::TIMER0
     }
     #[doc = "Checks if the value of the field is `TIMER1`"]
     #[inline(always)]
     pub fn is_timer1(&self) -> bool {
-        *self == SOURCESEL_A::TIMER1
+        **self == SOURCESEL_A::TIMER1
     }
     #[doc = "Checks if the value of the field is `TIMER2`"]
     #[inline(always)]
     pub fn is_timer2(&self) -> bool {
-        *self == SOURCESEL_A::TIMER2
+        **self == SOURCESEL_A::TIMER2
     }
     #[doc = "Checks if the value of the field is `MSC`"]
     #[inline(always)]
     pub fn is_msc(&self) -> bool {
-        *self == SOURCESEL_A::MSC
+        **self == SOURCESEL_A::MSC
     }
     #[doc = "Checks if the value of the field is `AES`"]
     #[inline(always)]
     pub fn is_aes(&self) -> bool {
-        *self == SOURCESEL_A::AES
+        **self == SOURCESEL_A::AES
     }
 }
-#[doc = "Write proxy for field `SOURCESEL`"]
+impl core::ops::Deref for SOURCESEL_R {
+    type Target = crate::FieldReader<u8, SOURCESEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SOURCESEL` writer - Source Select"]
 pub struct SOURCESEL_W<'a> {
     w: &'a mut W,
 }
@@ -214,7 +248,7 @@ impl<'a> SOURCESEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
+        self.w.bits = (self.w.bits & !(0x3f << 16)) | ((value as u32 & 0x3f) << 16);
         self.w
     }
 }
@@ -240,5 +274,31 @@ impl W {
     #[inline(always)]
     pub fn sourcesel(&mut self) -> SOURCESEL_W {
         SOURCESEL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch1_ctrl](index.html) module"]
+pub struct CH1_CTRL_SPEC;
+impl crate::RegisterSpec for CH1_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ch1_ctrl::R](R) reader structure"]
+impl crate::Readable for CH1_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ch1_ctrl::W](W) writer structure"]
+impl crate::Writable for CH1_CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CH1_CTRL to value 0"]
+impl crate::Resettable for CH1_CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

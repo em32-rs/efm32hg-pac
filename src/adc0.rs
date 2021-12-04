@@ -2,181 +2,94 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Control Register"]
-    pub ctrl: CTRL,
+    pub ctrl: crate::Reg<ctrl::CTRL_SPEC>,
     #[doc = "0x04 - Command Register"]
-    pub cmd: CMD,
+    pub cmd: crate::Reg<cmd::CMD_SPEC>,
     #[doc = "0x08 - Status Register"]
-    pub status: STATUS,
+    pub status: crate::Reg<status::STATUS_SPEC>,
     #[doc = "0x0c - Single Sample Control Register"]
-    pub singlectrl: SINGLECTRL,
+    pub singlectrl: crate::Reg<singlectrl::SINGLECTRL_SPEC>,
     #[doc = "0x10 - Scan Control Register"]
-    pub scanctrl: SCANCTRL,
+    pub scanctrl: crate::Reg<scanctrl::SCANCTRL_SPEC>,
     #[doc = "0x14 - Interrupt Enable Register"]
-    pub ien: IEN,
+    pub ien: crate::Reg<ien::IEN_SPEC>,
     #[doc = "0x18 - Interrupt Flag Register"]
-    pub if_: IF,
+    pub if_: crate::Reg<if_::IF_SPEC>,
     #[doc = "0x1c - Interrupt Flag Set Register"]
-    pub ifs: IFS,
+    pub ifs: crate::Reg<ifs::IFS_SPEC>,
     #[doc = "0x20 - Interrupt Flag Clear Register"]
-    pub ifc: IFC,
+    pub ifc: crate::Reg<ifc::IFC_SPEC>,
     #[doc = "0x24 - Single Conversion Result Data"]
-    pub singledata: SINGLEDATA,
+    pub singledata: crate::Reg<singledata::SINGLEDATA_SPEC>,
     #[doc = "0x28 - Scan Conversion Result Data"]
-    pub scandata: SCANDATA,
+    pub scandata: crate::Reg<scandata::SCANDATA_SPEC>,
     #[doc = "0x2c - Single Conversion Result Data Peek Register"]
-    pub singledatap: SINGLEDATAP,
+    pub singledatap: crate::Reg<singledatap::SINGLEDATAP_SPEC>,
     #[doc = "0x30 - Scan Sequence Result Data Peek Register"]
-    pub scandatap: SCANDATAP,
+    pub scandatap: crate::Reg<scandatap::SCANDATAP_SPEC>,
     #[doc = "0x34 - Calibration Register"]
-    pub cal: CAL,
-    _reserved14: [u8; 4usize],
+    pub cal: crate::Reg<cal::CAL_SPEC>,
+    _reserved14: [u8; 0x04],
     #[doc = "0x3c - Bias Programming Register"]
-    pub biasprog: BIASPROG,
+    pub biasprog: crate::Reg<biasprog::BIASPROG_SPEC>,
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
-pub type CTRL = crate::Reg<u32, _CTRL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CTRL;
-#[doc = "`read()` method returns [ctrl::R](ctrl::R) reader structure"]
-impl crate::Readable for CTRL {}
-#[doc = "`write(|w| ..)` method takes [ctrl::W](ctrl::W) writer structure"]
-impl crate::Writable for CTRL {}
+#[doc = "CTRL register accessor: an alias for `Reg<CTRL_SPEC>`"]
+pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "Control Register"]
 pub mod ctrl;
-#[doc = "Command Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmd](cmd) module"]
-pub type CMD = crate::Reg<u32, _CMD>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CMD;
-#[doc = "`write(|w| ..)` method takes [cmd::W](cmd::W) writer structure"]
-impl crate::Writable for CMD {}
+#[doc = "CMD register accessor: an alias for `Reg<CMD_SPEC>`"]
+pub type CMD = crate::Reg<cmd::CMD_SPEC>;
 #[doc = "Command Register"]
 pub mod cmd;
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status](status) module"]
-pub type STATUS = crate::Reg<u32, _STATUS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STATUS;
-#[doc = "`read()` method returns [status::R](status::R) reader structure"]
-impl crate::Readable for STATUS {}
+#[doc = "STATUS register accessor: an alias for `Reg<STATUS_SPEC>`"]
+pub type STATUS = crate::Reg<status::STATUS_SPEC>;
 #[doc = "Status Register"]
 pub mod status;
-#[doc = "Single Sample Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [singlectrl](singlectrl) module"]
-pub type SINGLECTRL = crate::Reg<u32, _SINGLECTRL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SINGLECTRL;
-#[doc = "`read()` method returns [singlectrl::R](singlectrl::R) reader structure"]
-impl crate::Readable for SINGLECTRL {}
-#[doc = "`write(|w| ..)` method takes [singlectrl::W](singlectrl::W) writer structure"]
-impl crate::Writable for SINGLECTRL {}
+#[doc = "SINGLECTRL register accessor: an alias for `Reg<SINGLECTRL_SPEC>`"]
+pub type SINGLECTRL = crate::Reg<singlectrl::SINGLECTRL_SPEC>;
 #[doc = "Single Sample Control Register"]
 pub mod singlectrl;
-#[doc = "Scan Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [scanctrl](scanctrl) module"]
-pub type SCANCTRL = crate::Reg<u32, _SCANCTRL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SCANCTRL;
-#[doc = "`read()` method returns [scanctrl::R](scanctrl::R) reader structure"]
-impl crate::Readable for SCANCTRL {}
-#[doc = "`write(|w| ..)` method takes [scanctrl::W](scanctrl::W) writer structure"]
-impl crate::Writable for SCANCTRL {}
+#[doc = "SCANCTRL register accessor: an alias for `Reg<SCANCTRL_SPEC>`"]
+pub type SCANCTRL = crate::Reg<scanctrl::SCANCTRL_SPEC>;
 #[doc = "Scan Control Register"]
 pub mod scanctrl;
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ien](ien) module"]
-pub type IEN = crate::Reg<u32, _IEN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IEN;
-#[doc = "`read()` method returns [ien::R](ien::R) reader structure"]
-impl crate::Readable for IEN {}
-#[doc = "`write(|w| ..)` method takes [ien::W](ien::W) writer structure"]
-impl crate::Writable for IEN {}
+#[doc = "IEN register accessor: an alias for `Reg<IEN_SPEC>`"]
+pub type IEN = crate::Reg<ien::IEN_SPEC>;
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
-#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [if_](if_) module"]
-pub type IF = crate::Reg<u32, _IF>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IF;
-#[doc = "`read()` method returns [if_::R](if_::R) reader structure"]
-impl crate::Readable for IF {}
+#[doc = "IF register accessor: an alias for `Reg<IF_SPEC>`"]
+pub type IF = crate::Reg<if_::IF_SPEC>;
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
-#[doc = "Interrupt Flag Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ifs](ifs) module"]
-pub type IFS = crate::Reg<u32, _IFS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IFS;
-#[doc = "`write(|w| ..)` method takes [ifs::W](ifs::W) writer structure"]
-impl crate::Writable for IFS {}
+#[doc = "IFS register accessor: an alias for `Reg<IFS_SPEC>`"]
+pub type IFS = crate::Reg<ifs::IFS_SPEC>;
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
-#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ifc](ifc) module"]
-pub type IFC = crate::Reg<u32, _IFC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IFC;
-#[doc = "`write(|w| ..)` method takes [ifc::W](ifc::W) writer structure"]
-impl crate::Writable for IFC {}
+#[doc = "IFC register accessor: an alias for `Reg<IFC_SPEC>`"]
+pub type IFC = crate::Reg<ifc::IFC_SPEC>;
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
-#[doc = "Single Conversion Result Data\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [singledata](singledata) module"]
-pub type SINGLEDATA = crate::Reg<u32, _SINGLEDATA>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SINGLEDATA;
-#[doc = "`read()` method returns [singledata::R](singledata::R) reader structure"]
-impl crate::Readable for SINGLEDATA {}
+#[doc = "SINGLEDATA register accessor: an alias for `Reg<SINGLEDATA_SPEC>`"]
+pub type SINGLEDATA = crate::Reg<singledata::SINGLEDATA_SPEC>;
 #[doc = "Single Conversion Result Data"]
 pub mod singledata;
-#[doc = "Scan Conversion Result Data\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [scandata](scandata) module"]
-pub type SCANDATA = crate::Reg<u32, _SCANDATA>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SCANDATA;
-#[doc = "`read()` method returns [scandata::R](scandata::R) reader structure"]
-impl crate::Readable for SCANDATA {}
+#[doc = "SCANDATA register accessor: an alias for `Reg<SCANDATA_SPEC>`"]
+pub type SCANDATA = crate::Reg<scandata::SCANDATA_SPEC>;
 #[doc = "Scan Conversion Result Data"]
 pub mod scandata;
-#[doc = "Single Conversion Result Data Peek Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [singledatap](singledatap) module"]
-pub type SINGLEDATAP = crate::Reg<u32, _SINGLEDATAP>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SINGLEDATAP;
-#[doc = "`read()` method returns [singledatap::R](singledatap::R) reader structure"]
-impl crate::Readable for SINGLEDATAP {}
+#[doc = "SINGLEDATAP register accessor: an alias for `Reg<SINGLEDATAP_SPEC>`"]
+pub type SINGLEDATAP = crate::Reg<singledatap::SINGLEDATAP_SPEC>;
 #[doc = "Single Conversion Result Data Peek Register"]
 pub mod singledatap;
-#[doc = "Scan Sequence Result Data Peek Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [scandatap](scandatap) module"]
-pub type SCANDATAP = crate::Reg<u32, _SCANDATAP>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SCANDATAP;
-#[doc = "`read()` method returns [scandatap::R](scandatap::R) reader structure"]
-impl crate::Readable for SCANDATAP {}
+#[doc = "SCANDATAP register accessor: an alias for `Reg<SCANDATAP_SPEC>`"]
+pub type SCANDATAP = crate::Reg<scandatap::SCANDATAP_SPEC>;
 #[doc = "Scan Sequence Result Data Peek Register"]
 pub mod scandatap;
-#[doc = "Calibration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cal](cal) module"]
-pub type CAL = crate::Reg<u32, _CAL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAL;
-#[doc = "`read()` method returns [cal::R](cal::R) reader structure"]
-impl crate::Readable for CAL {}
-#[doc = "`write(|w| ..)` method takes [cal::W](cal::W) writer structure"]
-impl crate::Writable for CAL {}
+#[doc = "CAL register accessor: an alias for `Reg<CAL_SPEC>`"]
+pub type CAL = crate::Reg<cal::CAL_SPEC>;
 #[doc = "Calibration Register"]
 pub mod cal;
-#[doc = "Bias Programming Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [biasprog](biasprog) module"]
-pub type BIASPROG = crate::Reg<u32, _BIASPROG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BIASPROG;
-#[doc = "`read()` method returns [biasprog::R](biasprog::R) reader structure"]
-impl crate::Readable for BIASPROG {}
-#[doc = "`write(|w| ..)` method takes [biasprog::W](biasprog::W) writer structure"]
-impl crate::Writable for BIASPROG {}
+#[doc = "BIASPROG register accessor: an alias for `Reg<BIASPROG_SPEC>`"]
+pub type BIASPROG = crate::Reg<biasprog::BIASPROG_SPEC>;
 #[doc = "Bias Programming Register"]
 pub mod biasprog;

@@ -1,14 +1,25 @@
-#[doc = "Writer for register CONFIG"]
-pub type W = crate::W<u32, super::CONFIG>;
-#[doc = "Register CONFIG `reset()`'s with value 0"]
-impl crate::ResetValue for super::CONFIG {
-    type Type = u32;
+#[doc = "Register `CONFIG` writer"]
+pub struct W(crate::W<CONFIG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CONFIG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `EN`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CONFIG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CONFIG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `EN` writer - Enable DMA"]
 pub struct EN_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `CHPROT`"]
+#[doc = "Field `CHPROT` writer - Channel Protection Control"]
 pub struct CHPROT_W<'a> {
     w: &'a mut W,
 }
@@ -48,7 +59,7 @@ impl<'a> CHPROT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -62,5 +73,27 @@ impl W {
     #[inline(always)]
     pub fn chprot(&mut self) -> CHPROT_W {
         CHPROT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "DMA Configuration Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](index.html) module"]
+pub struct CONFIG_SPEC;
+impl crate::RegisterSpec for CONFIG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [config::W](W) writer structure"]
+impl crate::Writable for CONFIG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CONFIG to value 0"]
+impl crate::Resettable for CONFIG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

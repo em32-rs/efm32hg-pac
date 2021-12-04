@@ -1,18 +1,54 @@
-#[doc = "Reader of register CTRLBASE"]
-pub type R = crate::R<u32, super::CTRLBASE>;
-#[doc = "Writer for register CTRLBASE"]
-pub type W = crate::W<u32, super::CTRLBASE>;
-#[doc = "Register CTRLBASE `reset()`'s with value 0"]
-impl crate::ResetValue for super::CTRLBASE {
-    type Type = u32;
+#[doc = "Register `CTRLBASE` reader"]
+pub struct R(crate::R<CTRLBASE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CTRLBASE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CTRLBASE`"]
-pub type CTRLBASE_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `CTRLBASE`"]
+impl From<crate::R<CTRLBASE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CTRLBASE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CTRLBASE` writer"]
+pub struct W(crate::W<CTRLBASE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CTRLBASE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CTRLBASE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CTRLBASE_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CTRLBASE` reader - Channel Control Data Base Pointer"]
+pub struct CTRLBASE_R(crate::FieldReader<u32, u32>);
+impl CTRLBASE_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        CTRLBASE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CTRLBASE_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CTRLBASE` writer - Channel Control Data Base Pointer"]
 pub struct CTRLBASE_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> CTRLBASE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
+        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
         self.w
     }
 }
@@ -36,5 +72,31 @@ impl W {
     #[inline(always)]
     pub fn ctrlbase(&mut self) -> CTRLBASE_W {
         CTRLBASE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Control Data Base Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrlbase](index.html) module"]
+pub struct CTRLBASE_SPEC;
+impl crate::RegisterSpec for CTRLBASE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ctrlbase::R](R) reader structure"]
+impl crate::Readable for CTRLBASE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ctrlbase::W](W) writer structure"]
+impl crate::Writable for CTRLBASE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CTRLBASE to value 0"]
+impl crate::Resettable for CTRLBASE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
