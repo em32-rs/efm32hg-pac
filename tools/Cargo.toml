@@ -1,13 +1,12 @@
 
 [package]
 name = "tools"
-version = "0.1.0"
+version = "0.2.0"
 authors = []
 # We never publish our tasks
 publish = false
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-svd2rust = "0.16.1"
-rustfmt-nightly = "1.4.9"
-form = "0.7.0"
+svd2rust = "0.19.0"
+form = "0.8.0"

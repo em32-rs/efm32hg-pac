@@ -21,7 +21,8 @@ svd/%.svd.patched: devices/%.yaml svd/%.svd .deps/%.d
 patch: $(PATCHED_SVDS)
 
 gen:
-	cargo +nightly gen
+	cargo gen
+	cargo fmt
 
 html/index.html: $(PATCHED_SVDS)
 	@mkdir -p html
