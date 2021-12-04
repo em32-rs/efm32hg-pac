@@ -13,11 +13,6 @@ cortex-m = "^0.7.1"
 cortex-m-rt = { version = "^0.7.1", optional = true }
 vcell = "0.1.0"
 
-[[bin]]
-name = "gen"
-path = "tools/src/bin/gen.rs"
-doc = false
-
 [features]
 rt = ["cortex-m-rt/device"]
 
