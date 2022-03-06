@@ -1,10 +1,8 @@
 use form::create_directory_structure;
-use rustfmt_nightly::{Config, Input, Session};
 use std::env::set_current_dir;
 use std::fs::{create_dir_all, read_to_string, remove_dir_all, rename, File};
 use std::io::Write;
-use std::path::PathBuf;
-use svd2rust::{generate, Generation, Target::CortexM};
+use svd2rust::{generate, Config, Generation};
 
 pub fn main() -> () {
     //parse xml
@@ -13,7 +11,7 @@ pub fn main() -> () {
         lib_rs,
         device_specific,
         ..
-    } = generate(&xml, CortexM, false).unwrap();
+    } = generate(&xml, &Config::default()).unwrap();
 
     let device_specific = device_specific.unwrap();
 
@@ -36,15 +34,6 @@ pub fn main() -> () {
 
     //form lib.rs and save
     create_directory_structure("src/", lib_rs).unwrap();
-
-    //rustfmt saved files
-    let files = ["build.rs", "src/lib.rs"].iter().map(|a| PathBuf::from(a));
-    let mut buf = Vec::<u8>::new();
-    let mut session = Session::new(Config::default(), Some(&mut buf));
-
-    for path in files {
-        session.format(Input::File(path)).unwrap();
-    }
 
     set_current_dir("..").unwrap();
     remove_dir_all("./src").unwrap_or_else(|err| println!("./src: {} [ignored]", err));

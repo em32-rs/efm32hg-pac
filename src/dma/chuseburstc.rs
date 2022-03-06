@@ -1,14 +1,25 @@
-#[doc = "Writer for register CHUSEBURSTC"]
-pub type W = crate::W<u32, super::CHUSEBURSTC>;
-#[doc = "Register CHUSEBURSTC `reset()`'s with value 0"]
-impl crate::ResetValue for super::CHUSEBURSTC {
-    type Type = u32;
+#[doc = "Register `CHUSEBURSTC` writer"]
+pub struct W(crate::W<CHUSEBURSTC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CHUSEBURSTC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `CH0USEBURSTC`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CHUSEBURSTC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CHUSEBURSTC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CH0USEBURSTC` writer - Channel 0 Useburst Clear"]
 pub struct CH0USEBURSTC_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> CH0USEBURSTC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH1USEBURSTC`"]
+#[doc = "Field `CH1USEBURSTC` writer - Channel 1 Useburst Clear"]
 pub struct CH1USEBURSTC_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> CH1USEBURSTC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH2USEBURSTC`"]
+#[doc = "Field `CH2USEBURSTC` writer - Channel 2 Useburst Clear"]
 pub struct CH2USEBURSTC_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> CH2USEBURSTC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH3USEBURSTC`"]
+#[doc = "Field `CH3USEBURSTC` writer - Channel 3 Useburst Clear"]
 pub struct CH3USEBURSTC_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +103,11 @@ impl<'a> CH3USEBURSTC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH4USEBURSTC`"]
+#[doc = "Field `CH4USEBURSTC` writer - Channel 4 Useburst Clear"]
 pub struct CH4USEBURSTC_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +125,11 @@ impl<'a> CH4USEBURSTC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH5USEBURSTC`"]
+#[doc = "Field `CH5USEBURSTC` writer - Channel 5 Useburst Clear"]
 pub struct CH5USEBURSTC_W<'a> {
     w: &'a mut W,
 }
@@ -136,7 +147,7 @@ impl<'a> CH5USEBURSTC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -170,5 +181,27 @@ impl W {
     #[inline(always)]
     pub fn ch5useburstc(&mut self) -> CH5USEBURSTC_W {
         CH5USEBURSTC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Useburst Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chuseburstc](index.html) module"]
+pub struct CHUSEBURSTC_SPEC;
+impl crate::RegisterSpec for CHUSEBURSTC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [chuseburstc::W](W) writer structure"]
+impl crate::Writable for CHUSEBURSTC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CHUSEBURSTC to value 0"]
+impl crate::Resettable for CHUSEBURSTC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

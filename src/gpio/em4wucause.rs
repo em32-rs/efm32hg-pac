@@ -1,80 +1,96 @@
-#[doc = "Reader of register EM4WUCAUSE"]
-pub type R = crate::R<u32, super::EM4WUCAUSE>;
+#[doc = "Register `EM4WUCAUSE` reader"]
+pub struct R(crate::R<EM4WUCAUSE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EM4WUCAUSE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EM4WUCAUSE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EM4WUCAUSE_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "EM4 wake-up cause\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EM4WUCAUSE_A {
     #[doc = "1: This bit indicates an em4 wake-up request occurred on pin A0"]
-    A0,
+    A0 = 1,
     #[doc = "4: This bit indicates an em4 wake-up request occurred on pin C9"]
-    C9,
+    C9 = 4,
     #[doc = "8: This bit indicates an em4 wake-up request occurred on pin F1"]
-    F1,
+    F1 = 8,
     #[doc = "16: This bit indicates an em4 wake-up request occurred on pin F2"]
-    F2,
+    F2 = 16,
     #[doc = "32: This bit indicates an em4 wake-up request occurred on pin E13"]
-    E13,
+    E13 = 32,
     #[doc = "64: This bit indicates an em4 wake-up request occurred on pin C4"]
-    C4,
+    C4 = 64,
 }
 impl From<EM4WUCAUSE_A> for u8 {
     #[inline(always)]
     fn from(variant: EM4WUCAUSE_A) -> Self {
-        match variant {
-            EM4WUCAUSE_A::A0 => 1,
-            EM4WUCAUSE_A::C9 => 4,
-            EM4WUCAUSE_A::F1 => 8,
-            EM4WUCAUSE_A::F2 => 16,
-            EM4WUCAUSE_A::E13 => 32,
-            EM4WUCAUSE_A::C4 => 64,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `EM4WUCAUSE`"]
-pub type EM4WUCAUSE_R = crate::R<u8, EM4WUCAUSE_A>;
+#[doc = "Field `EM4WUCAUSE` reader - EM4 wake-up cause"]
+pub struct EM4WUCAUSE_R(crate::FieldReader<u8, EM4WUCAUSE_A>);
 impl EM4WUCAUSE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EM4WUCAUSE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, EM4WUCAUSE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<EM4WUCAUSE_A> {
         match self.bits {
-            1 => Val(EM4WUCAUSE_A::A0),
-            4 => Val(EM4WUCAUSE_A::C9),
-            8 => Val(EM4WUCAUSE_A::F1),
-            16 => Val(EM4WUCAUSE_A::F2),
-            32 => Val(EM4WUCAUSE_A::E13),
-            64 => Val(EM4WUCAUSE_A::C4),
-            i => Res(i),
+            1 => Some(EM4WUCAUSE_A::A0),
+            4 => Some(EM4WUCAUSE_A::C9),
+            8 => Some(EM4WUCAUSE_A::F1),
+            16 => Some(EM4WUCAUSE_A::F2),
+            32 => Some(EM4WUCAUSE_A::E13),
+            64 => Some(EM4WUCAUSE_A::C4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `A0`"]
     #[inline(always)]
     pub fn is_a0(&self) -> bool {
-        *self == EM4WUCAUSE_A::A0
+        **self == EM4WUCAUSE_A::A0
     }
     #[doc = "Checks if the value of the field is `C9`"]
     #[inline(always)]
     pub fn is_c9(&self) -> bool {
-        *self == EM4WUCAUSE_A::C9
+        **self == EM4WUCAUSE_A::C9
     }
     #[doc = "Checks if the value of the field is `F1`"]
     #[inline(always)]
     pub fn is_f1(&self) -> bool {
-        *self == EM4WUCAUSE_A::F1
+        **self == EM4WUCAUSE_A::F1
     }
     #[doc = "Checks if the value of the field is `F2`"]
     #[inline(always)]
     pub fn is_f2(&self) -> bool {
-        *self == EM4WUCAUSE_A::F2
+        **self == EM4WUCAUSE_A::F2
     }
     #[doc = "Checks if the value of the field is `E13`"]
     #[inline(always)]
     pub fn is_e13(&self) -> bool {
-        *self == EM4WUCAUSE_A::E13
+        **self == EM4WUCAUSE_A::E13
     }
     #[doc = "Checks if the value of the field is `C4`"]
     #[inline(always)]
     pub fn is_c4(&self) -> bool {
-        *self == EM4WUCAUSE_A::C4
+        **self == EM4WUCAUSE_A::C4
+    }
+}
+impl core::ops::Deref for EM4WUCAUSE_R {
+    type Target = crate::FieldReader<u8, EM4WUCAUSE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -82,5 +98,21 @@ impl R {
     #[inline(always)]
     pub fn em4wucause(&self) -> EM4WUCAUSE_R {
         EM4WUCAUSE_R::new((self.bits & 0x7f) as u8)
+    }
+}
+#[doc = "EM4 Wake-up Cause Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [em4wucause](index.html) module"]
+pub struct EM4WUCAUSE_SPEC;
+impl crate::RegisterSpec for EM4WUCAUSE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [em4wucause::R](R) reader structure"]
+impl crate::Readable for EM4WUCAUSE_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets EM4WUCAUSE to value 0"]
+impl crate::Resettable for EM4WUCAUSE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

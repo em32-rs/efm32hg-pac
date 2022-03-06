@@ -1,19 +1,116 @@
-#[doc = "Reader of register STATUS"]
-pub type R = crate::R<u32, super::STATUS>;
-#[doc = "Reader of field `BUSY`"]
-pub type BUSY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCKED`"]
-pub type LOCKED_R = crate::R<bool, bool>;
-#[doc = "Reader of field `INVADDR`"]
-pub type INVADDR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WDATAREADY`"]
-pub type WDATAREADY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WORDTIMEOUT`"]
-pub type WORDTIMEOUT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ERASEABORTED`"]
-pub type ERASEABORTED_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PCRUNNING`"]
-pub type PCRUNNING_R = crate::R<bool, bool>;
+#[doc = "Register `STATUS` reader"]
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `BUSY` reader - Erase/Write Busy"]
+pub struct BUSY_R(crate::FieldReader<bool, bool>);
+impl BUSY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUSY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BUSY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCKED` reader - Access Locked"]
+pub struct LOCKED_R(crate::FieldReader<bool, bool>);
+impl LOCKED_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCKED_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCKED_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INVADDR` reader - Invalid Write Address or Erase Page"]
+pub struct INVADDR_R(crate::FieldReader<bool, bool>);
+impl INVADDR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INVADDR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INVADDR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WDATAREADY` reader - WDATA Write Ready"]
+pub struct WDATAREADY_R(crate::FieldReader<bool, bool>);
+impl WDATAREADY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WDATAREADY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WDATAREADY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WORDTIMEOUT` reader - Flash Write Word Timeout"]
+pub struct WORDTIMEOUT_R(crate::FieldReader<bool, bool>);
+impl WORDTIMEOUT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WORDTIMEOUT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WORDTIMEOUT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERASEABORTED` reader - The Current Flash Erase Operation Aborted"]
+pub struct ERASEABORTED_R(crate::FieldReader<bool, bool>);
+impl ERASEABORTED_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERASEABORTED_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ERASEABORTED_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PCRUNNING` reader - Performance Counters Running"]
+pub struct PCRUNNING_R(crate::FieldReader<bool, bool>);
+impl PCRUNNING_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PCRUNNING_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PCRUNNING_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Erase/Write Busy"]
     #[inline(always)]
@@ -49,5 +146,21 @@ impl R {
     #[inline(always)]
     pub fn pcrunning(&self) -> PCRUNNING_R {
         PCRUNNING_R::new(((self.bits >> 6) & 0x01) != 0)
+    }
+}
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets STATUS to value 0x08"]
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x08
     }
 }

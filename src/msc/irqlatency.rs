@@ -1,18 +1,54 @@
-#[doc = "Reader of register IRQLATENCY"]
-pub type R = crate::R<u32, super::IRQLATENCY>;
-#[doc = "Writer for register IRQLATENCY"]
-pub type W = crate::W<u32, super::IRQLATENCY>;
-#[doc = "Register IRQLATENCY `reset()`'s with value 0"]
-impl crate::ResetValue for super::IRQLATENCY {
-    type Type = u32;
+#[doc = "Register `IRQLATENCY` reader"]
+pub struct R(crate::R<IRQLATENCY_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IRQLATENCY_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `IRQLATENCY`"]
-pub type IRQLATENCY_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IRQLATENCY`"]
+impl From<crate::R<IRQLATENCY_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IRQLATENCY_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `IRQLATENCY` writer"]
+pub struct W(crate::W<IRQLATENCY_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IRQLATENCY_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<IRQLATENCY_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<IRQLATENCY_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `IRQLATENCY` reader - Irq Latency Register"]
+pub struct IRQLATENCY_R(crate::FieldReader<u8, u8>);
+impl IRQLATENCY_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IRQLATENCY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IRQLATENCY_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IRQLATENCY` writer - Irq Latency Register"]
 pub struct IRQLATENCY_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> IRQLATENCY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
@@ -36,5 +72,31 @@ impl W {
     #[inline(always)]
     pub fn irqlatency(&mut self) -> IRQLATENCY_W {
         IRQLATENCY_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Irq Latency Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [irqlatency](index.html) module"]
+pub struct IRQLATENCY_SPEC;
+impl crate::RegisterSpec for IRQLATENCY_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [irqlatency::R](R) reader structure"]
+impl crate::Readable for IRQLATENCY_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [irqlatency::W](W) writer structure"]
+impl crate::Writable for IRQLATENCY_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets IRQLATENCY to value 0"]
+impl crate::Resettable for IRQLATENCY_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

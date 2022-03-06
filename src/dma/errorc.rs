@@ -1,18 +1,54 @@
-#[doc = "Reader of register ERRORC"]
-pub type R = crate::R<u32, super::ERRORC>;
-#[doc = "Writer for register ERRORC"]
-pub type W = crate::W<u32, super::ERRORC>;
-#[doc = "Register ERRORC `reset()`'s with value 0"]
-impl crate::ResetValue for super::ERRORC {
-    type Type = u32;
+#[doc = "Register `ERRORC` reader"]
+pub struct R(crate::R<ERRORC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ERRORC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ERRORC`"]
-pub type ERRORC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ERRORC`"]
+impl From<crate::R<ERRORC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ERRORC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ERRORC` writer"]
+pub struct W(crate::W<ERRORC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ERRORC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ERRORC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ERRORC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ERRORC` reader - Bus Error Clear"]
+pub struct ERRORC_R(crate::FieldReader<bool, bool>);
+impl ERRORC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERRORC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ERRORC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERRORC` writer - Bus Error Clear"]
 pub struct ERRORC_W<'a> {
     w: &'a mut W,
 }
@@ -30,7 +66,7 @@ impl<'a> ERRORC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -46,5 +82,31 @@ impl W {
     #[inline(always)]
     pub fn errorc(&mut self) -> ERRORC_W {
         ERRORC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Bus Error Clear Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [errorc](index.html) module"]
+pub struct ERRORC_SPEC;
+impl crate::RegisterSpec for ERRORC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [errorc::R](R) reader structure"]
+impl crate::Readable for ERRORC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [errorc::W](W) writer structure"]
+impl crate::Writable for ERRORC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ERRORC to value 0"]
+impl crate::Resettable for ERRORC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

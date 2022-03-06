@@ -1,21 +1,130 @@
-#[doc = "Reader of register SYNCBUSY"]
-pub type R = crate::R<u32, super::SYNCBUSY>;
-#[doc = "Reader of field `CTRL`"]
-pub type CTRL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CMD`"]
-pub type CMD_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CLKDIV`"]
-pub type CLKDIV_R = crate::R<bool, bool>;
-#[doc = "Reader of field `STARTFRAME`"]
-pub type STARTFRAME_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SIGFRAME`"]
-pub type SIGFRAME_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXDATAX`"]
-pub type TXDATAX_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXDATA`"]
-pub type TXDATA_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PULSECTRL`"]
-pub type PULSECTRL_R = crate::R<bool, bool>;
+#[doc = "Register `SYNCBUSY` reader"]
+pub struct R(crate::R<SYNCBUSY_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYNCBUSY_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SYNCBUSY_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SYNCBUSY_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CTRL` reader - CTRL Register Busy"]
+pub struct CTRL_R(crate::FieldReader<bool, bool>);
+impl CTRL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CTRL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CTRL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CMD` reader - CMD Register Busy"]
+pub struct CMD_R(crate::FieldReader<bool, bool>);
+impl CMD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CMD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CMD_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CLKDIV` reader - CLKDIV Register Busy"]
+pub struct CLKDIV_R(crate::FieldReader<bool, bool>);
+impl CLKDIV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CLKDIV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CLKDIV_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `STARTFRAME` reader - STARTFRAME Register Busy"]
+pub struct STARTFRAME_R(crate::FieldReader<bool, bool>);
+impl STARTFRAME_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        STARTFRAME_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for STARTFRAME_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SIGFRAME` reader - SIGFRAME Register Busy"]
+pub struct SIGFRAME_R(crate::FieldReader<bool, bool>);
+impl SIGFRAME_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SIGFRAME_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SIGFRAME_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXDATAX` reader - TXDATAX Register Busy"]
+pub struct TXDATAX_R(crate::FieldReader<bool, bool>);
+impl TXDATAX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXDATAX_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXDATAX_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXDATA` reader - TXDATA Register Busy"]
+pub struct TXDATA_R(crate::FieldReader<bool, bool>);
+impl TXDATA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXDATA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXDATA_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PULSECTRL` reader - PULSECTRL Register Busy"]
+pub struct PULSECTRL_R(crate::FieldReader<bool, bool>);
+impl PULSECTRL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PULSECTRL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PULSECTRL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - CTRL Register Busy"]
     #[inline(always)]
@@ -56,5 +165,21 @@ impl R {
     #[inline(always)]
     pub fn pulsectrl(&self) -> PULSECTRL_R {
         PULSECTRL_R::new(((self.bits >> 7) & 0x01) != 0)
+    }
+}
+#[doc = "Synchronization Busy Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [syncbusy](index.html) module"]
+pub struct SYNCBUSY_SPEC;
+impl crate::RegisterSpec for SYNCBUSY_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [syncbusy::R](R) reader structure"]
+impl crate::Readable for SYNCBUSY_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets SYNCBUSY to value 0"]
+impl crate::Resettable for SYNCBUSY_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

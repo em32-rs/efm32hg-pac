@@ -1,14 +1,25 @@
-#[doc = "Writer for register TXDOUBLEX"]
-pub type W = crate::W<u32, super::TXDOUBLEX>;
-#[doc = "Register TXDOUBLEX `reset()`'s with value 0"]
-impl crate::ResetValue for super::TXDOUBLEX {
-    type Type = u32;
+#[doc = "Register `TXDOUBLEX` writer"]
+pub struct W(crate::W<TXDOUBLEX_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TXDOUBLEX_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `TXDATA0`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TXDOUBLEX_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TXDOUBLEX_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TXDATA0` writer - TX Data"]
 pub struct TXDATA0_W<'a> {
     w: &'a mut W,
 }
@@ -16,11 +27,11 @@ impl<'a> TXDATA0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | ((value as u32) & 0x01ff);
+        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
         self.w
     }
 }
-#[doc = "Write proxy for field `UBRXAT0`"]
+#[doc = "Field `UBRXAT0` writer - Unblock RX After Transmission"]
 pub struct UBRXAT0_W<'a> {
     w: &'a mut W,
 }
@@ -38,11 +49,11 @@ impl<'a> UBRXAT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Write proxy for field `TXTRIAT0`"]
+#[doc = "Field `TXTRIAT0` writer - Set TXTRI After Transmission"]
 pub struct TXTRIAT0_W<'a> {
     w: &'a mut W,
 }
@@ -60,11 +71,11 @@ impl<'a> TXTRIAT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Write proxy for field `TXBREAK0`"]
+#[doc = "Field `TXBREAK0` writer - Transmit Data As Break"]
 pub struct TXBREAK0_W<'a> {
     w: &'a mut W,
 }
@@ -82,11 +93,11 @@ impl<'a> TXBREAK0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Write proxy for field `TXDISAT0`"]
+#[doc = "Field `TXDISAT0` writer - Clear TXEN After Transmission"]
 pub struct TXDISAT0_W<'a> {
     w: &'a mut W,
 }
@@ -104,11 +115,11 @@ impl<'a> TXDISAT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Write proxy for field `RXENAT0`"]
+#[doc = "Field `RXENAT0` writer - Enable RX After Transmission"]
 pub struct RXENAT0_W<'a> {
     w: &'a mut W,
 }
@@ -126,11 +137,11 @@ impl<'a> RXENAT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Write proxy for field `TXDATA1`"]
+#[doc = "Field `TXDATA1` writer - TX Data"]
 pub struct TXDATA1_W<'a> {
     w: &'a mut W,
 }
@@ -138,11 +149,11 @@ impl<'a> TXDATA1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01ff << 16)) | (((value as u32) & 0x01ff) << 16);
+        self.w.bits = (self.w.bits & !(0x01ff << 16)) | ((value as u32 & 0x01ff) << 16);
         self.w
     }
 }
-#[doc = "Write proxy for field `UBRXAT1`"]
+#[doc = "Field `UBRXAT1` writer - Unblock RX After Transmission"]
 pub struct UBRXAT1_W<'a> {
     w: &'a mut W,
 }
@@ -160,11 +171,11 @@ impl<'a> UBRXAT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Write proxy for field `TXTRIAT1`"]
+#[doc = "Field `TXTRIAT1` writer - Set TXTRI After Transmission"]
 pub struct TXTRIAT1_W<'a> {
     w: &'a mut W,
 }
@@ -182,11 +193,11 @@ impl<'a> TXTRIAT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Write proxy for field `TXBREAK1`"]
+#[doc = "Field `TXBREAK1` writer - Transmit Data As Break"]
 pub struct TXBREAK1_W<'a> {
     w: &'a mut W,
 }
@@ -204,11 +215,11 @@ impl<'a> TXBREAK1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
-#[doc = "Write proxy for field `TXDISAT1`"]
+#[doc = "Field `TXDISAT1` writer - Clear TXEN After Transmission"]
 pub struct TXDISAT1_W<'a> {
     w: &'a mut W,
 }
@@ -226,11 +237,11 @@ impl<'a> TXDISAT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Write proxy for field `RXENAT1`"]
+#[doc = "Field `RXENAT1` writer - Enable RX After Transmission"]
 pub struct RXENAT1_W<'a> {
     w: &'a mut W,
 }
@@ -248,7 +259,7 @@ impl<'a> RXENAT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -312,5 +323,27 @@ impl W {
     #[inline(always)]
     pub fn rxenat1(&mut self) -> RXENAT1_W {
         RXENAT1_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "TX Buffer Double Data Extended Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [txdoublex](index.html) module"]
+pub struct TXDOUBLEX_SPEC;
+impl crate::RegisterSpec for TXDOUBLEX_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [txdoublex::W](W) writer structure"]
+impl crate::Writable for TXDOUBLEX_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TXDOUBLEX to value 0"]
+impl crate::Resettable for TXDOUBLEX_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

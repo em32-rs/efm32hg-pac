@@ -1,57 +1,88 @@
-#[doc = "Reader of register MASSLOCK"]
-pub type R = crate::R<u32, super::MASSLOCK>;
-#[doc = "Writer for register MASSLOCK"]
-pub type W = crate::W<u32, super::MASSLOCK>;
-#[doc = "Register MASSLOCK `reset()`'s with value 0x01"]
-impl crate::ResetValue for super::MASSLOCK {
-    type Type = u32;
+#[doc = "Register `MASSLOCK` reader"]
+pub struct R(crate::R<MASSLOCK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MASSLOCK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x01
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MASSLOCK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MASSLOCK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MASSLOCK` writer"]
+pub struct W(crate::W<MASSLOCK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MASSLOCK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MASSLOCK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MASSLOCK_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Mass Erase Lock\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum LOCKKEY_A {
     #[doc = "0: Mass erase unlocked."]
-    UNLOCKED,
+    UNLOCKED = 0,
     #[doc = "1: Mass erase locked."]
-    LOCKED,
+    LOCKED = 1,
 }
 impl From<LOCKKEY_A> for u16 {
     #[inline(always)]
     fn from(variant: LOCKKEY_A) -> Self {
-        match variant {
-            LOCKKEY_A::UNLOCKED => 0,
-            LOCKKEY_A::LOCKED => 1,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `LOCKKEY`"]
-pub type LOCKKEY_R = crate::R<u16, LOCKKEY_A>;
+#[doc = "Field `LOCKKEY` reader - Mass Erase Lock"]
+pub struct LOCKKEY_R(crate::FieldReader<u16, LOCKKEY_A>);
 impl LOCKKEY_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        LOCKKEY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, LOCKKEY_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<LOCKKEY_A> {
         match self.bits {
-            0 => Val(LOCKKEY_A::UNLOCKED),
-            1 => Val(LOCKKEY_A::LOCKED),
-            i => Res(i),
+            0 => Some(LOCKKEY_A::UNLOCKED),
+            1 => Some(LOCKKEY_A::LOCKED),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        *self == LOCKKEY_A::UNLOCKED
+        **self == LOCKKEY_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCKKEY_A::LOCKED
+        **self == LOCKKEY_A::LOCKED
     }
 }
-#[doc = "Write proxy for field `LOCKKEY`"]
+impl core::ops::Deref for LOCKKEY_R {
+    type Target = crate::FieldReader<u16, LOCKKEY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCKKEY` writer - Mass Erase Lock"]
 pub struct LOCKKEY_W<'a> {
     w: &'a mut W,
 }
@@ -74,7 +105,7 @@ impl<'a> LOCKKEY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
@@ -90,5 +121,31 @@ impl W {
     #[inline(always)]
     pub fn lockkey(&mut self) -> LOCKKEY_W {
         LOCKKEY_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Mass Erase Lock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [masslock](index.html) module"]
+pub struct MASSLOCK_SPEC;
+impl crate::RegisterSpec for MASSLOCK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [masslock::R](R) reader structure"]
+impl crate::Readable for MASSLOCK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [masslock::W](W) writer structure"]
+impl crate::Writable for MASSLOCK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MASSLOCK to value 0x01"]
+impl crate::Resettable for MASSLOCK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
     }
 }

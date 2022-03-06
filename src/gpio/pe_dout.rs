@@ -1,18 +1,54 @@
-#[doc = "Reader of register PE_DOUT"]
-pub type R = crate::R<u32, super::PE_DOUT>;
-#[doc = "Writer for register PE_DOUT"]
-pub type W = crate::W<u32, super::PE_DOUT>;
-#[doc = "Register PE_DOUT `reset()`'s with value 0"]
-impl crate::ResetValue for super::PE_DOUT {
-    type Type = u32;
+#[doc = "Register `PE_DOUT` reader"]
+pub struct R(crate::R<PE_DOUT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PE_DOUT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DOUT`"]
-pub type DOUT_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `DOUT`"]
+impl From<crate::R<PE_DOUT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PE_DOUT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PE_DOUT` writer"]
+pub struct W(crate::W<PE_DOUT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PE_DOUT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PE_DOUT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PE_DOUT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DOUT` reader - Data Out"]
+pub struct DOUT_R(crate::FieldReader<u16, u16>);
+impl DOUT_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        DOUT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DOUT_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DOUT` writer - Data Out"]
 pub struct DOUT_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> DOUT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
@@ -36,5 +72,31 @@ impl W {
     #[inline(always)]
     pub fn dout(&mut self) -> DOUT_W {
         DOUT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_dout](index.html) module"]
+pub struct PE_DOUT_SPEC;
+impl crate::RegisterSpec for PE_DOUT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pe_dout::R](R) reader structure"]
+impl crate::Readable for PE_DOUT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pe_dout::W](W) writer structure"]
+impl crate::Writable for PE_DOUT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PE_DOUT to value 0"]
+impl crate::Resettable for PE_DOUT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

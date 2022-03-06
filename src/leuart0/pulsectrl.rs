@@ -1,18 +1,54 @@
-#[doc = "Reader of register PULSECTRL"]
-pub type R = crate::R<u32, super::PULSECTRL>;
-#[doc = "Writer for register PULSECTRL"]
-pub type W = crate::W<u32, super::PULSECTRL>;
-#[doc = "Register PULSECTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::PULSECTRL {
-    type Type = u32;
+#[doc = "Register `PULSECTRL` reader"]
+pub struct R(crate::R<PULSECTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PULSECTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PULSEW`"]
-pub type PULSEW_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PULSEW`"]
+impl From<crate::R<PULSECTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PULSECTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PULSECTRL` writer"]
+pub struct W(crate::W<PULSECTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PULSECTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PULSECTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PULSECTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PULSEW` reader - Pulse Width"]
+pub struct PULSEW_R(crate::FieldReader<u8, u8>);
+impl PULSEW_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PULSEW_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PULSEW_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PULSEW` writer - Pulse Width"]
 pub struct PULSEW_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> PULSEW_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
-#[doc = "Reader of field `PULSEEN`"]
-pub type PULSEEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PULSEEN`"]
+#[doc = "Field `PULSEEN` reader - Pulse Generator/Extender Enable"]
+pub struct PULSEEN_R(crate::FieldReader<bool, bool>);
+impl PULSEEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PULSEEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PULSEEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PULSEEN` writer - Pulse Generator/Extender Enable"]
 pub struct PULSEEN_W<'a> {
     w: &'a mut W,
 }
@@ -44,13 +92,25 @@ impl<'a> PULSEEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `PULSEFILT`"]
-pub type PULSEFILT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PULSEFILT`"]
+#[doc = "Field `PULSEFILT` reader - Pulse Filter"]
+pub struct PULSEFILT_R(crate::FieldReader<bool, bool>);
+impl PULSEFILT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PULSEFILT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PULSEFILT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PULSEFILT` writer - Pulse Filter"]
 pub struct PULSEFILT_W<'a> {
     w: &'a mut W,
 }
@@ -68,7 +128,7 @@ impl<'a> PULSEFILT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -104,5 +164,31 @@ impl W {
     #[inline(always)]
     pub fn pulsefilt(&mut self) -> PULSEFILT_W {
         PULSEFILT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Pulse Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pulsectrl](index.html) module"]
+pub struct PULSECTRL_SPEC;
+impl crate::RegisterSpec for PULSECTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pulsectrl::R](R) reader structure"]
+impl crate::Readable for PULSECTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pulsectrl::W](W) writer structure"]
+impl crate::Writable for PULSECTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PULSECTRL to value 0"]
+impl crate::Resettable for PULSECTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

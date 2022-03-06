@@ -1,51 +1,340 @@
-#[doc = "Reader of register STATUS"]
-pub type R = crate::R<u32, super::STATUS>;
-#[doc = "Reader of field `HFRCOENS`"]
-pub type HFRCOENS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `HFRCORDY`"]
-pub type HFRCORDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `HFXOENS`"]
-pub type HFXOENS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `HFXORDY`"]
-pub type HFXORDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AUXHFRCOENS`"]
-pub type AUXHFRCOENS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AUXHFRCORDY`"]
-pub type AUXHFRCORDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LFRCOENS`"]
-pub type LFRCOENS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LFRCORDY`"]
-pub type LFRCORDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LFXOENS`"]
-pub type LFXOENS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LFXORDY`"]
-pub type LFXORDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `HFRCOSEL`"]
-pub type HFRCOSEL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `HFXOSEL`"]
-pub type HFXOSEL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LFRCOSEL`"]
-pub type LFRCOSEL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LFXOSEL`"]
-pub type LFXOSEL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CALBSY`"]
-pub type CALBSY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `USBCLFXOSEL`"]
-pub type USBCLFXOSEL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `USBCLFRCOSEL`"]
-pub type USBCLFRCOSEL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `USBCUSHFRCOSEL`"]
-pub type USBCUSHFRCOSEL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `USBCHFCLKSYNC`"]
-pub type USBCHFCLKSYNC_R = crate::R<bool, bool>;
-#[doc = "Reader of field `USHFRCOENS`"]
-pub type USHFRCOENS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `USHFRCORDY`"]
-pub type USHFRCORDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `USHFRCOSUSPEND`"]
-pub type USHFRCOSUSPEND_R = crate::R<bool, bool>;
-#[doc = "Reader of field `USHFRCODIV2SEL`"]
-pub type USHFRCODIV2SEL_R = crate::R<bool, bool>;
+#[doc = "Register `STATUS` reader"]
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `HFRCOENS` reader - HFRCO Enable Status"]
+pub struct HFRCOENS_R(crate::FieldReader<bool, bool>);
+impl HFRCOENS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFRCOENS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HFRCOENS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFRCORDY` reader - HFRCO Ready"]
+pub struct HFRCORDY_R(crate::FieldReader<bool, bool>);
+impl HFRCORDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFRCORDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HFRCORDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFXOENS` reader - HFXO Enable Status"]
+pub struct HFXOENS_R(crate::FieldReader<bool, bool>);
+impl HFXOENS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXOENS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HFXOENS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFXORDY` reader - HFXO Ready"]
+pub struct HFXORDY_R(crate::FieldReader<bool, bool>);
+impl HFXORDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXORDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HFXORDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AUXHFRCOENS` reader - AUXHFRCO Enable Status"]
+pub struct AUXHFRCOENS_R(crate::FieldReader<bool, bool>);
+impl AUXHFRCOENS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AUXHFRCOENS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AUXHFRCOENS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AUXHFRCORDY` reader - AUXHFRCO Ready"]
+pub struct AUXHFRCORDY_R(crate::FieldReader<bool, bool>);
+impl AUXHFRCORDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AUXHFRCORDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AUXHFRCORDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFRCOENS` reader - LFRCO Enable Status"]
+pub struct LFRCOENS_R(crate::FieldReader<bool, bool>);
+impl LFRCOENS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFRCOENS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LFRCOENS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFRCORDY` reader - LFRCO Ready"]
+pub struct LFRCORDY_R(crate::FieldReader<bool, bool>);
+impl LFRCORDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFRCORDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LFRCORDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFXOENS` reader - LFXO Enable Status"]
+pub struct LFXOENS_R(crate::FieldReader<bool, bool>);
+impl LFXOENS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFXOENS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LFXOENS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFXORDY` reader - LFXO Ready"]
+pub struct LFXORDY_R(crate::FieldReader<bool, bool>);
+impl LFXORDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFXORDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LFXORDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFRCOSEL` reader - HFRCO Selected"]
+pub struct HFRCOSEL_R(crate::FieldReader<bool, bool>);
+impl HFRCOSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFRCOSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HFRCOSEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFXOSEL` reader - HFXO Selected"]
+pub struct HFXOSEL_R(crate::FieldReader<bool, bool>);
+impl HFXOSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXOSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HFXOSEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFRCOSEL` reader - LFRCO Selected"]
+pub struct LFRCOSEL_R(crate::FieldReader<bool, bool>);
+impl LFRCOSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFRCOSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LFRCOSEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFXOSEL` reader - LFXO Selected"]
+pub struct LFXOSEL_R(crate::FieldReader<bool, bool>);
+impl LFXOSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFXOSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LFXOSEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CALBSY` reader - Calibration Busy"]
+pub struct CALBSY_R(crate::FieldReader<bool, bool>);
+impl CALBSY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CALBSY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CALBSY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBCLFXOSEL` reader - USBC LFXO Selected"]
+pub struct USBCLFXOSEL_R(crate::FieldReader<bool, bool>);
+impl USBCLFXOSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBCLFXOSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USBCLFXOSEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBCLFRCOSEL` reader - USBC LFRCO Selected"]
+pub struct USBCLFRCOSEL_R(crate::FieldReader<bool, bool>);
+impl USBCLFRCOSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBCLFRCOSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USBCLFRCOSEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBCUSHFRCOSEL` reader - USBC USHFRCO Selected"]
+pub struct USBCUSHFRCOSEL_R(crate::FieldReader<bool, bool>);
+impl USBCUSHFRCOSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBCUSHFRCOSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USBCUSHFRCOSEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBCHFCLKSYNC` reader - USBC is synchronous to HFCLK"]
+pub struct USBCHFCLKSYNC_R(crate::FieldReader<bool, bool>);
+impl USBCHFCLKSYNC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBCHFCLKSYNC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USBCHFCLKSYNC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USHFRCOENS` reader - USHFRCO Enable Status"]
+pub struct USHFRCOENS_R(crate::FieldReader<bool, bool>);
+impl USHFRCOENS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USHFRCOENS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USHFRCOENS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USHFRCORDY` reader - USHFRCO Ready"]
+pub struct USHFRCORDY_R(crate::FieldReader<bool, bool>);
+impl USHFRCORDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USHFRCORDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USHFRCORDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USHFRCOSUSPEND` reader - USHFRCO is suspended"]
+pub struct USHFRCOSUSPEND_R(crate::FieldReader<bool, bool>);
+impl USHFRCOSUSPEND_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USHFRCOSUSPEND_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USHFRCOSUSPEND_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USHFRCODIV2SEL` reader - USHFRCODIV2 Selected"]
+pub struct USHFRCODIV2SEL_R(crate::FieldReader<bool, bool>);
+impl USHFRCODIV2SEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USHFRCODIV2SEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USHFRCODIV2SEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - HFRCO Enable Status"]
     #[inline(always)]
@@ -161,5 +450,21 @@ impl R {
     #[inline(always)]
     pub fn ushfrcodiv2sel(&self) -> USHFRCODIV2SEL_R {
         USHFRCODIV2SEL_R::new(((self.bits >> 26) & 0x01) != 0)
+    }
+}
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets STATUS to value 0x0403"]
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0403
     }
 }

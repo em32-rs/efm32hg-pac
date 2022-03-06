@@ -1,14 +1,25 @@
-#[doc = "Writer for register CHENC"]
-pub type W = crate::W<u32, super::CHENC>;
-#[doc = "Register CHENC `reset()`'s with value 0"]
-impl crate::ResetValue for super::CHENC {
-    type Type = u32;
+#[doc = "Register `CHENC` writer"]
+pub struct W(crate::W<CHENC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CHENC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `CH0ENC`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CHENC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CHENC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CH0ENC` writer - Channel 0 Enable Clear"]
 pub struct CH0ENC_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> CH0ENC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH1ENC`"]
+#[doc = "Field `CH1ENC` writer - Channel 1 Enable Clear"]
 pub struct CH1ENC_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> CH1ENC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH2ENC`"]
+#[doc = "Field `CH2ENC` writer - Channel 2 Enable Clear"]
 pub struct CH2ENC_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> CH2ENC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH3ENC`"]
+#[doc = "Field `CH3ENC` writer - Channel 3 Enable Clear"]
 pub struct CH3ENC_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +103,11 @@ impl<'a> CH3ENC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH4ENC`"]
+#[doc = "Field `CH4ENC` writer - Channel 4 Enable Clear"]
 pub struct CH4ENC_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +125,11 @@ impl<'a> CH4ENC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH5ENC`"]
+#[doc = "Field `CH5ENC` writer - Channel 5 Enable Clear"]
 pub struct CH5ENC_W<'a> {
     w: &'a mut W,
 }
@@ -136,7 +147,7 @@ impl<'a> CH5ENC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -170,5 +181,27 @@ impl W {
     #[inline(always)]
     pub fn ch5enc(&mut self) -> CH5ENC_W {
         CH5ENC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Enable Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chenc](index.html) module"]
+pub struct CHENC_SPEC;
+impl crate::RegisterSpec for CHENC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [chenc::W](W) writer structure"]
+impl crate::Writable for CHENC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CHENC to value 0"]
+impl crate::Resettable for CHENC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

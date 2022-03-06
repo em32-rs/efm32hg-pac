@@ -1,99 +1,174 @@
-#[doc = "Reader of register STATE"]
-pub type R = crate::R<u32, super::STATE>;
-#[doc = "Reader of field `BUSY`"]
-pub type BUSY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MASTER`"]
-pub type MASTER_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TRANSMITTER`"]
-pub type TRANSMITTER_R = crate::R<bool, bool>;
-#[doc = "Reader of field `NACKED`"]
-pub type NACKED_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BUSHOLD`"]
-pub type BUSHOLD_R = crate::R<bool, bool>;
+#[doc = "Register `STATE` reader"]
+pub struct R(crate::R<STATE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `BUSY` reader - Bus Busy"]
+pub struct BUSY_R(crate::FieldReader<bool, bool>);
+impl BUSY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUSY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BUSY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MASTER` reader - Master"]
+pub struct MASTER_R(crate::FieldReader<bool, bool>);
+impl MASTER_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MASTER_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MASTER_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TRANSMITTER` reader - Transmitter"]
+pub struct TRANSMITTER_R(crate::FieldReader<bool, bool>);
+impl TRANSMITTER_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TRANSMITTER_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TRANSMITTER_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NACKED` reader - Nack Received"]
+pub struct NACKED_R(crate::FieldReader<bool, bool>);
+impl NACKED_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NACKED_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NACKED_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BUSHOLD` reader - Bus Held"]
+pub struct BUSHOLD_R(crate::FieldReader<bool, bool>);
+impl BUSHOLD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUSHOLD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BUSHOLD_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Transmission State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STATE_A {
     #[doc = "0: No transmission is being performed."]
-    IDLE,
+    IDLE = 0,
     #[doc = "1: Waiting for idle. Will send a start condition as soon as the bus is idle."]
-    WAIT,
+    WAIT = 1,
     #[doc = "2: Start transmitted or received"]
-    START,
+    START = 2,
     #[doc = "3: Address transmitted or received"]
-    ADDR,
+    ADDR = 3,
     #[doc = "4: Address ack/nack transmitted or received"]
-    ADDRACK,
+    ADDRACK = 4,
     #[doc = "5: Data transmitted or received"]
-    DATA,
+    DATA = 5,
     #[doc = "6: Data ack/nack transmitted or received"]
-    DATAACK,
+    DATAACK = 6,
 }
 impl From<STATE_A> for u8 {
     #[inline(always)]
     fn from(variant: STATE_A) -> Self {
-        match variant {
-            STATE_A::IDLE => 0,
-            STATE_A::WAIT => 1,
-            STATE_A::START => 2,
-            STATE_A::ADDR => 3,
-            STATE_A::ADDRACK => 4,
-            STATE_A::DATA => 5,
-            STATE_A::DATAACK => 6,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `STATE`"]
-pub type STATE_R = crate::R<u8, STATE_A>;
+#[doc = "Field `STATE` reader - Transmission State"]
+pub struct STATE_R(crate::FieldReader<u8, STATE_A>);
 impl STATE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        STATE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, STATE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<STATE_A> {
         match self.bits {
-            0 => Val(STATE_A::IDLE),
-            1 => Val(STATE_A::WAIT),
-            2 => Val(STATE_A::START),
-            3 => Val(STATE_A::ADDR),
-            4 => Val(STATE_A::ADDRACK),
-            5 => Val(STATE_A::DATA),
-            6 => Val(STATE_A::DATAACK),
-            i => Res(i),
+            0 => Some(STATE_A::IDLE),
+            1 => Some(STATE_A::WAIT),
+            2 => Some(STATE_A::START),
+            3 => Some(STATE_A::ADDR),
+            4 => Some(STATE_A::ADDRACK),
+            5 => Some(STATE_A::DATA),
+            6 => Some(STATE_A::DATAACK),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        *self == STATE_A::IDLE
+        **self == STATE_A::IDLE
     }
     #[doc = "Checks if the value of the field is `WAIT`"]
     #[inline(always)]
     pub fn is_wait(&self) -> bool {
-        *self == STATE_A::WAIT
+        **self == STATE_A::WAIT
     }
     #[doc = "Checks if the value of the field is `START`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
-        *self == STATE_A::START
+        **self == STATE_A::START
     }
     #[doc = "Checks if the value of the field is `ADDR`"]
     #[inline(always)]
     pub fn is_addr(&self) -> bool {
-        *self == STATE_A::ADDR
+        **self == STATE_A::ADDR
     }
     #[doc = "Checks if the value of the field is `ADDRACK`"]
     #[inline(always)]
     pub fn is_addrack(&self) -> bool {
-        *self == STATE_A::ADDRACK
+        **self == STATE_A::ADDRACK
     }
     #[doc = "Checks if the value of the field is `DATA`"]
     #[inline(always)]
     pub fn is_data(&self) -> bool {
-        *self == STATE_A::DATA
+        **self == STATE_A::DATA
     }
     #[doc = "Checks if the value of the field is `DATAACK`"]
     #[inline(always)]
     pub fn is_dataack(&self) -> bool {
-        *self == STATE_A::DATAACK
+        **self == STATE_A::DATAACK
+    }
+}
+impl core::ops::Deref for STATE_R {
+    type Target = crate::FieldReader<u8, STATE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -126,5 +201,21 @@ impl R {
     #[inline(always)]
     pub fn state(&self) -> STATE_R {
         STATE_R::new(((self.bits >> 5) & 0x07) as u8)
+    }
+}
+#[doc = "State Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [state](index.html) module"]
+pub struct STATE_SPEC;
+impl crate::RegisterSpec for STATE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [state::R](R) reader structure"]
+impl crate::Readable for STATE_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets STATE to value 0x01"]
+impl crate::Resettable for STATE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
     }
 }

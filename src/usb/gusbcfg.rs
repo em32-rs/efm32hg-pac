@@ -1,18 +1,54 @@
-#[doc = "Reader of register GUSBCFG"]
-pub type R = crate::R<u32, super::GUSBCFG>;
-#[doc = "Writer for register GUSBCFG"]
-pub type W = crate::W<u32, super::GUSBCFG>;
-#[doc = "Register GUSBCFG `reset()`'s with value 0x1440"]
-impl crate::ResetValue for super::GUSBCFG {
-    type Type = u32;
+#[doc = "Register `GUSBCFG` reader"]
+pub struct R(crate::R<GUSBCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GUSBCFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x1440
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TOUTCAL`"]
-pub type TOUTCAL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TOUTCAL`"]
+impl From<crate::R<GUSBCFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GUSBCFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GUSBCFG` writer"]
+pub struct W(crate::W<GUSBCFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GUSBCFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GUSBCFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GUSBCFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TOUTCAL` reader - Timeout Calibration"]
+pub struct TOUTCAL_R(crate::FieldReader<u8, u8>);
+impl TOUTCAL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TOUTCAL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TOUTCAL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TOUTCAL` writer - Timeout Calibration"]
 pub struct TOUTCAL_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> TOUTCAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
-#[doc = "Reader of field `FSINTF`"]
-pub type FSINTF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FSINTF`"]
+#[doc = "Field `FSINTF` reader - Full-Speed Serial Interface Select"]
+pub struct FSINTF_R(crate::FieldReader<bool, bool>);
+impl FSINTF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FSINTF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FSINTF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FSINTF` writer - Full-Speed Serial Interface Select"]
 pub struct FSINTF_W<'a> {
     w: &'a mut W,
 }
@@ -44,13 +92,25 @@ impl<'a> FSINTF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `USBTRDTIM`"]
-pub type USBTRDTIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USBTRDTIM`"]
+#[doc = "Field `USBTRDTIM` reader - USB Turnaround Time"]
+pub struct USBTRDTIM_R(crate::FieldReader<u8, u8>);
+impl USBTRDTIM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USBTRDTIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USBTRDTIM_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBTRDTIM` writer - USB Turnaround Time"]
 pub struct USBTRDTIM_W<'a> {
     w: &'a mut W,
 }
@@ -58,13 +118,25 @@ impl<'a> USBTRDTIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 10)) | (((value as u32) & 0x0f) << 10);
+        self.w.bits = (self.w.bits & !(0x0f << 10)) | ((value as u32 & 0x0f) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `TERMSELDLPULSE`"]
-pub type TERMSELDLPULSE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TERMSELDLPULSE`"]
+#[doc = "Field `TERMSELDLPULSE` reader - TermSel DLine Pulsing Selection"]
+pub struct TERMSELDLPULSE_R(crate::FieldReader<bool, bool>);
+impl TERMSELDLPULSE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TERMSELDLPULSE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TERMSELDLPULSE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TERMSELDLPULSE` writer - TermSel DLine Pulsing Selection"]
 pub struct TERMSELDLPULSE_W<'a> {
     w: &'a mut W,
 }
@@ -82,13 +154,25 @@ impl<'a> TERMSELDLPULSE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Reader of field `TXENDDELAY`"]
-pub type TXENDDELAY_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXENDDELAY`"]
+#[doc = "Field `TXENDDELAY` reader - Tx End Delay"]
+pub struct TXENDDELAY_R(crate::FieldReader<bool, bool>);
+impl TXENDDELAY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXENDDELAY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXENDDELAY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXENDDELAY` writer - Tx End Delay"]
 pub struct TXENDDELAY_W<'a> {
     w: &'a mut W,
 }
@@ -106,11 +190,11 @@ impl<'a> TXENDDELAY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Write proxy for field `CORRUPTTXPKT`"]
+#[doc = "Field `CORRUPTTXPKT` writer - Corrupt Tx packet"]
 pub struct CORRUPTTXPKT_W<'a> {
     w: &'a mut W,
 }
@@ -128,7 +212,7 @@ impl<'a> CORRUPTTXPKT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -189,5 +273,31 @@ impl W {
     #[inline(always)]
     pub fn corrupttxpkt(&mut self) -> CORRUPTTXPKT_W {
         CORRUPTTXPKT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gusbcfg](index.html) module"]
+pub struct GUSBCFG_SPEC;
+impl crate::RegisterSpec for GUSBCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [gusbcfg::R](R) reader structure"]
+impl crate::Readable for GUSBCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [gusbcfg::W](W) writer structure"]
+impl crate::Writable for GUSBCFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GUSBCFG to value 0x1440"]
+impl crate::Resettable for GUSBCFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x1440
     }
 }

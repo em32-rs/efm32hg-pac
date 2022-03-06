@@ -14,7 +14,7 @@ Other HG series might be able to use this crate but is not supported until it's 
 ## [Documentation](https://docs.rs/efm32hg-pac)
 
 ## Requirements
-The crate can be used with Rust v1.31 or newer. However generating a new svd requires more deps and Rust nightly due to its `rustfmt-nightly` dependency.
+The crate can be used with Rust v1.56 or newer.
 
 ## Regenerate
 The src directory is generated. If you want to upstream changes here, don't manually edit, but rather send a PR to one of the upstream tools used in tools/gen. However if you have tools or svd version bumps you can regenerate this pac. The script needs to apply patches to the svd via the Makefile which requires python3 and `pip3 install --user pyyaml`. Then you can run `make` to patch, generate and format the pac from source svd.

@@ -1,57 +1,88 @@
-#[doc = "Reader of register LOCK"]
-pub type R = crate::R<u32, super::LOCK>;
-#[doc = "Writer for register LOCK"]
-pub type W = crate::W<u32, super::LOCK>;
-#[doc = "Register LOCK `reset()`'s with value 0"]
-impl crate::ResetValue for super::LOCK {
-    type Type = u32;
+#[doc = "Register `LOCK` reader"]
+pub struct R(crate::R<LOCK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LOCK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<LOCK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<LOCK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LOCK` writer"]
+pub struct W(crate::W<LOCK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LOCK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LOCK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LOCK_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Configuration Lock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum LOCKKEY_A {
-    #[doc = "0: \"\""]
-    UNLOCKED,
-    #[doc = "1: \"\""]
-    LOCKED,
+    #[doc = "0: `0`"]
+    UNLOCKED = 0,
+    #[doc = "1: `1`"]
+    LOCKED = 1,
 }
 impl From<LOCKKEY_A> for u16 {
     #[inline(always)]
     fn from(variant: LOCKKEY_A) -> Self {
-        match variant {
-            LOCKKEY_A::UNLOCKED => 0,
-            LOCKKEY_A::LOCKED => 1,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `LOCKKEY`"]
-pub type LOCKKEY_R = crate::R<u16, LOCKKEY_A>;
+#[doc = "Field `LOCKKEY` reader - Configuration Lock"]
+pub struct LOCKKEY_R(crate::FieldReader<u16, LOCKKEY_A>);
 impl LOCKKEY_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        LOCKKEY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, LOCKKEY_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<LOCKKEY_A> {
         match self.bits {
-            0 => Val(LOCKKEY_A::UNLOCKED),
-            1 => Val(LOCKKEY_A::LOCKED),
-            i => Res(i),
+            0 => Some(LOCKKEY_A::UNLOCKED),
+            1 => Some(LOCKKEY_A::LOCKED),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        *self == LOCKKEY_A::UNLOCKED
+        **self == LOCKKEY_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCKKEY_A::LOCKED
+        **self == LOCKKEY_A::LOCKED
     }
 }
-#[doc = "Write proxy for field `LOCKKEY`"]
+impl core::ops::Deref for LOCKKEY_R {
+    type Target = crate::FieldReader<u16, LOCKKEY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCKKEY` writer - Configuration Lock"]
 pub struct LOCKKEY_W<'a> {
     w: &'a mut W,
 }
@@ -61,12 +92,12 @@ impl<'a> LOCKKEY_W<'a> {
     pub fn variant(self, variant: LOCKKEY_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
         self.variant(LOCKKEY_A::UNLOCKED)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn locked(self) -> &'a mut W {
         self.variant(LOCKKEY_A::LOCKED)
@@ -74,7 +105,7 @@ impl<'a> LOCKKEY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
@@ -90,5 +121,31 @@ impl W {
     #[inline(always)]
     pub fn lockkey(&mut self) -> LOCKKEY_W {
         LOCKKEY_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Configuration Lock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lock](index.html) module"]
+pub struct LOCK_SPEC;
+impl crate::RegisterSpec for LOCK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [lock::R](R) reader structure"]
+impl crate::Readable for LOCK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lock::W](W) writer structure"]
+impl crate::Writable for LOCK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LOCK to value 0"]
+impl crate::Resettable for LOCK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

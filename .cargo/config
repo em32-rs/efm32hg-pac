@@ -1,2 +1,2 @@
 [alias]
-gen  = "run --package tools --bin gen"
+gen  = "run --release --package tools --bin gen"

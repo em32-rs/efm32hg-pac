@@ -1,54 +1,122 @@
-#[doc = "Reader of register DSTS"]
-pub type R = crate::R<u32, super::DSTS>;
-#[doc = "Reader of field `SUSPSTS`"]
-pub type SUSPSTS_R = crate::R<bool, bool>;
+#[doc = "Register `DSTS` reader"]
+pub struct R(crate::R<DSTS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DSTS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DSTS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DSTS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `SUSPSTS` reader - Suspend Status"]
+pub struct SUSPSTS_R(crate::FieldReader<bool, bool>);
+impl SUSPSTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUSPSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SUSPSTS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Enumerated Speed\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENUMSPD_A {
     #[doc = "2: Low speed (PHY clock is running at 6 MHz)."]
-    LS,
+    LS = 2,
     #[doc = "3: Full speed (PHY clock is running at 48 MHz)."]
-    FS,
+    FS = 3,
 }
 impl From<ENUMSPD_A> for u8 {
     #[inline(always)]
     fn from(variant: ENUMSPD_A) -> Self {
-        match variant {
-            ENUMSPD_A::LS => 2,
-            ENUMSPD_A::FS => 3,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `ENUMSPD`"]
-pub type ENUMSPD_R = crate::R<u8, ENUMSPD_A>;
+#[doc = "Field `ENUMSPD` reader - Enumerated Speed"]
+pub struct ENUMSPD_R(crate::FieldReader<u8, ENUMSPD_A>);
 impl ENUMSPD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ENUMSPD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ENUMSPD_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<ENUMSPD_A> {
         match self.bits {
-            2 => Val(ENUMSPD_A::LS),
-            3 => Val(ENUMSPD_A::FS),
-            i => Res(i),
+            2 => Some(ENUMSPD_A::LS),
+            3 => Some(ENUMSPD_A::FS),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LS`"]
     #[inline(always)]
     pub fn is_ls(&self) -> bool {
-        *self == ENUMSPD_A::LS
+        **self == ENUMSPD_A::LS
     }
     #[doc = "Checks if the value of the field is `FS`"]
     #[inline(always)]
     pub fn is_fs(&self) -> bool {
-        *self == ENUMSPD_A::FS
+        **self == ENUMSPD_A::FS
     }
 }
-#[doc = "Reader of field `ERRTICERR`"]
-pub type ERRTICERR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SOFFN`"]
-pub type SOFFN_R = crate::R<u16, u16>;
-#[doc = "Reader of field `DEVLNSTS`"]
-pub type DEVLNSTS_R = crate::R<u8, u8>;
+impl core::ops::Deref for ENUMSPD_R {
+    type Target = crate::FieldReader<u8, ENUMSPD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERRTICERR` reader - Erratic Error"]
+pub struct ERRTICERR_R(crate::FieldReader<bool, bool>);
+impl ERRTICERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERRTICERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ERRTICERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SOFFN` reader - Frame Number of the Received SOF"]
+pub struct SOFFN_R(crate::FieldReader<u16, u16>);
+impl SOFFN_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        SOFFN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SOFFN_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DEVLNSTS` reader - Device Line Status"]
+pub struct DEVLNSTS_R(crate::FieldReader<u8, u8>);
+impl DEVLNSTS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DEVLNSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DEVLNSTS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Suspend Status"]
     #[inline(always)]
@@ -74,5 +142,21 @@ impl R {
     #[inline(always)]
     pub fn devlnsts(&self) -> DEVLNSTS_R {
         DEVLNSTS_R::new(((self.bits >> 22) & 0x03) as u8)
+    }
+}
+#[doc = "Device Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dsts](index.html) module"]
+pub struct DSTS_SPEC;
+impl crate::RegisterSpec for DSTS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dsts::R](R) reader structure"]
+impl crate::Readable for DSTS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets DSTS to value 0x02"]
+impl crate::Resettable for DSTS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x02
     }
 }

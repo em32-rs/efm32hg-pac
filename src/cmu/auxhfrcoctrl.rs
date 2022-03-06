@@ -1,18 +1,54 @@
-#[doc = "Reader of register AUXHFRCOCTRL"]
-pub type R = crate::R<u32, super::AUXHFRCOCTRL>;
-#[doc = "Writer for register AUXHFRCOCTRL"]
-pub type W = crate::W<u32, super::AUXHFRCOCTRL>;
-#[doc = "Register AUXHFRCOCTRL `reset()`'s with value 0x80"]
-impl crate::ResetValue for super::AUXHFRCOCTRL {
-    type Type = u32;
+#[doc = "Register `AUXHFRCOCTRL` reader"]
+pub struct R(crate::R<AUXHFRCOCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<AUXHFRCOCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x80
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TUNING`"]
-pub type TUNING_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TUNING`"]
+impl From<crate::R<AUXHFRCOCTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<AUXHFRCOCTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `AUXHFRCOCTRL` writer"]
+pub struct W(crate::W<AUXHFRCOCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<AUXHFRCOCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<AUXHFRCOCTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<AUXHFRCOCTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TUNING` reader - AUXHFRCO Tuning Value"]
+pub struct TUNING_R(crate::FieldReader<u8, u8>);
+impl TUNING_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TUNING_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TUNING_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TUNING` writer - AUXHFRCO Tuning Value"]
 pub struct TUNING_W<'a> {
     w: &'a mut W,
 }
@@ -20,79 +56,83 @@ impl<'a> TUNING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
 #[doc = "AUXHFRCO Band Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BAND_A {
     #[doc = "0: 14 MHz band. NOTE: Also set the TUNING value (bits 7:0) when changing band."]
-    _14MHZ,
+    _14MHZ = 0,
     #[doc = "1: 11 MHz band. NOTE: Also set the TUNING value (bits 7:0) when changing band."]
-    _11MHZ,
+    _11MHZ = 1,
     #[doc = "2: 7 MHz band. NOTE: Also set the TUNING value (bits 7:0) when changing band."]
-    _7MHZ,
+    _7MHZ = 2,
     #[doc = "3: 1 MHz band. NOTE: Also set the TUNING value (bits 7:0) when changing band."]
-    _1MHZ,
+    _1MHZ = 3,
     #[doc = "7: 21 MHz band. NOTE: Also set the TUNING value (bits 7:0) when changing band."]
-    _21MHZ,
+    _21MHZ = 7,
 }
 impl From<BAND_A> for u8 {
     #[inline(always)]
     fn from(variant: BAND_A) -> Self {
-        match variant {
-            BAND_A::_14MHZ => 0,
-            BAND_A::_11MHZ => 1,
-            BAND_A::_7MHZ => 2,
-            BAND_A::_1MHZ => 3,
-            BAND_A::_21MHZ => 7,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `BAND`"]
-pub type BAND_R = crate::R<u8, BAND_A>;
+#[doc = "Field `BAND` reader - AUXHFRCO Band Select"]
+pub struct BAND_R(crate::FieldReader<u8, BAND_A>);
 impl BAND_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BAND_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, BAND_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<BAND_A> {
         match self.bits {
-            0 => Val(BAND_A::_14MHZ),
-            1 => Val(BAND_A::_11MHZ),
-            2 => Val(BAND_A::_7MHZ),
-            3 => Val(BAND_A::_1MHZ),
-            7 => Val(BAND_A::_21MHZ),
-            i => Res(i),
+            0 => Some(BAND_A::_14MHZ),
+            1 => Some(BAND_A::_11MHZ),
+            2 => Some(BAND_A::_7MHZ),
+            3 => Some(BAND_A::_1MHZ),
+            7 => Some(BAND_A::_21MHZ),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_14MHZ`"]
     #[inline(always)]
     pub fn is_14mhz(&self) -> bool {
-        *self == BAND_A::_14MHZ
+        **self == BAND_A::_14MHZ
     }
     #[doc = "Checks if the value of the field is `_11MHZ`"]
     #[inline(always)]
     pub fn is_11mhz(&self) -> bool {
-        *self == BAND_A::_11MHZ
+        **self == BAND_A::_11MHZ
     }
     #[doc = "Checks if the value of the field is `_7MHZ`"]
     #[inline(always)]
     pub fn is_7mhz(&self) -> bool {
-        *self == BAND_A::_7MHZ
+        **self == BAND_A::_7MHZ
     }
     #[doc = "Checks if the value of the field is `_1MHZ`"]
     #[inline(always)]
     pub fn is_1mhz(&self) -> bool {
-        *self == BAND_A::_1MHZ
+        **self == BAND_A::_1MHZ
     }
     #[doc = "Checks if the value of the field is `_21MHZ`"]
     #[inline(always)]
     pub fn is_21mhz(&self) -> bool {
-        *self == BAND_A::_21MHZ
+        **self == BAND_A::_21MHZ
     }
 }
-#[doc = "Write proxy for field `BAND`"]
+impl core::ops::Deref for BAND_R {
+    type Target = crate::FieldReader<u8, BAND_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BAND` writer - AUXHFRCO Band Select"]
 pub struct BAND_W<'a> {
     w: &'a mut W,
 }
@@ -130,7 +170,7 @@ impl<'a> BAND_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
         self.w
     }
 }
@@ -156,5 +196,31 @@ impl W {
     #[inline(always)]
     pub fn band(&mut self) -> BAND_W {
         BAND_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "AUXHFRCO Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [auxhfrcoctrl](index.html) module"]
+pub struct AUXHFRCOCTRL_SPEC;
+impl crate::RegisterSpec for AUXHFRCOCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [auxhfrcoctrl::R](R) reader structure"]
+impl crate::Readable for AUXHFRCOCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [auxhfrcoctrl::W](W) writer structure"]
+impl crate::Writable for AUXHFRCOCTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets AUXHFRCOCTRL to value 0x80"]
+impl crate::Resettable for AUXHFRCOCTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x80
     }
 }

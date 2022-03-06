@@ -1,18 +1,54 @@
-#[doc = "Reader of register PE_PINLOCKN"]
-pub type R = crate::R<u32, super::PE_PINLOCKN>;
-#[doc = "Writer for register PE_PINLOCKN"]
-pub type W = crate::W<u32, super::PE_PINLOCKN>;
-#[doc = "Register PE_PINLOCKN `reset()`'s with value 0xffff"]
-impl crate::ResetValue for super::PE_PINLOCKN {
-    type Type = u32;
+#[doc = "Register `PE_PINLOCKN` reader"]
+pub struct R(crate::R<PE_PINLOCKN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PE_PINLOCKN_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xffff
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PINLOCKN`"]
-pub type PINLOCKN_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `PINLOCKN`"]
+impl From<crate::R<PE_PINLOCKN_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PE_PINLOCKN_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PE_PINLOCKN` writer"]
+pub struct W(crate::W<PE_PINLOCKN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PE_PINLOCKN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PE_PINLOCKN_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PE_PINLOCKN_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PINLOCKN` reader - Unlocked Pins"]
+pub struct PINLOCKN_R(crate::FieldReader<u16, u16>);
+impl PINLOCKN_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        PINLOCKN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PINLOCKN_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PINLOCKN` writer - Unlocked Pins"]
 pub struct PINLOCKN_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> PINLOCKN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
@@ -36,5 +72,31 @@ impl W {
     #[inline(always)]
     pub fn pinlockn(&mut self) -> PINLOCKN_W {
         PINLOCKN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_pinlockn](index.html) module"]
+pub struct PE_PINLOCKN_SPEC;
+impl crate::RegisterSpec for PE_PINLOCKN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pe_pinlockn::R](R) reader structure"]
+impl crate::Readable for PE_PINLOCKN_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pe_pinlockn::W](W) writer structure"]
+impl crate::Writable for PE_PINLOCKN_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PE_PINLOCKN to value 0xffff"]
+impl crate::Resettable for PE_PINLOCKN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff
     }
 }

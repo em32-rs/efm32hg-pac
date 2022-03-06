@@ -1,22 +1,17 @@
 [package]
 name = "efm32hg-pac"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Jacob Rosenthal <jacobrosenthal@gmail.com>"]
-edition = "2018"
+edition = "2021"
 keywords = ["no-std", "arm", "cortex-m", "efm32", "efm32hg", "efm32hg309", "efm32hg309f64", "pac"]
 readme = "readme.md"
 repository = "https://github.com/em32-rs/efm32hg-pac"
 
 [dependencies]
-bare-metal = "0.2.0"
-cortex-m = "^0.6.1"
-cortex-m-rt = { version = "^0.6.11", optional = true }
+bare-metal = "1.0.0"
+cortex-m = "^0.7.1"
+cortex-m-rt = { version = "^0.7.1", optional = true }
 vcell = "0.1.0"
-
-[[bin]]
-name = "gen"
-path = "tools/src/bin/gen.rs"
-doc = false
 
 [features]
 rt = ["cortex-m-rt/device"]

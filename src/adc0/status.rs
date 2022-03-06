@@ -1,57 +1,149 @@
-#[doc = "Reader of register STATUS"]
-pub type R = crate::R<u32, super::STATUS>;
-#[doc = "Reader of field `SINGLEACT`"]
-pub type SINGLEACT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SCANACT`"]
-pub type SCANACT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SINGLEREFWARM`"]
-pub type SINGLEREFWARM_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SCANREFWARM`"]
-pub type SCANREFWARM_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WARM`"]
-pub type WARM_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SINGLEDV`"]
-pub type SINGLEDV_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SCANDV`"]
-pub type SCANDV_R = crate::R<bool, bool>;
+#[doc = "Register `STATUS` reader"]
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `SINGLEACT` reader - Single Conversion Active"]
+pub struct SINGLEACT_R(crate::FieldReader<bool, bool>);
+impl SINGLEACT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SINGLEACT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SINGLEACT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCANACT` reader - Scan Conversion Active"]
+pub struct SCANACT_R(crate::FieldReader<bool, bool>);
+impl SCANACT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCANACT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCANACT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SINGLEREFWARM` reader - Single Reference Warmed Up"]
+pub struct SINGLEREFWARM_R(crate::FieldReader<bool, bool>);
+impl SINGLEREFWARM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SINGLEREFWARM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SINGLEREFWARM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCANREFWARM` reader - Scan Reference Warmed Up"]
+pub struct SCANREFWARM_R(crate::FieldReader<bool, bool>);
+impl SCANREFWARM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCANREFWARM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCANREFWARM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WARM` reader - ADC Warmed Up"]
+pub struct WARM_R(crate::FieldReader<bool, bool>);
+impl WARM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WARM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WARM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SINGLEDV` reader - Single Sample Data Valid"]
+pub struct SINGLEDV_R(crate::FieldReader<bool, bool>);
+impl SINGLEDV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SINGLEDV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SINGLEDV_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCANDV` reader - Scan Data Valid"]
+pub struct SCANDV_R(crate::FieldReader<bool, bool>);
+impl SCANDV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCANDV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCANDV_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Scan Data Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SCANDATASRC_A {
     #[doc = "0: Single ended mode: SCANDATA result originates from ADCn_CH0. Differential mode: SCANDATA result originates from ADCn_CH0-ADCn_CH1"]
-    CH0,
+    CH0 = 0,
     #[doc = "1: Single ended mode: SCANDATA result originates from ADCn_CH1. Differential mode: SCANDATA result originates from ADCn_CH2_ADCn_CH3"]
-    CH1,
+    CH1 = 1,
     #[doc = "2: Single ended mode: SCANDATA result originates from ADCn_CH2. Differential mode: SCANDATA result originates from ADCn_CH4-ADCn_CH5"]
-    CH2,
+    CH2 = 2,
     #[doc = "3: Single ended mode: SCANDATA result originates from ADCn_CH3. Differential mode: SCANDATA result originates from ADCn_CH6-ADCn_CH7"]
-    CH3,
+    CH3 = 3,
     #[doc = "4: SCANDATA result originates from ADCn_CH4"]
-    CH4,
+    CH4 = 4,
     #[doc = "5: SCANDATA result originates from ADCn_CH5"]
-    CH5,
+    CH5 = 5,
     #[doc = "6: SCANDATA result originates from ADCn_CH6"]
-    CH6,
+    CH6 = 6,
     #[doc = "7: SCANDATA result originates from ADCn_CH7"]
-    CH7,
+    CH7 = 7,
 }
 impl From<SCANDATASRC_A> for u8 {
     #[inline(always)]
     fn from(variant: SCANDATASRC_A) -> Self {
-        match variant {
-            SCANDATASRC_A::CH0 => 0,
-            SCANDATASRC_A::CH1 => 1,
-            SCANDATASRC_A::CH2 => 2,
-            SCANDATASRC_A::CH3 => 3,
-            SCANDATASRC_A::CH4 => 4,
-            SCANDATASRC_A::CH5 => 5,
-            SCANDATASRC_A::CH6 => 6,
-            SCANDATASRC_A::CH7 => 7,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `SCANDATASRC`"]
-pub type SCANDATASRC_R = crate::R<u8, SCANDATASRC_A>;
+#[doc = "Field `SCANDATASRC` reader - Scan Data Source"]
+pub struct SCANDATASRC_R(crate::FieldReader<u8, SCANDATASRC_A>);
 impl SCANDATASRC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SCANDATASRC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SCANDATASRC_A {
@@ -70,42 +162,49 @@ impl SCANDATASRC_R {
     #[doc = "Checks if the value of the field is `CH0`"]
     #[inline(always)]
     pub fn is_ch0(&self) -> bool {
-        *self == SCANDATASRC_A::CH0
+        **self == SCANDATASRC_A::CH0
     }
     #[doc = "Checks if the value of the field is `CH1`"]
     #[inline(always)]
     pub fn is_ch1(&self) -> bool {
-        *self == SCANDATASRC_A::CH1
+        **self == SCANDATASRC_A::CH1
     }
     #[doc = "Checks if the value of the field is `CH2`"]
     #[inline(always)]
     pub fn is_ch2(&self) -> bool {
-        *self == SCANDATASRC_A::CH2
+        **self == SCANDATASRC_A::CH2
     }
     #[doc = "Checks if the value of the field is `CH3`"]
     #[inline(always)]
     pub fn is_ch3(&self) -> bool {
-        *self == SCANDATASRC_A::CH3
+        **self == SCANDATASRC_A::CH3
     }
     #[doc = "Checks if the value of the field is `CH4`"]
     #[inline(always)]
     pub fn is_ch4(&self) -> bool {
-        *self == SCANDATASRC_A::CH4
+        **self == SCANDATASRC_A::CH4
     }
     #[doc = "Checks if the value of the field is `CH5`"]
     #[inline(always)]
     pub fn is_ch5(&self) -> bool {
-        *self == SCANDATASRC_A::CH5
+        **self == SCANDATASRC_A::CH5
     }
     #[doc = "Checks if the value of the field is `CH6`"]
     #[inline(always)]
     pub fn is_ch6(&self) -> bool {
-        *self == SCANDATASRC_A::CH6
+        **self == SCANDATASRC_A::CH6
     }
     #[doc = "Checks if the value of the field is `CH7`"]
     #[inline(always)]
     pub fn is_ch7(&self) -> bool {
-        *self == SCANDATASRC_A::CH7
+        **self == SCANDATASRC_A::CH7
+    }
+}
+impl core::ops::Deref for SCANDATASRC_R {
+    type Target = crate::FieldReader<u8, SCANDATASRC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -148,5 +247,21 @@ impl R {
     #[inline(always)]
     pub fn scandatasrc(&self) -> SCANDATASRC_R {
         SCANDATASRC_R::new(((self.bits >> 24) & 0x07) as u8)
+    }
+}
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets STATUS to value 0"]
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

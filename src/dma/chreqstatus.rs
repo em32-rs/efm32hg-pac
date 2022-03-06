@@ -1,17 +1,102 @@
-#[doc = "Reader of register CHREQSTATUS"]
-pub type R = crate::R<u32, super::CHREQSTATUS>;
-#[doc = "Reader of field `CH0REQSTATUS`"]
-pub type CH0REQSTATUS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH1REQSTATUS`"]
-pub type CH1REQSTATUS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH2REQSTATUS`"]
-pub type CH2REQSTATUS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH3REQSTATUS`"]
-pub type CH3REQSTATUS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH4REQSTATUS`"]
-pub type CH4REQSTATUS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH5REQSTATUS`"]
-pub type CH5REQSTATUS_R = crate::R<bool, bool>;
+#[doc = "Register `CHREQSTATUS` reader"]
+pub struct R(crate::R<CHREQSTATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CHREQSTATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CHREQSTATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CHREQSTATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CH0REQSTATUS` reader - Channel 0 Request Status"]
+pub struct CH0REQSTATUS_R(crate::FieldReader<bool, bool>);
+impl CH0REQSTATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0REQSTATUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH0REQSTATUS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1REQSTATUS` reader - Channel 1 Request Status"]
+pub struct CH1REQSTATUS_R(crate::FieldReader<bool, bool>);
+impl CH1REQSTATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1REQSTATUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH1REQSTATUS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2REQSTATUS` reader - Channel 2 Request Status"]
+pub struct CH2REQSTATUS_R(crate::FieldReader<bool, bool>);
+impl CH2REQSTATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2REQSTATUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH2REQSTATUS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3REQSTATUS` reader - Channel 3 Request Status"]
+pub struct CH3REQSTATUS_R(crate::FieldReader<bool, bool>);
+impl CH3REQSTATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3REQSTATUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH3REQSTATUS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH4REQSTATUS` reader - Channel 4 Request Status"]
+pub struct CH4REQSTATUS_R(crate::FieldReader<bool, bool>);
+impl CH4REQSTATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH4REQSTATUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH4REQSTATUS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH5REQSTATUS` reader - Channel 5 Request Status"]
+pub struct CH5REQSTATUS_R(crate::FieldReader<bool, bool>);
+impl CH5REQSTATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH5REQSTATUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH5REQSTATUS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Channel 0 Request Status"]
     #[inline(always)]
@@ -42,5 +127,21 @@ impl R {
     #[inline(always)]
     pub fn ch5reqstatus(&self) -> CH5REQSTATUS_R {
         CH5REQSTATUS_R::new(((self.bits >> 5) & 0x01) != 0)
+    }
+}
+#[doc = "Channel Request Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chreqstatus](index.html) module"]
+pub struct CHREQSTATUS_SPEC;
+impl crate::RegisterSpec for CHREQSTATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [chreqstatus::R](R) reader structure"]
+impl crate::Readable for CHREQSTATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets CHREQSTATUS to value 0"]
+impl crate::Resettable for CHREQSTATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,11 +1,45 @@
-#[doc = "Reader of register UNIQUEH"]
-pub type R = crate::R<u32, super::UNIQUEH>;
-#[doc = "Reader of field `UNIQUEH`"]
-pub type UNIQUEH_R = crate::R<u32, u32>;
+#[doc = "Register `UNIQUEH` reader"]
+pub struct R(crate::R<UNIQUEH_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UNIQUEH_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<UNIQUEH_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UNIQUEH_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `UNIQUEH` reader - High part of 64-bit device unique number"]
+pub struct UNIQUEH_R(crate::FieldReader<u32, u32>);
+impl UNIQUEH_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        UNIQUEH_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UNIQUEH_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:31 - High part of 64-bit device unique number"]
     #[inline(always)]
     pub fn uniqueh(&self) -> UNIQUEH_R {
         UNIQUEH_R::new((self.bits & 0xffff_ffff) as u32)
     }
+}
+#[doc = "High 32 bits of device unique number\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uniqueh](index.html) module"]
+pub struct UNIQUEH_SPEC;
+impl crate::RegisterSpec for UNIQUEH_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [uniqueh::R](R) reader structure"]
+impl crate::Readable for UNIQUEH_SPEC {
+    type Reader = R;
 }

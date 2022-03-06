@@ -1,27 +1,172 @@
-#[doc = "Reader of register RSTCAUSE"]
-pub type R = crate::R<u32, super::RSTCAUSE>;
-#[doc = "Reader of field `PORST`"]
-pub type PORST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BODUNREGRST`"]
-pub type BODUNREGRST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BODREGRST`"]
-pub type BODREGRST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EXTRST`"]
-pub type EXTRST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WDOGRST`"]
-pub type WDOGRST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCKUPRST`"]
-pub type LOCKUPRST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SYSREQRST`"]
-pub type SYSREQRST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EM4RST`"]
-pub type EM4RST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EM4WURST`"]
-pub type EM4WURST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BODAVDD0`"]
-pub type BODAVDD0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BODAVDD1`"]
-pub type BODAVDD1_R = crate::R<bool, bool>;
+#[doc = "Register `RSTCAUSE` reader"]
+pub struct R(crate::R<RSTCAUSE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RSTCAUSE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RSTCAUSE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RSTCAUSE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `PORST` reader - Power On Reset"]
+pub struct PORST_R(crate::FieldReader<bool, bool>);
+impl PORST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PORST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PORST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BODUNREGRST` reader - Brown Out Detector Unregulated Domain Reset"]
+pub struct BODUNREGRST_R(crate::FieldReader<bool, bool>);
+impl BODUNREGRST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODUNREGRST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BODUNREGRST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BODREGRST` reader - Brown Out Detector Regulated Domain Reset"]
+pub struct BODREGRST_R(crate::FieldReader<bool, bool>);
+impl BODREGRST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODREGRST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BODREGRST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXTRST` reader - External Pin Reset"]
+pub struct EXTRST_R(crate::FieldReader<bool, bool>);
+impl EXTRST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EXTRST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EXTRST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WDOGRST` reader - Watchdog Reset"]
+pub struct WDOGRST_R(crate::FieldReader<bool, bool>);
+impl WDOGRST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WDOGRST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WDOGRST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCKUPRST` reader - LOCKUP Reset"]
+pub struct LOCKUPRST_R(crate::FieldReader<bool, bool>);
+impl LOCKUPRST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCKUPRST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCKUPRST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SYSREQRST` reader - System Request Reset"]
+pub struct SYSREQRST_R(crate::FieldReader<bool, bool>);
+impl SYSREQRST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SYSREQRST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SYSREQRST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EM4RST` reader - EM4 Reset"]
+pub struct EM4RST_R(crate::FieldReader<bool, bool>);
+impl EM4RST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EM4RST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EM4RST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EM4WURST` reader - EM4 Wake-up Reset"]
+pub struct EM4WURST_R(crate::FieldReader<bool, bool>);
+impl EM4WURST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EM4WURST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EM4WURST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BODAVDD0` reader - AVDD0 Bod Reset"]
+pub struct BODAVDD0_R(crate::FieldReader<bool, bool>);
+impl BODAVDD0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODAVDD0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BODAVDD0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BODAVDD1` reader - AVDD1 Bod Reset"]
+pub struct BODAVDD1_R(crate::FieldReader<bool, bool>);
+impl BODAVDD1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODAVDD1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BODAVDD1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Power On Reset"]
     #[inline(always)]
@@ -77,5 +222,21 @@ impl R {
     #[inline(always)]
     pub fn bodavdd1(&self) -> BODAVDD1_R {
         BODAVDD1_R::new(((self.bits >> 10) & 0x01) != 0)
+    }
+}
+#[doc = "Reset Cause Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rstcause](index.html) module"]
+pub struct RSTCAUSE_SPEC;
+impl crate::RegisterSpec for RSTCAUSE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [rstcause::R](R) reader structure"]
+impl crate::Readable for RSTCAUSE_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets RSTCAUSE to value 0"]
+impl crate::Resettable for RSTCAUSE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

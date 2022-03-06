@@ -1,35 +1,71 @@
-#[doc = "Reader of register GRXSTSP"]
-pub type R = crate::R<u32, super::GRXSTSP>;
-#[doc = "Reader of field `CHEPNUM`"]
-pub type CHEPNUM_R = crate::R<u8, u8>;
-#[doc = "Reader of field `BCNT`"]
-pub type BCNT_R = crate::R<u16, u16>;
+#[doc = "Register `GRXSTSP` reader"]
+pub struct R(crate::R<GRXSTSP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GRXSTSP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GRXSTSP_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GRXSTSP_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CHEPNUM` reader - Channel Number host only / Endpoint Number"]
+pub struct CHEPNUM_R(crate::FieldReader<u8, u8>);
+impl CHEPNUM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CHEPNUM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CHEPNUM_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BCNT` reader - Byte Count (host or device)"]
+pub struct BCNT_R(crate::FieldReader<u16, u16>);
+impl BCNT_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        BCNT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BCNT_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Data PID (host or device)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DPID_A {
     #[doc = "0: DATA0 PID."]
-    DATA0,
+    DATA0 = 0,
     #[doc = "1: DATA1 PID."]
-    DATA1,
+    DATA1 = 1,
     #[doc = "2: DATA2 PID."]
-    DATA2,
+    DATA2 = 2,
     #[doc = "3: MDATA PID."]
-    MDATA,
+    MDATA = 3,
 }
 impl From<DPID_A> for u8 {
     #[inline(always)]
     fn from(variant: DPID_A) -> Self {
-        match variant {
-            DPID_A::DATA0 => 0,
-            DPID_A::DATA1 => 1,
-            DPID_A::DATA2 => 2,
-            DPID_A::MDATA => 3,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `DPID`"]
-pub type DPID_R = crate::R<u8, DPID_A>;
+#[doc = "Field `DPID` reader - Data PID (host or device)"]
+pub struct DPID_R(crate::FieldReader<u8, DPID_A>);
 impl DPID_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DPID_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPID_A {
@@ -44,112 +80,133 @@ impl DPID_R {
     #[doc = "Checks if the value of the field is `DATA0`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        *self == DPID_A::DATA0
+        **self == DPID_A::DATA0
     }
     #[doc = "Checks if the value of the field is `DATA1`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        *self == DPID_A::DATA1
+        **self == DPID_A::DATA1
     }
     #[doc = "Checks if the value of the field is `DATA2`"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
-        *self == DPID_A::DATA2
+        **self == DPID_A::DATA2
     }
     #[doc = "Checks if the value of the field is `MDATA`"]
     #[inline(always)]
     pub fn is_mdata(&self) -> bool {
-        *self == DPID_A::MDATA
+        **self == DPID_A::MDATA
+    }
+}
+impl core::ops::Deref for DPID_R {
+    type Target = crate::FieldReader<u8, DPID_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Packet Status (host or device)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PKTSTS_A {
     #[doc = "1: Device mode: Global OUT NAK (triggers an interrupt)."]
-    GOUTNAK,
+    GOUTNAK = 1,
     #[doc = "2: Host mode: IN data packet received. Device mode: OUT data packet received."]
-    PKTRCV,
+    PKTRCV = 2,
     #[doc = "3: Host mode: IN transfer completed (triggers an interrupt). Device mode: OUT transfer completed (triggers an interrupt)."]
-    XFERCOMPL,
+    XFERCOMPL = 3,
     #[doc = "4: Device mode: SETUP transaction completed (triggers an interrupt)."]
-    SETUPCOMPL,
+    SETUPCOMPL = 4,
     #[doc = "5: Host mode: Data toggle error (triggers an interrupt)."]
-    TGLERR,
+    TGLERR = 5,
     #[doc = "6: Device mode: SETUP data packet received."]
-    SETUPRCV,
+    SETUPRCV = 6,
     #[doc = "7: Host mode: Channel halted (triggers an interrupt)."]
-    CHLT,
+    CHLT = 7,
 }
 impl From<PKTSTS_A> for u8 {
     #[inline(always)]
     fn from(variant: PKTSTS_A) -> Self {
-        match variant {
-            PKTSTS_A::GOUTNAK => 1,
-            PKTSTS_A::PKTRCV => 2,
-            PKTSTS_A::XFERCOMPL => 3,
-            PKTSTS_A::SETUPCOMPL => 4,
-            PKTSTS_A::TGLERR => 5,
-            PKTSTS_A::SETUPRCV => 6,
-            PKTSTS_A::CHLT => 7,
-        }
+        variant as _
     }
 }
-#[doc = "Reader of field `PKTSTS`"]
-pub type PKTSTS_R = crate::R<u8, PKTSTS_A>;
+#[doc = "Field `PKTSTS` reader - Packet Status (host or device)"]
+pub struct PKTSTS_R(crate::FieldReader<u8, PKTSTS_A>);
 impl PKTSTS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PKTSTS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PKTSTS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PKTSTS_A> {
         match self.bits {
-            1 => Val(PKTSTS_A::GOUTNAK),
-            2 => Val(PKTSTS_A::PKTRCV),
-            3 => Val(PKTSTS_A::XFERCOMPL),
-            4 => Val(PKTSTS_A::SETUPCOMPL),
-            5 => Val(PKTSTS_A::TGLERR),
-            6 => Val(PKTSTS_A::SETUPRCV),
-            7 => Val(PKTSTS_A::CHLT),
-            i => Res(i),
+            1 => Some(PKTSTS_A::GOUTNAK),
+            2 => Some(PKTSTS_A::PKTRCV),
+            3 => Some(PKTSTS_A::XFERCOMPL),
+            4 => Some(PKTSTS_A::SETUPCOMPL),
+            5 => Some(PKTSTS_A::TGLERR),
+            6 => Some(PKTSTS_A::SETUPRCV),
+            7 => Some(PKTSTS_A::CHLT),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `GOUTNAK`"]
     #[inline(always)]
     pub fn is_goutnak(&self) -> bool {
-        *self == PKTSTS_A::GOUTNAK
+        **self == PKTSTS_A::GOUTNAK
     }
     #[doc = "Checks if the value of the field is `PKTRCV`"]
     #[inline(always)]
     pub fn is_pktrcv(&self) -> bool {
-        *self == PKTSTS_A::PKTRCV
+        **self == PKTSTS_A::PKTRCV
     }
     #[doc = "Checks if the value of the field is `XFERCOMPL`"]
     #[inline(always)]
     pub fn is_xfercompl(&self) -> bool {
-        *self == PKTSTS_A::XFERCOMPL
+        **self == PKTSTS_A::XFERCOMPL
     }
     #[doc = "Checks if the value of the field is `SETUPCOMPL`"]
     #[inline(always)]
     pub fn is_setupcompl(&self) -> bool {
-        *self == PKTSTS_A::SETUPCOMPL
+        **self == PKTSTS_A::SETUPCOMPL
     }
     #[doc = "Checks if the value of the field is `TGLERR`"]
     #[inline(always)]
     pub fn is_tglerr(&self) -> bool {
-        *self == PKTSTS_A::TGLERR
+        **self == PKTSTS_A::TGLERR
     }
     #[doc = "Checks if the value of the field is `SETUPRCV`"]
     #[inline(always)]
     pub fn is_setuprcv(&self) -> bool {
-        *self == PKTSTS_A::SETUPRCV
+        **self == PKTSTS_A::SETUPRCV
     }
     #[doc = "Checks if the value of the field is `CHLT`"]
     #[inline(always)]
     pub fn is_chlt(&self) -> bool {
-        *self == PKTSTS_A::CHLT
+        **self == PKTSTS_A::CHLT
     }
 }
-#[doc = "Reader of field `FN`"]
-pub type FN_R = crate::R<u8, u8>;
+impl core::ops::Deref for PKTSTS_R {
+    type Target = crate::FieldReader<u8, PKTSTS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FN` reader - Frame Number"]
+pub struct FN_R(crate::FieldReader<u8, u8>);
+impl FN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FN_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:3 - Channel Number host only / Endpoint Number"]
     #[inline(always)]
@@ -175,5 +232,21 @@ impl R {
     #[inline(always)]
     pub fn fn_(&self) -> FN_R {
         FN_R::new(((self.bits >> 21) & 0x0f) as u8)
+    }
+}
+#[doc = "Receive Status Read and Pop Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxstsp](index.html) module"]
+pub struct GRXSTSP_SPEC;
+impl crate::RegisterSpec for GRXSTSP_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [grxstsp::R](R) reader structure"]
+impl crate::Readable for GRXSTSP_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets GRXSTSP to value 0"]
+impl crate::Resettable for GRXSTSP_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
