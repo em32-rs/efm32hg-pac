@@ -1,6 +1,6 @@
 # `efm32hg309f64-pac`
 
-Peripheral access API for efm32hg309f64 microcontroller from Silicon Labs from efm32hg family.
+Peripheral access API for efm32hg309f64 microcontroller from Silicon Labs' efm32hg family.
 
 The efm32hg register definitions were retrieved from from keil.com and provided here in ./svd as a convenience only.
 
