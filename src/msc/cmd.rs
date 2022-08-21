@@ -20,86 +20,26 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `INVCACHE` writer - Invalidate Instruction Cache"]
-pub struct INVCACHE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INVCACHE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type INVCACHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `STARTPC` writer - Start Performance Counters"]
-pub struct STARTPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STARTPC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type STARTPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `STOPPC` writer - Stop Performance Counters"]
-pub struct STOPPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOPPC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type STOPPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Invalidate Instruction Cache"]
     #[inline(always)]
-    pub fn invcache(&mut self) -> INVCACHE_W {
-        INVCACHE_W { w: self }
+    pub fn invcache(&mut self) -> INVCACHE_W<0> {
+        INVCACHE_W::new(self)
     }
     #[doc = "Bit 1 - Start Performance Counters"]
     #[inline(always)]
-    pub fn startpc(&mut self) -> STARTPC_W {
-        STARTPC_W { w: self }
+    pub fn startpc(&mut self) -> STARTPC_W<1> {
+        STARTPC_W::new(self)
     }
     #[doc = "Bit 2 - Stop Performance Counters"]
     #[inline(always)]
-    pub fn stoppc(&mut self) -> STOPPC_W {
-        STOPPC_W { w: self }
+    pub fn stoppc(&mut self) -> STOPPC_W<2> {
+        STOPPC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

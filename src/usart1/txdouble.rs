@@ -20,39 +20,19 @@ impl From<crate::W<TXDOUBLE_SPEC>> for W {
     }
 }
 #[doc = "Field `TXDATA0` writer - TX Data"]
-pub struct TXDATA0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDATA0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TXDATA0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXDOUBLE_SPEC, u8, u8, 8, O>;
 #[doc = "Field `TXDATA1` writer - TX Data"]
-pub struct TXDATA1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDATA1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type TXDATA1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXDOUBLE_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - TX Data"]
     #[inline(always)]
-    pub fn txdata0(&mut self) -> TXDATA0_W {
-        TXDATA0_W { w: self }
+    pub fn txdata0(&mut self) -> TXDATA0_W<0> {
+        TXDATA0_W::new(self)
     }
     #[doc = "Bits 8:15 - TX Data"]
     #[inline(always)]
-    pub fn txdata1(&mut self) -> TXDATA1_W {
-        TXDATA1_W { w: self }
+    pub fn txdata1(&mut self) -> TXDATA1_W<8> {
+        TXDATA1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,57 +35,16 @@ impl From<crate::W<DOEP1_TSIZ_SPEC>> for W {
     }
 }
 #[doc = "Field `XFERSIZE` reader - Transfer Size"]
-pub struct XFERSIZE_R(crate::FieldReader<u32, u32>);
-impl XFERSIZE_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        XFERSIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XFERSIZE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XFERSIZE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `XFERSIZE` writer - Transfer Size"]
-pub struct XFERSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XFERSIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0007_ffff) | (value as u32 & 0x0007_ffff);
-        self.w
-    }
-}
+pub type XFERSIZE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DOEP1_TSIZ_SPEC, u32, u32, 19, O>;
 #[doc = "Field `PKTCNT` reader - Packet Count"]
-pub struct PKTCNT_R(crate::FieldReader<u16, u16>);
-impl PKTCNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PKTCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PKTCNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PKTCNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PKTCNT` writer - Packet Count"]
-pub struct PKTCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKTCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 19)) | ((value as u32 & 0x03ff) << 19);
-        self.w
-    }
-}
+pub type PKTCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEP1_TSIZ_SPEC, u16, u16, 10, O>;
+#[doc = "Field `RXDPIDSUPCNT` reader - Receive Data PID / SETUP Packet Count"]
+pub type RXDPIDSUPCNT_R = crate::FieldReader<u8, RXDPIDSUPCNT_A>;
 #[doc = "Receive Data PID / SETUP Packet Count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -105,13 +64,8 @@ impl From<RXDPIDSUPCNT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RXDPIDSUPCNT` reader - Receive Data PID / SETUP Packet Count"]
-pub struct RXDPIDSUPCNT_R(crate::FieldReader<u8, RXDPIDSUPCNT_A>);
 impl RXDPIDSUPCNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDPIDSUPCNT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXDPIDSUPCNT_A {
         match self.bits {
@@ -125,29 +79,22 @@ impl RXDPIDSUPCNT_R {
     #[doc = "Checks if the value of the field is `DATA0`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        **self == RXDPIDSUPCNT_A::DATA0
+        *self == RXDPIDSUPCNT_A::DATA0
     }
     #[doc = "Checks if the value of the field is `DATA2`"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
-        **self == RXDPIDSUPCNT_A::DATA2
+        *self == RXDPIDSUPCNT_A::DATA2
     }
     #[doc = "Checks if the value of the field is `DATA1`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        **self == RXDPIDSUPCNT_A::DATA1
+        *self == RXDPIDSUPCNT_A::DATA1
     }
     #[doc = "Checks if the value of the field is `MDATA`"]
     #[inline(always)]
     pub fn is_mdata(&self) -> bool {
-        **self == RXDPIDSUPCNT_A::MDATA
-    }
-}
-impl core::ops::Deref for RXDPIDSUPCNT_R {
-    type Target = crate::FieldReader<u8, RXDPIDSUPCNT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXDPIDSUPCNT_A::MDATA
     }
 }
 impl R {
@@ -164,19 +111,19 @@ impl R {
     #[doc = "Bits 29:30 - Receive Data PID / SETUP Packet Count"]
     #[inline(always)]
     pub fn rxdpidsupcnt(&self) -> RXDPIDSUPCNT_R {
-        RXDPIDSUPCNT_R::new(((self.bits >> 29) & 0x03) as u8)
+        RXDPIDSUPCNT_R::new(((self.bits >> 29) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
-    pub fn xfersize(&mut self) -> XFERSIZE_W {
-        XFERSIZE_W { w: self }
+    pub fn xfersize(&mut self) -> XFERSIZE_W<0> {
+        XFERSIZE_W::new(self)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
-    pub fn pktcnt(&mut self) -> PKTCNT_W {
-        PKTCNT_W { w: self }
+    pub fn pktcnt(&mut self) -> PKTCNT_W<19> {
+        PKTCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

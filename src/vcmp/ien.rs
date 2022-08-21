@@ -35,99 +35,35 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `EDGE` reader - Edge Trigger Interrupt Enable"]
-pub struct EDGE_R(crate::FieldReader<bool, bool>);
-impl EDGE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EDGE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EDGE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EDGE_R = crate::BitReader<bool>;
 #[doc = "Field `EDGE` writer - Edge Trigger Interrupt Enable"]
-pub struct EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `WARMUP` reader - Warm-up Interrupt Enable"]
-pub struct WARMUP_R(crate::FieldReader<bool, bool>);
-impl WARMUP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WARMUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WARMUP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WARMUP_R = crate::BitReader<bool>;
 #[doc = "Field `WARMUP` writer - Warm-up Interrupt Enable"]
-pub struct WARMUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WARMUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type WARMUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Edge Trigger Interrupt Enable"]
     #[inline(always)]
     pub fn edge(&self) -> EDGE_R {
-        EDGE_R::new((self.bits & 0x01) != 0)
+        EDGE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Warm-up Interrupt Enable"]
     #[inline(always)]
     pub fn warmup(&self) -> WARMUP_R {
-        WARMUP_R::new(((self.bits >> 1) & 0x01) != 0)
+        WARMUP_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Edge Trigger Interrupt Enable"]
     #[inline(always)]
-    pub fn edge(&mut self) -> EDGE_W {
-        EDGE_W { w: self }
+    pub fn edge(&mut self) -> EDGE_W<0> {
+        EDGE_W::new(self)
     }
     #[doc = "Bit 1 - Warm-up Interrupt Enable"]
     #[inline(always)]
-    pub fn warmup(&mut self) -> WARMUP_W {
-        WARMUP_W { w: self }
+    pub fn warmup(&mut self) -> WARMUP_W<1> {
+        WARMUP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

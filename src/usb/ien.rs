@@ -35,99 +35,35 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `VREGOSH` reader - VREGO Sense High Interrupt Enable"]
-pub struct VREGOSH_R(crate::FieldReader<bool, bool>);
-impl VREGOSH_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VREGOSH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VREGOSH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VREGOSH_R = crate::BitReader<bool>;
 #[doc = "Field `VREGOSH` writer - VREGO Sense High Interrupt Enable"]
-pub struct VREGOSH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VREGOSH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type VREGOSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `VREGOSL` reader - VREGO Sense Low Interrupt Enable"]
-pub struct VREGOSL_R(crate::FieldReader<bool, bool>);
-impl VREGOSL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VREGOSL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VREGOSL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VREGOSL_R = crate::BitReader<bool>;
 #[doc = "Field `VREGOSL` writer - VREGO Sense Low Interrupt Enable"]
-pub struct VREGOSL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VREGOSL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type VREGOSL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - VREGO Sense High Interrupt Enable"]
     #[inline(always)]
     pub fn vregosh(&self) -> VREGOSH_R {
-        VREGOSH_R::new((self.bits & 0x01) != 0)
+        VREGOSH_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - VREGO Sense Low Interrupt Enable"]
     #[inline(always)]
     pub fn vregosl(&self) -> VREGOSL_R {
-        VREGOSL_R::new(((self.bits >> 1) & 0x01) != 0)
+        VREGOSL_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - VREGO Sense High Interrupt Enable"]
     #[inline(always)]
-    pub fn vregosh(&mut self) -> VREGOSH_W {
-        VREGOSH_W { w: self }
+    pub fn vregosh(&mut self) -> VREGOSH_W<0> {
+        VREGOSH_W::new(self)
     }
     #[doc = "Bit 1 - VREGO Sense Low Interrupt Enable"]
     #[inline(always)]
-    pub fn vregosl(&mut self) -> VREGOSL_W {
-        VREGOSL_W { w: self }
+    pub fn vregosl(&mut self) -> VREGOSL_W<1> {
+        VREGOSL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

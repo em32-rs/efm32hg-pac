@@ -2,12 +2,6 @@
 
 _svd: ../svd/EFM32HG309F64.svd
 
-PRS:
-  "CH*_CTRL":
-    _modify:
-      ASYNC:
-        name: ASYNC_
-
 _add:
   DEVINFO:
     description: The DI page contains calibration values, a unique identification number and other useful data

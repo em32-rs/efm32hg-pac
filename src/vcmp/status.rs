@@ -14,43 +14,19 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `VCMPACT` reader - Voltage Supply Comparator Active"]
-pub struct VCMPACT_R(crate::FieldReader<bool, bool>);
-impl VCMPACT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VCMPACT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VCMPACT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VCMPACT_R = crate::BitReader<bool>;
 #[doc = "Field `VCMPOUT` reader - Voltage Supply Comparator Output"]
-pub struct VCMPOUT_R(crate::FieldReader<bool, bool>);
-impl VCMPOUT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VCMPOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VCMPOUT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VCMPOUT_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Voltage Supply Comparator Active"]
     #[inline(always)]
     pub fn vcmpact(&self) -> VCMPACT_R {
-        VCMPACT_R::new((self.bits & 0x01) != 0)
+        VCMPACT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Voltage Supply Comparator Output"]
     #[inline(always)]
     pub fn vcmpout(&self) -> VCMPOUT_R {
-        VCMPOUT_R::new(((self.bits >> 1) & 0x01) != 0)
+        VCMPOUT_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]

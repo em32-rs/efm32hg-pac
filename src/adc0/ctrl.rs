@@ -34,6 +34,8 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WARMUPMODE` reader - Warm-up Mode"]
+pub type WARMUPMODE_R = crate::FieldReader<u8, WARMUPMODE_A>;
 #[doc = "Warm-up Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,13 +55,8 @@ impl From<WARMUPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WARMUPMODE` reader - Warm-up Mode"]
-pub struct WARMUPMODE_R(crate::FieldReader<u8, WARMUPMODE_A>);
 impl WARMUPMODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WARMUPMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WARMUPMODE_A {
         match self.bits {
@@ -73,41 +70,28 @@ impl WARMUPMODE_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == WARMUPMODE_A::NORMAL
+        *self == WARMUPMODE_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `FASTBG`"]
     #[inline(always)]
     pub fn is_fastbg(&self) -> bool {
-        **self == WARMUPMODE_A::FASTBG
+        *self == WARMUPMODE_A::FASTBG
     }
     #[doc = "Checks if the value of the field is `KEEPSCANREFWARM`"]
     #[inline(always)]
     pub fn is_keepscanrefwarm(&self) -> bool {
-        **self == WARMUPMODE_A::KEEPSCANREFWARM
+        *self == WARMUPMODE_A::KEEPSCANREFWARM
     }
     #[doc = "Checks if the value of the field is `KEEPADCWARM`"]
     #[inline(always)]
     pub fn is_keepadcwarm(&self) -> bool {
-        **self == WARMUPMODE_A::KEEPADCWARM
-    }
-}
-impl core::ops::Deref for WARMUPMODE_R {
-    type Target = crate::FieldReader<u8, WARMUPMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WARMUPMODE_A::KEEPADCWARM
     }
 }
 #[doc = "Field `WARMUPMODE` writer - Warm-up Mode"]
-pub struct WARMUPMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WARMUPMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WARMUPMODE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type WARMUPMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, WARMUPMODE_A, 2, O>;
+impl<'a, const O: u8> WARMUPMODE_W<'a, O> {
     #[doc = "ADC is shut down after each conversion"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -128,49 +112,13 @@ impl<'a> WARMUPMODE_W<'a> {
     pub fn keepadcwarm(self) -> &'a mut W {
         self.variant(WARMUPMODE_A::KEEPADCWARM)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `TAILGATE` reader - Conversion Tailgating"]
-pub struct TAILGATE_R(crate::FieldReader<bool, bool>);
-impl TAILGATE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAILGATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TAILGATE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TAILGATE_R = crate::BitReader<bool>;
 #[doc = "Field `TAILGATE` writer - Conversion Tailgating"]
-pub struct TAILGATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAILGATE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type TAILGATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `LPFMODE` reader - Low Pass Filter Mode"]
+pub type LPFMODE_R = crate::FieldReader<u8, LPFMODE_A>;
 #[doc = "Low Pass Filter Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -188,13 +136,8 @@ impl From<LPFMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LPFMODE` reader - Low Pass Filter Mode"]
-pub struct LPFMODE_R(crate::FieldReader<u8, LPFMODE_A>);
 impl LPFMODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LPFMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LPFMODE_A> {
         match self.bits {
@@ -207,36 +150,22 @@ impl LPFMODE_R {
     #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        **self == LPFMODE_A::BYPASS
+        *self == LPFMODE_A::BYPASS
     }
     #[doc = "Checks if the value of the field is `DECAP`"]
     #[inline(always)]
     pub fn is_decap(&self) -> bool {
-        **self == LPFMODE_A::DECAP
+        *self == LPFMODE_A::DECAP
     }
     #[doc = "Checks if the value of the field is `RCFILT`"]
     #[inline(always)]
     pub fn is_rcfilt(&self) -> bool {
-        **self == LPFMODE_A::RCFILT
-    }
-}
-impl core::ops::Deref for LPFMODE_R {
-    type Target = crate::FieldReader<u8, LPFMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LPFMODE_A::RCFILT
     }
 }
 #[doc = "Field `LPFMODE` writer - Low Pass Filter Mode"]
-pub struct LPFMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPFMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LPFMODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LPFMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, LPFMODE_A, 2, O>;
+impl<'a, const O: u8> LPFMODE_W<'a, O> {
     #[doc = "No filter or decoupling capacitor"]
     #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
@@ -252,13 +181,9 @@ impl<'a> LPFMODE_W<'a> {
     pub fn rcfilt(self) -> &'a mut W {
         self.variant(LPFMODE_A::RCFILT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `PRESC` reader - Prescaler Setting"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -272,13 +197,8 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRESC` reader - Prescaler Setting"]
-pub struct PRESC_R(crate::FieldReader<u8, PRESC_A>);
 impl PRESC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRESC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PRESC_A> {
         match self.bits {
@@ -289,64 +209,24 @@ impl PRESC_R {
     #[doc = "Checks if the value of the field is `NODIVISION`"]
     #[inline(always)]
     pub fn is_nodivision(&self) -> bool {
-        **self == PRESC_A::NODIVISION
-    }
-}
-impl core::ops::Deref for PRESC_R {
-    type Target = crate::FieldReader<u8, PRESC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRESC_A::NODIVISION
     }
 }
 #[doc = "Field `PRESC` writer - Prescaler Setting"]
-pub struct PRESC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRESC_A, 7, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn nodivision(self) -> &'a mut W {
         self.variant(PRESC_A::NODIVISION)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
 }
 #[doc = "Field `TIMEBASE` reader - Time Base"]
-pub struct TIMEBASE_R(crate::FieldReader<u8, u8>);
-impl TIMEBASE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TIMEBASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMEBASE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMEBASE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TIMEBASE` writer - Time Base"]
-pub struct TIMEBASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEBASE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type TIMEBASE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 7, O>;
+#[doc = "Field `OVSRSEL` reader - Oversample Rate Select"]
+pub type OVSRSEL_R = crate::FieldReader<u8, OVSRSEL_A>;
 #[doc = "Oversample Rate Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -382,13 +262,8 @@ impl From<OVSRSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OVSRSEL` reader - Oversample Rate Select"]
-pub struct OVSRSEL_R(crate::FieldReader<u8, OVSRSEL_A>);
 impl OVSRSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        OVSRSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<OVSRSEL_A> {
         match self.bits {
@@ -410,81 +285,67 @@ impl OVSRSEL_R {
     #[doc = "Checks if the value of the field is `X2`"]
     #[inline(always)]
     pub fn is_x2(&self) -> bool {
-        **self == OVSRSEL_A::X2
+        *self == OVSRSEL_A::X2
     }
     #[doc = "Checks if the value of the field is `X4`"]
     #[inline(always)]
     pub fn is_x4(&self) -> bool {
-        **self == OVSRSEL_A::X4
+        *self == OVSRSEL_A::X4
     }
     #[doc = "Checks if the value of the field is `X8`"]
     #[inline(always)]
     pub fn is_x8(&self) -> bool {
-        **self == OVSRSEL_A::X8
+        *self == OVSRSEL_A::X8
     }
     #[doc = "Checks if the value of the field is `X16`"]
     #[inline(always)]
     pub fn is_x16(&self) -> bool {
-        **self == OVSRSEL_A::X16
+        *self == OVSRSEL_A::X16
     }
     #[doc = "Checks if the value of the field is `X32`"]
     #[inline(always)]
     pub fn is_x32(&self) -> bool {
-        **self == OVSRSEL_A::X32
+        *self == OVSRSEL_A::X32
     }
     #[doc = "Checks if the value of the field is `X64`"]
     #[inline(always)]
     pub fn is_x64(&self) -> bool {
-        **self == OVSRSEL_A::X64
+        *self == OVSRSEL_A::X64
     }
     #[doc = "Checks if the value of the field is `X128`"]
     #[inline(always)]
     pub fn is_x128(&self) -> bool {
-        **self == OVSRSEL_A::X128
+        *self == OVSRSEL_A::X128
     }
     #[doc = "Checks if the value of the field is `X256`"]
     #[inline(always)]
     pub fn is_x256(&self) -> bool {
-        **self == OVSRSEL_A::X256
+        *self == OVSRSEL_A::X256
     }
     #[doc = "Checks if the value of the field is `X512`"]
     #[inline(always)]
     pub fn is_x512(&self) -> bool {
-        **self == OVSRSEL_A::X512
+        *self == OVSRSEL_A::X512
     }
     #[doc = "Checks if the value of the field is `X1024`"]
     #[inline(always)]
     pub fn is_x1024(&self) -> bool {
-        **self == OVSRSEL_A::X1024
+        *self == OVSRSEL_A::X1024
     }
     #[doc = "Checks if the value of the field is `X2048`"]
     #[inline(always)]
     pub fn is_x2048(&self) -> bool {
-        **self == OVSRSEL_A::X2048
+        *self == OVSRSEL_A::X2048
     }
     #[doc = "Checks if the value of the field is `X4096`"]
     #[inline(always)]
     pub fn is_x4096(&self) -> bool {
-        **self == OVSRSEL_A::X4096
-    }
-}
-impl core::ops::Deref for OVSRSEL_R {
-    type Target = crate::FieldReader<u8, OVSRSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OVSRSEL_A::X4096
     }
 }
 #[doc = "Field `OVSRSEL` writer - Oversample Rate Select"]
-pub struct OVSRSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVSRSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVSRSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type OVSRSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, OVSRSEL_A, 4, O>;
+impl<'a, const O: u8> OVSRSEL_W<'a, O> {
     #[doc = "2 samples for each conversion result"]
     #[inline(always)]
     pub fn x2(self) -> &'a mut W {
@@ -545,64 +406,26 @@ impl<'a> OVSRSEL_W<'a> {
     pub fn x4096(self) -> &'a mut W {
         self.variant(OVSRSEL_A::X4096)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
 }
 #[doc = "Field `CHCONIDLE` reader - Input channel connected when ADC is IDLE"]
-pub struct CHCONIDLE_R(crate::FieldReader<bool, bool>);
-impl CHCONIDLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHCONIDLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHCONIDLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHCONIDLE_R = crate::BitReader<bool>;
 #[doc = "Field `CHCONIDLE` writer - Input channel connected when ADC is IDLE"]
-pub struct CHCONIDLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHCONIDLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type CHCONIDLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Warm-up Mode"]
     #[inline(always)]
     pub fn warmupmode(&self) -> WARMUPMODE_R {
-        WARMUPMODE_R::new((self.bits & 0x03) as u8)
+        WARMUPMODE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 3 - Conversion Tailgating"]
     #[inline(always)]
     pub fn tailgate(&self) -> TAILGATE_R {
-        TAILGATE_R::new(((self.bits >> 3) & 0x01) != 0)
+        TAILGATE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Low Pass Filter Mode"]
     #[inline(always)]
     pub fn lpfmode(&self) -> LPFMODE_R {
-        LPFMODE_R::new(((self.bits >> 4) & 0x03) as u8)
+        LPFMODE_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:14 - Prescaler Setting"]
     #[inline(always)]
@@ -622,44 +445,44 @@ impl R {
     #[doc = "Bit 28 - Input channel connected when ADC is IDLE"]
     #[inline(always)]
     pub fn chconidle(&self) -> CHCONIDLE_R {
-        CHCONIDLE_R::new(((self.bits >> 28) & 0x01) != 0)
+        CHCONIDLE_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Warm-up Mode"]
     #[inline(always)]
-    pub fn warmupmode(&mut self) -> WARMUPMODE_W {
-        WARMUPMODE_W { w: self }
+    pub fn warmupmode(&mut self) -> WARMUPMODE_W<0> {
+        WARMUPMODE_W::new(self)
     }
     #[doc = "Bit 3 - Conversion Tailgating"]
     #[inline(always)]
-    pub fn tailgate(&mut self) -> TAILGATE_W {
-        TAILGATE_W { w: self }
+    pub fn tailgate(&mut self) -> TAILGATE_W<3> {
+        TAILGATE_W::new(self)
     }
     #[doc = "Bits 4:5 - Low Pass Filter Mode"]
     #[inline(always)]
-    pub fn lpfmode(&mut self) -> LPFMODE_W {
-        LPFMODE_W { w: self }
+    pub fn lpfmode(&mut self) -> LPFMODE_W<4> {
+        LPFMODE_W::new(self)
     }
     #[doc = "Bits 8:14 - Prescaler Setting"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
-        PRESC_W { w: self }
+    pub fn presc(&mut self) -> PRESC_W<8> {
+        PRESC_W::new(self)
     }
     #[doc = "Bits 16:22 - Time Base"]
     #[inline(always)]
-    pub fn timebase(&mut self) -> TIMEBASE_W {
-        TIMEBASE_W { w: self }
+    pub fn timebase(&mut self) -> TIMEBASE_W<16> {
+        TIMEBASE_W::new(self)
     }
     #[doc = "Bits 24:27 - Oversample Rate Select"]
     #[inline(always)]
-    pub fn ovsrsel(&mut self) -> OVSRSEL_W {
-        OVSRSEL_W { w: self }
+    pub fn ovsrsel(&mut self) -> OVSRSEL_W<24> {
+        OVSRSEL_W::new(self)
     }
     #[doc = "Bit 28 - Input channel connected when ADC is IDLE"]
     #[inline(always)]
-    pub fn chconidle(&mut self) -> CHCONIDLE_W {
-        CHCONIDLE_W { w: self }
+    pub fn chconidle(&mut self) -> CHCONIDLE_W<28> {
+        CHCONIDLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

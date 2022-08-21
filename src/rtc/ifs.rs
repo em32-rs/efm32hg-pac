@@ -20,86 +20,26 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `OF` writer - Set Overflow Interrupt Flag"]
-pub struct OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `COMP0` writer - Set Compare match 0 Interrupt Flag"]
-pub struct COMP0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMP0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type COMP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `COMP1` writer - Set Compare match 1 Interrupt Flag"]
-pub struct COMP1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMP1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type COMP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Set Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn of(&mut self) -> OF_W {
-        OF_W { w: self }
+    pub fn of(&mut self) -> OF_W<0> {
+        OF_W::new(self)
     }
     #[doc = "Bit 1 - Set Compare match 0 Interrupt Flag"]
     #[inline(always)]
-    pub fn comp0(&mut self) -> COMP0_W {
-        COMP0_W { w: self }
+    pub fn comp0(&mut self) -> COMP0_W<1> {
+        COMP0_W::new(self)
     }
     #[doc = "Bit 2 - Set Compare match 1 Interrupt Flag"]
     #[inline(always)]
-    pub fn comp1(&mut self) -> COMP1_W {
-        COMP1_W { w: self }
+    pub fn comp1(&mut self) -> COMP1_W<2> {
+        COMP1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

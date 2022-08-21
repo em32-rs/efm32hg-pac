@@ -20,167 +20,47 @@ impl From<crate::W<CHENC_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0ENC` writer - Channel 0 Enable Clear"]
-pub struct CH0ENC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0ENC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 #[doc = "Field `CH1ENC` writer - Channel 1 Enable Clear"]
-pub struct CH1ENC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1ENC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 #[doc = "Field `CH2ENC` writer - Channel 2 Enable Clear"]
-pub struct CH2ENC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2ENC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 #[doc = "Field `CH3ENC` writer - Channel 3 Enable Clear"]
-pub struct CH3ENC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3ENC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 #[doc = "Field `CH4ENC` writer - Channel 4 Enable Clear"]
-pub struct CH4ENC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4ENC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 #[doc = "Field `CH5ENC` writer - Channel 5 Enable Clear"]
-pub struct CH5ENC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5ENC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Enable Clear"]
     #[inline(always)]
-    pub fn ch0enc(&mut self) -> CH0ENC_W {
-        CH0ENC_W { w: self }
+    pub fn ch0enc(&mut self) -> CH0ENC_W<0> {
+        CH0ENC_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Enable Clear"]
     #[inline(always)]
-    pub fn ch1enc(&mut self) -> CH1ENC_W {
-        CH1ENC_W { w: self }
+    pub fn ch1enc(&mut self) -> CH1ENC_W<1> {
+        CH1ENC_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Enable Clear"]
     #[inline(always)]
-    pub fn ch2enc(&mut self) -> CH2ENC_W {
-        CH2ENC_W { w: self }
+    pub fn ch2enc(&mut self) -> CH2ENC_W<2> {
+        CH2ENC_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Enable Clear"]
     #[inline(always)]
-    pub fn ch3enc(&mut self) -> CH3ENC_W {
-        CH3ENC_W { w: self }
+    pub fn ch3enc(&mut self) -> CH3ENC_W<3> {
+        CH3ENC_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Enable Clear"]
     #[inline(always)]
-    pub fn ch4enc(&mut self) -> CH4ENC_W {
-        CH4ENC_W { w: self }
+    pub fn ch4enc(&mut self) -> CH4ENC_W<4> {
+        CH4ENC_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Enable Clear"]
     #[inline(always)]
-    pub fn ch5enc(&mut self) -> CH5ENC_W {
-        CH5ENC_W { w: self }
+    pub fn ch5enc(&mut self) -> CH5ENC_W<5> {
+        CH5ENC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,31 +35,11 @@ impl From<crate::W<CH1_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SIGSEL` reader - Signal Select"]
-pub struct SIGSEL_R(crate::FieldReader<u8, u8>);
-impl SIGSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SIGSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SIGSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SIGSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SIGSEL` writer - Signal Select"]
-pub struct SIGSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIGSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type SIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH1_CTRL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `SOURCESEL` reader - Source Select"]
+pub type SOURCESEL_R = crate::FieldReader<u8, SOURCESEL_A>;
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -99,13 +79,8 @@ impl From<SOURCESEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SOURCESEL` reader - Source Select"]
-pub struct SOURCESEL_R(crate::FieldReader<u8, SOURCESEL_A>);
 impl SOURCESEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SOURCESEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SOURCESEL_A> {
         match self.bits {
@@ -129,91 +104,78 @@ impl SOURCESEL_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == SOURCESEL_A::NONE
+        *self == SOURCESEL_A::NONE
     }
     #[doc = "Checks if the value of the field is `VCMP`"]
     #[inline(always)]
     pub fn is_vcmp(&self) -> bool {
-        **self == SOURCESEL_A::VCMP
+        *self == SOURCESEL_A::VCMP
     }
     #[doc = "Checks if the value of the field is `ACMP0`"]
     #[inline(always)]
     pub fn is_acmp0(&self) -> bool {
-        **self == SOURCESEL_A::ACMP0
+        *self == SOURCESEL_A::ACMP0
     }
     #[doc = "Checks if the value of the field is `ADC0`"]
     #[inline(always)]
     pub fn is_adc0(&self) -> bool {
-        **self == SOURCESEL_A::ADC0
+        *self == SOURCESEL_A::ADC0
     }
     #[doc = "Checks if the value of the field is `USART0`"]
     #[inline(always)]
     pub fn is_usart0(&self) -> bool {
-        **self == SOURCESEL_A::USART0
+        *self == SOURCESEL_A::USART0
     }
     #[doc = "Checks if the value of the field is `USART1`"]
     #[inline(always)]
     pub fn is_usart1(&self) -> bool {
-        **self == SOURCESEL_A::USART1
+        *self == SOURCESEL_A::USART1
     }
     #[doc = "Checks if the value of the field is `TIMER0`"]
     #[inline(always)]
     pub fn is_timer0(&self) -> bool {
-        **self == SOURCESEL_A::TIMER0
+        *self == SOURCESEL_A::TIMER0
     }
     #[doc = "Checks if the value of the field is `TIMER1`"]
     #[inline(always)]
     pub fn is_timer1(&self) -> bool {
-        **self == SOURCESEL_A::TIMER1
+        *self == SOURCESEL_A::TIMER1
     }
     #[doc = "Checks if the value of the field is `TIMER2`"]
     #[inline(always)]
     pub fn is_timer2(&self) -> bool {
-        **self == SOURCESEL_A::TIMER2
+        *self == SOURCESEL_A::TIMER2
     }
     #[doc = "Checks if the value of the field is `USB`"]
     #[inline(always)]
     pub fn is_usb(&self) -> bool {
-        **self == SOURCESEL_A::USB
+        *self == SOURCESEL_A::USB
     }
     #[doc = "Checks if the value of the field is `RTC`"]
     #[inline(always)]
     pub fn is_rtc(&self) -> bool {
-        **self == SOURCESEL_A::RTC
+        *self == SOURCESEL_A::RTC
     }
     #[doc = "Checks if the value of the field is `GPIOL`"]
     #[inline(always)]
     pub fn is_gpiol(&self) -> bool {
-        **self == SOURCESEL_A::GPIOL
+        *self == SOURCESEL_A::GPIOL
     }
     #[doc = "Checks if the value of the field is `GPIOH`"]
     #[inline(always)]
     pub fn is_gpioh(&self) -> bool {
-        **self == SOURCESEL_A::GPIOH
+        *self == SOURCESEL_A::GPIOH
     }
     #[doc = "Checks if the value of the field is `PCNT0`"]
     #[inline(always)]
     pub fn is_pcnt0(&self) -> bool {
-        **self == SOURCESEL_A::PCNT0
-    }
-}
-impl core::ops::Deref for SOURCESEL_R {
-    type Target = crate::FieldReader<u8, SOURCESEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SOURCESEL_A::PCNT0
     }
 }
 #[doc = "Field `SOURCESEL` writer - Source Select"]
-pub struct SOURCESEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOURCESEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SOURCESEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SOURCESEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CH1_CTRL_SPEC, u8, SOURCESEL_A, 6, O>;
+impl<'a, const O: u8> SOURCESEL_W<'a, O> {
     #[doc = "No source selected"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -284,13 +246,9 @@ impl<'a> SOURCESEL_W<'a> {
     pub fn pcnt0(self) -> &'a mut W {
         self.variant(SOURCESEL_A::PCNT0)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | ((value as u32 & 0x3f) << 16);
-        self.w
-    }
 }
+#[doc = "Field `EDSEL` reader - Edge Detect Select"]
+pub type EDSEL_R = crate::FieldReader<u8, EDSEL_A>;
 #[doc = "Edge Detect Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -310,13 +268,8 @@ impl From<EDSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EDSEL` reader - Edge Detect Select"]
-pub struct EDSEL_R(crate::FieldReader<u8, EDSEL_A>);
 impl EDSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EDSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EDSEL_A {
         match self.bits {
@@ -330,41 +283,28 @@ impl EDSEL_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == EDSEL_A::OFF
+        *self == EDSEL_A::OFF
     }
     #[doc = "Checks if the value of the field is `POSEDGE`"]
     #[inline(always)]
     pub fn is_posedge(&self) -> bool {
-        **self == EDSEL_A::POSEDGE
+        *self == EDSEL_A::POSEDGE
     }
     #[doc = "Checks if the value of the field is `NEGEDGE`"]
     #[inline(always)]
     pub fn is_negedge(&self) -> bool {
-        **self == EDSEL_A::NEGEDGE
+        *self == EDSEL_A::NEGEDGE
     }
     #[doc = "Checks if the value of the field is `BOTHEDGES`"]
     #[inline(always)]
     pub fn is_bothedges(&self) -> bool {
-        **self == EDSEL_A::BOTHEDGES
-    }
-}
-impl core::ops::Deref for EDSEL_R {
-    type Target = crate::FieldReader<u8, EDSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EDSEL_A::BOTHEDGES
     }
 }
 #[doc = "Field `EDSEL` writer - Edge Detect Select"]
-pub struct EDSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EDSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type EDSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CH1_CTRL_SPEC, u8, EDSEL_A, 2, O>;
+impl<'a, const O: u8> EDSEL_W<'a, O> {
     #[doc = "Signal is left as it is"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -385,54 +325,16 @@ impl<'a> EDSEL_W<'a> {
     pub fn bothedges(self) -> &'a mut W {
         self.variant(EDSEL_A::BOTHEDGES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
-    }
 }
-#[doc = "Field `ASYNC_` reader - Asynchronous reflex"]
-pub struct ASYNC__R(crate::FieldReader<bool, bool>);
-impl ASYNC__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ASYNC__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ASYNC__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `ASYNC_` writer - Asynchronous reflex"]
-pub struct ASYNC__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ASYNC__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+#[doc = "Field `ASYNC` reader - Asynchronous reflex"]
+pub type ASYNC_R = crate::BitReader<bool>;
+#[doc = "Field `ASYNC` writer - Asynchronous reflex"]
+pub type ASYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH1_CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
     pub fn sigsel(&self) -> SIGSEL_R {
-        SIGSEL_R::new((self.bits & 0x07) as u8)
+        SIGSEL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 16:21 - Source Select"]
     #[inline(always)]
@@ -442,34 +344,34 @@ impl R {
     #[doc = "Bits 24:25 - Edge Detect Select"]
     #[inline(always)]
     pub fn edsel(&self) -> EDSEL_R {
-        EDSEL_R::new(((self.bits >> 24) & 0x03) as u8)
+        EDSEL_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bit 28 - Asynchronous reflex"]
     #[inline(always)]
-    pub fn async_(&self) -> ASYNC__R {
-        ASYNC__R::new(((self.bits >> 28) & 0x01) != 0)
+    pub fn async_(&self) -> ASYNC_R {
+        ASYNC_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
-    pub fn sigsel(&mut self) -> SIGSEL_W {
-        SIGSEL_W { w: self }
+    pub fn sigsel(&mut self) -> SIGSEL_W<0> {
+        SIGSEL_W::new(self)
     }
     #[doc = "Bits 16:21 - Source Select"]
     #[inline(always)]
-    pub fn sourcesel(&mut self) -> SOURCESEL_W {
-        SOURCESEL_W { w: self }
+    pub fn sourcesel(&mut self) -> SOURCESEL_W<16> {
+        SOURCESEL_W::new(self)
     }
     #[doc = "Bits 24:25 - Edge Detect Select"]
     #[inline(always)]
-    pub fn edsel(&mut self) -> EDSEL_W {
-        EDSEL_W { w: self }
+    pub fn edsel(&mut self) -> EDSEL_W<24> {
+        EDSEL_W::new(self)
     }
     #[doc = "Bit 28 - Asynchronous reflex"]
     #[inline(always)]
-    pub fn async_(&mut self) -> ASYNC__W {
-        ASYNC__W { w: self }
+    pub fn async_(&mut self) -> ASYNC_W<28> {
+        ASYNC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

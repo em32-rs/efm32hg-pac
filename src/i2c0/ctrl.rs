@@ -35,257 +35,35 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - I2C Enable"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - I2C Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `SLAVE` reader - Addressable as Slave"]
-pub struct SLAVE_R(crate::FieldReader<bool, bool>);
-impl SLAVE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLAVE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLAVE_R = crate::BitReader<bool>;
 #[doc = "Field `SLAVE` writer - Addressable as Slave"]
-pub struct SLAVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SLAVE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOACK` reader - Automatic Acknowledge"]
-pub struct AUTOACK_R(crate::FieldReader<bool, bool>);
-impl AUTOACK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUTOACK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AUTOACK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AUTOACK_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOACK` writer - Automatic Acknowledge"]
-pub struct AUTOACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUTOACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type AUTOACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOSE` reader - Automatic STOP when Empty"]
-pub struct AUTOSE_R(crate::FieldReader<bool, bool>);
-impl AUTOSE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUTOSE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AUTOSE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AUTOSE_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOSE` writer - Automatic STOP when Empty"]
-pub struct AUTOSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUTOSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type AUTOSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOSN` reader - Automatic STOP on NACK"]
-pub struct AUTOSN_R(crate::FieldReader<bool, bool>);
-impl AUTOSN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUTOSN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AUTOSN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AUTOSN_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOSN` writer - Automatic STOP on NACK"]
-pub struct AUTOSN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUTOSN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type AUTOSN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `ARBDIS` reader - Arbitration Disable"]
-pub struct ARBDIS_R(crate::FieldReader<bool, bool>);
-impl ARBDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ARBDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ARBDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ARBDIS_R = crate::BitReader<bool>;
 #[doc = "Field `ARBDIS` writer - Arbitration Disable"]
-pub struct ARBDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ARBDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ARBDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `GCAMEN` reader - General Call Address Match Enable"]
-pub struct GCAMEN_R(crate::FieldReader<bool, bool>);
-impl GCAMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GCAMEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GCAMEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GCAMEN_R = crate::BitReader<bool>;
 #[doc = "Field `GCAMEN` writer - General Call Address Match Enable"]
-pub struct GCAMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GCAMEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type GCAMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CLHR` reader - Clock Low High Ratio"]
+pub type CLHR_R = crate::FieldReader<u8, CLHR_A>;
 #[doc = "Clock Low High Ratio\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -303,13 +81,8 @@ impl From<CLHR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLHR` reader - Clock Low High Ratio"]
-pub struct CLHR_R(crate::FieldReader<u8, CLHR_A>);
 impl CLHR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CLHR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLHR_A> {
         match self.bits {
@@ -322,36 +95,22 @@ impl CLHR_R {
     #[doc = "Checks if the value of the field is `STANDARD`"]
     #[inline(always)]
     pub fn is_standard(&self) -> bool {
-        **self == CLHR_A::STANDARD
+        *self == CLHR_A::STANDARD
     }
     #[doc = "Checks if the value of the field is `ASYMMETRIC`"]
     #[inline(always)]
     pub fn is_asymmetric(&self) -> bool {
-        **self == CLHR_A::ASYMMETRIC
+        *self == CLHR_A::ASYMMETRIC
     }
     #[doc = "Checks if the value of the field is `FAST`"]
     #[inline(always)]
     pub fn is_fast(&self) -> bool {
-        **self == CLHR_A::FAST
-    }
-}
-impl core::ops::Deref for CLHR_R {
-    type Target = crate::FieldReader<u8, CLHR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLHR_A::FAST
     }
 }
 #[doc = "Field `CLHR` writer - Clock Low High Ratio"]
-pub struct CLHR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLHR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLHR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CLHR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLHR_A, 2, O>;
+impl<'a, const O: u8> CLHR_W<'a, O> {
     #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 4:4"]
     #[inline(always)]
     pub fn standard(self) -> &'a mut W {
@@ -367,13 +126,9 @@ impl<'a> CLHR_W<'a> {
     pub fn fast(self) -> &'a mut W {
         self.variant(CLHR_A::FAST)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `BITO` reader - Bus Idle Timeout"]
+pub type BITO_R = crate::FieldReader<u8, BITO_A>;
 #[doc = "Bus Idle Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -393,13 +148,8 @@ impl From<BITO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BITO` reader - Bus Idle Timeout"]
-pub struct BITO_R(crate::FieldReader<u8, BITO_A>);
 impl BITO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BITO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BITO_A {
         match self.bits {
@@ -413,41 +163,27 @@ impl BITO_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == BITO_A::OFF
+        *self == BITO_A::OFF
     }
     #[doc = "Checks if the value of the field is `_40PCC`"]
     #[inline(always)]
     pub fn is_40pcc(&self) -> bool {
-        **self == BITO_A::_40PCC
+        *self == BITO_A::_40PCC
     }
     #[doc = "Checks if the value of the field is `_80PCC`"]
     #[inline(always)]
     pub fn is_80pcc(&self) -> bool {
-        **self == BITO_A::_80PCC
+        *self == BITO_A::_80PCC
     }
     #[doc = "Checks if the value of the field is `_160PCC`"]
     #[inline(always)]
     pub fn is_160pcc(&self) -> bool {
-        **self == BITO_A::_160PCC
-    }
-}
-impl core::ops::Deref for BITO_R {
-    type Target = crate::FieldReader<u8, BITO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BITO_A::_160PCC
     }
 }
 #[doc = "Field `BITO` writer - Bus Idle Timeout"]
-pub struct BITO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BITO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BITO_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type BITO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, BITO_A, 2, O>;
+impl<'a, const O: u8> BITO_W<'a, O> {
     #[doc = "Timeout disabled"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -468,49 +204,13 @@ impl<'a> BITO_W<'a> {
     pub fn _160pcc(self) -> &'a mut W {
         self.variant(BITO_A::_160PCC)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
 }
 #[doc = "Field `GIBITO` reader - Go Idle on Bus Idle Timeout"]
-pub struct GIBITO_R(crate::FieldReader<bool, bool>);
-impl GIBITO_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GIBITO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GIBITO_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GIBITO_R = crate::BitReader<bool>;
 #[doc = "Field `GIBITO` writer - Go Idle on Bus Idle Timeout"]
-pub struct GIBITO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GIBITO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type GIBITO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CLTO` reader - Clock Low Timeout"]
+pub type CLTO_R = crate::FieldReader<u8, CLTO_A>;
 #[doc = "Clock Low Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -534,13 +234,8 @@ impl From<CLTO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLTO` reader - Clock Low Timeout"]
-pub struct CLTO_R(crate::FieldReader<u8, CLTO_A>);
 impl CLTO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CLTO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLTO_A> {
         match self.bits {
@@ -556,51 +251,37 @@ impl CLTO_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CLTO_A::OFF
+        *self == CLTO_A::OFF
     }
     #[doc = "Checks if the value of the field is `_40PCC`"]
     #[inline(always)]
     pub fn is_40pcc(&self) -> bool {
-        **self == CLTO_A::_40PCC
+        *self == CLTO_A::_40PCC
     }
     #[doc = "Checks if the value of the field is `_80PCC`"]
     #[inline(always)]
     pub fn is_80pcc(&self) -> bool {
-        **self == CLTO_A::_80PCC
+        *self == CLTO_A::_80PCC
     }
     #[doc = "Checks if the value of the field is `_160PCC`"]
     #[inline(always)]
     pub fn is_160pcc(&self) -> bool {
-        **self == CLTO_A::_160PCC
+        *self == CLTO_A::_160PCC
     }
     #[doc = "Checks if the value of the field is `_320PPC`"]
     #[inline(always)]
     pub fn is_320ppc(&self) -> bool {
-        **self == CLTO_A::_320PPC
+        *self == CLTO_A::_320PPC
     }
     #[doc = "Checks if the value of the field is `_1024PPC`"]
     #[inline(always)]
     pub fn is_1024ppc(&self) -> bool {
-        **self == CLTO_A::_1024PPC
-    }
-}
-impl core::ops::Deref for CLTO_R {
-    type Target = crate::FieldReader<u8, CLTO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLTO_A::_1024PPC
     }
 }
 #[doc = "Field `CLTO` writer - Clock Low Timeout"]
-pub struct CLTO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLTO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLTO_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CLTO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLTO_A, 3, O>;
+impl<'a, const O: u8> CLTO_W<'a, O> {
     #[doc = "Timeout disabled"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -631,125 +312,119 @@ impl<'a> CLTO_W<'a> {
     pub fn _1024ppc(self) -> &'a mut W {
         self.variant(CLTO_A::_1024PPC)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - I2C Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Addressable as Slave"]
     #[inline(always)]
     pub fn slave(&self) -> SLAVE_R {
-        SLAVE_R::new(((self.bits >> 1) & 0x01) != 0)
+        SLAVE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Automatic Acknowledge"]
     #[inline(always)]
     pub fn autoack(&self) -> AUTOACK_R {
-        AUTOACK_R::new(((self.bits >> 2) & 0x01) != 0)
+        AUTOACK_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Automatic STOP when Empty"]
     #[inline(always)]
     pub fn autose(&self) -> AUTOSE_R {
-        AUTOSE_R::new(((self.bits >> 3) & 0x01) != 0)
+        AUTOSE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Automatic STOP on NACK"]
     #[inline(always)]
     pub fn autosn(&self) -> AUTOSN_R {
-        AUTOSN_R::new(((self.bits >> 4) & 0x01) != 0)
+        AUTOSN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Arbitration Disable"]
     #[inline(always)]
     pub fn arbdis(&self) -> ARBDIS_R {
-        ARBDIS_R::new(((self.bits >> 5) & 0x01) != 0)
+        ARBDIS_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - General Call Address Match Enable"]
     #[inline(always)]
     pub fn gcamen(&self) -> GCAMEN_R {
-        GCAMEN_R::new(((self.bits >> 6) & 0x01) != 0)
+        GCAMEN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Clock Low High Ratio"]
     #[inline(always)]
     pub fn clhr(&self) -> CLHR_R {
-        CLHR_R::new(((self.bits >> 8) & 0x03) as u8)
+        CLHR_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Bus Idle Timeout"]
     #[inline(always)]
     pub fn bito(&self) -> BITO_R {
-        BITO_R::new(((self.bits >> 12) & 0x03) as u8)
+        BITO_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 15 - Go Idle on Bus Idle Timeout"]
     #[inline(always)]
     pub fn gibito(&self) -> GIBITO_R {
-        GIBITO_R::new(((self.bits >> 15) & 0x01) != 0)
+        GIBITO_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:18 - Clock Low Timeout"]
     #[inline(always)]
     pub fn clto(&self) -> CLTO_R {
-        CLTO_R::new(((self.bits >> 16) & 0x07) as u8)
+        CLTO_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - I2C Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Addressable as Slave"]
     #[inline(always)]
-    pub fn slave(&mut self) -> SLAVE_W {
-        SLAVE_W { w: self }
+    pub fn slave(&mut self) -> SLAVE_W<1> {
+        SLAVE_W::new(self)
     }
     #[doc = "Bit 2 - Automatic Acknowledge"]
     #[inline(always)]
-    pub fn autoack(&mut self) -> AUTOACK_W {
-        AUTOACK_W { w: self }
+    pub fn autoack(&mut self) -> AUTOACK_W<2> {
+        AUTOACK_W::new(self)
     }
     #[doc = "Bit 3 - Automatic STOP when Empty"]
     #[inline(always)]
-    pub fn autose(&mut self) -> AUTOSE_W {
-        AUTOSE_W { w: self }
+    pub fn autose(&mut self) -> AUTOSE_W<3> {
+        AUTOSE_W::new(self)
     }
     #[doc = "Bit 4 - Automatic STOP on NACK"]
     #[inline(always)]
-    pub fn autosn(&mut self) -> AUTOSN_W {
-        AUTOSN_W { w: self }
+    pub fn autosn(&mut self) -> AUTOSN_W<4> {
+        AUTOSN_W::new(self)
     }
     #[doc = "Bit 5 - Arbitration Disable"]
     #[inline(always)]
-    pub fn arbdis(&mut self) -> ARBDIS_W {
-        ARBDIS_W { w: self }
+    pub fn arbdis(&mut self) -> ARBDIS_W<5> {
+        ARBDIS_W::new(self)
     }
     #[doc = "Bit 6 - General Call Address Match Enable"]
     #[inline(always)]
-    pub fn gcamen(&mut self) -> GCAMEN_W {
-        GCAMEN_W { w: self }
+    pub fn gcamen(&mut self) -> GCAMEN_W<6> {
+        GCAMEN_W::new(self)
     }
     #[doc = "Bits 8:9 - Clock Low High Ratio"]
     #[inline(always)]
-    pub fn clhr(&mut self) -> CLHR_W {
-        CLHR_W { w: self }
+    pub fn clhr(&mut self) -> CLHR_W<8> {
+        CLHR_W::new(self)
     }
     #[doc = "Bits 12:13 - Bus Idle Timeout"]
     #[inline(always)]
-    pub fn bito(&mut self) -> BITO_W {
-        BITO_W { w: self }
+    pub fn bito(&mut self) -> BITO_W<12> {
+        BITO_W::new(self)
     }
     #[doc = "Bit 15 - Go Idle on Bus Idle Timeout"]
     #[inline(always)]
-    pub fn gibito(&mut self) -> GIBITO_W {
-        GIBITO_W { w: self }
+    pub fn gibito(&mut self) -> GIBITO_W<15> {
+        GIBITO_W::new(self)
     }
     #[doc = "Bits 16:18 - Clock Low Timeout"]
     #[inline(always)]
-    pub fn clto(&mut self) -> CLTO_W {
-        CLTO_W { w: self }
+    pub fn clto(&mut self) -> CLTO_W<16> {
+        CLTO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -14,19 +14,7 @@ impl From<crate::R<RXDATA_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATA` reader - RX Data"]
-pub struct RXDATA_R(crate::FieldReader<u8, u8>);
-impl RXDATA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATA_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - RX Data"]
     #[inline(always)]
@@ -34,7 +22,7 @@ impl R {
         RXDATA_R::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "RX Buffer Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdata](index.html) module"]
+#[doc = "RX Buffer Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdata](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
 pub struct RXDATA_SPEC;
 impl crate::RegisterSpec for RXDATA_SPEC {
     type Ux = u32;

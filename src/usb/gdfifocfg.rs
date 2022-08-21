@@ -35,57 +35,15 @@ impl From<crate::W<GDFIFOCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `GDFIFOCFG` reader - DFIFO Config"]
-pub struct GDFIFOCFG_R(crate::FieldReader<u16, u16>);
-impl GDFIFOCFG_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        GDFIFOCFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GDFIFOCFG_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GDFIFOCFG_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `GDFIFOCFG` writer - DFIFO Config"]
-pub struct GDFIFOCFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GDFIFOCFG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type GDFIFOCFG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GDFIFOCFG_SPEC, u16, u16, 16, O>;
 #[doc = "Field `EPINFOBASEADDR` reader - Endpoint Info Base Address"]
-pub struct EPINFOBASEADDR_R(crate::FieldReader<u16, u16>);
-impl EPINFOBASEADDR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        EPINFOBASEADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPINFOBASEADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPINFOBASEADDR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `EPINFOBASEADDR` writer - Endpoint Info Base Address"]
-pub struct EPINFOBASEADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPINFOBASEADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type EPINFOBASEADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GDFIFOCFG_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - DFIFO Config"]
     #[inline(always)]
@@ -101,13 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - DFIFO Config"]
     #[inline(always)]
-    pub fn gdfifocfg(&mut self) -> GDFIFOCFG_W {
-        GDFIFOCFG_W { w: self }
+    pub fn gdfifocfg(&mut self) -> GDFIFOCFG_W<0> {
+        GDFIFOCFG_W::new(self)
     }
     #[doc = "Bits 16:31 - Endpoint Info Base Address"]
     #[inline(always)]
-    pub fn epinfobaseaddr(&mut self) -> EPINFOBASEADDR_W {
-        EPINFOBASEADDR_W { w: self }
+    pub fn epinfobaseaddr(&mut self) -> EPINFOBASEADDR_W<16> {
+        EPINFOBASEADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

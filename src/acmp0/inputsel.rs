@@ -34,6 +34,8 @@ impl From<crate::W<INPUTSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `POSSEL` reader - Positive Input Select"]
+pub type POSSEL_R = crate::FieldReader<u8, POSSEL_A>;
 #[doc = "Positive Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,13 +63,8 @@ impl From<POSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `POSSEL` reader - Positive Input Select"]
-pub struct POSSEL_R(crate::FieldReader<u8, POSSEL_A>);
 impl POSSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        POSSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POSSEL_A {
         match self.bits {
@@ -85,61 +82,48 @@ impl POSSEL_R {
     #[doc = "Checks if the value of the field is `CH0`"]
     #[inline(always)]
     pub fn is_ch0(&self) -> bool {
-        **self == POSSEL_A::CH0
+        *self == POSSEL_A::CH0
     }
     #[doc = "Checks if the value of the field is `CH1`"]
     #[inline(always)]
     pub fn is_ch1(&self) -> bool {
-        **self == POSSEL_A::CH1
+        *self == POSSEL_A::CH1
     }
     #[doc = "Checks if the value of the field is `CH2`"]
     #[inline(always)]
     pub fn is_ch2(&self) -> bool {
-        **self == POSSEL_A::CH2
+        *self == POSSEL_A::CH2
     }
     #[doc = "Checks if the value of the field is `CH3`"]
     #[inline(always)]
     pub fn is_ch3(&self) -> bool {
-        **self == POSSEL_A::CH3
+        *self == POSSEL_A::CH3
     }
     #[doc = "Checks if the value of the field is `CH4`"]
     #[inline(always)]
     pub fn is_ch4(&self) -> bool {
-        **self == POSSEL_A::CH4
+        *self == POSSEL_A::CH4
     }
     #[doc = "Checks if the value of the field is `CH5`"]
     #[inline(always)]
     pub fn is_ch5(&self) -> bool {
-        **self == POSSEL_A::CH5
+        *self == POSSEL_A::CH5
     }
     #[doc = "Checks if the value of the field is `CH6`"]
     #[inline(always)]
     pub fn is_ch6(&self) -> bool {
-        **self == POSSEL_A::CH6
+        *self == POSSEL_A::CH6
     }
     #[doc = "Checks if the value of the field is `CH7`"]
     #[inline(always)]
     pub fn is_ch7(&self) -> bool {
-        **self == POSSEL_A::CH7
-    }
-}
-impl core::ops::Deref for POSSEL_R {
-    type Target = crate::FieldReader<u8, POSSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == POSSEL_A::CH7
     }
 }
 #[doc = "Field `POSSEL` writer - Positive Input Select"]
-pub struct POSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POSSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type POSSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, INPUTSEL_SPEC, u8, POSSEL_A, 3, O>;
+impl<'a, const O: u8> POSSEL_W<'a, O> {
     #[doc = "Channel 0 as positive input."]
     #[inline(always)]
     pub fn ch0(self) -> &'a mut W {
@@ -180,13 +164,9 @@ impl<'a> POSSEL_W<'a> {
     pub fn ch7(self) -> &'a mut W {
         self.variant(POSSEL_A::CH7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
+#[doc = "Field `NEGSEL` reader - Negative Input Select"]
+pub type NEGSEL_R = crate::FieldReader<u8, NEGSEL_A>;
 #[doc = "Negative Input Select\n\nValue on reset: 8"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -222,13 +202,8 @@ impl From<NEGSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NEGSEL` reader - Negative Input Select"]
-pub struct NEGSEL_R(crate::FieldReader<u8, NEGSEL_A>);
 impl NEGSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NEGSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<NEGSEL_A> {
         match self.bits {
@@ -250,81 +225,67 @@ impl NEGSEL_R {
     #[doc = "Checks if the value of the field is `CH0`"]
     #[inline(always)]
     pub fn is_ch0(&self) -> bool {
-        **self == NEGSEL_A::CH0
+        *self == NEGSEL_A::CH0
     }
     #[doc = "Checks if the value of the field is `CH1`"]
     #[inline(always)]
     pub fn is_ch1(&self) -> bool {
-        **self == NEGSEL_A::CH1
+        *self == NEGSEL_A::CH1
     }
     #[doc = "Checks if the value of the field is `CH2`"]
     #[inline(always)]
     pub fn is_ch2(&self) -> bool {
-        **self == NEGSEL_A::CH2
+        *self == NEGSEL_A::CH2
     }
     #[doc = "Checks if the value of the field is `CH3`"]
     #[inline(always)]
     pub fn is_ch3(&self) -> bool {
-        **self == NEGSEL_A::CH3
+        *self == NEGSEL_A::CH3
     }
     #[doc = "Checks if the value of the field is `CH4`"]
     #[inline(always)]
     pub fn is_ch4(&self) -> bool {
-        **self == NEGSEL_A::CH4
+        *self == NEGSEL_A::CH4
     }
     #[doc = "Checks if the value of the field is `CH5`"]
     #[inline(always)]
     pub fn is_ch5(&self) -> bool {
-        **self == NEGSEL_A::CH5
+        *self == NEGSEL_A::CH5
     }
     #[doc = "Checks if the value of the field is `CH6`"]
     #[inline(always)]
     pub fn is_ch6(&self) -> bool {
-        **self == NEGSEL_A::CH6
+        *self == NEGSEL_A::CH6
     }
     #[doc = "Checks if the value of the field is `CH7`"]
     #[inline(always)]
     pub fn is_ch7(&self) -> bool {
-        **self == NEGSEL_A::CH7
+        *self == NEGSEL_A::CH7
     }
     #[doc = "Checks if the value of the field is `_1V25`"]
     #[inline(always)]
     pub fn is_1v25(&self) -> bool {
-        **self == NEGSEL_A::_1V25
+        *self == NEGSEL_A::_1V25
     }
     #[doc = "Checks if the value of the field is `_2V5`"]
     #[inline(always)]
     pub fn is_2v5(&self) -> bool {
-        **self == NEGSEL_A::_2V5
+        *self == NEGSEL_A::_2V5
     }
     #[doc = "Checks if the value of the field is `VDD`"]
     #[inline(always)]
     pub fn is_vdd(&self) -> bool {
-        **self == NEGSEL_A::VDD
+        *self == NEGSEL_A::VDD
     }
     #[doc = "Checks if the value of the field is `CAPSENSE`"]
     #[inline(always)]
     pub fn is_capsense(&self) -> bool {
-        **self == NEGSEL_A::CAPSENSE
-    }
-}
-impl core::ops::Deref for NEGSEL_R {
-    type Target = crate::FieldReader<u8, NEGSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NEGSEL_A::CAPSENSE
     }
 }
 #[doc = "Field `NEGSEL` writer - Negative Input Select"]
-pub struct NEGSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NEGSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NEGSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type NEGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPUTSEL_SPEC, u8, NEGSEL_A, 4, O>;
+impl<'a, const O: u8> NEGSEL_W<'a, O> {
     #[doc = "Channel 0 as negative input."]
     #[inline(always)]
     pub fn ch0(self) -> &'a mut W {
@@ -385,111 +346,21 @@ impl<'a> NEGSEL_W<'a> {
     pub fn capsense(self) -> &'a mut W {
         self.variant(NEGSEL_A::CAPSENSE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
 }
 #[doc = "Field `VDDLEVEL` reader - VDD Reference Level"]
-pub struct VDDLEVEL_R(crate::FieldReader<u8, u8>);
-impl VDDLEVEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VDDLEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VDDLEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VDDLEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VDDLEVEL` writer - VDD Reference Level"]
-pub struct VDDLEVEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VDDLEVEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u32 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type VDDLEVEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPUTSEL_SPEC, u8, u8, 6, O>;
 #[doc = "Field `LPREF` reader - Low Power Reference Mode"]
-pub struct LPREF_R(crate::FieldReader<bool, bool>);
-impl LPREF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LPREF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LPREF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LPREF_R = crate::BitReader<bool>;
 #[doc = "Field `LPREF` writer - Low Power Reference Mode"]
-pub struct LPREF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPREF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type LPREF_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUTSEL_SPEC, bool, O>;
 #[doc = "Field `CSRESEN` reader - Capacitive Sense Mode Internal Resistor Enable"]
-pub struct CSRESEN_R(crate::FieldReader<bool, bool>);
-impl CSRESEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSRESEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSRESEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSRESEN_R = crate::BitReader<bool>;
 #[doc = "Field `CSRESEN` writer - Capacitive Sense Mode Internal Resistor Enable"]
-pub struct CSRESEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSRESEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type CSRESEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUTSEL_SPEC, bool, O>;
+#[doc = "Field `CSRESSEL` reader - Capacitive Sense Mode Internal Resistor Select"]
+pub type CSRESSEL_R = crate::FieldReader<u8, CSRESSEL_A>;
 #[doc = "Capacitive Sense Mode Internal Resistor Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -509,13 +380,8 @@ impl From<CSRESSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CSRESSEL` reader - Capacitive Sense Mode Internal Resistor Select"]
-pub struct CSRESSEL_R(crate::FieldReader<u8, CSRESSEL_A>);
 impl CSRESSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CSRESSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSRESSEL_A {
         match self.bits {
@@ -529,41 +395,28 @@ impl CSRESSEL_R {
     #[doc = "Checks if the value of the field is `RES0`"]
     #[inline(always)]
     pub fn is_res0(&self) -> bool {
-        **self == CSRESSEL_A::RES0
+        *self == CSRESSEL_A::RES0
     }
     #[doc = "Checks if the value of the field is `RES1`"]
     #[inline(always)]
     pub fn is_res1(&self) -> bool {
-        **self == CSRESSEL_A::RES1
+        *self == CSRESSEL_A::RES1
     }
     #[doc = "Checks if the value of the field is `RES2`"]
     #[inline(always)]
     pub fn is_res2(&self) -> bool {
-        **self == CSRESSEL_A::RES2
+        *self == CSRESSEL_A::RES2
     }
     #[doc = "Checks if the value of the field is `RES3`"]
     #[inline(always)]
     pub fn is_res3(&self) -> bool {
-        **self == CSRESSEL_A::RES3
-    }
-}
-impl core::ops::Deref for CSRESSEL_R {
-    type Target = crate::FieldReader<u8, CSRESSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CSRESSEL_A::RES3
     }
 }
 #[doc = "Field `CSRESSEL` writer - Capacitive Sense Mode Internal Resistor Select"]
-pub struct CSRESSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSRESSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSRESSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CSRESSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, INPUTSEL_SPEC, u8, CSRESSEL_A, 2, O>;
+impl<'a, const O: u8> CSRESSEL_W<'a, O> {
     #[doc = "Internal capacitive sense resistor value 0."]
     #[inline(always)]
     pub fn res0(self) -> &'a mut W {
@@ -584,18 +437,12 @@ impl<'a> CSRESSEL_W<'a> {
     pub fn res3(self) -> &'a mut W {
         self.variant(CSRESSEL_A::RES3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Positive Input Select"]
     #[inline(always)]
     pub fn possel(&self) -> POSSEL_R {
-        POSSEL_R::new((self.bits & 0x07) as u8)
+        POSSEL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:7 - Negative Input Select"]
     #[inline(always)]
@@ -610,49 +457,49 @@ impl R {
     #[doc = "Bit 16 - Low Power Reference Mode"]
     #[inline(always)]
     pub fn lpref(&self) -> LPREF_R {
-        LPREF_R::new(((self.bits >> 16) & 0x01) != 0)
+        LPREF_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 24 - Capacitive Sense Mode Internal Resistor Enable"]
     #[inline(always)]
     pub fn csresen(&self) -> CSRESEN_R {
-        CSRESEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        CSRESEN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bits 28:29 - Capacitive Sense Mode Internal Resistor Select"]
     #[inline(always)]
     pub fn csressel(&self) -> CSRESSEL_R {
-        CSRESSEL_R::new(((self.bits >> 28) & 0x03) as u8)
+        CSRESSEL_R::new(((self.bits >> 28) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Positive Input Select"]
     #[inline(always)]
-    pub fn possel(&mut self) -> POSSEL_W {
-        POSSEL_W { w: self }
+    pub fn possel(&mut self) -> POSSEL_W<0> {
+        POSSEL_W::new(self)
     }
     #[doc = "Bits 4:7 - Negative Input Select"]
     #[inline(always)]
-    pub fn negsel(&mut self) -> NEGSEL_W {
-        NEGSEL_W { w: self }
+    pub fn negsel(&mut self) -> NEGSEL_W<4> {
+        NEGSEL_W::new(self)
     }
     #[doc = "Bits 8:13 - VDD Reference Level"]
     #[inline(always)]
-    pub fn vddlevel(&mut self) -> VDDLEVEL_W {
-        VDDLEVEL_W { w: self }
+    pub fn vddlevel(&mut self) -> VDDLEVEL_W<8> {
+        VDDLEVEL_W::new(self)
     }
     #[doc = "Bit 16 - Low Power Reference Mode"]
     #[inline(always)]
-    pub fn lpref(&mut self) -> LPREF_W {
-        LPREF_W { w: self }
+    pub fn lpref(&mut self) -> LPREF_W<16> {
+        LPREF_W::new(self)
     }
     #[doc = "Bit 24 - Capacitive Sense Mode Internal Resistor Enable"]
     #[inline(always)]
-    pub fn csresen(&mut self) -> CSRESEN_W {
-        CSRESEN_W { w: self }
+    pub fn csresen(&mut self) -> CSRESEN_W<24> {
+        CSRESEN_W::new(self)
     }
     #[doc = "Bits 28:29 - Capacitive Sense Mode Internal Resistor Select"]
     #[inline(always)]
-    pub fn csressel(&mut self) -> CSRESSEL_W {
-        CSRESSEL_W { w: self }
+    pub fn csressel(&mut self) -> CSRESSEL_W<28> {
+        CSRESSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

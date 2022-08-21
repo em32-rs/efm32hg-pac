@@ -20,167 +20,47 @@ impl From<crate::W<CHALTC_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0ALTC` writer - Channel 0 Alternate Clear"]
-pub struct CH0ALTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0ALTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH1ALTC` writer - Channel 1 Alternate Clear"]
-pub struct CH1ALTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1ALTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH2ALTC` writer - Channel 2 Alternate Clear"]
-pub struct CH2ALTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2ALTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH3ALTC` writer - Channel 3 Alternate Clear"]
-pub struct CH3ALTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3ALTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH4ALTC` writer - Channel 4 Alternate Clear"]
-pub struct CH4ALTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4ALTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH5ALTC` writer - Channel 5 Alternate Clear"]
-pub struct CH5ALTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5ALTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Alternate Clear"]
     #[inline(always)]
-    pub fn ch0altc(&mut self) -> CH0ALTC_W {
-        CH0ALTC_W { w: self }
+    pub fn ch0altc(&mut self) -> CH0ALTC_W<0> {
+        CH0ALTC_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Alternate Clear"]
     #[inline(always)]
-    pub fn ch1altc(&mut self) -> CH1ALTC_W {
-        CH1ALTC_W { w: self }
+    pub fn ch1altc(&mut self) -> CH1ALTC_W<1> {
+        CH1ALTC_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Alternate Clear"]
     #[inline(always)]
-    pub fn ch2altc(&mut self) -> CH2ALTC_W {
-        CH2ALTC_W { w: self }
+    pub fn ch2altc(&mut self) -> CH2ALTC_W<2> {
+        CH2ALTC_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Alternate Clear"]
     #[inline(always)]
-    pub fn ch3altc(&mut self) -> CH3ALTC_W {
-        CH3ALTC_W { w: self }
+    pub fn ch3altc(&mut self) -> CH3ALTC_W<3> {
+        CH3ALTC_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Alternate Clear"]
     #[inline(always)]
-    pub fn ch4altc(&mut self) -> CH4ALTC_W {
-        CH4ALTC_W { w: self }
+    pub fn ch4altc(&mut self) -> CH4ALTC_W<4> {
+        CH4ALTC_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Alternate Clear"]
     #[inline(always)]
-    pub fn ch5altc(&mut self) -> CH5ALTC_W {
-        CH5ALTC_W { w: self }
+    pub fn ch5altc(&mut self) -> CH5ALTC_W<5> {
+        CH5ALTC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

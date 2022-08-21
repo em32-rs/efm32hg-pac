@@ -14,61 +14,13 @@ impl From<crate::R<ADC0CAL1_SPEC>> for R {
     }
 }
 #[doc = "Field `VDD_OFFSET` reader - Offset for VDD reference"]
-pub struct VDD_OFFSET_R(crate::FieldReader<u8, u8>);
-impl VDD_OFFSET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VDD_OFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VDD_OFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VDD_OFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VDD_GAIN` reader - Gain for VDD reference"]
-pub struct VDD_GAIN_R(crate::FieldReader<u8, u8>);
-impl VDD_GAIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VDD_GAIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VDD_GAIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VDD_GAIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `5VDIFF_OFFSET` reader - Offset for 5VDIFF reference"]
-pub struct _5VDIFF_OFFSET_R(crate::FieldReader<u8, u8>);
-impl _5VDIFF_OFFSET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        _5VDIFF_OFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for _5VDIFF_OFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type _5VDIFF_OFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `5VDIFF_GAIN` reader - Gain for 5VDIFF reference"]
-pub struct _5VDIFF_GAIN_R(crate::FieldReader<u8, u8>);
-impl _5VDIFF_GAIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        _5VDIFF_GAIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for _5VDIFF_GAIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type _5VDIFF_GAIN_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:6 - Offset for VDD reference"]
     #[inline(always)]

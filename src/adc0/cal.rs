@@ -35,109 +35,21 @@ impl From<crate::W<CAL_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLEOFFSET` reader - Single Mode Offset Calibration Value"]
-pub struct SINGLEOFFSET_R(crate::FieldReader<u8, u8>);
-impl SINGLEOFFSET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SINGLEOFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SINGLEOFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SINGLEOFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SINGLEOFFSET` writer - Single Mode Offset Calibration Value"]
-pub struct SINGLEOFFSET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLEOFFSET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type SINGLEOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, O>;
 #[doc = "Field `SINGLEGAIN` reader - Single Mode Gain Calibration Value"]
-pub struct SINGLEGAIN_R(crate::FieldReader<u8, u8>);
-impl SINGLEGAIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SINGLEGAIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SINGLEGAIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SINGLEGAIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SINGLEGAIN` writer - Single Mode Gain Calibration Value"]
-pub struct SINGLEGAIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLEGAIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type SINGLEGAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, O>;
 #[doc = "Field `SCANOFFSET` reader - Scan Mode Offset Calibration Value"]
-pub struct SCANOFFSET_R(crate::FieldReader<u8, u8>);
-impl SCANOFFSET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SCANOFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCANOFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCANOFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCANOFFSET` writer - Scan Mode Offset Calibration Value"]
-pub struct SCANOFFSET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCANOFFSET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type SCANOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, O>;
 #[doc = "Field `SCANGAIN` reader - Scan Mode Gain Calibration Value"]
-pub struct SCANGAIN_R(crate::FieldReader<u8, u8>);
-impl SCANGAIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SCANGAIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCANGAIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCANGAIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCANGAIN` writer - Scan Mode Gain Calibration Value"]
-pub struct SCANGAIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCANGAIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 24)) | ((value as u32 & 0x7f) << 24);
-        self.w
-    }
-}
+pub type SCANGAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 0:6 - Single Mode Offset Calibration Value"]
     #[inline(always)]
@@ -163,23 +75,23 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Single Mode Offset Calibration Value"]
     #[inline(always)]
-    pub fn singleoffset(&mut self) -> SINGLEOFFSET_W {
-        SINGLEOFFSET_W { w: self }
+    pub fn singleoffset(&mut self) -> SINGLEOFFSET_W<0> {
+        SINGLEOFFSET_W::new(self)
     }
     #[doc = "Bits 8:14 - Single Mode Gain Calibration Value"]
     #[inline(always)]
-    pub fn singlegain(&mut self) -> SINGLEGAIN_W {
-        SINGLEGAIN_W { w: self }
+    pub fn singlegain(&mut self) -> SINGLEGAIN_W<8> {
+        SINGLEGAIN_W::new(self)
     }
     #[doc = "Bits 16:22 - Scan Mode Offset Calibration Value"]
     #[inline(always)]
-    pub fn scanoffset(&mut self) -> SCANOFFSET_W {
-        SCANOFFSET_W { w: self }
+    pub fn scanoffset(&mut self) -> SCANOFFSET_W<16> {
+        SCANOFFSET_W::new(self)
     }
     #[doc = "Bits 24:30 - Scan Mode Gain Calibration Value"]
     #[inline(always)]
-    pub fn scangain(&mut self) -> SCANGAIN_W {
-        SCANGAIN_W { w: self }
+    pub fn scangain(&mut self) -> SCANGAIN_W<24> {
+        SCANGAIN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,221 +20,61 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `OF` writer - Overflow Interrupt Flag Set"]
-pub struct OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `UF` writer - Underflow Interrupt Flag Set"]
-pub struct UF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `CC0` writer - CC Channel 0 Interrupt Flag Set"]
-pub struct CC0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `CC1` writer - CC Channel 1 Interrupt Flag Set"]
-pub struct CC1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `CC2` writer - CC Channel 2 Interrupt Flag Set"]
-pub struct CC2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `ICBOF0` writer - CC Channel 0 Input Capture Buffer Overflow Interrupt Flag Set"]
-pub struct ICBOF0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICBOF0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type ICBOF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `ICBOF1` writer - CC Channel 1 Input Capture Buffer Overflow Interrupt Flag Set"]
-pub struct ICBOF1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICBOF1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type ICBOF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `ICBOF2` writer - CC Channel 2 Input Capture Buffer Overflow Interrupt Flag Set"]
-pub struct ICBOF2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICBOF2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type ICBOF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Overflow Interrupt Flag Set"]
     #[inline(always)]
-    pub fn of(&mut self) -> OF_W {
-        OF_W { w: self }
+    pub fn of(&mut self) -> OF_W<0> {
+        OF_W::new(self)
     }
     #[doc = "Bit 1 - Underflow Interrupt Flag Set"]
     #[inline(always)]
-    pub fn uf(&mut self) -> UF_W {
-        UF_W { w: self }
+    pub fn uf(&mut self) -> UF_W<1> {
+        UF_W::new(self)
     }
     #[doc = "Bit 4 - CC Channel 0 Interrupt Flag Set"]
     #[inline(always)]
-    pub fn cc0(&mut self) -> CC0_W {
-        CC0_W { w: self }
+    pub fn cc0(&mut self) -> CC0_W<4> {
+        CC0_W::new(self)
     }
     #[doc = "Bit 5 - CC Channel 1 Interrupt Flag Set"]
     #[inline(always)]
-    pub fn cc1(&mut self) -> CC1_W {
-        CC1_W { w: self }
+    pub fn cc1(&mut self) -> CC1_W<5> {
+        CC1_W::new(self)
     }
     #[doc = "Bit 6 - CC Channel 2 Interrupt Flag Set"]
     #[inline(always)]
-    pub fn cc2(&mut self) -> CC2_W {
-        CC2_W { w: self }
+    pub fn cc2(&mut self) -> CC2_W<6> {
+        CC2_W::new(self)
     }
     #[doc = "Bit 8 - CC Channel 0 Input Capture Buffer Overflow Interrupt Flag Set"]
     #[inline(always)]
-    pub fn icbof0(&mut self) -> ICBOF0_W {
-        ICBOF0_W { w: self }
+    pub fn icbof0(&mut self) -> ICBOF0_W<8> {
+        ICBOF0_W::new(self)
     }
     #[doc = "Bit 9 - CC Channel 1 Input Capture Buffer Overflow Interrupt Flag Set"]
     #[inline(always)]
-    pub fn icbof1(&mut self) -> ICBOF1_W {
-        ICBOF1_W { w: self }
+    pub fn icbof1(&mut self) -> ICBOF1_W<9> {
+        ICBOF1_W::new(self)
     }
     #[doc = "Bit 10 - CC Channel 2 Input Capture Buffer Overflow Interrupt Flag Set"]
     #[inline(always)]
-    pub fn icbof2(&mut self) -> ICBOF2_W {
-        ICBOF2_W { w: self }
+    pub fn icbof2(&mut self) -> ICBOF2_W<10> {
+        ICBOF2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

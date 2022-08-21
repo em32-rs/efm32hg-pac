@@ -35,67 +35,13 @@ impl From<crate::W<INPUTSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `TRIGLEVEL` reader - Trigger Level"]
-pub struct TRIGLEVEL_R(crate::FieldReader<u8, u8>);
-impl TRIGLEVEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TRIGLEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRIGLEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRIGLEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TRIGLEVEL` writer - Trigger Level"]
-pub struct TRIGLEVEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIGLEVEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type TRIGLEVEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPUTSEL_SPEC, u8, u8, 6, O>;
 #[doc = "Field `LPREF` reader - Low Power Reference"]
-pub struct LPREF_R(crate::FieldReader<bool, bool>);
-impl LPREF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LPREF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LPREF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LPREF_R = crate::BitReader<bool>;
 #[doc = "Field `LPREF` writer - Low Power Reference"]
-pub struct LPREF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPREF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type LPREF_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUTSEL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:5 - Trigger Level"]
     #[inline(always)]
@@ -105,19 +51,19 @@ impl R {
     #[doc = "Bit 8 - Low Power Reference"]
     #[inline(always)]
     pub fn lpref(&self) -> LPREF_R {
-        LPREF_R::new(((self.bits >> 8) & 0x01) != 0)
+        LPREF_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - Trigger Level"]
     #[inline(always)]
-    pub fn triglevel(&mut self) -> TRIGLEVEL_W {
-        TRIGLEVEL_W { w: self }
+    pub fn triglevel(&mut self) -> TRIGLEVEL_W<0> {
+        TRIGLEVEL_W::new(self)
     }
     #[doc = "Bit 8 - Low Power Reference"]
     #[inline(always)]
-    pub fn lpref(&mut self) -> LPREF_W {
-        LPREF_W { w: self }
+    pub fn lpref(&mut self) -> LPREF_W<8> {
+        LPREF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

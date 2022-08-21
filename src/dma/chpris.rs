@@ -20,167 +20,47 @@ impl From<crate::W<CHPRIS_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0PRIS` writer - Channel 0 High Priority Set"]
-pub struct CH0PRIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0PRIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0PRIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHPRIS_SPEC, bool, O>;
 #[doc = "Field `CH1PRIS` writer - Channel 1 High Priority Set"]
-pub struct CH1PRIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1PRIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1PRIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHPRIS_SPEC, bool, O>;
 #[doc = "Field `CH2PRIS` writer - Channel 2 High Priority Set"]
-pub struct CH2PRIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2PRIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2PRIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHPRIS_SPEC, bool, O>;
 #[doc = "Field `CH3PRIS` writer - Channel 3 High Priority Set"]
-pub struct CH3PRIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3PRIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3PRIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHPRIS_SPEC, bool, O>;
 #[doc = "Field `CH4PRIS` writer - Channel 4 High Priority Set"]
-pub struct CH4PRIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4PRIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4PRIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHPRIS_SPEC, bool, O>;
 #[doc = "Field `CH5PRIS` writer - Channel 5 High Priority Set"]
-pub struct CH5PRIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5PRIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5PRIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHPRIS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 High Priority Set"]
     #[inline(always)]
-    pub fn ch0pris(&mut self) -> CH0PRIS_W {
-        CH0PRIS_W { w: self }
+    pub fn ch0pris(&mut self) -> CH0PRIS_W<0> {
+        CH0PRIS_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 High Priority Set"]
     #[inline(always)]
-    pub fn ch1pris(&mut self) -> CH1PRIS_W {
-        CH1PRIS_W { w: self }
+    pub fn ch1pris(&mut self) -> CH1PRIS_W<1> {
+        CH1PRIS_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 High Priority Set"]
     #[inline(always)]
-    pub fn ch2pris(&mut self) -> CH2PRIS_W {
-        CH2PRIS_W { w: self }
+    pub fn ch2pris(&mut self) -> CH2PRIS_W<2> {
+        CH2PRIS_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 High Priority Set"]
     #[inline(always)]
-    pub fn ch3pris(&mut self) -> CH3PRIS_W {
-        CH3PRIS_W { w: self }
+    pub fn ch3pris(&mut self) -> CH3PRIS_W<3> {
+        CH3PRIS_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 High Priority Set"]
     #[inline(always)]
-    pub fn ch4pris(&mut self) -> CH4PRIS_W {
-        CH4PRIS_W { w: self }
+    pub fn ch4pris(&mut self) -> CH4PRIS_W<4> {
+        CH4PRIS_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 High Priority Set"]
     #[inline(always)]
-    pub fn ch5pris(&mut self) -> CH5PRIS_W {
-        CH5PRIS_W { w: self }
+    pub fn ch5pris(&mut self) -> CH5PRIS_W<5> {
+        CH5PRIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

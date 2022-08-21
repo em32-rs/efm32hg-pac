@@ -35,99 +35,35 @@ impl From<crate::W<PCNTCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `PCNT0CLKEN` reader - PCNT0 Clock Enable"]
-pub struct PCNT0CLKEN_R(crate::FieldReader<bool, bool>);
-impl PCNT0CLKEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PCNT0CLKEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PCNT0CLKEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PCNT0CLKEN_R = crate::BitReader<bool>;
 #[doc = "Field `PCNT0CLKEN` writer - PCNT0 Clock Enable"]
-pub struct PCNT0CLKEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCNT0CLKEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PCNT0CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCNTCTRL_SPEC, bool, O>;
 #[doc = "Field `PCNT0CLKSEL` reader - PCNT0 Clock Select"]
-pub struct PCNT0CLKSEL_R(crate::FieldReader<bool, bool>);
-impl PCNT0CLKSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PCNT0CLKSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PCNT0CLKSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PCNT0CLKSEL_R = crate::BitReader<bool>;
 #[doc = "Field `PCNT0CLKSEL` writer - PCNT0 Clock Select"]
-pub struct PCNT0CLKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCNT0CLKSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PCNT0CLKSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCNTCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
     #[inline(always)]
     pub fn pcnt0clken(&self) -> PCNT0CLKEN_R {
-        PCNT0CLKEN_R::new((self.bits & 0x01) != 0)
+        PCNT0CLKEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PCNT0 Clock Select"]
     #[inline(always)]
     pub fn pcnt0clksel(&self) -> PCNT0CLKSEL_R {
-        PCNT0CLKSEL_R::new(((self.bits >> 1) & 0x01) != 0)
+        PCNT0CLKSEL_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
     #[inline(always)]
-    pub fn pcnt0clken(&mut self) -> PCNT0CLKEN_W {
-        PCNT0CLKEN_W { w: self }
+    pub fn pcnt0clken(&mut self) -> PCNT0CLKEN_W<0> {
+        PCNT0CLKEN_W::new(self)
     }
     #[doc = "Bit 1 - PCNT0 Clock Select"]
     #[inline(always)]
-    pub fn pcnt0clksel(&mut self) -> PCNT0CLKSEL_W {
-        PCNT0CLKSEL_W { w: self }
+    pub fn pcnt0clksel(&mut self) -> PCNT0CLKSEL_W<1> {
+        PCNT0CLKSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

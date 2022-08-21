@@ -14,47 +14,11 @@ impl From<crate::R<PART_SPEC>> for R {
     }
 }
 #[doc = "Field `PART_NUMBER` reader - Device part number"]
-pub struct PART_NUMBER_R(crate::FieldReader<u16, u16>);
-impl PART_NUMBER_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PART_NUMBER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PART_NUMBER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PART_NUMBER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DEVICE_FAMILY` reader - Device Family, 0x47 for Gecko"]
-pub struct DEVICE_FAMILY_R(crate::FieldReader<u8, u8>);
-impl DEVICE_FAMILY_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DEVICE_FAMILY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEVICE_FAMILY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEVICE_FAMILY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PROD_REV` reader - Production revision"]
-pub struct PROD_REV_R(crate::FieldReader<u8, u8>);
-impl PROD_REV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PROD_REV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PROD_REV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PROD_REV_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:15 - Device part number"]
     #[inline(always)]

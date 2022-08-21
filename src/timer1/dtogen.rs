@@ -35,283 +35,91 @@ impl From<crate::W<DTOGEN_SPEC>> for W {
     }
 }
 #[doc = "Field `DTOGCC0EN` reader - DTI CC0 Output Generation Enable"]
-pub struct DTOGCC0EN_R(crate::FieldReader<bool, bool>);
-impl DTOGCC0EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTOGCC0EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTOGCC0EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTOGCC0EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTOGCC0EN` writer - DTI CC0 Output Generation Enable"]
-pub struct DTOGCC0EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTOGCC0EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DTOGCC0EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
 #[doc = "Field `DTOGCC1EN` reader - DTI CC1 Output Generation Enable"]
-pub struct DTOGCC1EN_R(crate::FieldReader<bool, bool>);
-impl DTOGCC1EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTOGCC1EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTOGCC1EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTOGCC1EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTOGCC1EN` writer - DTI CC1 Output Generation Enable"]
-pub struct DTOGCC1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTOGCC1EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DTOGCC1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
 #[doc = "Field `DTOGCC2EN` reader - DTI CC2 Output Generation Enable"]
-pub struct DTOGCC2EN_R(crate::FieldReader<bool, bool>);
-impl DTOGCC2EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTOGCC2EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTOGCC2EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTOGCC2EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTOGCC2EN` writer - DTI CC2 Output Generation Enable"]
-pub struct DTOGCC2EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTOGCC2EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DTOGCC2EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
 #[doc = "Field `DTOGCDTI0EN` reader - DTI CDTI0 Output Generation Enable"]
-pub struct DTOGCDTI0EN_R(crate::FieldReader<bool, bool>);
-impl DTOGCDTI0EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTOGCDTI0EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTOGCDTI0EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTOGCDTI0EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTOGCDTI0EN` writer - DTI CDTI0 Output Generation Enable"]
-pub struct DTOGCDTI0EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTOGCDTI0EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type DTOGCDTI0EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
 #[doc = "Field `DTOGCDTI1EN` reader - DTI CDTI1 Output Generation Enable"]
-pub struct DTOGCDTI1EN_R(crate::FieldReader<bool, bool>);
-impl DTOGCDTI1EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTOGCDTI1EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTOGCDTI1EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTOGCDTI1EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTOGCDTI1EN` writer - DTI CDTI1 Output Generation Enable"]
-pub struct DTOGCDTI1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTOGCDTI1EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type DTOGCDTI1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
 #[doc = "Field `DTOGCDTI2EN` reader - DTI CDTI2 Output Generation Enable"]
-pub struct DTOGCDTI2EN_R(crate::FieldReader<bool, bool>);
-impl DTOGCDTI2EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTOGCDTI2EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTOGCDTI2EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTOGCDTI2EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTOGCDTI2EN` writer - DTI CDTI2 Output Generation Enable"]
-pub struct DTOGCDTI2EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTOGCDTI2EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type DTOGCDTI2EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - DTI CC0 Output Generation Enable"]
     #[inline(always)]
     pub fn dtogcc0en(&self) -> DTOGCC0EN_R {
-        DTOGCC0EN_R::new((self.bits & 0x01) != 0)
+        DTOGCC0EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - DTI CC1 Output Generation Enable"]
     #[inline(always)]
     pub fn dtogcc1en(&self) -> DTOGCC1EN_R {
-        DTOGCC1EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        DTOGCC1EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - DTI CC2 Output Generation Enable"]
     #[inline(always)]
     pub fn dtogcc2en(&self) -> DTOGCC2EN_R {
-        DTOGCC2EN_R::new(((self.bits >> 2) & 0x01) != 0)
+        DTOGCC2EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - DTI CDTI0 Output Generation Enable"]
     #[inline(always)]
     pub fn dtogcdti0en(&self) -> DTOGCDTI0EN_R {
-        DTOGCDTI0EN_R::new(((self.bits >> 3) & 0x01) != 0)
+        DTOGCDTI0EN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - DTI CDTI1 Output Generation Enable"]
     #[inline(always)]
     pub fn dtogcdti1en(&self) -> DTOGCDTI1EN_R {
-        DTOGCDTI1EN_R::new(((self.bits >> 4) & 0x01) != 0)
+        DTOGCDTI1EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - DTI CDTI2 Output Generation Enable"]
     #[inline(always)]
     pub fn dtogcdti2en(&self) -> DTOGCDTI2EN_R {
-        DTOGCDTI2EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        DTOGCDTI2EN_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - DTI CC0 Output Generation Enable"]
     #[inline(always)]
-    pub fn dtogcc0en(&mut self) -> DTOGCC0EN_W {
-        DTOGCC0EN_W { w: self }
+    pub fn dtogcc0en(&mut self) -> DTOGCC0EN_W<0> {
+        DTOGCC0EN_W::new(self)
     }
     #[doc = "Bit 1 - DTI CC1 Output Generation Enable"]
     #[inline(always)]
-    pub fn dtogcc1en(&mut self) -> DTOGCC1EN_W {
-        DTOGCC1EN_W { w: self }
+    pub fn dtogcc1en(&mut self) -> DTOGCC1EN_W<1> {
+        DTOGCC1EN_W::new(self)
     }
     #[doc = "Bit 2 - DTI CC2 Output Generation Enable"]
     #[inline(always)]
-    pub fn dtogcc2en(&mut self) -> DTOGCC2EN_W {
-        DTOGCC2EN_W { w: self }
+    pub fn dtogcc2en(&mut self) -> DTOGCC2EN_W<2> {
+        DTOGCC2EN_W::new(self)
     }
     #[doc = "Bit 3 - DTI CDTI0 Output Generation Enable"]
     #[inline(always)]
-    pub fn dtogcdti0en(&mut self) -> DTOGCDTI0EN_W {
-        DTOGCDTI0EN_W { w: self }
+    pub fn dtogcdti0en(&mut self) -> DTOGCDTI0EN_W<3> {
+        DTOGCDTI0EN_W::new(self)
     }
     #[doc = "Bit 4 - DTI CDTI1 Output Generation Enable"]
     #[inline(always)]
-    pub fn dtogcdti1en(&mut self) -> DTOGCDTI1EN_W {
-        DTOGCDTI1EN_W { w: self }
+    pub fn dtogcdti1en(&mut self) -> DTOGCDTI1EN_W<4> {
+        DTOGCDTI1EN_W::new(self)
     }
     #[doc = "Bit 5 - DTI CDTI2 Output Generation Enable"]
     #[inline(always)]
-    pub fn dtogcdti2en(&mut self) -> DTOGCDTI2EN_W {
-        DTOGCDTI2EN_W { w: self }
+    pub fn dtogcdti2en(&mut self) -> DTOGCDTI2EN_W<5> {
+        DTOGCDTI2EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

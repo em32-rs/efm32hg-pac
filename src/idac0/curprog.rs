@@ -34,6 +34,8 @@ impl From<crate::W<CURPROG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RANGESEL` reader - Current Range Select"]
+pub type RANGESEL_R = crate::FieldReader<u8, RANGESEL_A>;
 #[doc = "Current Range Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,13 +55,8 @@ impl From<RANGESEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RANGESEL` reader - Current Range Select"]
-pub struct RANGESEL_R(crate::FieldReader<u8, RANGESEL_A>);
 impl RANGESEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RANGESEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RANGESEL_A {
         match self.bits {
@@ -73,41 +70,28 @@ impl RANGESEL_R {
     #[doc = "Checks if the value of the field is `RANGE0`"]
     #[inline(always)]
     pub fn is_range0(&self) -> bool {
-        **self == RANGESEL_A::RANGE0
+        *self == RANGESEL_A::RANGE0
     }
     #[doc = "Checks if the value of the field is `RANGE1`"]
     #[inline(always)]
     pub fn is_range1(&self) -> bool {
-        **self == RANGESEL_A::RANGE1
+        *self == RANGESEL_A::RANGE1
     }
     #[doc = "Checks if the value of the field is `RANGE2`"]
     #[inline(always)]
     pub fn is_range2(&self) -> bool {
-        **self == RANGESEL_A::RANGE2
+        *self == RANGESEL_A::RANGE2
     }
     #[doc = "Checks if the value of the field is `RANGE3`"]
     #[inline(always)]
     pub fn is_range3(&self) -> bool {
-        **self == RANGESEL_A::RANGE3
-    }
-}
-impl core::ops::Deref for RANGESEL_R {
-    type Target = crate::FieldReader<u8, RANGESEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RANGESEL_A::RANGE3
     }
 }
 #[doc = "Field `RANGESEL` writer - Current Range Select"]
-pub struct RANGESEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RANGESEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RANGESEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RANGESEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CURPROG_SPEC, u8, RANGESEL_A, 2, O>;
+impl<'a, const O: u8> RANGESEL_W<'a, O> {
     #[doc = "Current range set to 0 - 1.6 uA."]
     #[inline(always)]
     pub fn range0(self) -> &'a mut W {
@@ -128,44 +112,16 @@ impl<'a> RANGESEL_W<'a> {
     pub fn range3(self) -> &'a mut W {
         self.variant(RANGESEL_A::RANGE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `STEPSEL` reader - Current Step Size Select"]
-pub struct STEPSEL_R(crate::FieldReader<u8, u8>);
-impl STEPSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        STEPSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STEPSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STEPSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STEPSEL` writer - Current Step Size Select"]
-pub struct STEPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STEPSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | ((value as u32 & 0x1f) << 8);
-        self.w
-    }
-}
+pub type STEPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CURPROG_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:1 - Current Range Select"]
     #[inline(always)]
     pub fn rangesel(&self) -> RANGESEL_R {
-        RANGESEL_R::new((self.bits & 0x03) as u8)
+        RANGESEL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 8:12 - Current Step Size Select"]
     #[inline(always)]
@@ -176,13 +132,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Current Range Select"]
     #[inline(always)]
-    pub fn rangesel(&mut self) -> RANGESEL_W {
-        RANGESEL_W { w: self }
+    pub fn rangesel(&mut self) -> RANGESEL_W<0> {
+        RANGESEL_W::new(self)
     }
     #[doc = "Bits 8:12 - Current Step Size Select"]
     #[inline(always)]
-    pub fn stepsel(&mut self) -> STEPSEL_W {
-        STEPSEL_W { w: self }
+    pub fn stepsel(&mut self) -> STEPSEL_W<8> {
+        STEPSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

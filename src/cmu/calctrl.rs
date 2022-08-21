@@ -34,6 +34,8 @@ impl From<crate::W<CALCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
+pub type UPSEL_R = crate::FieldReader<u8, UPSEL_A>;
 #[doc = "Calibration Up-counter Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -57,13 +59,8 @@ impl From<UPSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
-pub struct UPSEL_R(crate::FieldReader<u8, UPSEL_A>);
 impl UPSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        UPSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<UPSEL_A> {
         match self.bits {
@@ -79,51 +76,37 @@ impl UPSEL_R {
     #[doc = "Checks if the value of the field is `HFXO`"]
     #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
-        **self == UPSEL_A::HFXO
+        *self == UPSEL_A::HFXO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
     #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        **self == UPSEL_A::LFXO
+        *self == UPSEL_A::LFXO
     }
     #[doc = "Checks if the value of the field is `HFRCO`"]
     #[inline(always)]
     pub fn is_hfrco(&self) -> bool {
-        **self == UPSEL_A::HFRCO
+        *self == UPSEL_A::HFRCO
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
     #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
-        **self == UPSEL_A::LFRCO
+        *self == UPSEL_A::LFRCO
     }
     #[doc = "Checks if the value of the field is `AUXHFRCO`"]
     #[inline(always)]
     pub fn is_auxhfrco(&self) -> bool {
-        **self == UPSEL_A::AUXHFRCO
+        *self == UPSEL_A::AUXHFRCO
     }
     #[doc = "Checks if the value of the field is `USHFRCO`"]
     #[inline(always)]
     pub fn is_ushfrco(&self) -> bool {
-        **self == UPSEL_A::USHFRCO
-    }
-}
-impl core::ops::Deref for UPSEL_R {
-    type Target = crate::FieldReader<u8, UPSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UPSEL_A::USHFRCO
     }
 }
 #[doc = "Field `UPSEL` writer - Calibration Up-counter Select"]
-pub struct UPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UPSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UPSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type UPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, UPSEL_A, 3, O>;
+impl<'a, const O: u8> UPSEL_W<'a, O> {
     #[doc = "Select HFXO as up-counter."]
     #[inline(always)]
     pub fn hfxo(self) -> &'a mut W {
@@ -154,13 +137,9 @@ impl<'a> UPSEL_W<'a> {
     pub fn ushfrco(self) -> &'a mut W {
         self.variant(UPSEL_A::USHFRCO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
+#[doc = "Field `DOWNSEL` reader - Calibration Down-counter Select"]
+pub type DOWNSEL_R = crate::FieldReader<u8, DOWNSEL_A>;
 #[doc = "Calibration Down-counter Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -186,13 +165,8 @@ impl From<DOWNSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DOWNSEL` reader - Calibration Down-counter Select"]
-pub struct DOWNSEL_R(crate::FieldReader<u8, DOWNSEL_A>);
 impl DOWNSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DOWNSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DOWNSEL_A> {
         match self.bits {
@@ -209,56 +183,43 @@ impl DOWNSEL_R {
     #[doc = "Checks if the value of the field is `HFCLK`"]
     #[inline(always)]
     pub fn is_hfclk(&self) -> bool {
-        **self == DOWNSEL_A::HFCLK
+        *self == DOWNSEL_A::HFCLK
     }
     #[doc = "Checks if the value of the field is `HFXO`"]
     #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
-        **self == DOWNSEL_A::HFXO
+        *self == DOWNSEL_A::HFXO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
     #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        **self == DOWNSEL_A::LFXO
+        *self == DOWNSEL_A::LFXO
     }
     #[doc = "Checks if the value of the field is `HFRCO`"]
     #[inline(always)]
     pub fn is_hfrco(&self) -> bool {
-        **self == DOWNSEL_A::HFRCO
+        *self == DOWNSEL_A::HFRCO
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
     #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
-        **self == DOWNSEL_A::LFRCO
+        *self == DOWNSEL_A::LFRCO
     }
     #[doc = "Checks if the value of the field is `AUXHFRCO`"]
     #[inline(always)]
     pub fn is_auxhfrco(&self) -> bool {
-        **self == DOWNSEL_A::AUXHFRCO
+        *self == DOWNSEL_A::AUXHFRCO
     }
     #[doc = "Checks if the value of the field is `USHFRCO`"]
     #[inline(always)]
     pub fn is_ushfrco(&self) -> bool {
-        **self == DOWNSEL_A::USHFRCO
-    }
-}
-impl core::ops::Deref for DOWNSEL_R {
-    type Target = crate::FieldReader<u8, DOWNSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DOWNSEL_A::USHFRCO
     }
 }
 #[doc = "Field `DOWNSEL` writer - Calibration Down-counter Select"]
-pub struct DOWNSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DOWNSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DOWNSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DOWNSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, DOWNSEL_A, 3, O>;
+impl<'a, const O: u8> DOWNSEL_W<'a, O> {
     #[doc = "Select HFCLK for down-counter."]
     #[inline(always)]
     pub fn hfclk(self) -> &'a mut W {
@@ -294,81 +255,43 @@ impl<'a> DOWNSEL_W<'a> {
     pub fn ushfrco(self) -> &'a mut W {
         self.variant(DOWNSEL_A::USHFRCO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 3)) | ((value as u32 & 0x07) << 3);
-        self.w
-    }
 }
 #[doc = "Field `CONT` reader - Continuous Calibration"]
-pub struct CONT_R(crate::FieldReader<bool, bool>);
-impl CONT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CONT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CONT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CONT_R = crate::BitReader<bool>;
 #[doc = "Field `CONT` writer - Continuous Calibration"]
-pub struct CONT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CONT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CALCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Calibration Up-counter Select"]
     #[inline(always)]
     pub fn upsel(&self) -> UPSEL_R {
-        UPSEL_R::new((self.bits & 0x07) as u8)
+        UPSEL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:5 - Calibration Down-counter Select"]
     #[inline(always)]
     pub fn downsel(&self) -> DOWNSEL_R {
-        DOWNSEL_R::new(((self.bits >> 3) & 0x07) as u8)
+        DOWNSEL_R::new(((self.bits >> 3) & 7) as u8)
     }
     #[doc = "Bit 6 - Continuous Calibration"]
     #[inline(always)]
     pub fn cont(&self) -> CONT_R {
-        CONT_R::new(((self.bits >> 6) & 0x01) != 0)
+        CONT_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Calibration Up-counter Select"]
     #[inline(always)]
-    pub fn upsel(&mut self) -> UPSEL_W {
-        UPSEL_W { w: self }
+    pub fn upsel(&mut self) -> UPSEL_W<0> {
+        UPSEL_W::new(self)
     }
     #[doc = "Bits 3:5 - Calibration Down-counter Select"]
     #[inline(always)]
-    pub fn downsel(&mut self) -> DOWNSEL_W {
-        DOWNSEL_W { w: self }
+    pub fn downsel(&mut self) -> DOWNSEL_W<3> {
+        DOWNSEL_W::new(self)
     }
     #[doc = "Bit 6 - Continuous Calibration"]
     #[inline(always)]
-    pub fn cont(&mut self) -> CONT_W {
-        CONT_W { w: self }
+    pub fn cont(&mut self) -> CONT_W<6> {
+        CONT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

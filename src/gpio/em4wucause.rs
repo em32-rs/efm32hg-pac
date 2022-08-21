@@ -13,6 +13,8 @@ impl From<crate::R<EM4WUCAUSE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `EM4WUCAUSE` reader - EM4 wake-up cause"]
+pub type EM4WUCAUSE_R = crate::FieldReader<u8, EM4WUCAUSE_A>;
 #[doc = "EM4 wake-up cause\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -36,13 +38,8 @@ impl From<EM4WUCAUSE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EM4WUCAUSE` reader - EM4 wake-up cause"]
-pub struct EM4WUCAUSE_R(crate::FieldReader<u8, EM4WUCAUSE_A>);
 impl EM4WUCAUSE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EM4WUCAUSE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EM4WUCAUSE_A> {
         match self.bits {
@@ -58,39 +55,32 @@ impl EM4WUCAUSE_R {
     #[doc = "Checks if the value of the field is `A0`"]
     #[inline(always)]
     pub fn is_a0(&self) -> bool {
-        **self == EM4WUCAUSE_A::A0
+        *self == EM4WUCAUSE_A::A0
     }
     #[doc = "Checks if the value of the field is `C9`"]
     #[inline(always)]
     pub fn is_c9(&self) -> bool {
-        **self == EM4WUCAUSE_A::C9
+        *self == EM4WUCAUSE_A::C9
     }
     #[doc = "Checks if the value of the field is `F1`"]
     #[inline(always)]
     pub fn is_f1(&self) -> bool {
-        **self == EM4WUCAUSE_A::F1
+        *self == EM4WUCAUSE_A::F1
     }
     #[doc = "Checks if the value of the field is `F2`"]
     #[inline(always)]
     pub fn is_f2(&self) -> bool {
-        **self == EM4WUCAUSE_A::F2
+        *self == EM4WUCAUSE_A::F2
     }
     #[doc = "Checks if the value of the field is `E13`"]
     #[inline(always)]
     pub fn is_e13(&self) -> bool {
-        **self == EM4WUCAUSE_A::E13
+        *self == EM4WUCAUSE_A::E13
     }
     #[doc = "Checks if the value of the field is `C4`"]
     #[inline(always)]
     pub fn is_c4(&self) -> bool {
-        **self == EM4WUCAUSE_A::C4
-    }
-}
-impl core::ops::Deref for EM4WUCAUSE_R {
-    type Target = crate::FieldReader<u8, EM4WUCAUSE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EM4WUCAUSE_A::C4
     }
 }
 impl R {

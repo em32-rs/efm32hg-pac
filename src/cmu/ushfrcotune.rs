@@ -35,31 +35,10 @@ impl From<crate::W<USHFRCOTUNE_SPEC>> for W {
     }
 }
 #[doc = "Field `FINETUNING` reader - Oscillator fine frequency adjust"]
-pub struct FINETUNING_R(crate::FieldReader<u8, u8>);
-impl FINETUNING_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FINETUNING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FINETUNING_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FINETUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FINETUNING` writer - Oscillator fine frequency adjust"]
-pub struct FINETUNING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FINETUNING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type FINETUNING_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, USHFRCOTUNE_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Oscillator fine frequency adjust"]
     #[inline(always)]
@@ -70,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Oscillator fine frequency adjust"]
     #[inline(always)]
-    pub fn finetuning(&mut self) -> FINETUNING_W {
-        FINETUNING_W { w: self }
+    pub fn finetuning(&mut self) -> FINETUNING_W<0> {
+        FINETUNING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

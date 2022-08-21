@@ -34,6 +34,8 @@ impl From<crate::W<TRIGCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TSEL` reader - Trigger PRS Channel Select"]
+pub type TSEL_R = crate::FieldReader<u8, TSEL_A>;
 #[doc = "Trigger PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -57,13 +59,8 @@ impl From<TSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TSEL` reader - Trigger PRS Channel Select"]
-pub struct TSEL_R(crate::FieldReader<u8, TSEL_A>);
 impl TSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TSEL_A> {
         match self.bits {
@@ -79,51 +76,37 @@ impl TSEL_R {
     #[doc = "Checks if the value of the field is `PRSCH0`"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        **self == TSEL_A::PRSCH0
+        *self == TSEL_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        **self == TSEL_A::PRSCH1
+        *self == TSEL_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        **self == TSEL_A::PRSCH2
+        *self == TSEL_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        **self == TSEL_A::PRSCH3
+        *self == TSEL_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        **self == TSEL_A::PRSCH4
+        *self == TSEL_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        **self == TSEL_A::PRSCH5
-    }
-}
-impl core::ops::Deref for TSEL_R {
-    type Target = crate::FieldReader<u8, TSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TSEL_A::PRSCH5
     }
 }
 #[doc = "Field `TSEL` writer - Trigger PRS Channel Select"]
-pub struct TSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TRIGCTRL_SPEC, u8, TSEL_A, 3, O>;
+impl<'a, const O: u8> TSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -154,163 +137,61 @@ impl<'a> TSEL_W<'a> {
     pub fn prsch5(self) -> &'a mut W {
         self.variant(TSEL_A::PRSCH5)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 #[doc = "Field `RXTEN` reader - Receive Trigger Enable"]
-pub struct RXTEN_R(crate::FieldReader<bool, bool>);
-impl RXTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXTEN_R = crate::BitReader<bool>;
 #[doc = "Field `RXTEN` writer - Receive Trigger Enable"]
-pub struct RXTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, O>;
 #[doc = "Field `TXTEN` reader - Transmit Trigger Enable"]
-pub struct TXTEN_R(crate::FieldReader<bool, bool>);
-impl TXTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXTEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXTEN` writer - Transmit Trigger Enable"]
-pub struct TXTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type TXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOTXTEN` reader - AUTOTX Trigger Enable"]
-pub struct AUTOTXTEN_R(crate::FieldReader<bool, bool>);
-impl AUTOTXTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUTOTXTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AUTOTXTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AUTOTXTEN_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOTXTEN` writer - AUTOTX Trigger Enable"]
-pub struct AUTOTXTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUTOTXTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type AUTOTXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Trigger PRS Channel Select"]
     #[inline(always)]
     pub fn tsel(&self) -> TSEL_R {
-        TSEL_R::new((self.bits & 0x07) as u8)
+        TSEL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 4 - Receive Trigger Enable"]
     #[inline(always)]
     pub fn rxten(&self) -> RXTEN_R {
-        RXTEN_R::new(((self.bits >> 4) & 0x01) != 0)
+        RXTEN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Transmit Trigger Enable"]
     #[inline(always)]
     pub fn txten(&self) -> TXTEN_R {
-        TXTEN_R::new(((self.bits >> 5) & 0x01) != 0)
+        TXTEN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - AUTOTX Trigger Enable"]
     #[inline(always)]
     pub fn autotxten(&self) -> AUTOTXTEN_R {
-        AUTOTXTEN_R::new(((self.bits >> 6) & 0x01) != 0)
+        AUTOTXTEN_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Trigger PRS Channel Select"]
     #[inline(always)]
-    pub fn tsel(&mut self) -> TSEL_W {
-        TSEL_W { w: self }
+    pub fn tsel(&mut self) -> TSEL_W<0> {
+        TSEL_W::new(self)
     }
     #[doc = "Bit 4 - Receive Trigger Enable"]
     #[inline(always)]
-    pub fn rxten(&mut self) -> RXTEN_W {
-        RXTEN_W { w: self }
+    pub fn rxten(&mut self) -> RXTEN_W<4> {
+        RXTEN_W::new(self)
     }
     #[doc = "Bit 5 - Transmit Trigger Enable"]
     #[inline(always)]
-    pub fn txten(&mut self) -> TXTEN_W {
-        TXTEN_W { w: self }
+    pub fn txten(&mut self) -> TXTEN_W<5> {
+        TXTEN_W::new(self)
     }
     #[doc = "Bit 6 - AUTOTX Trigger Enable"]
     #[inline(always)]
-    pub fn autotxten(&mut self) -> AUTOTXTEN_W {
-        AUTOTXTEN_W { w: self }
+    pub fn autotxten(&mut self) -> AUTOTXTEN_W<6> {
+        AUTOTXTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

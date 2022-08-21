@@ -20,167 +20,47 @@ impl From<crate::W<SWPULSE_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0PULSE` writer - Channel 0 Pulse Generation"]
-pub struct CH0PULSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0PULSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
 #[doc = "Field `CH1PULSE` writer - Channel 1 Pulse Generation"]
-pub struct CH1PULSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1PULSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
 #[doc = "Field `CH2PULSE` writer - Channel 2 Pulse Generation"]
-pub struct CH2PULSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2PULSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
 #[doc = "Field `CH3PULSE` writer - Channel 3 Pulse Generation"]
-pub struct CH3PULSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3PULSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
 #[doc = "Field `CH4PULSE` writer - Channel 4 Pulse Generation"]
-pub struct CH4PULSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4PULSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
 #[doc = "Field `CH5PULSE` writer - Channel 5 Pulse Generation"]
-pub struct CH5PULSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5PULSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Pulse Generation"]
     #[inline(always)]
-    pub fn ch0pulse(&mut self) -> CH0PULSE_W {
-        CH0PULSE_W { w: self }
+    pub fn ch0pulse(&mut self) -> CH0PULSE_W<0> {
+        CH0PULSE_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Pulse Generation"]
     #[inline(always)]
-    pub fn ch1pulse(&mut self) -> CH1PULSE_W {
-        CH1PULSE_W { w: self }
+    pub fn ch1pulse(&mut self) -> CH1PULSE_W<1> {
+        CH1PULSE_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Pulse Generation"]
     #[inline(always)]
-    pub fn ch2pulse(&mut self) -> CH2PULSE_W {
-        CH2PULSE_W { w: self }
+    pub fn ch2pulse(&mut self) -> CH2PULSE_W<2> {
+        CH2PULSE_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Pulse Generation"]
     #[inline(always)]
-    pub fn ch3pulse(&mut self) -> CH3PULSE_W {
-        CH3PULSE_W { w: self }
+    pub fn ch3pulse(&mut self) -> CH3PULSE_W<3> {
+        CH3PULSE_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Pulse Generation"]
     #[inline(always)]
-    pub fn ch4pulse(&mut self) -> CH4PULSE_W {
-        CH4PULSE_W { w: self }
+    pub fn ch4pulse(&mut self) -> CH4PULSE_W<4> {
+        CH4PULSE_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Pulse Generation"]
     #[inline(always)]
-    pub fn ch5pulse(&mut self) -> CH5PULSE_W {
-        CH5PULSE_W { w: self }
+    pub fn ch5pulse(&mut self) -> CH5PULSE_W<5> {
+        CH5PULSE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -14,119 +14,47 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXENS` reader - Receiver Enable Status"]
-pub struct RXENS_R(crate::FieldReader<bool, bool>);
-impl RXENS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXENS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXENS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXENS_R = crate::BitReader<bool>;
 #[doc = "Field `TXENS` reader - Transmitter Enable Status"]
-pub struct TXENS_R(crate::FieldReader<bool, bool>);
-impl TXENS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXENS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXENS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXENS_R = crate::BitReader<bool>;
 #[doc = "Field `RXBLOCK` reader - Block Incoming Data"]
-pub struct RXBLOCK_R(crate::FieldReader<bool, bool>);
-impl RXBLOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXBLOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXBLOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXBLOCK_R = crate::BitReader<bool>;
 #[doc = "Field `TXC` reader - TX Complete"]
-pub struct TXC_R(crate::FieldReader<bool, bool>);
-impl TXC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXC_R = crate::BitReader<bool>;
 #[doc = "Field `TXBL` reader - TX Buffer Level"]
-pub struct TXBL_R(crate::FieldReader<bool, bool>);
-impl TXBL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXBL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXBL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXBL_R = crate::BitReader<bool>;
 #[doc = "Field `RXDATAV` reader - RX Data Valid"]
-pub struct RXDATAV_R(crate::FieldReader<bool, bool>);
-impl RXDATAV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXDATAV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATAV_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATAV_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Receiver Enable Status"]
     #[inline(always)]
     pub fn rxens(&self) -> RXENS_R {
-        RXENS_R::new((self.bits & 0x01) != 0)
+        RXENS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmitter Enable Status"]
     #[inline(always)]
     pub fn txens(&self) -> TXENS_R {
-        TXENS_R::new(((self.bits >> 1) & 0x01) != 0)
+        TXENS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Block Incoming Data"]
     #[inline(always)]
     pub fn rxblock(&self) -> RXBLOCK_R {
-        RXBLOCK_R::new(((self.bits >> 2) & 0x01) != 0)
+        RXBLOCK_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - TX Complete"]
     #[inline(always)]
     pub fn txc(&self) -> TXC_R {
-        TXC_R::new(((self.bits >> 3) & 0x01) != 0)
+        TXC_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - TX Buffer Level"]
     #[inline(always)]
     pub fn txbl(&self) -> TXBL_R {
-        TXBL_R::new(((self.bits >> 4) & 0x01) != 0)
+        TXBL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - RX Data Valid"]
     #[inline(always)]
     pub fn rxdatav(&self) -> RXDATAV_R {
-        RXDATAV_R::new(((self.bits >> 5) & 0x01) != 0)
+        RXDATAV_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]

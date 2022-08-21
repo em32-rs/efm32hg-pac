@@ -35,197 +35,37 @@ impl From<crate::W<GUSBCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `TOUTCAL` reader - Timeout Calibration"]
-pub struct TOUTCAL_R(crate::FieldReader<u8, u8>);
-impl TOUTCAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TOUTCAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUTCAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUTCAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TOUTCAL` writer - Timeout Calibration"]
-pub struct TOUTCAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOUTCAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type TOUTCAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUSBCFG_SPEC, u8, u8, 3, O>;
 #[doc = "Field `FSINTF` reader - Full-Speed Serial Interface Select"]
-pub struct FSINTF_R(crate::FieldReader<bool, bool>);
-impl FSINTF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FSINTF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FSINTF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FSINTF_R = crate::BitReader<bool>;
 #[doc = "Field `FSINTF` writer - Full-Speed Serial Interface Select"]
-pub struct FSINTF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FSINTF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type FSINTF_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, bool, O>;
 #[doc = "Field `USBTRDTIM` reader - USB Turnaround Time"]
-pub struct USBTRDTIM_R(crate::FieldReader<u8, u8>);
-impl USBTRDTIM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        USBTRDTIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USBTRDTIM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USBTRDTIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `USBTRDTIM` writer - USB Turnaround Time"]
-pub struct USBTRDTIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBTRDTIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 10)) | ((value as u32 & 0x0f) << 10);
-        self.w
-    }
-}
+pub type USBTRDTIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUSBCFG_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TERMSELDLPULSE` reader - TermSel DLine Pulsing Selection"]
-pub struct TERMSELDLPULSE_R(crate::FieldReader<bool, bool>);
-impl TERMSELDLPULSE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TERMSELDLPULSE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TERMSELDLPULSE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TERMSELDLPULSE_R = crate::BitReader<bool>;
 #[doc = "Field `TERMSELDLPULSE` writer - TermSel DLine Pulsing Selection"]
-pub struct TERMSELDLPULSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TERMSELDLPULSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type TERMSELDLPULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, bool, O>;
 #[doc = "Field `TXENDDELAY` reader - Tx End Delay"]
-pub struct TXENDDELAY_R(crate::FieldReader<bool, bool>);
-impl TXENDDELAY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXENDDELAY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXENDDELAY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXENDDELAY_R = crate::BitReader<bool>;
 #[doc = "Field `TXENDDELAY` writer - Tx End Delay"]
-pub struct TXENDDELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXENDDELAY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type TXENDDELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, bool, O>;
 #[doc = "Field `CORRUPTTXPKT` writer - Corrupt Tx packet"]
-pub struct CORRUPTTXPKT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORRUPTTXPKT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type CORRUPTTXPKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Timeout Calibration"]
     #[inline(always)]
     pub fn toutcal(&self) -> TOUTCAL_R {
-        TOUTCAL_R::new((self.bits & 0x07) as u8)
+        TOUTCAL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 5 - Full-Speed Serial Interface Select"]
     #[inline(always)]
     pub fn fsintf(&self) -> FSINTF_R {
-        FSINTF_R::new(((self.bits >> 5) & 0x01) != 0)
+        FSINTF_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
@@ -235,44 +75,44 @@ impl R {
     #[doc = "Bit 22 - TermSel DLine Pulsing Selection"]
     #[inline(always)]
     pub fn termseldlpulse(&self) -> TERMSELDLPULSE_R {
-        TERMSELDLPULSE_R::new(((self.bits >> 22) & 0x01) != 0)
+        TERMSELDLPULSE_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
     pub fn txenddelay(&self) -> TXENDDELAY_R {
-        TXENDDELAY_R::new(((self.bits >> 28) & 0x01) != 0)
+        TXENDDELAY_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Timeout Calibration"]
     #[inline(always)]
-    pub fn toutcal(&mut self) -> TOUTCAL_W {
-        TOUTCAL_W { w: self }
+    pub fn toutcal(&mut self) -> TOUTCAL_W<0> {
+        TOUTCAL_W::new(self)
     }
     #[doc = "Bit 5 - Full-Speed Serial Interface Select"]
     #[inline(always)]
-    pub fn fsintf(&mut self) -> FSINTF_W {
-        FSINTF_W { w: self }
+    pub fn fsintf(&mut self) -> FSINTF_W<5> {
+        FSINTF_W::new(self)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
-    pub fn usbtrdtim(&mut self) -> USBTRDTIM_W {
-        USBTRDTIM_W { w: self }
+    pub fn usbtrdtim(&mut self) -> USBTRDTIM_W<10> {
+        USBTRDTIM_W::new(self)
     }
     #[doc = "Bit 22 - TermSel DLine Pulsing Selection"]
     #[inline(always)]
-    pub fn termseldlpulse(&mut self) -> TERMSELDLPULSE_W {
-        TERMSELDLPULSE_W { w: self }
+    pub fn termseldlpulse(&mut self) -> TERMSELDLPULSE_W<22> {
+        TERMSELDLPULSE_W::new(self)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
-    pub fn txenddelay(&mut self) -> TXENDDELAY_W {
-        TXENDDELAY_W { w: self }
+    pub fn txenddelay(&mut self) -> TXENDDELAY_W<28> {
+        TXENDDELAY_W::new(self)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
-    pub fn corrupttxpkt(&mut self) -> CORRUPTTXPKT_W {
-        CORRUPTTXPKT_W { w: self }
+    pub fn corrupttxpkt(&mut self) -> CORRUPTTXPKT_W<31> {
+        CORRUPTTXPKT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,59 +20,19 @@ impl From<crate::W<IFC_SPEC>> for W {
     }
 }
 #[doc = "Field `EDGE` writer - Edge Triggered Interrupt Flag Clear"]
-pub struct EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `WARMUP` writer - Warm-up Interrupt Flag Clear"]
-pub struct WARMUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WARMUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type WARMUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Edge Triggered Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn edge(&mut self) -> EDGE_W {
-        EDGE_W { w: self }
+    pub fn edge(&mut self) -> EDGE_W<0> {
+        EDGE_W::new(self)
     }
     #[doc = "Bit 1 - Warm-up Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn warmup(&mut self) -> WARMUP_W {
-        WARMUP_W { w: self }
+    pub fn warmup(&mut self) -> WARMUP_W<1> {
+        WARMUP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,31 +35,9 @@ impl From<crate::W<CC2_CCV_SPEC>> for W {
     }
 }
 #[doc = "Field `CCV` reader - CC Channel Value"]
-pub struct CCV_R(crate::FieldReader<u16, u16>);
-impl CCV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CCV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CCV_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CCV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CCV` writer - CC Channel Value"]
-pub struct CCV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type CCV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC2_CCV_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - CC Channel Value"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - CC Channel Value"]
     #[inline(always)]
-    pub fn ccv(&mut self) -> CCV_W {
-        CCV_W { w: self }
+    pub fn ccv(&mut self) -> CCV_W<0> {
+        CCV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

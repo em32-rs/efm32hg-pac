@@ -14,47 +14,11 @@ impl From<crate::R<RXDATAX_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATA` reader - RX Data"]
-pub struct RXDATA_R(crate::FieldReader<u16, u16>);
-impl RXDATA_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RXDATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PERR` reader - Receive Data Parity Error"]
-pub struct PERR_R(crate::FieldReader<bool, bool>);
-impl PERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERR_R = crate::BitReader<bool>;
 #[doc = "Field `FERR` reader - Receive Data Framing Error"]
-pub struct FERR_R(crate::FieldReader<bool, bool>);
-impl FERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FERR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:8 - RX Data"]
     #[inline(always)]
@@ -64,15 +28,15 @@ impl R {
     #[doc = "Bit 14 - Receive Data Parity Error"]
     #[inline(always)]
     pub fn perr(&self) -> PERR_R {
-        PERR_R::new(((self.bits >> 14) & 0x01) != 0)
+        PERR_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Receive Data Framing Error"]
     #[inline(always)]
     pub fn ferr(&self) -> FERR_R {
-        FERR_R::new(((self.bits >> 15) & 0x01) != 0)
+        FERR_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Receive Buffer Data Extended Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdatax](index.html) module"]
+#[doc = "Receive Buffer Data Extended Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdatax](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
 pub struct RXDATAX_SPEC;
 impl crate::RegisterSpec for RXDATAX_SPEC {
     type Ux = u32;

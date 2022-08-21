@@ -14,33 +14,9 @@ impl From<crate::R<RXDOUBLE_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATA0` reader - RX Data 0"]
-pub struct RXDATA0_R(crate::FieldReader<u8, u8>);
-impl RXDATA0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDATA0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATA0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATA0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RXDATA1` reader - RX Data 1"]
-pub struct RXDATA1_R(crate::FieldReader<u8, u8>);
-impl RXDATA1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDATA1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATA1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATA1_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - RX Data 0"]
     #[inline(always)]
@@ -53,7 +29,7 @@ impl R {
         RXDATA1_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "RX FIFO Double Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdouble](index.html) module"]
+#[doc = "RX FIFO Double Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdouble](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
 pub struct RXDOUBLE_SPEC;
 impl crate::RegisterSpec for RXDOUBLE_SPEC {
     type Ux = u32;

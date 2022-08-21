@@ -34,6 +34,8 @@ impl From<crate::W<USHFRCOCONF_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BAND` reader - USHFRCO Band Select"]
+pub type BAND_R = crate::FieldReader<u8, BAND_A>;
 #[doc = "USHFRCO Band Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,13 +51,8 @@ impl From<BAND_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BAND` reader - USHFRCO Band Select"]
-pub struct BAND_R(crate::FieldReader<u8, BAND_A>);
 impl BAND_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BAND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<BAND_A> {
         match self.bits {
@@ -67,31 +64,17 @@ impl BAND_R {
     #[doc = "Checks if the value of the field is `_48MHZ`"]
     #[inline(always)]
     pub fn is_48mhz(&self) -> bool {
-        **self == BAND_A::_48MHZ
+        *self == BAND_A::_48MHZ
     }
     #[doc = "Checks if the value of the field is `_24MHZ`"]
     #[inline(always)]
     pub fn is_24mhz(&self) -> bool {
-        **self == BAND_A::_24MHZ
-    }
-}
-impl core::ops::Deref for BAND_R {
-    type Target = crate::FieldReader<u8, BAND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BAND_A::_24MHZ
     }
 }
 #[doc = "Field `BAND` writer - USHFRCO Band Select"]
-pub struct BAND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BAND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BAND_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type BAND_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USHFRCOCONF_SPEC, u8, BAND_A, 3, O>;
+impl<'a, const O: u8> BAND_W<'a, O> {
     #[doc = "48 MHz band. NOTE: Also set the TUNING and FINETUNING value when changing band."]
     #[inline(always)]
     pub fn _48mhz(self) -> &'a mut W {
@@ -102,71 +85,33 @@ impl<'a> BAND_W<'a> {
     pub fn _24mhz(self) -> &'a mut W {
         self.variant(BAND_A::_24MHZ)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 #[doc = "Field `USHFRCODIV2DIS` reader - USHFRCO divider for HFCLK disable"]
-pub struct USHFRCODIV2DIS_R(crate::FieldReader<bool, bool>);
-impl USHFRCODIV2DIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USHFRCODIV2DIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USHFRCODIV2DIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USHFRCODIV2DIS_R = crate::BitReader<bool>;
 #[doc = "Field `USHFRCODIV2DIS` writer - USHFRCO divider for HFCLK disable"]
-pub struct USHFRCODIV2DIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USHFRCODIV2DIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type USHFRCODIV2DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, USHFRCOCONF_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - USHFRCO Band Select"]
     #[inline(always)]
     pub fn band(&self) -> BAND_R {
-        BAND_R::new((self.bits & 0x07) as u8)
+        BAND_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 4 - USHFRCO divider for HFCLK disable"]
     #[inline(always)]
     pub fn ushfrcodiv2dis(&self) -> USHFRCODIV2DIS_R {
-        USHFRCODIV2DIS_R::new(((self.bits >> 4) & 0x01) != 0)
+        USHFRCODIV2DIS_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - USHFRCO Band Select"]
     #[inline(always)]
-    pub fn band(&mut self) -> BAND_W {
-        BAND_W { w: self }
+    pub fn band(&mut self) -> BAND_W<0> {
+        BAND_W::new(self)
     }
     #[doc = "Bit 4 - USHFRCO divider for HFCLK disable"]
     #[inline(always)]
-    pub fn ushfrcodiv2dis(&mut self) -> USHFRCODIV2DIS_W {
-        USHFRCODIV2DIS_W { w: self }
+    pub fn ushfrcodiv2dis(&mut self) -> USHFRCODIV2DIS_W<4> {
+        USHFRCODIV2DIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,53 +35,21 @@ impl From<crate::W<LFBCLKEN0_SPEC>> for W {
     }
 }
 #[doc = "Field `LEUART0` reader - Low Energy UART 0 Clock Enable"]
-pub struct LEUART0_R(crate::FieldReader<bool, bool>);
-impl LEUART0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LEUART0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LEUART0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LEUART0_R = crate::BitReader<bool>;
 #[doc = "Field `LEUART0` writer - Low Energy UART 0 Clock Enable"]
-pub struct LEUART0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEUART0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type LEUART0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFBCLKEN0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Low Energy UART 0 Clock Enable"]
     #[inline(always)]
     pub fn leuart0(&self) -> LEUART0_R {
-        LEUART0_R::new((self.bits & 0x01) != 0)
+        LEUART0_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Low Energy UART 0 Clock Enable"]
     #[inline(always)]
-    pub fn leuart0(&mut self) -> LEUART0_W {
-        LEUART0_W { w: self }
+    pub fn leuart0(&mut self) -> LEUART0_W<0> {
+        LEUART0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

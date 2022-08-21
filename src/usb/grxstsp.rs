@@ -14,33 +14,11 @@ impl From<crate::R<GRXSTSP_SPEC>> for R {
     }
 }
 #[doc = "Field `CHEPNUM` reader - Channel Number host only / Endpoint Number"]
-pub struct CHEPNUM_R(crate::FieldReader<u8, u8>);
-impl CHEPNUM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CHEPNUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHEPNUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHEPNUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BCNT` reader - Byte Count (host or device)"]
-pub struct BCNT_R(crate::FieldReader<u16, u16>);
-impl BCNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BCNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BCNT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `DPID` reader - Data PID (host or device)"]
+pub type DPID_R = crate::FieldReader<u8, DPID_A>;
 #[doc = "Data PID (host or device)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -60,13 +38,8 @@ impl From<DPID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DPID` reader - Data PID (host or device)"]
-pub struct DPID_R(crate::FieldReader<u8, DPID_A>);
 impl DPID_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DPID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPID_A {
         match self.bits {
@@ -80,31 +53,26 @@ impl DPID_R {
     #[doc = "Checks if the value of the field is `DATA0`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        **self == DPID_A::DATA0
+        *self == DPID_A::DATA0
     }
     #[doc = "Checks if the value of the field is `DATA1`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        **self == DPID_A::DATA1
+        *self == DPID_A::DATA1
     }
     #[doc = "Checks if the value of the field is `DATA2`"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
-        **self == DPID_A::DATA2
+        *self == DPID_A::DATA2
     }
     #[doc = "Checks if the value of the field is `MDATA`"]
     #[inline(always)]
     pub fn is_mdata(&self) -> bool {
-        **self == DPID_A::MDATA
+        *self == DPID_A::MDATA
     }
 }
-impl core::ops::Deref for DPID_R {
-    type Target = crate::FieldReader<u8, DPID_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `PKTSTS` reader - Packet Status (host or device)"]
+pub type PKTSTS_R = crate::FieldReader<u8, PKTSTS_A>;
 #[doc = "Packet Status (host or device)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -130,13 +98,8 @@ impl From<PKTSTS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PKTSTS` reader - Packet Status (host or device)"]
-pub struct PKTSTS_R(crate::FieldReader<u8, PKTSTS_A>);
 impl PKTSTS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PKTSTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PKTSTS_A> {
         match self.bits {
@@ -153,60 +116,41 @@ impl PKTSTS_R {
     #[doc = "Checks if the value of the field is `GOUTNAK`"]
     #[inline(always)]
     pub fn is_goutnak(&self) -> bool {
-        **self == PKTSTS_A::GOUTNAK
+        *self == PKTSTS_A::GOUTNAK
     }
     #[doc = "Checks if the value of the field is `PKTRCV`"]
     #[inline(always)]
     pub fn is_pktrcv(&self) -> bool {
-        **self == PKTSTS_A::PKTRCV
+        *self == PKTSTS_A::PKTRCV
     }
     #[doc = "Checks if the value of the field is `XFERCOMPL`"]
     #[inline(always)]
     pub fn is_xfercompl(&self) -> bool {
-        **self == PKTSTS_A::XFERCOMPL
+        *self == PKTSTS_A::XFERCOMPL
     }
     #[doc = "Checks if the value of the field is `SETUPCOMPL`"]
     #[inline(always)]
     pub fn is_setupcompl(&self) -> bool {
-        **self == PKTSTS_A::SETUPCOMPL
+        *self == PKTSTS_A::SETUPCOMPL
     }
     #[doc = "Checks if the value of the field is `TGLERR`"]
     #[inline(always)]
     pub fn is_tglerr(&self) -> bool {
-        **self == PKTSTS_A::TGLERR
+        *self == PKTSTS_A::TGLERR
     }
     #[doc = "Checks if the value of the field is `SETUPRCV`"]
     #[inline(always)]
     pub fn is_setuprcv(&self) -> bool {
-        **self == PKTSTS_A::SETUPRCV
+        *self == PKTSTS_A::SETUPRCV
     }
     #[doc = "Checks if the value of the field is `CHLT`"]
     #[inline(always)]
     pub fn is_chlt(&self) -> bool {
-        **self == PKTSTS_A::CHLT
-    }
-}
-impl core::ops::Deref for PKTSTS_R {
-    type Target = crate::FieldReader<u8, PKTSTS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PKTSTS_A::CHLT
     }
 }
 #[doc = "Field `FN` reader - Frame Number"]
-pub struct FN_R(crate::FieldReader<u8, u8>);
-impl FN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FN_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - Channel Number host only / Endpoint Number"]
     #[inline(always)]
@@ -221,7 +165,7 @@ impl R {
     #[doc = "Bits 15:16 - Data PID (host or device)"]
     #[inline(always)]
     pub fn dpid(&self) -> DPID_R {
-        DPID_R::new(((self.bits >> 15) & 0x03) as u8)
+        DPID_R::new(((self.bits >> 15) & 3) as u8)
     }
     #[doc = "Bits 17:20 - Packet Status (host or device)"]
     #[inline(always)]

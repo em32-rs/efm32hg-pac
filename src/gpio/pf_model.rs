@@ -34,6 +34,8 @@ impl From<crate::W<PF_MODEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE0` reader - Pin 0 Mode"]
+pub type MODE0_R = crate::FieldReader<u8, MODE0_A>;
 #[doc = "Pin 0 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -77,13 +79,8 @@ impl From<MODE0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE0` reader - Pin 0 Mode"]
-pub struct MODE0_R(crate::FieldReader<u8, MODE0_A>);
 impl MODE0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE0_A {
         match self.bits {
@@ -109,101 +106,88 @@ impl MODE0_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE0_A::DISABLED
+        *self == MODE0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == MODE0_A::INPUT
+        *self == MODE0_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
     #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        **self == MODE0_A::INPUTPULL
+        *self == MODE0_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
     #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        **self == MODE0_A::INPUTPULLFILTER
+        *self == MODE0_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
     #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        **self == MODE0_A::PUSHPULL
+        *self == MODE0_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLDRIVE`"]
     #[inline(always)]
     pub fn is_pushpulldrive(&self) -> bool {
-        **self == MODE0_A::PUSHPULLDRIVE
+        *self == MODE0_A::PUSHPULLDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
     #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        **self == MODE0_A::WIREDOR
+        *self == MODE0_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
     #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        **self == MODE0_A::WIREDORPULLDOWN
+        *self == MODE0_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
     #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        **self == MODE0_A::WIREDAND
+        *self == MODE0_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
     #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        **self == MODE0_A::WIREDANDFILTER
+        *self == MODE0_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
     #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        **self == MODE0_A::WIREDANDPULLUP
+        *self == MODE0_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        **self == MODE0_A::WIREDANDPULLUPFILTER
+        *self == MODE0_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVE`"]
     #[inline(always)]
     pub fn is_wiredanddrive(&self) -> bool {
-        **self == MODE0_A::WIREDANDDRIVE
+        *self == MODE0_A::WIREDANDDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivefilter(&self) -> bool {
-        **self == MODE0_A::WIREDANDDRIVEFILTER
+        *self == MODE0_A::WIREDANDDRIVEFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUP`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullup(&self) -> bool {
-        **self == MODE0_A::WIREDANDDRIVEPULLUP
+        *self == MODE0_A::WIREDANDDRIVEPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullupfilter(&self) -> bool {
-        **self == MODE0_A::WIREDANDDRIVEPULLUPFILTER
-    }
-}
-impl core::ops::Deref for MODE0_R {
-    type Target = crate::FieldReader<u8, MODE0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE0_A::WIREDANDDRIVEPULLUPFILTER
     }
 }
 #[doc = "Field `MODE0` writer - Pin 0 Mode"]
-pub struct MODE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE0_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_MODEL_SPEC, u8, MODE0_A, 4, O>;
+impl<'a, const O: u8> MODE0_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -284,13 +268,9 @@ impl<'a> MODE0_W<'a> {
     pub fn wiredanddrivepullupfilter(self) -> &'a mut W {
         self.variant(MODE0_A::WIREDANDDRIVEPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
+#[doc = "Field `MODE1` reader - Pin 1 Mode"]
+pub type MODE1_R = crate::FieldReader<u8, MODE1_A>;
 #[doc = "Pin 1 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -334,13 +314,8 @@ impl From<MODE1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE1` reader - Pin 1 Mode"]
-pub struct MODE1_R(crate::FieldReader<u8, MODE1_A>);
 impl MODE1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE1_A {
         match self.bits {
@@ -366,101 +341,88 @@ impl MODE1_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE1_A::DISABLED
+        *self == MODE1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == MODE1_A::INPUT
+        *self == MODE1_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
     #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        **self == MODE1_A::INPUTPULL
+        *self == MODE1_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
     #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        **self == MODE1_A::INPUTPULLFILTER
+        *self == MODE1_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
     #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        **self == MODE1_A::PUSHPULL
+        *self == MODE1_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLDRIVE`"]
     #[inline(always)]
     pub fn is_pushpulldrive(&self) -> bool {
-        **self == MODE1_A::PUSHPULLDRIVE
+        *self == MODE1_A::PUSHPULLDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
     #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        **self == MODE1_A::WIREDOR
+        *self == MODE1_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
     #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        **self == MODE1_A::WIREDORPULLDOWN
+        *self == MODE1_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
     #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        **self == MODE1_A::WIREDAND
+        *self == MODE1_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
     #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        **self == MODE1_A::WIREDANDFILTER
+        *self == MODE1_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
     #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        **self == MODE1_A::WIREDANDPULLUP
+        *self == MODE1_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        **self == MODE1_A::WIREDANDPULLUPFILTER
+        *self == MODE1_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVE`"]
     #[inline(always)]
     pub fn is_wiredanddrive(&self) -> bool {
-        **self == MODE1_A::WIREDANDDRIVE
+        *self == MODE1_A::WIREDANDDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivefilter(&self) -> bool {
-        **self == MODE1_A::WIREDANDDRIVEFILTER
+        *self == MODE1_A::WIREDANDDRIVEFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUP`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullup(&self) -> bool {
-        **self == MODE1_A::WIREDANDDRIVEPULLUP
+        *self == MODE1_A::WIREDANDDRIVEPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullupfilter(&self) -> bool {
-        **self == MODE1_A::WIREDANDDRIVEPULLUPFILTER
-    }
-}
-impl core::ops::Deref for MODE1_R {
-    type Target = crate::FieldReader<u8, MODE1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE1_A::WIREDANDDRIVEPULLUPFILTER
     }
 }
 #[doc = "Field `MODE1` writer - Pin 1 Mode"]
-pub struct MODE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE1_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE1_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_MODEL_SPEC, u8, MODE1_A, 4, O>;
+impl<'a, const O: u8> MODE1_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -541,13 +503,9 @@ impl<'a> MODE1_W<'a> {
     pub fn wiredanddrivepullupfilter(self) -> &'a mut W {
         self.variant(MODE1_A::WIREDANDDRIVEPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
 }
+#[doc = "Field `MODE2` reader - Pin 2 Mode"]
+pub type MODE2_R = crate::FieldReader<u8, MODE2_A>;
 #[doc = "Pin 2 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -591,13 +549,8 @@ impl From<MODE2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE2` reader - Pin 2 Mode"]
-pub struct MODE2_R(crate::FieldReader<u8, MODE2_A>);
 impl MODE2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE2_A {
         match self.bits {
@@ -623,101 +576,88 @@ impl MODE2_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE2_A::DISABLED
+        *self == MODE2_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == MODE2_A::INPUT
+        *self == MODE2_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
     #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        **self == MODE2_A::INPUTPULL
+        *self == MODE2_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
     #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        **self == MODE2_A::INPUTPULLFILTER
+        *self == MODE2_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
     #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        **self == MODE2_A::PUSHPULL
+        *self == MODE2_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLDRIVE`"]
     #[inline(always)]
     pub fn is_pushpulldrive(&self) -> bool {
-        **self == MODE2_A::PUSHPULLDRIVE
+        *self == MODE2_A::PUSHPULLDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
     #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        **self == MODE2_A::WIREDOR
+        *self == MODE2_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
     #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        **self == MODE2_A::WIREDORPULLDOWN
+        *self == MODE2_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
     #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        **self == MODE2_A::WIREDAND
+        *self == MODE2_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
     #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        **self == MODE2_A::WIREDANDFILTER
+        *self == MODE2_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
     #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        **self == MODE2_A::WIREDANDPULLUP
+        *self == MODE2_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        **self == MODE2_A::WIREDANDPULLUPFILTER
+        *self == MODE2_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVE`"]
     #[inline(always)]
     pub fn is_wiredanddrive(&self) -> bool {
-        **self == MODE2_A::WIREDANDDRIVE
+        *self == MODE2_A::WIREDANDDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivefilter(&self) -> bool {
-        **self == MODE2_A::WIREDANDDRIVEFILTER
+        *self == MODE2_A::WIREDANDDRIVEFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUP`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullup(&self) -> bool {
-        **self == MODE2_A::WIREDANDDRIVEPULLUP
+        *self == MODE2_A::WIREDANDDRIVEPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullupfilter(&self) -> bool {
-        **self == MODE2_A::WIREDANDDRIVEPULLUPFILTER
-    }
-}
-impl core::ops::Deref for MODE2_R {
-    type Target = crate::FieldReader<u8, MODE2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE2_A::WIREDANDDRIVEPULLUPFILTER
     }
 }
 #[doc = "Field `MODE2` writer - Pin 2 Mode"]
-pub struct MODE2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE2_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE2_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_MODEL_SPEC, u8, MODE2_A, 4, O>;
+impl<'a, const O: u8> MODE2_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -798,13 +738,9 @@ impl<'a> MODE2_W<'a> {
     pub fn wiredanddrivepullupfilter(self) -> &'a mut W {
         self.variant(MODE2_A::WIREDANDDRIVEPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
 }
+#[doc = "Field `MODE3` reader - Pin 3 Mode"]
+pub type MODE3_R = crate::FieldReader<u8, MODE3_A>;
 #[doc = "Pin 3 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -848,13 +784,8 @@ impl From<MODE3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE3` reader - Pin 3 Mode"]
-pub struct MODE3_R(crate::FieldReader<u8, MODE3_A>);
 impl MODE3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE3_A {
         match self.bits {
@@ -880,101 +811,88 @@ impl MODE3_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE3_A::DISABLED
+        *self == MODE3_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == MODE3_A::INPUT
+        *self == MODE3_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
     #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        **self == MODE3_A::INPUTPULL
+        *self == MODE3_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
     #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        **self == MODE3_A::INPUTPULLFILTER
+        *self == MODE3_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
     #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        **self == MODE3_A::PUSHPULL
+        *self == MODE3_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLDRIVE`"]
     #[inline(always)]
     pub fn is_pushpulldrive(&self) -> bool {
-        **self == MODE3_A::PUSHPULLDRIVE
+        *self == MODE3_A::PUSHPULLDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
     #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        **self == MODE3_A::WIREDOR
+        *self == MODE3_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
     #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        **self == MODE3_A::WIREDORPULLDOWN
+        *self == MODE3_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
     #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        **self == MODE3_A::WIREDAND
+        *self == MODE3_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
     #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        **self == MODE3_A::WIREDANDFILTER
+        *self == MODE3_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
     #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        **self == MODE3_A::WIREDANDPULLUP
+        *self == MODE3_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        **self == MODE3_A::WIREDANDPULLUPFILTER
+        *self == MODE3_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVE`"]
     #[inline(always)]
     pub fn is_wiredanddrive(&self) -> bool {
-        **self == MODE3_A::WIREDANDDRIVE
+        *self == MODE3_A::WIREDANDDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivefilter(&self) -> bool {
-        **self == MODE3_A::WIREDANDDRIVEFILTER
+        *self == MODE3_A::WIREDANDDRIVEFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUP`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullup(&self) -> bool {
-        **self == MODE3_A::WIREDANDDRIVEPULLUP
+        *self == MODE3_A::WIREDANDDRIVEPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullupfilter(&self) -> bool {
-        **self == MODE3_A::WIREDANDDRIVEPULLUPFILTER
-    }
-}
-impl core::ops::Deref for MODE3_R {
-    type Target = crate::FieldReader<u8, MODE3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE3_A::WIREDANDDRIVEPULLUPFILTER
     }
 }
 #[doc = "Field `MODE3` writer - Pin 3 Mode"]
-pub struct MODE3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE3_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE3_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_MODEL_SPEC, u8, MODE3_A, 4, O>;
+impl<'a, const O: u8> MODE3_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1055,13 +973,9 @@ impl<'a> MODE3_W<'a> {
     pub fn wiredanddrivepullupfilter(self) -> &'a mut W {
         self.variant(MODE3_A::WIREDANDDRIVEPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
 }
+#[doc = "Field `MODE4` reader - Pin 4 Mode"]
+pub type MODE4_R = crate::FieldReader<u8, MODE4_A>;
 #[doc = "Pin 4 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1105,13 +1019,8 @@ impl From<MODE4_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE4` reader - Pin 4 Mode"]
-pub struct MODE4_R(crate::FieldReader<u8, MODE4_A>);
 impl MODE4_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE4_A {
         match self.bits {
@@ -1137,101 +1046,88 @@ impl MODE4_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE4_A::DISABLED
+        *self == MODE4_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == MODE4_A::INPUT
+        *self == MODE4_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
     #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        **self == MODE4_A::INPUTPULL
+        *self == MODE4_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
     #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        **self == MODE4_A::INPUTPULLFILTER
+        *self == MODE4_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
     #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        **self == MODE4_A::PUSHPULL
+        *self == MODE4_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLDRIVE`"]
     #[inline(always)]
     pub fn is_pushpulldrive(&self) -> bool {
-        **self == MODE4_A::PUSHPULLDRIVE
+        *self == MODE4_A::PUSHPULLDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
     #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        **self == MODE4_A::WIREDOR
+        *self == MODE4_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
     #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        **self == MODE4_A::WIREDORPULLDOWN
+        *self == MODE4_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
     #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        **self == MODE4_A::WIREDAND
+        *self == MODE4_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
     #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        **self == MODE4_A::WIREDANDFILTER
+        *self == MODE4_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
     #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        **self == MODE4_A::WIREDANDPULLUP
+        *self == MODE4_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        **self == MODE4_A::WIREDANDPULLUPFILTER
+        *self == MODE4_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVE`"]
     #[inline(always)]
     pub fn is_wiredanddrive(&self) -> bool {
-        **self == MODE4_A::WIREDANDDRIVE
+        *self == MODE4_A::WIREDANDDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivefilter(&self) -> bool {
-        **self == MODE4_A::WIREDANDDRIVEFILTER
+        *self == MODE4_A::WIREDANDDRIVEFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUP`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullup(&self) -> bool {
-        **self == MODE4_A::WIREDANDDRIVEPULLUP
+        *self == MODE4_A::WIREDANDDRIVEPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullupfilter(&self) -> bool {
-        **self == MODE4_A::WIREDANDDRIVEPULLUPFILTER
-    }
-}
-impl core::ops::Deref for MODE4_R {
-    type Target = crate::FieldReader<u8, MODE4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE4_A::WIREDANDDRIVEPULLUPFILTER
     }
 }
 #[doc = "Field `MODE4` writer - Pin 4 Mode"]
-pub struct MODE4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE4_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE4_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_MODEL_SPEC, u8, MODE4_A, 4, O>;
+impl<'a, const O: u8> MODE4_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1312,13 +1208,9 @@ impl<'a> MODE4_W<'a> {
     pub fn wiredanddrivepullupfilter(self) -> &'a mut W {
         self.variant(MODE4_A::WIREDANDDRIVEPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
 }
+#[doc = "Field `MODE5` reader - Pin 5 Mode"]
+pub type MODE5_R = crate::FieldReader<u8, MODE5_A>;
 #[doc = "Pin 5 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1362,13 +1254,8 @@ impl From<MODE5_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE5` reader - Pin 5 Mode"]
-pub struct MODE5_R(crate::FieldReader<u8, MODE5_A>);
 impl MODE5_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE5_A {
         match self.bits {
@@ -1394,101 +1281,88 @@ impl MODE5_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE5_A::DISABLED
+        *self == MODE5_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == MODE5_A::INPUT
+        *self == MODE5_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
     #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        **self == MODE5_A::INPUTPULL
+        *self == MODE5_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
     #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        **self == MODE5_A::INPUTPULLFILTER
+        *self == MODE5_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
     #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        **self == MODE5_A::PUSHPULL
+        *self == MODE5_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLDRIVE`"]
     #[inline(always)]
     pub fn is_pushpulldrive(&self) -> bool {
-        **self == MODE5_A::PUSHPULLDRIVE
+        *self == MODE5_A::PUSHPULLDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
     #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        **self == MODE5_A::WIREDOR
+        *self == MODE5_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
     #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        **self == MODE5_A::WIREDORPULLDOWN
+        *self == MODE5_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
     #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        **self == MODE5_A::WIREDAND
+        *self == MODE5_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
     #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        **self == MODE5_A::WIREDANDFILTER
+        *self == MODE5_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
     #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        **self == MODE5_A::WIREDANDPULLUP
+        *self == MODE5_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        **self == MODE5_A::WIREDANDPULLUPFILTER
+        *self == MODE5_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVE`"]
     #[inline(always)]
     pub fn is_wiredanddrive(&self) -> bool {
-        **self == MODE5_A::WIREDANDDRIVE
+        *self == MODE5_A::WIREDANDDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivefilter(&self) -> bool {
-        **self == MODE5_A::WIREDANDDRIVEFILTER
+        *self == MODE5_A::WIREDANDDRIVEFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUP`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullup(&self) -> bool {
-        **self == MODE5_A::WIREDANDDRIVEPULLUP
+        *self == MODE5_A::WIREDANDDRIVEPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullupfilter(&self) -> bool {
-        **self == MODE5_A::WIREDANDDRIVEPULLUPFILTER
-    }
-}
-impl core::ops::Deref for MODE5_R {
-    type Target = crate::FieldReader<u8, MODE5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE5_A::WIREDANDDRIVEPULLUPFILTER
     }
 }
 #[doc = "Field `MODE5` writer - Pin 5 Mode"]
-pub struct MODE5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE5_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE5_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_MODEL_SPEC, u8, MODE5_A, 4, O>;
+impl<'a, const O: u8> MODE5_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1569,13 +1443,9 @@ impl<'a> MODE5_W<'a> {
     pub fn wiredanddrivepullupfilter(self) -> &'a mut W {
         self.variant(MODE5_A::WIREDANDDRIVEPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | ((value as u32 & 0x0f) << 20);
-        self.w
-    }
 }
+#[doc = "Field `MODE6` reader - Pin 6 Mode"]
+pub type MODE6_R = crate::FieldReader<u8, MODE6_A>;
 #[doc = "Pin 6 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1619,13 +1489,8 @@ impl From<MODE6_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE6` reader - Pin 6 Mode"]
-pub struct MODE6_R(crate::FieldReader<u8, MODE6_A>);
 impl MODE6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE6_A {
         match self.bits {
@@ -1651,101 +1516,88 @@ impl MODE6_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE6_A::DISABLED
+        *self == MODE6_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == MODE6_A::INPUT
+        *self == MODE6_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
     #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        **self == MODE6_A::INPUTPULL
+        *self == MODE6_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
     #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        **self == MODE6_A::INPUTPULLFILTER
+        *self == MODE6_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
     #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        **self == MODE6_A::PUSHPULL
+        *self == MODE6_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLDRIVE`"]
     #[inline(always)]
     pub fn is_pushpulldrive(&self) -> bool {
-        **self == MODE6_A::PUSHPULLDRIVE
+        *self == MODE6_A::PUSHPULLDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
     #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        **self == MODE6_A::WIREDOR
+        *self == MODE6_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
     #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        **self == MODE6_A::WIREDORPULLDOWN
+        *self == MODE6_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
     #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        **self == MODE6_A::WIREDAND
+        *self == MODE6_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
     #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        **self == MODE6_A::WIREDANDFILTER
+        *self == MODE6_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
     #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        **self == MODE6_A::WIREDANDPULLUP
+        *self == MODE6_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        **self == MODE6_A::WIREDANDPULLUPFILTER
+        *self == MODE6_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVE`"]
     #[inline(always)]
     pub fn is_wiredanddrive(&self) -> bool {
-        **self == MODE6_A::WIREDANDDRIVE
+        *self == MODE6_A::WIREDANDDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivefilter(&self) -> bool {
-        **self == MODE6_A::WIREDANDDRIVEFILTER
+        *self == MODE6_A::WIREDANDDRIVEFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUP`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullup(&self) -> bool {
-        **self == MODE6_A::WIREDANDDRIVEPULLUP
+        *self == MODE6_A::WIREDANDDRIVEPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullupfilter(&self) -> bool {
-        **self == MODE6_A::WIREDANDDRIVEPULLUPFILTER
-    }
-}
-impl core::ops::Deref for MODE6_R {
-    type Target = crate::FieldReader<u8, MODE6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE6_A::WIREDANDDRIVEPULLUPFILTER
     }
 }
 #[doc = "Field `MODE6` writer - Pin 6 Mode"]
-pub struct MODE6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE6_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE6_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_MODEL_SPEC, u8, MODE6_A, 4, O>;
+impl<'a, const O: u8> MODE6_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1826,13 +1678,9 @@ impl<'a> MODE6_W<'a> {
     pub fn wiredanddrivepullupfilter(self) -> &'a mut W {
         self.variant(MODE6_A::WIREDANDDRIVEPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
 }
+#[doc = "Field `MODE7` reader - Pin 7 Mode"]
+pub type MODE7_R = crate::FieldReader<u8, MODE7_A>;
 #[doc = "Pin 7 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -1876,13 +1724,8 @@ impl From<MODE7_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE7` reader - Pin 7 Mode"]
-pub struct MODE7_R(crate::FieldReader<u8, MODE7_A>);
 impl MODE7_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE7_A {
         match self.bits {
@@ -1908,101 +1751,88 @@ impl MODE7_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE7_A::DISABLED
+        *self == MODE7_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == MODE7_A::INPUT
+        *self == MODE7_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
     #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        **self == MODE7_A::INPUTPULL
+        *self == MODE7_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
     #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        **self == MODE7_A::INPUTPULLFILTER
+        *self == MODE7_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
     #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        **self == MODE7_A::PUSHPULL
+        *self == MODE7_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLDRIVE`"]
     #[inline(always)]
     pub fn is_pushpulldrive(&self) -> bool {
-        **self == MODE7_A::PUSHPULLDRIVE
+        *self == MODE7_A::PUSHPULLDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
     #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        **self == MODE7_A::WIREDOR
+        *self == MODE7_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
     #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        **self == MODE7_A::WIREDORPULLDOWN
+        *self == MODE7_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
     #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        **self == MODE7_A::WIREDAND
+        *self == MODE7_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
     #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        **self == MODE7_A::WIREDANDFILTER
+        *self == MODE7_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
     #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        **self == MODE7_A::WIREDANDPULLUP
+        *self == MODE7_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        **self == MODE7_A::WIREDANDPULLUPFILTER
+        *self == MODE7_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVE`"]
     #[inline(always)]
     pub fn is_wiredanddrive(&self) -> bool {
-        **self == MODE7_A::WIREDANDDRIVE
+        *self == MODE7_A::WIREDANDDRIVE
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivefilter(&self) -> bool {
-        **self == MODE7_A::WIREDANDDRIVEFILTER
+        *self == MODE7_A::WIREDANDDRIVEFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUP`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullup(&self) -> bool {
-        **self == MODE7_A::WIREDANDDRIVEPULLUP
+        *self == MODE7_A::WIREDANDDRIVEPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDDRIVEPULLUPFILTER`"]
     #[inline(always)]
     pub fn is_wiredanddrivepullupfilter(&self) -> bool {
-        **self == MODE7_A::WIREDANDDRIVEPULLUPFILTER
-    }
-}
-impl core::ops::Deref for MODE7_R {
-    type Target = crate::FieldReader<u8, MODE7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE7_A::WIREDANDDRIVEPULLUPFILTER
     }
 }
 #[doc = "Field `MODE7` writer - Pin 7 Mode"]
-pub struct MODE7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE7_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE7_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_MODEL_SPEC, u8, MODE7_A, 4, O>;
+impl<'a, const O: u8> MODE7_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2083,12 +1913,6 @@ impl<'a> MODE7_W<'a> {
     pub fn wiredanddrivepullupfilter(self) -> &'a mut W {
         self.variant(MODE7_A::WIREDANDDRIVEPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | ((value as u32 & 0x0f) << 28);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Pin 0 Mode"]
@@ -2135,43 +1959,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Pin 0 Mode"]
     #[inline(always)]
-    pub fn mode0(&mut self) -> MODE0_W {
-        MODE0_W { w: self }
+    pub fn mode0(&mut self) -> MODE0_W<0> {
+        MODE0_W::new(self)
     }
     #[doc = "Bits 4:7 - Pin 1 Mode"]
     #[inline(always)]
-    pub fn mode1(&mut self) -> MODE1_W {
-        MODE1_W { w: self }
+    pub fn mode1(&mut self) -> MODE1_W<4> {
+        MODE1_W::new(self)
     }
     #[doc = "Bits 8:11 - Pin 2 Mode"]
     #[inline(always)]
-    pub fn mode2(&mut self) -> MODE2_W {
-        MODE2_W { w: self }
+    pub fn mode2(&mut self) -> MODE2_W<8> {
+        MODE2_W::new(self)
     }
     #[doc = "Bits 12:15 - Pin 3 Mode"]
     #[inline(always)]
-    pub fn mode3(&mut self) -> MODE3_W {
-        MODE3_W { w: self }
+    pub fn mode3(&mut self) -> MODE3_W<12> {
+        MODE3_W::new(self)
     }
     #[doc = "Bits 16:19 - Pin 4 Mode"]
     #[inline(always)]
-    pub fn mode4(&mut self) -> MODE4_W {
-        MODE4_W { w: self }
+    pub fn mode4(&mut self) -> MODE4_W<16> {
+        MODE4_W::new(self)
     }
     #[doc = "Bits 20:23 - Pin 5 Mode"]
     #[inline(always)]
-    pub fn mode5(&mut self) -> MODE5_W {
-        MODE5_W { w: self }
+    pub fn mode5(&mut self) -> MODE5_W<20> {
+        MODE5_W::new(self)
     }
     #[doc = "Bits 24:27 - Pin 6 Mode"]
     #[inline(always)]
-    pub fn mode6(&mut self) -> MODE6_W {
-        MODE6_W { w: self }
+    pub fn mode6(&mut self) -> MODE6_W<24> {
+        MODE6_W::new(self)
     }
     #[doc = "Bits 28:31 - Pin 7 Mode"]
     #[inline(always)]
-    pub fn mode7(&mut self) -> MODE7_W {
-        MODE7_W { w: self }
+    pub fn mode7(&mut self) -> MODE7_W<28> {
+        MODE7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

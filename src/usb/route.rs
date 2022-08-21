@@ -35,99 +35,35 @@ impl From<crate::W<ROUTE_SPEC>> for W {
     }
 }
 #[doc = "Field `PHYPEN` reader - USB PHY Pin Enable"]
-pub struct PHYPEN_R(crate::FieldReader<bool, bool>);
-impl PHYPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PHYPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PHYPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PHYPEN_R = crate::BitReader<bool>;
 #[doc = "Field `PHYPEN` writer - USB PHY Pin Enable"]
-pub struct PHYPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PHYPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PHYPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `DMPUPEN` reader - DMPU Pin Enable"]
-pub struct DMPUPEN_R(crate::FieldReader<bool, bool>);
-impl DMPUPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMPUPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMPUPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMPUPEN_R = crate::BitReader<bool>;
 #[doc = "Field `DMPUPEN` writer - DMPU Pin Enable"]
-pub struct DMPUPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMPUPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DMPUPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - USB PHY Pin Enable"]
     #[inline(always)]
     pub fn phypen(&self) -> PHYPEN_R {
-        PHYPEN_R::new((self.bits & 0x01) != 0)
+        PHYPEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - DMPU Pin Enable"]
     #[inline(always)]
     pub fn dmpupen(&self) -> DMPUPEN_R {
-        DMPUPEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        DMPUPEN_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - USB PHY Pin Enable"]
     #[inline(always)]
-    pub fn phypen(&mut self) -> PHYPEN_W {
-        PHYPEN_W { w: self }
+    pub fn phypen(&mut self) -> PHYPEN_W<0> {
+        PHYPEN_W::new(self)
     }
     #[doc = "Bit 2 - DMPU Pin Enable"]
     #[inline(always)]
-    pub fn dmpupen(&mut self) -> DMPUPEN_W {
-        DMPUPEN_W { w: self }
+    pub fn dmpupen(&mut self) -> DMPUPEN_W<2> {
+        DMPUPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

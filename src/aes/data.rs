@@ -35,43 +35,21 @@ impl From<crate::W<DATA_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA` reader - Data Access"]
-pub struct DATA_R(crate::FieldReader<u32, u32>);
-impl DATA_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATA_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DATA` writer - Data Access"]
-pub struct DATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATA_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Data Access"]
     #[inline(always)]
     pub fn data(&self) -> DATA_R {
-        DATA_R::new((self.bits & 0xffff_ffff) as u32)
+        DATA_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Data Access"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W {
-        DATA_W { w: self }
+    pub fn data(&mut self) -> DATA_W<0> {
+        DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -80,7 +58,7 @@ impl W {
         self
     }
 }
-#[doc = "DATA Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [data](index.html) module"]
+#[doc = "DATA Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [data](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
 pub struct DATA_SPEC;
 impl crate::RegisterSpec for DATA_SPEC {
     type Ux = u32;

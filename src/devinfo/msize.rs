@@ -14,33 +14,9 @@ impl From<crate::R<MSIZE_SPEC>> for R {
     }
 }
 #[doc = "Field `FLASH` reader - Flash size in kilobytes"]
-pub struct FLASH_R(crate::FieldReader<u16, u16>);
-impl FLASH_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FLASH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASH_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLASH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SRAM` reader - SRAM size in kilobytes"]
-pub struct SRAM_R(crate::FieldReader<u16, u16>);
-impl SRAM_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SRAM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SRAM_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SRAM_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Flash size in kilobytes"]
     #[inline(always)]

@@ -14,47 +14,11 @@ impl From<crate::R<RXDATAXP_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATAP` reader - RX Data Peek"]
-pub struct RXDATAP_R(crate::FieldReader<u16, u16>);
-impl RXDATAP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RXDATAP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATAP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATAP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PERRP` reader - Data Parity Error Peek"]
-pub struct PERRP_R(crate::FieldReader<bool, bool>);
-impl PERRP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PERRP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERRP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERRP_R = crate::BitReader<bool>;
 #[doc = "Field `FERRP` reader - Data Framing Error Peek"]
-pub struct FERRP_R(crate::FieldReader<bool, bool>);
-impl FERRP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FERRP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FERRP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FERRP_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:8 - RX Data Peek"]
     #[inline(always)]
@@ -64,12 +28,12 @@ impl R {
     #[doc = "Bit 14 - Data Parity Error Peek"]
     #[inline(always)]
     pub fn perrp(&self) -> PERRP_R {
-        PERRP_R::new(((self.bits >> 14) & 0x01) != 0)
+        PERRP_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Data Framing Error Peek"]
     #[inline(always)]
     pub fn ferrp(&self) -> FERRP_R {
-        FERRP_R::new(((self.bits >> 15) & 0x01) != 0)
+        FERRP_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 #[doc = "RX Buffer Data Extended Peek Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdataxp](index.html) module"]

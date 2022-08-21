@@ -41,15 +41,8 @@ impl From<HFCLKSEL_AW> for u8 {
     }
 }
 #[doc = "Field `HFCLKSEL` writer - HFCLK Select"]
-pub struct HFCLKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFCLKSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFCLKSEL_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HFCLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMD_SPEC, u8, HFCLKSEL_AW, 3, O>;
+impl<'a, const O: u8> HFCLKSEL_W<'a, O> {
     #[doc = "Select HFRCO as HFCLK."]
     #[inline(always)]
     pub fn hfrco(self) -> &'a mut W {
@@ -75,57 +68,11 @@ impl<'a> HFCLKSEL_W<'a> {
     pub fn ushfrcodiv2(self) -> &'a mut W {
         self.variant(HFCLKSEL_AW::USHFRCODIV2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 #[doc = "Field `CALSTART` writer - Calibration Start"]
-pub struct CALSTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALSTART_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CALSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CALSTOP` writer - Calibration Stop"]
-pub struct CALSTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALSTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CALSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "USB Core Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -144,15 +91,9 @@ impl From<USBCCLKSEL_AW> for u8 {
     }
 }
 #[doc = "Field `USBCCLKSEL` writer - USB Core Clock Select"]
-pub struct USBCCLKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBCCLKSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBCCLKSEL_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type USBCCLKSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CMD_SPEC, u8, USBCCLKSEL_AW, 3, O>;
+impl<'a, const O: u8> USBCCLKSEL_W<'a, O> {
     #[doc = "Select LFXO as HFCORECLKUSBC."]
     #[inline(always)]
     pub fn lfxo(self) -> &'a mut W {
@@ -168,33 +109,27 @@ impl<'a> USBCCLKSEL_W<'a> {
     pub fn ushfrco(self) -> &'a mut W {
         self.variant(USBCCLKSEL_AW::USHFRCO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 5)) | ((value as u32 & 0x07) << 5);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bits 0:2 - HFCLK Select"]
     #[inline(always)]
-    pub fn hfclksel(&mut self) -> HFCLKSEL_W {
-        HFCLKSEL_W { w: self }
+    pub fn hfclksel(&mut self) -> HFCLKSEL_W<0> {
+        HFCLKSEL_W::new(self)
     }
     #[doc = "Bit 3 - Calibration Start"]
     #[inline(always)]
-    pub fn calstart(&mut self) -> CALSTART_W {
-        CALSTART_W { w: self }
+    pub fn calstart(&mut self) -> CALSTART_W<3> {
+        CALSTART_W::new(self)
     }
     #[doc = "Bit 4 - Calibration Stop"]
     #[inline(always)]
-    pub fn calstop(&mut self) -> CALSTOP_W {
-        CALSTOP_W { w: self }
+    pub fn calstop(&mut self) -> CALSTOP_W<4> {
+        CALSTOP_W::new(self)
     }
     #[doc = "Bits 5:7 - USB Core Clock Select"]
     #[inline(always)]
-    pub fn usbcclksel(&mut self) -> USBCCLKSEL_W {
-        USBCCLKSEL_W { w: self }
+    pub fn usbcclksel(&mut self) -> USBCCLKSEL_W<5> {
+        USBCCLKSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

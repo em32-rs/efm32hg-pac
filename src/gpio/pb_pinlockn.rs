@@ -35,31 +35,10 @@ impl From<crate::W<PB_PINLOCKN_SPEC>> for W {
     }
 }
 #[doc = "Field `PINLOCKN` reader - Unlocked Pins"]
-pub struct PINLOCKN_R(crate::FieldReader<u16, u16>);
-impl PINLOCKN_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PINLOCKN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PINLOCKN_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PINLOCKN_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PINLOCKN` writer - Unlocked Pins"]
-pub struct PINLOCKN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PINLOCKN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type PINLOCKN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PB_PINLOCKN_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Unlocked Pins"]
     #[inline(always)]
@@ -70,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Unlocked Pins"]
     #[inline(always)]
-    pub fn pinlockn(&mut self) -> PINLOCKN_W {
-        PINLOCKN_W { w: self }
+    pub fn pinlockn(&mut self) -> PINLOCKN_W<0> {
+        PINLOCKN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

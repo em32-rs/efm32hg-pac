@@ -34,6 +34,8 @@ impl From<crate::W<DTTIME_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DTPRESC` reader - DTI Prescaler Setting"]
+pub type DTPRESC_R = crate::FieldReader<u8, DTPRESC_A>;
 #[doc = "DTI Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -67,13 +69,8 @@ impl From<DTPRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DTPRESC` reader - DTI Prescaler Setting"]
-pub struct DTPRESC_R(crate::FieldReader<u8, DTPRESC_A>);
 impl DTPRESC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DTPRESC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DTPRESC_A> {
         match self.bits {
@@ -94,76 +91,62 @@ impl DTPRESC_R {
     #[doc = "Checks if the value of the field is `DIV1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == DTPRESC_A::DIV1
+        *self == DTPRESC_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == DTPRESC_A::DIV2
+        *self == DTPRESC_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == DTPRESC_A::DIV4
+        *self == DTPRESC_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == DTPRESC_A::DIV8
+        *self == DTPRESC_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == DTPRESC_A::DIV16
+        *self == DTPRESC_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
     #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        **self == DTPRESC_A::DIV32
+        *self == DTPRESC_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
     #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        **self == DTPRESC_A::DIV64
+        *self == DTPRESC_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
     #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        **self == DTPRESC_A::DIV128
+        *self == DTPRESC_A::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
     #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        **self == DTPRESC_A::DIV256
+        *self == DTPRESC_A::DIV256
     }
     #[doc = "Checks if the value of the field is `DIV512`"]
     #[inline(always)]
     pub fn is_div512(&self) -> bool {
-        **self == DTPRESC_A::DIV512
+        *self == DTPRESC_A::DIV512
     }
     #[doc = "Checks if the value of the field is `DIV1024`"]
     #[inline(always)]
     pub fn is_div1024(&self) -> bool {
-        **self == DTPRESC_A::DIV1024
-    }
-}
-impl core::ops::Deref for DTPRESC_R {
-    type Target = crate::FieldReader<u8, DTPRESC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DTPRESC_A::DIV1024
     }
 }
 #[doc = "Field `DTPRESC` writer - DTI Prescaler Setting"]
-pub struct DTPRESC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTPRESC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DTPRESC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DTPRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIME_SPEC, u8, DTPRESC_A, 4, O>;
+impl<'a, const O: u8> DTPRESC_W<'a, O> {
     #[doc = "The HFPERCLK is undivided"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -219,65 +202,15 @@ impl<'a> DTPRESC_W<'a> {
     pub fn div1024(self) -> &'a mut W {
         self.variant(DTPRESC_A::DIV1024)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 #[doc = "Field `DTRISET` reader - DTI Rise-time"]
-pub struct DTRISET_R(crate::FieldReader<u8, u8>);
-impl DTRISET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DTRISET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTRISET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTRISET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DTRISET` writer - DTI Rise-time"]
-pub struct DTRISET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTRISET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u32 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type DTRISET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIME_SPEC, u8, u8, 6, O>;
 #[doc = "Field `DTFALLT` reader - DTI Fall-time"]
-pub struct DTFALLT_R(crate::FieldReader<u8, u8>);
-impl DTFALLT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DTFALLT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTFALLT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTFALLT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DTFALLT` writer - DTI Fall-time"]
-pub struct DTFALLT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTFALLT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | ((value as u32 & 0x3f) << 16);
-        self.w
-    }
-}
+pub type DTFALLT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIME_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:3 - DTI Prescaler Setting"]
     #[inline(always)]
@@ -298,18 +231,18 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - DTI Prescaler Setting"]
     #[inline(always)]
-    pub fn dtpresc(&mut self) -> DTPRESC_W {
-        DTPRESC_W { w: self }
+    pub fn dtpresc(&mut self) -> DTPRESC_W<0> {
+        DTPRESC_W::new(self)
     }
     #[doc = "Bits 8:13 - DTI Rise-time"]
     #[inline(always)]
-    pub fn dtriset(&mut self) -> DTRISET_W {
-        DTRISET_W { w: self }
+    pub fn dtriset(&mut self) -> DTRISET_W<8> {
+        DTRISET_W::new(self)
     }
     #[doc = "Bits 16:21 - DTI Fall-time"]
     #[inline(always)]
-    pub fn dtfallt(&mut self) -> DTFALLT_W {
-        DTFALLT_W { w: self }
+    pub fn dtfallt(&mut self) -> DTFALLT_W<16> {
+        DTFALLT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

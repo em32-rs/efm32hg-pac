@@ -35,421 +35,133 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `HFRCORDY` reader - HFRCO Ready Interrupt Enable"]
-pub struct HFRCORDY_R(crate::FieldReader<bool, bool>);
-impl HFRCORDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFRCORDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HFRCORDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HFRCORDY_R = crate::BitReader<bool>;
 #[doc = "Field `HFRCORDY` writer - HFRCO Ready Interrupt Enable"]
-pub struct HFRCORDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFRCORDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type HFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `HFXORDY` reader - HFXO Ready Interrupt Enable"]
-pub struct HFXORDY_R(crate::FieldReader<bool, bool>);
-impl HFXORDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFXORDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HFXORDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HFXORDY_R = crate::BitReader<bool>;
 #[doc = "Field `HFXORDY` writer - HFXO Ready Interrupt Enable"]
-pub struct HFXORDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFXORDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type HFXORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `LFRCORDY` reader - LFRCO Ready Interrupt Enable"]
-pub struct LFRCORDY_R(crate::FieldReader<bool, bool>);
-impl LFRCORDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LFRCORDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LFRCORDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LFRCORDY_R = crate::BitReader<bool>;
 #[doc = "Field `LFRCORDY` writer - LFRCO Ready Interrupt Enable"]
-pub struct LFRCORDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFRCORDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type LFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `LFXORDY` reader - LFXO Ready Interrupt Enable"]
-pub struct LFXORDY_R(crate::FieldReader<bool, bool>);
-impl LFXORDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LFXORDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LFXORDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LFXORDY_R = crate::BitReader<bool>;
 #[doc = "Field `LFXORDY` writer - LFXO Ready Interrupt Enable"]
-pub struct LFXORDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFXORDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type LFXORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `AUXHFRCORDY` reader - AUXHFRCO Ready Interrupt Enable"]
-pub struct AUXHFRCORDY_R(crate::FieldReader<bool, bool>);
-impl AUXHFRCORDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUXHFRCORDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AUXHFRCORDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AUXHFRCORDY_R = crate::BitReader<bool>;
 #[doc = "Field `AUXHFRCORDY` writer - AUXHFRCO Ready Interrupt Enable"]
-pub struct AUXHFRCORDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUXHFRCORDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type AUXHFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CALRDY` reader - Calibration Ready Interrupt Enable"]
-pub struct CALRDY_R(crate::FieldReader<bool, bool>);
-impl CALRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CALRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALRDY_R = crate::BitReader<bool>;
 #[doc = "Field `CALRDY` writer - Calibration Ready Interrupt Enable"]
-pub struct CALRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CALRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CALOF` reader - Calibration Overflow Interrupt Enable"]
-pub struct CALOF_R(crate::FieldReader<bool, bool>);
-impl CALOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CALOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALOF_R = crate::BitReader<bool>;
 #[doc = "Field `CALOF` writer - Calibration Overflow Interrupt Enable"]
-pub struct CALOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CALOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `USHFRCORDY` reader - USHFRCO Ready Interrupt Enable"]
-pub struct USHFRCORDY_R(crate::FieldReader<bool, bool>);
-impl USHFRCORDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USHFRCORDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USHFRCORDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USHFRCORDY_R = crate::BitReader<bool>;
 #[doc = "Field `USHFRCORDY` writer - USHFRCO Ready Interrupt Enable"]
-pub struct USHFRCORDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USHFRCORDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type USHFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `USBCHFOSCSEL` reader - USBC HF-oscillator Selected Interrupt Flag Clear"]
-pub struct USBCHFOSCSEL_R(crate::FieldReader<bool, bool>);
-impl USBCHFOSCSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USBCHFOSCSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USBCHFOSCSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USBCHFOSCSEL_R = crate::BitReader<bool>;
 #[doc = "Field `USBCHFOSCSEL` writer - USBC HF-oscillator Selected Interrupt Flag Clear"]
-pub struct USBCHFOSCSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBCHFOSCSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type USBCHFOSCSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - HFRCO Ready Interrupt Enable"]
     #[inline(always)]
     pub fn hfrcordy(&self) -> HFRCORDY_R {
-        HFRCORDY_R::new((self.bits & 0x01) != 0)
+        HFRCORDY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - HFXO Ready Interrupt Enable"]
     #[inline(always)]
     pub fn hfxordy(&self) -> HFXORDY_R {
-        HFXORDY_R::new(((self.bits >> 1) & 0x01) != 0)
+        HFXORDY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - LFRCO Ready Interrupt Enable"]
     #[inline(always)]
     pub fn lfrcordy(&self) -> LFRCORDY_R {
-        LFRCORDY_R::new(((self.bits >> 2) & 0x01) != 0)
+        LFRCORDY_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - LFXO Ready Interrupt Enable"]
     #[inline(always)]
     pub fn lfxordy(&self) -> LFXORDY_R {
-        LFXORDY_R::new(((self.bits >> 3) & 0x01) != 0)
+        LFXORDY_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - AUXHFRCO Ready Interrupt Enable"]
     #[inline(always)]
     pub fn auxhfrcordy(&self) -> AUXHFRCORDY_R {
-        AUXHFRCORDY_R::new(((self.bits >> 4) & 0x01) != 0)
+        AUXHFRCORDY_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Calibration Ready Interrupt Enable"]
     #[inline(always)]
     pub fn calrdy(&self) -> CALRDY_R {
-        CALRDY_R::new(((self.bits >> 5) & 0x01) != 0)
+        CALRDY_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Calibration Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn calof(&self) -> CALOF_R {
-        CALOF_R::new(((self.bits >> 6) & 0x01) != 0)
+        CALOF_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 8 - USHFRCO Ready Interrupt Enable"]
     #[inline(always)]
     pub fn ushfrcordy(&self) -> USHFRCORDY_R {
-        USHFRCORDY_R::new(((self.bits >> 8) & 0x01) != 0)
+        USHFRCORDY_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - USBC HF-oscillator Selected Interrupt Flag Clear"]
     #[inline(always)]
     pub fn usbchfoscsel(&self) -> USBCHFOSCSEL_R {
-        USBCHFOSCSEL_R::new(((self.bits >> 9) & 0x01) != 0)
+        USBCHFOSCSEL_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - HFRCO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn hfrcordy(&mut self) -> HFRCORDY_W {
-        HFRCORDY_W { w: self }
+    pub fn hfrcordy(&mut self) -> HFRCORDY_W<0> {
+        HFRCORDY_W::new(self)
     }
     #[doc = "Bit 1 - HFXO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn hfxordy(&mut self) -> HFXORDY_W {
-        HFXORDY_W { w: self }
+    pub fn hfxordy(&mut self) -> HFXORDY_W<1> {
+        HFXORDY_W::new(self)
     }
     #[doc = "Bit 2 - LFRCO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn lfrcordy(&mut self) -> LFRCORDY_W {
-        LFRCORDY_W { w: self }
+    pub fn lfrcordy(&mut self) -> LFRCORDY_W<2> {
+        LFRCORDY_W::new(self)
     }
     #[doc = "Bit 3 - LFXO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn lfxordy(&mut self) -> LFXORDY_W {
-        LFXORDY_W { w: self }
+    pub fn lfxordy(&mut self) -> LFXORDY_W<3> {
+        LFXORDY_W::new(self)
     }
     #[doc = "Bit 4 - AUXHFRCO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn auxhfrcordy(&mut self) -> AUXHFRCORDY_W {
-        AUXHFRCORDY_W { w: self }
+    pub fn auxhfrcordy(&mut self) -> AUXHFRCORDY_W<4> {
+        AUXHFRCORDY_W::new(self)
     }
     #[doc = "Bit 5 - Calibration Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn calrdy(&mut self) -> CALRDY_W {
-        CALRDY_W { w: self }
+    pub fn calrdy(&mut self) -> CALRDY_W<5> {
+        CALRDY_W::new(self)
     }
     #[doc = "Bit 6 - Calibration Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn calof(&mut self) -> CALOF_W {
-        CALOF_W { w: self }
+    pub fn calof(&mut self) -> CALOF_W<6> {
+        CALOF_W::new(self)
     }
     #[doc = "Bit 8 - USHFRCO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn ushfrcordy(&mut self) -> USHFRCORDY_W {
-        USHFRCORDY_W { w: self }
+    pub fn ushfrcordy(&mut self) -> USHFRCORDY_W<8> {
+        USHFRCORDY_W::new(self)
     }
     #[doc = "Bit 9 - USBC HF-oscillator Selected Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn usbchfoscsel(&mut self) -> USBCHFOSCSEL_W {
-        USBCHFOSCSEL_W { w: self }
+    pub fn usbchfoscsel(&mut self) -> USBCHFOSCSEL_W<9> {
+        USBCHFOSCSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

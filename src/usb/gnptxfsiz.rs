@@ -35,57 +35,15 @@ impl From<crate::W<GNPTXFSIZ_SPEC>> for W {
     }
 }
 #[doc = "Field `NPTXFSTADDR` reader - Non-periodic Transmit RAM Start Address host only"]
-pub struct NPTXFSTADDR_R(crate::FieldReader<u16, u16>);
-impl NPTXFSTADDR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        NPTXFSTADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NPTXFSTADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NPTXFSTADDR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `NPTXFSTADDR` writer - Non-periodic Transmit RAM Start Address host only"]
-pub struct NPTXFSTADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NPTXFSTADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type NPTXFSTADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GNPTXFSIZ_SPEC, u16, u16, 10, O>;
 #[doc = "Field `NPTXFINEPTXF0DEP` reader - Non-periodic TxFIFO Depth host only / IN Endpoint TxFIFO 0 Depth"]
-pub struct NPTXFINEPTXF0DEP_R(crate::FieldReader<u16, u16>);
-impl NPTXFINEPTXF0DEP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        NPTXFINEPTXF0DEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NPTXFINEPTXF0DEP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NPTXFINEPTXF0DEP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `NPTXFINEPTXF0DEP` writer - Non-periodic TxFIFO Depth host only / IN Endpoint TxFIFO 0 Depth"]
-pub struct NPTXFINEPTXF0DEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NPTXFINEPTXF0DEP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type NPTXFINEPTXF0DEP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GNPTXFSIZ_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:9 - Non-periodic Transmit RAM Start Address host only"]
     #[inline(always)]
@@ -101,13 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Non-periodic Transmit RAM Start Address host only"]
     #[inline(always)]
-    pub fn nptxfstaddr(&mut self) -> NPTXFSTADDR_W {
-        NPTXFSTADDR_W { w: self }
+    pub fn nptxfstaddr(&mut self) -> NPTXFSTADDR_W<0> {
+        NPTXFSTADDR_W::new(self)
     }
     #[doc = "Bits 16:31 - Non-periodic TxFIFO Depth host only / IN Endpoint TxFIFO 0 Depth"]
     #[inline(always)]
-    pub fn nptxfineptxf0dep(&mut self) -> NPTXFINEPTXF0DEP_W {
-        NPTXFINEPTXF0DEP_W { w: self }
+    pub fn nptxfineptxf0dep(&mut self) -> NPTXFINEPTXF0DEP_W<16> {
+        NPTXFINEPTXF0DEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

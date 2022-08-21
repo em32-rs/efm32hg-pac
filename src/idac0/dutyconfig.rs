@@ -35,99 +35,35 @@ impl From<crate::W<DUTYCONFIG_SPEC>> for W {
     }
 }
 #[doc = "Field `DUTYCYCLEEN` reader - Duty Cycle Enable."]
-pub struct DUTYCYCLEEN_R(crate::FieldReader<bool, bool>);
-impl DUTYCYCLEEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DUTYCYCLEEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DUTYCYCLEEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DUTYCYCLEEN_R = crate::BitReader<bool>;
 #[doc = "Field `DUTYCYCLEEN` writer - Duty Cycle Enable."]
-pub struct DUTYCYCLEEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DUTYCYCLEEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DUTYCYCLEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DUTYCONFIG_SPEC, bool, O>;
 #[doc = "Field `EM2DUTYCYCLEDIS` reader - EM2/EM3 Duty Cycle Disable."]
-pub struct EM2DUTYCYCLEDIS_R(crate::FieldReader<bool, bool>);
-impl EM2DUTYCYCLEDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EM2DUTYCYCLEDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EM2DUTYCYCLEDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EM2DUTYCYCLEDIS_R = crate::BitReader<bool>;
 #[doc = "Field `EM2DUTYCYCLEDIS` writer - EM2/EM3 Duty Cycle Disable."]
-pub struct EM2DUTYCYCLEDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM2DUTYCYCLEDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type EM2DUTYCYCLEDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DUTYCONFIG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Duty Cycle Enable."]
     #[inline(always)]
     pub fn dutycycleen(&self) -> DUTYCYCLEEN_R {
-        DUTYCYCLEEN_R::new((self.bits & 0x01) != 0)
+        DUTYCYCLEEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - EM2/EM3 Duty Cycle Disable."]
     #[inline(always)]
     pub fn em2dutycycledis(&self) -> EM2DUTYCYCLEDIS_R {
-        EM2DUTYCYCLEDIS_R::new(((self.bits >> 1) & 0x01) != 0)
+        EM2DUTYCYCLEDIS_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Duty Cycle Enable."]
     #[inline(always)]
-    pub fn dutycycleen(&mut self) -> DUTYCYCLEEN_W {
-        DUTYCYCLEEN_W { w: self }
+    pub fn dutycycleen(&mut self) -> DUTYCYCLEEN_W<0> {
+        DUTYCYCLEEN_W::new(self)
     }
     #[doc = "Bit 1 - EM2/EM3 Duty Cycle Disable."]
     #[inline(always)]
-    pub fn em2dutycycledis(&mut self) -> EM2DUTYCYCLEDIS_W {
-        EM2DUTYCYCLEDIS_W { w: self }
+    pub fn em2dutycycledis(&mut self) -> EM2DUTYCYCLEDIS_W<1> {
+        EM2DUTYCYCLEDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

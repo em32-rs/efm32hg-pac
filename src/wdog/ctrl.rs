@@ -35,283 +35,39 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Watchdog Timer Enable"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Watchdog Timer Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub struct DEBUGRUN_R(crate::FieldReader<bool, bool>);
-impl DEBUGRUN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DEBUGRUN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEBUGRUN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEBUGRUN_R = crate::BitReader<bool>;
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub struct DEBUGRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUGRUN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM2RUN` reader - Energy Mode 2 Run Enable"]
-pub struct EM2RUN_R(crate::FieldReader<bool, bool>);
-impl EM2RUN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EM2RUN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EM2RUN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EM2RUN_R = crate::BitReader<bool>;
 #[doc = "Field `EM2RUN` writer - Energy Mode 2 Run Enable"]
-pub struct EM2RUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM2RUN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type EM2RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM3RUN` reader - Energy Mode 3 Run Enable"]
-pub struct EM3RUN_R(crate::FieldReader<bool, bool>);
-impl EM3RUN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EM3RUN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EM3RUN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EM3RUN_R = crate::BitReader<bool>;
 #[doc = "Field `EM3RUN` writer - Energy Mode 3 Run Enable"]
-pub struct EM3RUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM3RUN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type EM3RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `LOCK` reader - Configuration lock"]
-pub struct LOCK_R(crate::FieldReader<bool, bool>);
-impl LOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOCK_R = crate::BitReader<bool>;
 #[doc = "Field `LOCK` writer - Configuration lock"]
-pub struct LOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM4BLOCK` reader - Energy Mode 4 Block"]
-pub struct EM4BLOCK_R(crate::FieldReader<bool, bool>);
-impl EM4BLOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EM4BLOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EM4BLOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EM4BLOCK_R = crate::BitReader<bool>;
 #[doc = "Field `EM4BLOCK` writer - Energy Mode 4 Block"]
-pub struct EM4BLOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM4BLOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type EM4BLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `SWOSCBLOCK` reader - Software Oscillator Disable Block"]
-pub struct SWOSCBLOCK_R(crate::FieldReader<bool, bool>);
-impl SWOSCBLOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SWOSCBLOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SWOSCBLOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SWOSCBLOCK_R = crate::BitReader<bool>;
 #[doc = "Field `SWOSCBLOCK` writer - Software Oscillator Disable Block"]
-pub struct SWOSCBLOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWOSCBLOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type SWOSCBLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `PERSEL` reader - Watchdog Timeout Period Select"]
-pub struct PERSEL_R(crate::FieldReader<u8, u8>);
-impl PERSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PERSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PERSEL` writer - Watchdog Timeout Period Select"]
-pub struct PERSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type PERSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `CLKSEL` reader - Watchdog Clock Select"]
+pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 #[doc = "Watchdog Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -329,13 +85,8 @@ impl From<CLKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKSEL` reader - Watchdog Clock Select"]
-pub struct CLKSEL_R(crate::FieldReader<u8, CLKSEL_A>);
 impl CLKSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CLKSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLKSEL_A> {
         match self.bits {
@@ -348,36 +99,22 @@ impl CLKSEL_R {
     #[doc = "Checks if the value of the field is `ULFRCO`"]
     #[inline(always)]
     pub fn is_ulfrco(&self) -> bool {
-        **self == CLKSEL_A::ULFRCO
+        *self == CLKSEL_A::ULFRCO
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
     #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
-        **self == CLKSEL_A::LFRCO
+        *self == CLKSEL_A::LFRCO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
     #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        **self == CLKSEL_A::LFXO
-    }
-}
-impl core::ops::Deref for CLKSEL_R {
-    type Target = crate::FieldReader<u8, CLKSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLKSEL_A::LFXO
     }
 }
 #[doc = "Field `CLKSEL` writer - Watchdog Clock Select"]
-pub struct CLKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLKSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKSEL_A, 2, O>;
+impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "ULFRCO"]
     #[inline(always)]
     pub fn ulfrco(self) -> &'a mut W {
@@ -393,48 +130,42 @@ impl<'a> CLKSEL_W<'a> {
     pub fn lfxo(self) -> &'a mut W {
         self.variant(CLKSEL_A::LFXO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Watchdog Timer Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Debug Mode Run Enable"]
     #[inline(always)]
     pub fn debugrun(&self) -> DEBUGRUN_R {
-        DEBUGRUN_R::new(((self.bits >> 1) & 0x01) != 0)
+        DEBUGRUN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Energy Mode 2 Run Enable"]
     #[inline(always)]
     pub fn em2run(&self) -> EM2RUN_R {
-        EM2RUN_R::new(((self.bits >> 2) & 0x01) != 0)
+        EM2RUN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Energy Mode 3 Run Enable"]
     #[inline(always)]
     pub fn em3run(&self) -> EM3RUN_R {
-        EM3RUN_R::new(((self.bits >> 3) & 0x01) != 0)
+        EM3RUN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Configuration lock"]
     #[inline(always)]
     pub fn lock(&self) -> LOCK_R {
-        LOCK_R::new(((self.bits >> 4) & 0x01) != 0)
+        LOCK_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Energy Mode 4 Block"]
     #[inline(always)]
     pub fn em4block(&self) -> EM4BLOCK_R {
-        EM4BLOCK_R::new(((self.bits >> 5) & 0x01) != 0)
+        EM4BLOCK_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Software Oscillator Disable Block"]
     #[inline(always)]
     pub fn swoscblock(&self) -> SWOSCBLOCK_R {
-        SWOSCBLOCK_R::new(((self.bits >> 6) & 0x01) != 0)
+        SWOSCBLOCK_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:11 - Watchdog Timeout Period Select"]
     #[inline(always)]
@@ -444,54 +175,54 @@ impl R {
     #[doc = "Bits 12:13 - Watchdog Clock Select"]
     #[inline(always)]
     pub fn clksel(&self) -> CLKSEL_R {
-        CLKSEL_R::new(((self.bits >> 12) & 0x03) as u8)
+        CLKSEL_R::new(((self.bits >> 12) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Watchdog Timer Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
-        DEBUGRUN_W { w: self }
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<1> {
+        DEBUGRUN_W::new(self)
     }
     #[doc = "Bit 2 - Energy Mode 2 Run Enable"]
     #[inline(always)]
-    pub fn em2run(&mut self) -> EM2RUN_W {
-        EM2RUN_W { w: self }
+    pub fn em2run(&mut self) -> EM2RUN_W<2> {
+        EM2RUN_W::new(self)
     }
     #[doc = "Bit 3 - Energy Mode 3 Run Enable"]
     #[inline(always)]
-    pub fn em3run(&mut self) -> EM3RUN_W {
-        EM3RUN_W { w: self }
+    pub fn em3run(&mut self) -> EM3RUN_W<3> {
+        EM3RUN_W::new(self)
     }
     #[doc = "Bit 4 - Configuration lock"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LOCK_W {
-        LOCK_W { w: self }
+    pub fn lock(&mut self) -> LOCK_W<4> {
+        LOCK_W::new(self)
     }
     #[doc = "Bit 5 - Energy Mode 4 Block"]
     #[inline(always)]
-    pub fn em4block(&mut self) -> EM4BLOCK_W {
-        EM4BLOCK_W { w: self }
+    pub fn em4block(&mut self) -> EM4BLOCK_W<5> {
+        EM4BLOCK_W::new(self)
     }
     #[doc = "Bit 6 - Software Oscillator Disable Block"]
     #[inline(always)]
-    pub fn swoscblock(&mut self) -> SWOSCBLOCK_W {
-        SWOSCBLOCK_W { w: self }
+    pub fn swoscblock(&mut self) -> SWOSCBLOCK_W<6> {
+        SWOSCBLOCK_W::new(self)
     }
     #[doc = "Bits 8:11 - Watchdog Timeout Period Select"]
     #[inline(always)]
-    pub fn persel(&mut self) -> PERSEL_W {
-        PERSEL_W { w: self }
+    pub fn persel(&mut self) -> PERSEL_W<8> {
+        PERSEL_W::new(self)
     }
     #[doc = "Bits 12:13 - Watchdog Clock Select"]
     #[inline(always)]
-    pub fn clksel(&mut self) -> CLKSEL_W {
-        CLKSEL_W { w: self }
+    pub fn clksel(&mut self) -> CLKSEL_W<12> {
+        CLKSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,59 +20,19 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `LCNTIM` writer - Load CNT Immediately"]
-pub struct LCNTIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCNTIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type LCNTIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `LTOPBIM` writer - Load TOPB Immediately"]
-pub struct LTOPBIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LTOPBIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type LTOPBIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Load CNT Immediately"]
     #[inline(always)]
-    pub fn lcntim(&mut self) -> LCNTIM_W {
-        LCNTIM_W { w: self }
+    pub fn lcntim(&mut self) -> LCNTIM_W<0> {
+        LCNTIM_W::new(self)
     }
     #[doc = "Bit 1 - Load TOPB Immediately"]
     #[inline(always)]
-    pub fn ltopbim(&mut self) -> LTOPBIM_W {
-        LTOPBIM_W { w: self }
+    pub fn ltopbim(&mut self) -> LTOPBIM_W<1> {
+        LTOPBIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

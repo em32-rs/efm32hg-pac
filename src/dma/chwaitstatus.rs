@@ -14,119 +14,47 @@ impl From<crate::R<CHWAITSTATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `CH0WAITSTATUS` reader - Channel 0 Wait on Request Status"]
-pub struct CH0WAITSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH0WAITSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH0WAITSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH0WAITSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH0WAITSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH1WAITSTATUS` reader - Channel 1 Wait on Request Status"]
-pub struct CH1WAITSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH1WAITSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH1WAITSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH1WAITSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH1WAITSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH2WAITSTATUS` reader - Channel 2 Wait on Request Status"]
-pub struct CH2WAITSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH2WAITSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH2WAITSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH2WAITSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH2WAITSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH3WAITSTATUS` reader - Channel 3 Wait on Request Status"]
-pub struct CH3WAITSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH3WAITSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH3WAITSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH3WAITSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH3WAITSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH4WAITSTATUS` reader - Channel 4 Wait on Request Status"]
-pub struct CH4WAITSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH4WAITSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH4WAITSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH4WAITSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH4WAITSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH5WAITSTATUS` reader - Channel 5 Wait on Request Status"]
-pub struct CH5WAITSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH5WAITSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH5WAITSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH5WAITSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH5WAITSTATUS_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Channel 0 Wait on Request Status"]
     #[inline(always)]
     pub fn ch0waitstatus(&self) -> CH0WAITSTATUS_R {
-        CH0WAITSTATUS_R::new((self.bits & 0x01) != 0)
+        CH0WAITSTATUS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Channel 1 Wait on Request Status"]
     #[inline(always)]
     pub fn ch1waitstatus(&self) -> CH1WAITSTATUS_R {
-        CH1WAITSTATUS_R::new(((self.bits >> 1) & 0x01) != 0)
+        CH1WAITSTATUS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Channel 2 Wait on Request Status"]
     #[inline(always)]
     pub fn ch2waitstatus(&self) -> CH2WAITSTATUS_R {
-        CH2WAITSTATUS_R::new(((self.bits >> 2) & 0x01) != 0)
+        CH2WAITSTATUS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Channel 3 Wait on Request Status"]
     #[inline(always)]
     pub fn ch3waitstatus(&self) -> CH3WAITSTATUS_R {
-        CH3WAITSTATUS_R::new(((self.bits >> 3) & 0x01) != 0)
+        CH3WAITSTATUS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Channel 4 Wait on Request Status"]
     #[inline(always)]
     pub fn ch4waitstatus(&self) -> CH4WAITSTATUS_R {
-        CH4WAITSTATUS_R::new(((self.bits >> 4) & 0x01) != 0)
+        CH4WAITSTATUS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Channel 5 Wait on Request Status"]
     #[inline(always)]
     pub fn ch5waitstatus(&self) -> CH5WAITSTATUS_R {
-        CH5WAITSTATUS_R::new(((self.bits >> 5) & 0x01) != 0)
+        CH5WAITSTATUS_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 #[doc = "Channel Wait on Request Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chwaitstatus](index.html) module"]

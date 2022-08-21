@@ -14,19 +14,7 @@ impl From<crate::R<CACHEMISSES_SPEC>> for R {
     }
 }
 #[doc = "Field `CACHEMISSES` reader - Cache misses since last performance counter start command."]
-pub struct CACHEMISSES_R(crate::FieldReader<u32, u32>);
-impl CACHEMISSES_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        CACHEMISSES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CACHEMISSES_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CACHEMISSES_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:19 - Cache misses since last performance counter start command."]
     #[inline(always)]

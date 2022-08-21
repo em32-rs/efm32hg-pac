@@ -14,19 +14,7 @@ impl From<crate::R<PC_DIN_SPEC>> for R {
     }
 }
 #[doc = "Field `DIN` reader - Data In"]
-pub struct DIN_R(crate::FieldReader<u16, u16>);
-impl DIN_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIN_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIN_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Data In"]
     #[inline(always)]

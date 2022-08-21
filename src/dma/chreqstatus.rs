@@ -14,119 +14,47 @@ impl From<crate::R<CHREQSTATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `CH0REQSTATUS` reader - Channel 0 Request Status"]
-pub struct CH0REQSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH0REQSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH0REQSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH0REQSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH0REQSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH1REQSTATUS` reader - Channel 1 Request Status"]
-pub struct CH1REQSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH1REQSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH1REQSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH1REQSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH1REQSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH2REQSTATUS` reader - Channel 2 Request Status"]
-pub struct CH2REQSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH2REQSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH2REQSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH2REQSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH2REQSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH3REQSTATUS` reader - Channel 3 Request Status"]
-pub struct CH3REQSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH3REQSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH3REQSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH3REQSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH3REQSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH4REQSTATUS` reader - Channel 4 Request Status"]
-pub struct CH4REQSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH4REQSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH4REQSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH4REQSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH4REQSTATUS_R = crate::BitReader<bool>;
 #[doc = "Field `CH5REQSTATUS` reader - Channel 5 Request Status"]
-pub struct CH5REQSTATUS_R(crate::FieldReader<bool, bool>);
-impl CH5REQSTATUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH5REQSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH5REQSTATUS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH5REQSTATUS_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Channel 0 Request Status"]
     #[inline(always)]
     pub fn ch0reqstatus(&self) -> CH0REQSTATUS_R {
-        CH0REQSTATUS_R::new((self.bits & 0x01) != 0)
+        CH0REQSTATUS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Channel 1 Request Status"]
     #[inline(always)]
     pub fn ch1reqstatus(&self) -> CH1REQSTATUS_R {
-        CH1REQSTATUS_R::new(((self.bits >> 1) & 0x01) != 0)
+        CH1REQSTATUS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Channel 2 Request Status"]
     #[inline(always)]
     pub fn ch2reqstatus(&self) -> CH2REQSTATUS_R {
-        CH2REQSTATUS_R::new(((self.bits >> 2) & 0x01) != 0)
+        CH2REQSTATUS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Channel 3 Request Status"]
     #[inline(always)]
     pub fn ch3reqstatus(&self) -> CH3REQSTATUS_R {
-        CH3REQSTATUS_R::new(((self.bits >> 3) & 0x01) != 0)
+        CH3REQSTATUS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Channel 4 Request Status"]
     #[inline(always)]
     pub fn ch4reqstatus(&self) -> CH4REQSTATUS_R {
-        CH4REQSTATUS_R::new(((self.bits >> 4) & 0x01) != 0)
+        CH4REQSTATUS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Channel 5 Request Status"]
     #[inline(always)]
     pub fn ch5reqstatus(&self) -> CH5REQSTATUS_R {
-        CH5REQSTATUS_R::new(((self.bits >> 5) & 0x01) != 0)
+        CH5REQSTATUS_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 #[doc = "Channel Request Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chreqstatus](index.html) module"]

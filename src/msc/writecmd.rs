@@ -20,221 +20,61 @@ impl From<crate::W<WRITECMD_SPEC>> for W {
     }
 }
 #[doc = "Field `LADDRIM` writer - Load MSC_ADDRB into ADDR"]
-pub struct LADDRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LADDRIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type LADDRIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `ERASEPAGE` writer - Erase Page"]
-pub struct ERASEPAGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEPAGE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ERASEPAGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `WRITEEND` writer - End Write Mode"]
-pub struct WRITEEND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITEEND_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type WRITEEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `WRITEONCE` writer - Word Write-Once Trigger"]
-pub struct WRITEONCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITEONCE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type WRITEONCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `WRITETRIG` writer - Word Write Sequence Trigger"]
-pub struct WRITETRIG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITETRIG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type WRITETRIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `ERASEABORT` writer - Abort erase sequence"]
-pub struct ERASEABORT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEABORT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ERASEABORT_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `ERASEMAIN0` writer - Mass erase region 0"]
-pub struct ERASEMAIN0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEMAIN0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type ERASEMAIN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `CLEARWDATA` writer - Clear WDATA state"]
-pub struct CLEARWDATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLEARWDATA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type CLEARWDATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Load MSC_ADDRB into ADDR"]
     #[inline(always)]
-    pub fn laddrim(&mut self) -> LADDRIM_W {
-        LADDRIM_W { w: self }
+    pub fn laddrim(&mut self) -> LADDRIM_W<0> {
+        LADDRIM_W::new(self)
     }
     #[doc = "Bit 1 - Erase Page"]
     #[inline(always)]
-    pub fn erasepage(&mut self) -> ERASEPAGE_W {
-        ERASEPAGE_W { w: self }
+    pub fn erasepage(&mut self) -> ERASEPAGE_W<1> {
+        ERASEPAGE_W::new(self)
     }
     #[doc = "Bit 2 - End Write Mode"]
     #[inline(always)]
-    pub fn writeend(&mut self) -> WRITEEND_W {
-        WRITEEND_W { w: self }
+    pub fn writeend(&mut self) -> WRITEEND_W<2> {
+        WRITEEND_W::new(self)
     }
     #[doc = "Bit 3 - Word Write-Once Trigger"]
     #[inline(always)]
-    pub fn writeonce(&mut self) -> WRITEONCE_W {
-        WRITEONCE_W { w: self }
+    pub fn writeonce(&mut self) -> WRITEONCE_W<3> {
+        WRITEONCE_W::new(self)
     }
     #[doc = "Bit 4 - Word Write Sequence Trigger"]
     #[inline(always)]
-    pub fn writetrig(&mut self) -> WRITETRIG_W {
-        WRITETRIG_W { w: self }
+    pub fn writetrig(&mut self) -> WRITETRIG_W<4> {
+        WRITETRIG_W::new(self)
     }
     #[doc = "Bit 5 - Abort erase sequence"]
     #[inline(always)]
-    pub fn eraseabort(&mut self) -> ERASEABORT_W {
-        ERASEABORT_W { w: self }
+    pub fn eraseabort(&mut self) -> ERASEABORT_W<5> {
+        ERASEABORT_W::new(self)
     }
     #[doc = "Bit 8 - Mass erase region 0"]
     #[inline(always)]
-    pub fn erasemain0(&mut self) -> ERASEMAIN0_W {
-        ERASEMAIN0_W { w: self }
+    pub fn erasemain0(&mut self) -> ERASEMAIN0_W<8> {
+        ERASEMAIN0_W::new(self)
     }
     #[doc = "Bit 12 - Clear WDATA state"]
     #[inline(always)]
-    pub fn clearwdata(&mut self) -> CLEARWDATA_W {
-        CLEARWDATA_W { w: self }
+    pub fn clearwdata(&mut self) -> CLEARWDATA_W<12> {
+        CLEARWDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,149 +35,23 @@ impl From<crate::W<ROUTE_SPEC>> for W {
     }
 }
 #[doc = "Field `RXPEN` reader - RX Pin Enable"]
-pub struct RXPEN_R(crate::FieldReader<bool, bool>);
-impl RXPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXPEN_R = crate::BitReader<bool>;
 #[doc = "Field `RXPEN` writer - RX Pin Enable"]
-pub struct RXPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RXPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `TXPEN` reader - TX Pin Enable"]
-pub struct TXPEN_R(crate::FieldReader<bool, bool>);
-impl TXPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXPEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXPEN` writer - TX Pin Enable"]
-pub struct TXPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TXPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CSPEN` reader - CS Pin Enable"]
-pub struct CSPEN_R(crate::FieldReader<bool, bool>);
-impl CSPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CSPEN` writer - CS Pin Enable"]
-pub struct CSPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CLKPEN` reader - CLK Pin Enable"]
-pub struct CLKPEN_R(crate::FieldReader<bool, bool>);
-impl CLKPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CLKPEN` writer - CLK Pin Enable"]
-pub struct CLKPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
+#[doc = "Field `LOCATION` reader - I/O Location"]
+pub type LOCATION_R = crate::FieldReader<u8, LOCATION_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -203,13 +77,8 @@ impl From<LOCATION_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LOCATION` reader - I/O Location"]
-pub struct LOCATION_R(crate::FieldReader<u8, LOCATION_A>);
 impl LOCATION_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LOCATION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LOCATION_A> {
         match self.bits {
@@ -226,56 +95,43 @@ impl LOCATION_R {
     #[doc = "Checks if the value of the field is `LOC0`"]
     #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        **self == LOCATION_A::LOC0
+        *self == LOCATION_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
     #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        **self == LOCATION_A::LOC1
+        *self == LOCATION_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
     #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        **self == LOCATION_A::LOC2
+        *self == LOCATION_A::LOC2
     }
     #[doc = "Checks if the value of the field is `LOC3`"]
     #[inline(always)]
     pub fn is_loc3(&self) -> bool {
-        **self == LOCATION_A::LOC3
+        *self == LOCATION_A::LOC3
     }
     #[doc = "Checks if the value of the field is `LOC4`"]
     #[inline(always)]
     pub fn is_loc4(&self) -> bool {
-        **self == LOCATION_A::LOC4
+        *self == LOCATION_A::LOC4
     }
     #[doc = "Checks if the value of the field is `LOC5`"]
     #[inline(always)]
     pub fn is_loc5(&self) -> bool {
-        **self == LOCATION_A::LOC5
+        *self == LOCATION_A::LOC5
     }
     #[doc = "Checks if the value of the field is `LOC6`"]
     #[inline(always)]
     pub fn is_loc6(&self) -> bool {
-        **self == LOCATION_A::LOC6
-    }
-}
-impl core::ops::Deref for LOCATION_R {
-    type Target = crate::FieldReader<u8, LOCATION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCATION_A::LOC6
     }
 }
 #[doc = "Field `LOCATION` writer - I/O Location"]
-pub struct LOCATION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCATION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOCATION_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LOCATION_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTE_SPEC, u8, LOCATION_A, 3, O>;
+impl<'a, const O: u8> LOCATION_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -311,65 +167,59 @@ impl<'a> LOCATION_W<'a> {
     pub fn loc6(self) -> &'a mut W {
         self.variant(LOCATION_A::LOC6)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - RX Pin Enable"]
     #[inline(always)]
     pub fn rxpen(&self) -> RXPEN_R {
-        RXPEN_R::new((self.bits & 0x01) != 0)
+        RXPEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - TX Pin Enable"]
     #[inline(always)]
     pub fn txpen(&self) -> TXPEN_R {
-        TXPEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        TXPEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - CS Pin Enable"]
     #[inline(always)]
     pub fn cspen(&self) -> CSPEN_R {
-        CSPEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        CSPEN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - CLK Pin Enable"]
     #[inline(always)]
     pub fn clkpen(&self) -> CLKPEN_R {
-        CLKPEN_R::new(((self.bits >> 3) & 0x01) != 0)
+        CLKPEN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 8:10 - I/O Location"]
     #[inline(always)]
     pub fn location(&self) -> LOCATION_R {
-        LOCATION_R::new(((self.bits >> 8) & 0x07) as u8)
+        LOCATION_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - RX Pin Enable"]
     #[inline(always)]
-    pub fn rxpen(&mut self) -> RXPEN_W {
-        RXPEN_W { w: self }
+    pub fn rxpen(&mut self) -> RXPEN_W<0> {
+        RXPEN_W::new(self)
     }
     #[doc = "Bit 1 - TX Pin Enable"]
     #[inline(always)]
-    pub fn txpen(&mut self) -> TXPEN_W {
-        TXPEN_W { w: self }
+    pub fn txpen(&mut self) -> TXPEN_W<1> {
+        TXPEN_W::new(self)
     }
     #[doc = "Bit 2 - CS Pin Enable"]
     #[inline(always)]
-    pub fn cspen(&mut self) -> CSPEN_W {
-        CSPEN_W { w: self }
+    pub fn cspen(&mut self) -> CSPEN_W<2> {
+        CSPEN_W::new(self)
     }
     #[doc = "Bit 3 - CLK Pin Enable"]
     #[inline(always)]
-    pub fn clkpen(&mut self) -> CLKPEN_W {
-        CLKPEN_W { w: self }
+    pub fn clkpen(&mut self) -> CLKPEN_W<3> {
+        CLKPEN_W::new(self)
     }
     #[doc = "Bits 8:10 - I/O Location"]
     #[inline(always)]
-    pub fn location(&mut self) -> LOCATION_W {
-        LOCATION_W { w: self }
+    pub fn location(&mut self) -> LOCATION_W<8> {
+        LOCATION_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

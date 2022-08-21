@@ -14,19 +14,7 @@ impl From<crate::R<TOP_SPEC>> for R {
     }
 }
 #[doc = "Field `TOP` reader - Counter Top Value"]
-pub struct TOP_R(crate::FieldReader<u16, u16>);
-impl TOP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TOP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOP_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Counter Top Value"]
     #[inline(always)]

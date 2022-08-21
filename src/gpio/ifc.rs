@@ -20,22 +20,12 @@ impl From<crate::W<IFC_SPEC>> for W {
     }
 }
 #[doc = "Field `EXT` writer - External Interrupt Flag Clear"]
-pub struct EXT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type EXT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFC_SPEC, u16, u16, 16, O>;
 impl W {
     #[doc = "Bits 0:15 - External Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn ext(&mut self) -> EXT_W {
-        EXT_W { w: self }
+    pub fn ext(&mut self) -> EXT_W<0> {
+        EXT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

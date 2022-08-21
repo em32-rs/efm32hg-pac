@@ -14,19 +14,7 @@ impl From<crate::R<RXDATAP_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATAP` reader - RX Data Peek"]
-pub struct RXDATAP_R(crate::FieldReader<u8, u8>);
-impl RXDATAP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDATAP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATAP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATAP_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - RX Data Peek"]
     #[inline(always)]

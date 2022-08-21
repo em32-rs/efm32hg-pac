@@ -35,31 +35,9 @@ impl From<crate::W<SADDRMASK_SPEC>> for W {
     }
 }
 #[doc = "Field `MASK` reader - Slave Address Mask"]
-pub struct MASK_R(crate::FieldReader<u8, u8>);
-impl MASK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MASK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MASK_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MASK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MASK` writer - Slave Address Mask"]
-pub struct MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MASK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 1)) | ((value as u32 & 0x7f) << 1);
-        self.w
-    }
-}
+pub type MASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SADDRMASK_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 1:7 - Slave Address Mask"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 1:7 - Slave Address Mask"]
     #[inline(always)]
-    pub fn mask(&mut self) -> MASK_W {
-        MASK_W { w: self }
+    pub fn mask(&mut self) -> MASK_W<1> {
+        MASK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

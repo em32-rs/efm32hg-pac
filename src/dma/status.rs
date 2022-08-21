@@ -14,19 +14,9 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `EN` reader - DMA Enable Status"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
+#[doc = "Field `STATE` reader - Control Current State"]
+pub type STATE_R = crate::FieldReader<u8, STATE_A>;
 #[doc = "Control Current State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -60,13 +50,8 @@ impl From<STATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STATE` reader - Control Current State"]
-pub struct STATE_R(crate::FieldReader<u8, STATE_A>);
 impl STATE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<STATE_A> {
         match self.bits {
@@ -87,85 +72,66 @@ impl STATE_R {
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == STATE_A::IDLE
+        *self == STATE_A::IDLE
     }
     #[doc = "Checks if the value of the field is `RDCHCTRLDATA`"]
     #[inline(always)]
     pub fn is_rdchctrldata(&self) -> bool {
-        **self == STATE_A::RDCHCTRLDATA
+        *self == STATE_A::RDCHCTRLDATA
     }
     #[doc = "Checks if the value of the field is `RDSRCENDPTR`"]
     #[inline(always)]
     pub fn is_rdsrcendptr(&self) -> bool {
-        **self == STATE_A::RDSRCENDPTR
+        *self == STATE_A::RDSRCENDPTR
     }
     #[doc = "Checks if the value of the field is `RDDSTENDPTR`"]
     #[inline(always)]
     pub fn is_rddstendptr(&self) -> bool {
-        **self == STATE_A::RDDSTENDPTR
+        *self == STATE_A::RDDSTENDPTR
     }
     #[doc = "Checks if the value of the field is `RDSRCDATA`"]
     #[inline(always)]
     pub fn is_rdsrcdata(&self) -> bool {
-        **self == STATE_A::RDSRCDATA
+        *self == STATE_A::RDSRCDATA
     }
     #[doc = "Checks if the value of the field is `WRDSTDATA`"]
     #[inline(always)]
     pub fn is_wrdstdata(&self) -> bool {
-        **self == STATE_A::WRDSTDATA
+        *self == STATE_A::WRDSTDATA
     }
     #[doc = "Checks if the value of the field is `WAITREQCLR`"]
     #[inline(always)]
     pub fn is_waitreqclr(&self) -> bool {
-        **self == STATE_A::WAITREQCLR
+        *self == STATE_A::WAITREQCLR
     }
     #[doc = "Checks if the value of the field is `WRCHCTRLDATA`"]
     #[inline(always)]
     pub fn is_wrchctrldata(&self) -> bool {
-        **self == STATE_A::WRCHCTRLDATA
+        *self == STATE_A::WRCHCTRLDATA
     }
     #[doc = "Checks if the value of the field is `STALLED`"]
     #[inline(always)]
     pub fn is_stalled(&self) -> bool {
-        **self == STATE_A::STALLED
+        *self == STATE_A::STALLED
     }
     #[doc = "Checks if the value of the field is `DONE`"]
     #[inline(always)]
     pub fn is_done(&self) -> bool {
-        **self == STATE_A::DONE
+        *self == STATE_A::DONE
     }
     #[doc = "Checks if the value of the field is `PERSCATTRANS`"]
     #[inline(always)]
     pub fn is_perscattrans(&self) -> bool {
-        **self == STATE_A::PERSCATTRANS
-    }
-}
-impl core::ops::Deref for STATE_R {
-    type Target = crate::FieldReader<u8, STATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATE_A::PERSCATTRANS
     }
 }
 #[doc = "Field `CHNUM` reader - Channel Number"]
-pub struct CHNUM_R(crate::FieldReader<u8, u8>);
-impl CHNUM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CHNUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHNUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHNUM_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 0 - DMA Enable Status"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:7 - Control Current State"]
     #[inline(always)]

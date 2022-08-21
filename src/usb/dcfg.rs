@@ -34,6 +34,8 @@ impl From<crate::W<DCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DEVSPD` reader - Device Speed"]
+pub type DEVSPD_R = crate::FieldReader<u8, DEVSPD_A>;
 #[doc = "Device Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,13 +51,8 @@ impl From<DEVSPD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DEVSPD` reader - Device Speed"]
-pub struct DEVSPD_R(crate::FieldReader<u8, DEVSPD_A>);
 impl DEVSPD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DEVSPD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DEVSPD_A> {
         match self.bits {
@@ -67,31 +64,17 @@ impl DEVSPD_R {
     #[doc = "Checks if the value of the field is `LS`"]
     #[inline(always)]
     pub fn is_ls(&self) -> bool {
-        **self == DEVSPD_A::LS
+        *self == DEVSPD_A::LS
     }
     #[doc = "Checks if the value of the field is `FS`"]
     #[inline(always)]
     pub fn is_fs(&self) -> bool {
-        **self == DEVSPD_A::FS
-    }
-}
-impl core::ops::Deref for DEVSPD_R {
-    type Target = crate::FieldReader<u8, DEVSPD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DEVSPD_A::FS
     }
 }
 #[doc = "Field `DEVSPD` writer - Device Speed"]
-pub struct DEVSPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEVSPD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DEVSPD_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DEVSPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, DEVSPD_A, 2, O>;
+impl<'a, const O: u8> DEVSPD_W<'a, O> {
     #[doc = "Low speed (PHY clock is 6 MHz). If you select 6 MHz LS mode, you must do a soft reset."]
     #[inline(always)]
     pub fn ls(self) -> &'a mut W {
@@ -102,111 +85,21 @@ impl<'a> DEVSPD_W<'a> {
     pub fn fs(self) -> &'a mut W {
         self.variant(DEVSPD_A::FS)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `NZSTSOUTHSHK` reader - Non-Zero-Length Status OUT Handshake"]
-pub struct NZSTSOUTHSHK_R(crate::FieldReader<bool, bool>);
-impl NZSTSOUTHSHK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NZSTSOUTHSHK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NZSTSOUTHSHK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NZSTSOUTHSHK_R = crate::BitReader<bool>;
 #[doc = "Field `NZSTSOUTHSHK` writer - Non-Zero-Length Status OUT Handshake"]
-pub struct NZSTSOUTHSHK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NZSTSOUTHSHK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type NZSTSOUTHSHK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFG_SPEC, bool, O>;
 #[doc = "Field `ENA32KHZSUSP` reader - Enable 32 KHz Suspend mode"]
-pub struct ENA32KHZSUSP_R(crate::FieldReader<bool, bool>);
-impl ENA32KHZSUSP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENA32KHZSUSP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ENA32KHZSUSP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ENA32KHZSUSP_R = crate::BitReader<bool>;
 #[doc = "Field `ENA32KHZSUSP` writer - Enable 32 KHz Suspend mode"]
-pub struct ENA32KHZSUSP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENA32KHZSUSP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type ENA32KHZSUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFG_SPEC, bool, O>;
 #[doc = "Field `DEVADDR` reader - Device Address"]
-pub struct DEVADDR_R(crate::FieldReader<u8, u8>);
-impl DEVADDR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DEVADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEVADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEVADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEVADDR` writer - Device Address"]
-pub struct DEVADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEVADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 4)) | ((value as u32 & 0x7f) << 4);
-        self.w
-    }
-}
+pub type DEVADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, u8, 7, O>;
+#[doc = "Field `PERFRINT` reader - Periodic Frame Interval"]
+pub type PERFRINT_R = crate::FieldReader<u8, PERFRINT_A>;
 #[doc = "Periodic Frame Interval\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -226,13 +119,8 @@ impl From<PERFRINT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PERFRINT` reader - Periodic Frame Interval"]
-pub struct PERFRINT_R(crate::FieldReader<u8, PERFRINT_A>);
 impl PERFRINT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PERFRINT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PERFRINT_A {
         match self.bits {
@@ -246,41 +134,28 @@ impl PERFRINT_R {
     #[doc = "Checks if the value of the field is `_80PCNT`"]
     #[inline(always)]
     pub fn is_80pcnt(&self) -> bool {
-        **self == PERFRINT_A::_80PCNT
+        *self == PERFRINT_A::_80PCNT
     }
     #[doc = "Checks if the value of the field is `_85PCNT`"]
     #[inline(always)]
     pub fn is_85pcnt(&self) -> bool {
-        **self == PERFRINT_A::_85PCNT
+        *self == PERFRINT_A::_85PCNT
     }
     #[doc = "Checks if the value of the field is `_90PCNT`"]
     #[inline(always)]
     pub fn is_90pcnt(&self) -> bool {
-        **self == PERFRINT_A::_90PCNT
+        *self == PERFRINT_A::_90PCNT
     }
     #[doc = "Checks if the value of the field is `_95PCNT`"]
     #[inline(always)]
     pub fn is_95pcnt(&self) -> bool {
-        **self == PERFRINT_A::_95PCNT
-    }
-}
-impl core::ops::Deref for PERFRINT_R {
-    type Target = crate::FieldReader<u8, PERFRINT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PERFRINT_A::_95PCNT
     }
 }
 #[doc = "Field `PERFRINT` writer - Periodic Frame Interval"]
-pub struct PERFRINT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERFRINT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PERFRINT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type PERFRINT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DCFG_SPEC, u8, PERFRINT_A, 2, O>;
+impl<'a, const O: u8> PERFRINT_W<'a, O> {
     #[doc = "80% of the frame interval."]
     #[inline(always)]
     pub fn _80pcnt(self) -> &'a mut W {
@@ -301,90 +176,30 @@ impl<'a> PERFRINT_W<'a> {
     pub fn _95pcnt(self) -> &'a mut W {
         self.variant(PERFRINT_A::_95PCNT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 11)) | ((value as u32 & 0x03) << 11);
-        self.w
-    }
 }
 #[doc = "Field `ERRATICINTMSK` reader - "]
-pub struct ERRATICINTMSK_R(crate::FieldReader<bool, bool>);
-impl ERRATICINTMSK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ERRATICINTMSK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERRATICINTMSK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERRATICINTMSK_R = crate::BitReader<bool>;
 #[doc = "Field `ERRATICINTMSK` writer - "]
-pub struct ERRATICINTMSK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERRATICINTMSK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type ERRATICINTMSK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFG_SPEC, bool, O>;
 #[doc = "Field `RESVALID` reader - Resume Validation Period"]
-pub struct RESVALID_R(crate::FieldReader<u8, u8>);
-impl RESVALID_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RESVALID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESVALID_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESVALID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RESVALID` writer - Resume Validation Period"]
-pub struct RESVALID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESVALID_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 26)) | ((value as u32 & 0x3f) << 26);
-        self.w
-    }
-}
+pub type RESVALID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:1 - Device Speed"]
     #[inline(always)]
     pub fn devspd(&self) -> DEVSPD_R {
-        DEVSPD_R::new((self.bits & 0x03) as u8)
+        DEVSPD_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Non-Zero-Length Status OUT Handshake"]
     #[inline(always)]
     pub fn nzstsouthshk(&self) -> NZSTSOUTHSHK_R {
-        NZSTSOUTHSHK_R::new(((self.bits >> 2) & 0x01) != 0)
+        NZSTSOUTHSHK_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable 32 KHz Suspend mode"]
     #[inline(always)]
     pub fn ena32khzsusp(&self) -> ENA32KHZSUSP_R {
-        ENA32KHZSUSP_R::new(((self.bits >> 3) & 0x01) != 0)
+        ENA32KHZSUSP_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:10 - Device Address"]
     #[inline(always)]
@@ -394,12 +209,12 @@ impl R {
     #[doc = "Bits 11:12 - Periodic Frame Interval"]
     #[inline(always)]
     pub fn perfrint(&self) -> PERFRINT_R {
-        PERFRINT_R::new(((self.bits >> 11) & 0x03) as u8)
+        PERFRINT_R::new(((self.bits >> 11) & 3) as u8)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
     pub fn erraticintmsk(&self) -> ERRATICINTMSK_R {
-        ERRATICINTMSK_R::new(((self.bits >> 15) & 0x01) != 0)
+        ERRATICINTMSK_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 26:31 - Resume Validation Period"]
     #[inline(always)]
@@ -410,38 +225,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Device Speed"]
     #[inline(always)]
-    pub fn devspd(&mut self) -> DEVSPD_W {
-        DEVSPD_W { w: self }
+    pub fn devspd(&mut self) -> DEVSPD_W<0> {
+        DEVSPD_W::new(self)
     }
     #[doc = "Bit 2 - Non-Zero-Length Status OUT Handshake"]
     #[inline(always)]
-    pub fn nzstsouthshk(&mut self) -> NZSTSOUTHSHK_W {
-        NZSTSOUTHSHK_W { w: self }
+    pub fn nzstsouthshk(&mut self) -> NZSTSOUTHSHK_W<2> {
+        NZSTSOUTHSHK_W::new(self)
     }
     #[doc = "Bit 3 - Enable 32 KHz Suspend mode"]
     #[inline(always)]
-    pub fn ena32khzsusp(&mut self) -> ENA32KHZSUSP_W {
-        ENA32KHZSUSP_W { w: self }
+    pub fn ena32khzsusp(&mut self) -> ENA32KHZSUSP_W<3> {
+        ENA32KHZSUSP_W::new(self)
     }
     #[doc = "Bits 4:10 - Device Address"]
     #[inline(always)]
-    pub fn devaddr(&mut self) -> DEVADDR_W {
-        DEVADDR_W { w: self }
+    pub fn devaddr(&mut self) -> DEVADDR_W<4> {
+        DEVADDR_W::new(self)
     }
     #[doc = "Bits 11:12 - Periodic Frame Interval"]
     #[inline(always)]
-    pub fn perfrint(&mut self) -> PERFRINT_W {
-        PERFRINT_W { w: self }
+    pub fn perfrint(&mut self) -> PERFRINT_W<11> {
+        PERFRINT_W::new(self)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
-    pub fn erraticintmsk(&mut self) -> ERRATICINTMSK_W {
-        ERRATICINTMSK_W { w: self }
+    pub fn erraticintmsk(&mut self) -> ERRATICINTMSK_W<15> {
+        ERRATICINTMSK_W::new(self)
     }
     #[doc = "Bits 26:31 - Resume Validation Period"]
     #[inline(always)]
-    pub fn resvalid(&mut self) -> RESVALID_W {
-        RESVALID_W { w: self }
+    pub fn resvalid(&mut self) -> RESVALID_W<26> {
+        RESVALID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
