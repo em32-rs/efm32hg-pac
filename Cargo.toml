@@ -3,9 +3,11 @@ name = "efm32hg309f64-pac"
 version = "0.2.1"
 authors = ["Jacob Rosenthal <jacobrosenthal@gmail.com>", "Nurahmadie <nurahmadie@gmail.com>"]
 edition = "2021"
-keywords = ["no-std", "arm", "cortex-m", "efm32", "efm32hg", "efm32hg309", "efm32hg309f64", "pac"]
+keywords = ["no-std", "arm", "cortex-m", "efm32hg309", "pac"]
 readme = "readme.md"
 repository = "https://github.com/em32-rs/efm32hg-pac"
+description = "Peripheral Access Crate for EFM32HG309 series MCU from Silicon Labs"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 bare-metal = "1.0.0"
