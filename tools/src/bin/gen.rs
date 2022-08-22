@@ -33,7 +33,7 @@ pub fn main() -> () {
     .unwrap();
 
     //form lib.rs and save
-    create_directory_structure("src/", lib_rs).unwrap();
+    create_directory_structure("src/", &lib_rs).unwrap();
 
     set_current_dir("..").unwrap();
     remove_dir_all("./src").unwrap_or_else(|err| println!("./src: {} [ignored]", err));
