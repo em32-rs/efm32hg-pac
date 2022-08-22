@@ -1,6 +1,6 @@
 all: patch gen
 
-.PHONY: patch clean-rs clean-patch clean-html clean
+.PHONY: patch clean-rs clean-patch clean
 .PRECIOUS: svd/%.svd .deps/%.d
 
 SHELL := /usr/bin/env bash
@@ -15,20 +15,14 @@ YAMLS := $(foreach crate, $(CRATES), \
 PATCHED_SVDS := $(patsubst devices/%.yaml, svd/%.svd.patched, $(YAMLS))
 
 # Turn a devices/device.yaml and svd/device.svd into svd/device.svd.patched
-svd/%.svd.patched: devices/%.yaml svd/%.svd .deps/%.d
-	python3 scripts/svdpatch.py $<
+svd/%.svd.patched: devices/%.yaml svd/%.svd
+	svdtools patch $<
 
 patch: $(PATCHED_SVDS)
 
 gen:
 	cargo gen
 	cargo fmt
-
-html/index.html: $(PATCHED_SVDS)
-	@mkdir -p html
-	python3 scripts/makehtml.py html/ svd/EFM*.svd.patched
-
-html: html/index.html
 
 clean-rs:
 	rm -rf $(RUST_DIRS)
@@ -42,10 +36,3 @@ clean-html:
 
 clean: clean-rs clean-patch clean-html
 	rm -rf .deps
-
-# Generate dependencies for each device YAML
-.deps/%.d: devices/%.yaml
-	@mkdir -p .deps
-	python3 scripts/makedeps.py $< > $@
-
--include .deps/*
