@@ -10,10 +10,28 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
-
+  gen:
     runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Regenerate Rust code
+      run: |
+        cargo install svdtools
+        make all
+    - name: Verify no additional changes
+      uses: tj-actions/verify-changed-files@v10.1
+      id: verify-changes
+      with:
+        files: |
+          src/**
+    - name: Error if there is additional changes
+      if: steps.verify-changes.output.files_changes == 'true'
+      run: |
+        echo "there are uncommitted files, please run make all locally and commit all changes. Changes:"
+        echo "${{ steps.verify-changed-files.outputs.changed_files }}"
 
+  build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Build
