@@ -6,6 +6,8 @@ edition = "2021"
 keywords = ["no-std", "arm", "cortex-m", "efm32hg309", "pac"]
 readme = "readme.md"
 repository = "https://github.com/em32-rs/efm32hg-pac"
+description = "Peripheral Access Crate for EFM32HG309 series MCU from Silicon Labs"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 bare-metal = "1.0.0"
