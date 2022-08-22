@@ -14,19 +14,7 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `EXT` reader - External Interrupt Flag n"]
-pub struct EXT_R(crate::FieldReader<u16, u16>);
-impl EXT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        EXT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - External Interrupt Flag n"]
     #[inline(always)]

@@ -35,31 +35,9 @@ impl From<crate::W<EXTIFALL_SPEC>> for W {
     }
 }
 #[doc = "Field `EXTIFALL` reader - External Interrupt n Falling Edge Trigger Enable"]
-pub struct EXTIFALL_R(crate::FieldReader<u16, u16>);
-impl EXTIFALL_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        EXTIFALL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTIFALL_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXTIFALL_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `EXTIFALL` writer - External Interrupt n Falling Edge Trigger Enable"]
-pub struct EXTIFALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTIFALL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type EXTIFALL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTIFALL_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - External Interrupt n Falling Edge Trigger Enable"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - External Interrupt n Falling Edge Trigger Enable"]
     #[inline(always)]
-    pub fn extifall(&mut self) -> EXTIFALL_W {
-        EXTIFALL_W { w: self }
+    pub fn extifall(&mut self) -> EXTIFALL_W<0> {
+        EXTIFALL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

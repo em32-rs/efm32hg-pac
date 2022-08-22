@@ -14,19 +14,7 @@ impl From<crate::R<CNT_SPEC>> for R {
     }
 }
 #[doc = "Field `CNT` reader - Counter Value"]
-pub struct CNT_R(crate::FieldReader<u16, u16>);
-impl CNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CNT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Counter Value"]
     #[inline(always)]

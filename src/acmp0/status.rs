@@ -14,43 +14,19 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `ACMPACT` reader - Analog Comparator Active"]
-pub struct ACMPACT_R(crate::FieldReader<bool, bool>);
-impl ACMPACT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACMPACT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACMPACT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACMPACT_R = crate::BitReader<bool>;
 #[doc = "Field `ACMPOUT` reader - Analog Comparator Output"]
-pub struct ACMPOUT_R(crate::FieldReader<bool, bool>);
-impl ACMPOUT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACMPOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACMPOUT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACMPOUT_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Analog Comparator Active"]
     #[inline(always)]
     pub fn acmpact(&self) -> ACMPACT_R {
-        ACMPACT_R::new((self.bits & 0x01) != 0)
+        ACMPACT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Analog Comparator Output"]
     #[inline(always)]
     pub fn acmpout(&self) -> ACMPOUT_R {
-        ACMPOUT_R::new(((self.bits >> 1) & 0x01) != 0)
+        ACMPOUT_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]

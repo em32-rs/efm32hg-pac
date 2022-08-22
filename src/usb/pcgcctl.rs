@@ -35,210 +35,70 @@ impl From<crate::W<PCGCCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `STOPPCLK` reader - Stop PHY clock"]
-pub struct STOPPCLK_R(crate::FieldReader<bool, bool>);
-impl STOPPCLK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STOPPCLK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STOPPCLK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STOPPCLK_R = crate::BitReader<bool>;
 #[doc = "Field `STOPPCLK` writer - Stop PHY clock"]
-pub struct STOPPCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOPPCLK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type STOPPCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCGCCTL_SPEC, bool, O>;
 #[doc = "Field `GATEHCLK` reader - Gate HCLK"]
-pub struct GATEHCLK_R(crate::FieldReader<bool, bool>);
-impl GATEHCLK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GATEHCLK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GATEHCLK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GATEHCLK_R = crate::BitReader<bool>;
 #[doc = "Field `GATEHCLK` writer - Gate HCLK"]
-pub struct GATEHCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GATEHCLK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type GATEHCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCGCCTL_SPEC, bool, O>;
 #[doc = "Field `PWRCLMP` reader - Power Clamp"]
-pub struct PWRCLMP_R(crate::FieldReader<bool, bool>);
-impl PWRCLMP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PWRCLMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PWRCLMP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PWRCLMP_R = crate::BitReader<bool>;
 #[doc = "Field `PWRCLMP` writer - Power Clamp"]
-pub struct PWRCLMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWRCLMP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type PWRCLMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCGCCTL_SPEC, bool, O>;
 #[doc = "Field `RSTPDWNMODULE` reader - Reset Power-Down Modules"]
-pub struct RSTPDWNMODULE_R(crate::FieldReader<bool, bool>);
-impl RSTPDWNMODULE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RSTPDWNMODULE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RSTPDWNMODULE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RSTPDWNMODULE_R = crate::BitReader<bool>;
 #[doc = "Field `RSTPDWNMODULE` writer - Reset Power-Down Modules"]
-pub struct RSTPDWNMODULE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSTPDWNMODULE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type RSTPDWNMODULE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCGCCTL_SPEC, bool, O>;
 #[doc = "Field `PHYSLEEP` reader - PHY In Sleep"]
-pub struct PHYSLEEP_R(crate::FieldReader<bool, bool>);
-impl PHYSLEEP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PHYSLEEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PHYSLEEP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PHYSLEEP_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Stop PHY clock"]
     #[inline(always)]
     pub fn stoppclk(&self) -> STOPPCLK_R {
-        STOPPCLK_R::new((self.bits & 0x01) != 0)
+        STOPPCLK_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Gate HCLK"]
     #[inline(always)]
     pub fn gatehclk(&self) -> GATEHCLK_R {
-        GATEHCLK_R::new(((self.bits >> 1) & 0x01) != 0)
+        GATEHCLK_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Power Clamp"]
     #[inline(always)]
     pub fn pwrclmp(&self) -> PWRCLMP_R {
-        PWRCLMP_R::new(((self.bits >> 2) & 0x01) != 0)
+        PWRCLMP_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Reset Power-Down Modules"]
     #[inline(always)]
     pub fn rstpdwnmodule(&self) -> RSTPDWNMODULE_R {
-        RSTPDWNMODULE_R::new(((self.bits >> 3) & 0x01) != 0)
+        RSTPDWNMODULE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 6 - PHY In Sleep"]
     #[inline(always)]
     pub fn physleep(&self) -> PHYSLEEP_R {
-        PHYSLEEP_R::new(((self.bits >> 6) & 0x01) != 0)
+        PHYSLEEP_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Stop PHY clock"]
     #[inline(always)]
-    pub fn stoppclk(&mut self) -> STOPPCLK_W {
-        STOPPCLK_W { w: self }
+    pub fn stoppclk(&mut self) -> STOPPCLK_W<0> {
+        STOPPCLK_W::new(self)
     }
     #[doc = "Bit 1 - Gate HCLK"]
     #[inline(always)]
-    pub fn gatehclk(&mut self) -> GATEHCLK_W {
-        GATEHCLK_W { w: self }
+    pub fn gatehclk(&mut self) -> GATEHCLK_W<1> {
+        GATEHCLK_W::new(self)
     }
     #[doc = "Bit 2 - Power Clamp"]
     #[inline(always)]
-    pub fn pwrclmp(&mut self) -> PWRCLMP_W {
-        PWRCLMP_W { w: self }
+    pub fn pwrclmp(&mut self) -> PWRCLMP_W<2> {
+        PWRCLMP_W::new(self)
     }
     #[doc = "Bit 3 - Reset Power-Down Modules"]
     #[inline(always)]
-    pub fn rstpdwnmodule(&mut self) -> RSTPDWNMODULE_W {
-        RSTPDWNMODULE_W { w: self }
+    pub fn rstpdwnmodule(&mut self) -> RSTPDWNMODULE_W<3> {
+        RSTPDWNMODULE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

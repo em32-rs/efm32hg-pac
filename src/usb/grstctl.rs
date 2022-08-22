@@ -35,149 +35,23 @@ impl From<crate::W<GRSTCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `CSFTRST` reader - Core Soft Reset"]
-pub struct CSFTRST_R(crate::FieldReader<bool, bool>);
-impl CSFTRST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSFTRST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSFTRST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSFTRST_R = crate::BitReader<bool>;
 #[doc = "Field `CSFTRST` writer - Core Soft Reset"]
-pub struct CSFTRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSFTRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CSFTRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRSTCTL_SPEC, bool, O>;
 #[doc = "Field `PIUFSSFTRST` reader - PIU FS Dedicated Controller Soft Reset"]
-pub struct PIUFSSFTRST_R(crate::FieldReader<bool, bool>);
-impl PIUFSSFTRST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PIUFSSFTRST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PIUFSSFTRST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PIUFSSFTRST_R = crate::BitReader<bool>;
 #[doc = "Field `PIUFSSFTRST` writer - PIU FS Dedicated Controller Soft Reset"]
-pub struct PIUFSSFTRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PIUFSSFTRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PIUFSSFTRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRSTCTL_SPEC, bool, O>;
 #[doc = "Field `RXFFLSH` reader - RxFIFO Flush"]
-pub struct RXFFLSH_R(crate::FieldReader<bool, bool>);
-impl RXFFLSH_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXFFLSH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXFFLSH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXFFLSH_R = crate::BitReader<bool>;
 #[doc = "Field `RXFFLSH` writer - RxFIFO Flush"]
-pub struct RXFFLSH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXFFLSH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RXFFLSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRSTCTL_SPEC, bool, O>;
 #[doc = "Field `TXFFLSH` reader - TxFIFO Flush"]
-pub struct TXFFLSH_R(crate::FieldReader<bool, bool>);
-impl TXFFLSH_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXFFLSH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXFFLSH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXFFLSH_R = crate::BitReader<bool>;
 #[doc = "Field `TXFFLSH` writer - TxFIFO Flush"]
-pub struct TXFFLSH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXFFLSH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type TXFFLSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRSTCTL_SPEC, bool, O>;
+#[doc = "Field `TXFNUM` reader - TxFIFO Number"]
+pub type TXFNUM_R = crate::FieldReader<u8, TXFNUM_A>;
 #[doc = "TxFIFO Number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -205,13 +79,8 @@ impl From<TXFNUM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TXFNUM` reader - TxFIFO Number"]
-pub struct TXFNUM_R(crate::FieldReader<u8, TXFNUM_A>);
 impl TXFNUM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TXFNUM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TXFNUM_A> {
         match self.bits {
@@ -229,61 +98,47 @@ impl TXFNUM_R {
     #[doc = "Checks if the value of the field is `F0`"]
     #[inline(always)]
     pub fn is_f0(&self) -> bool {
-        **self == TXFNUM_A::F0
+        *self == TXFNUM_A::F0
     }
     #[doc = "Checks if the value of the field is `F1`"]
     #[inline(always)]
     pub fn is_f1(&self) -> bool {
-        **self == TXFNUM_A::F1
+        *self == TXFNUM_A::F1
     }
     #[doc = "Checks if the value of the field is `F2`"]
     #[inline(always)]
     pub fn is_f2(&self) -> bool {
-        **self == TXFNUM_A::F2
+        *self == TXFNUM_A::F2
     }
     #[doc = "Checks if the value of the field is `F3`"]
     #[inline(always)]
     pub fn is_f3(&self) -> bool {
-        **self == TXFNUM_A::F3
+        *self == TXFNUM_A::F3
     }
     #[doc = "Checks if the value of the field is `F4`"]
     #[inline(always)]
     pub fn is_f4(&self) -> bool {
-        **self == TXFNUM_A::F4
+        *self == TXFNUM_A::F4
     }
     #[doc = "Checks if the value of the field is `F5`"]
     #[inline(always)]
     pub fn is_f5(&self) -> bool {
-        **self == TXFNUM_A::F5
+        *self == TXFNUM_A::F5
     }
     #[doc = "Checks if the value of the field is `F6`"]
     #[inline(always)]
     pub fn is_f6(&self) -> bool {
-        **self == TXFNUM_A::F6
+        *self == TXFNUM_A::F6
     }
     #[doc = "Checks if the value of the field is `FALL`"]
     #[inline(always)]
     pub fn is_fall(&self) -> bool {
-        **self == TXFNUM_A::FALL
-    }
-}
-impl core::ops::Deref for TXFNUM_R {
-    type Target = crate::FieldReader<u8, TXFNUM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXFNUM_A::FALL
     }
 }
 #[doc = "Field `TXFNUM` writer - TxFIFO Number"]
-pub struct TXFNUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXFNUM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXFNUM_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TXFNUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GRSTCTL_SPEC, u8, TXFNUM_A, 5, O>;
+impl<'a, const O: u8> TXFNUM_W<'a, O> {
     #[doc = "Host mode: Non-periodic TxFIFO flush. Device: Tx FIFO 0 flush"]
     #[inline(always)]
     pub fn f0(self) -> &'a mut W {
@@ -324,61 +179,31 @@ impl<'a> TXFNUM_W<'a> {
     pub fn fall(self) -> &'a mut W {
         self.variant(TXFNUM_A::FALL)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 6)) | ((value as u32 & 0x1f) << 6);
-        self.w
-    }
 }
 #[doc = "Field `DMAREQ` reader - DMA Request Signal"]
-pub struct DMAREQ_R(crate::FieldReader<bool, bool>);
-impl DMAREQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMAREQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMAREQ_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMAREQ_R = crate::BitReader<bool>;
 #[doc = "Field `AHBIDLE` reader - AHB Master Idle"]
-pub struct AHBIDLE_R(crate::FieldReader<bool, bool>);
-impl AHBIDLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AHBIDLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AHBIDLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AHBIDLE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Core Soft Reset"]
     #[inline(always)]
     pub fn csftrst(&self) -> CSFTRST_R {
-        CSFTRST_R::new((self.bits & 0x01) != 0)
+        CSFTRST_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PIU FS Dedicated Controller Soft Reset"]
     #[inline(always)]
     pub fn piufssftrst(&self) -> PIUFSSFTRST_R {
-        PIUFSSFTRST_R::new(((self.bits >> 1) & 0x01) != 0)
+        PIUFSSFTRST_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - RxFIFO Flush"]
     #[inline(always)]
     pub fn rxfflsh(&self) -> RXFFLSH_R {
-        RXFFLSH_R::new(((self.bits >> 4) & 0x01) != 0)
+        RXFFLSH_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - TxFIFO Flush"]
     #[inline(always)]
     pub fn txfflsh(&self) -> TXFFLSH_R {
-        TXFFLSH_R::new(((self.bits >> 5) & 0x01) != 0)
+        TXFFLSH_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:10 - TxFIFO Number"]
     #[inline(always)]
@@ -388,39 +213,39 @@ impl R {
     #[doc = "Bit 30 - DMA Request Signal"]
     #[inline(always)]
     pub fn dmareq(&self) -> DMAREQ_R {
-        DMAREQ_R::new(((self.bits >> 30) & 0x01) != 0)
+        DMAREQ_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - AHB Master Idle"]
     #[inline(always)]
     pub fn ahbidle(&self) -> AHBIDLE_R {
-        AHBIDLE_R::new(((self.bits >> 31) & 0x01) != 0)
+        AHBIDLE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Core Soft Reset"]
     #[inline(always)]
-    pub fn csftrst(&mut self) -> CSFTRST_W {
-        CSFTRST_W { w: self }
+    pub fn csftrst(&mut self) -> CSFTRST_W<0> {
+        CSFTRST_W::new(self)
     }
     #[doc = "Bit 1 - PIU FS Dedicated Controller Soft Reset"]
     #[inline(always)]
-    pub fn piufssftrst(&mut self) -> PIUFSSFTRST_W {
-        PIUFSSFTRST_W { w: self }
+    pub fn piufssftrst(&mut self) -> PIUFSSFTRST_W<1> {
+        PIUFSSFTRST_W::new(self)
     }
     #[doc = "Bit 4 - RxFIFO Flush"]
     #[inline(always)]
-    pub fn rxfflsh(&mut self) -> RXFFLSH_W {
-        RXFFLSH_W { w: self }
+    pub fn rxfflsh(&mut self) -> RXFFLSH_W<4> {
+        RXFFLSH_W::new(self)
     }
     #[doc = "Bit 5 - TxFIFO Flush"]
     #[inline(always)]
-    pub fn txfflsh(&mut self) -> TXFFLSH_W {
-        TXFFLSH_W { w: self }
+    pub fn txfflsh(&mut self) -> TXFFLSH_W<5> {
+        TXFFLSH_W::new(self)
     }
     #[doc = "Bits 6:10 - TxFIFO Number"]
     #[inline(always)]
-    pub fn txfnum(&mut self) -> TXFNUM_W {
-        TXFNUM_W { w: self }
+    pub fn txfnum(&mut self) -> TXFNUM_W<6> {
+        TXFNUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

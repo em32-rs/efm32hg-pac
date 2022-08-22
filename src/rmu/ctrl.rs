@@ -35,53 +35,21 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `LOCKUPRDIS` reader - Lockup Reset Disable"]
-pub struct LOCKUPRDIS_R(crate::FieldReader<bool, bool>);
-impl LOCKUPRDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCKUPRDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOCKUPRDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOCKUPRDIS_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKUPRDIS` writer - Lockup Reset Disable"]
-pub struct LOCKUPRDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCKUPRDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type LOCKUPRDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Lockup Reset Disable"]
     #[inline(always)]
     pub fn lockuprdis(&self) -> LOCKUPRDIS_R {
-        LOCKUPRDIS_R::new((self.bits & 0x01) != 0)
+        LOCKUPRDIS_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Lockup Reset Disable"]
     #[inline(always)]
-    pub fn lockuprdis(&mut self) -> LOCKUPRDIS_W {
-        LOCKUPRDIS_W { w: self }
+    pub fn lockuprdis(&mut self) -> LOCKUPRDIS_W<0> {
+        LOCKUPRDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

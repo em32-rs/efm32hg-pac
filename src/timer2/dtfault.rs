@@ -14,81 +14,33 @@ impl From<crate::R<DTFAULT_SPEC>> for R {
     }
 }
 #[doc = "Field `DTPRS0F` reader - DTI PRS 0 Fault"]
-pub struct DTPRS0F_R(crate::FieldReader<bool, bool>);
-impl DTPRS0F_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTPRS0F_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTPRS0F_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTPRS0F_R = crate::BitReader<bool>;
 #[doc = "Field `DTPRS1F` reader - DTI PRS 1 Fault"]
-pub struct DTPRS1F_R(crate::FieldReader<bool, bool>);
-impl DTPRS1F_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTPRS1F_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTPRS1F_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTPRS1F_R = crate::BitReader<bool>;
 #[doc = "Field `DTDBGF` reader - DTI Debugger Fault"]
-pub struct DTDBGF_R(crate::FieldReader<bool, bool>);
-impl DTDBGF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTDBGF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTDBGF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTDBGF_R = crate::BitReader<bool>;
 #[doc = "Field `DTLOCKUPF` reader - DTI Lockup Fault"]
-pub struct DTLOCKUPF_R(crate::FieldReader<bool, bool>);
-impl DTLOCKUPF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DTLOCKUPF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTLOCKUPF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTLOCKUPF_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - DTI PRS 0 Fault"]
     #[inline(always)]
     pub fn dtprs0f(&self) -> DTPRS0F_R {
-        DTPRS0F_R::new((self.bits & 0x01) != 0)
+        DTPRS0F_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - DTI PRS 1 Fault"]
     #[inline(always)]
     pub fn dtprs1f(&self) -> DTPRS1F_R {
-        DTPRS1F_R::new(((self.bits >> 1) & 0x01) != 0)
+        DTPRS1F_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - DTI Debugger Fault"]
     #[inline(always)]
     pub fn dtdbgf(&self) -> DTDBGF_R {
-        DTDBGF_R::new(((self.bits >> 2) & 0x01) != 0)
+        DTDBGF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - DTI Lockup Fault"]
     #[inline(always)]
     pub fn dtlockupf(&self) -> DTLOCKUPF_R {
-        DTLOCKUPF_R::new(((self.bits >> 3) & 0x01) != 0)
+        DTLOCKUPF_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 #[doc = "DTI Fault Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtfault](index.html) module"]

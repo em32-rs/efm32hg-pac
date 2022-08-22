@@ -20,140 +20,40 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `UF` writer - Underflow interrupt set"]
-pub struct UF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `OF` writer - Overflow Interrupt Set"]
-pub struct OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `DIRCNG` writer - Direction Change Detect Interrupt Set"]
-pub struct DIRCNG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIRCNG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DIRCNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `AUXOF` writer - Auxiliary Overflow Interrupt Set"]
-pub struct AUXOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUXOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type AUXOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `TCC` writer - Triggered compare Interrupt Set"]
-pub struct TCC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type TCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Underflow interrupt set"]
     #[inline(always)]
-    pub fn uf(&mut self) -> UF_W {
-        UF_W { w: self }
+    pub fn uf(&mut self) -> UF_W<0> {
+        UF_W::new(self)
     }
     #[doc = "Bit 1 - Overflow Interrupt Set"]
     #[inline(always)]
-    pub fn of(&mut self) -> OF_W {
-        OF_W { w: self }
+    pub fn of(&mut self) -> OF_W<1> {
+        OF_W::new(self)
     }
     #[doc = "Bit 2 - Direction Change Detect Interrupt Set"]
     #[inline(always)]
-    pub fn dircng(&mut self) -> DIRCNG_W {
-        DIRCNG_W { w: self }
+    pub fn dircng(&mut self) -> DIRCNG_W<2> {
+        DIRCNG_W::new(self)
     }
     #[doc = "Bit 3 - Auxiliary Overflow Interrupt Set"]
     #[inline(always)]
-    pub fn auxof(&mut self) -> AUXOF_W {
-        AUXOF_W { w: self }
+    pub fn auxof(&mut self) -> AUXOF_W<3> {
+        AUXOF_W::new(self)
     }
     #[doc = "Bit 4 - Triggered compare Interrupt Set"]
     #[inline(always)]
-    pub fn tcc(&mut self) -> TCC_W {
-        TCC_W { w: self }
+    pub fn tcc(&mut self) -> TCC_W<4> {
+        TCC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

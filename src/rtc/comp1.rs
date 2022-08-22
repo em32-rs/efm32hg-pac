@@ -35,31 +35,9 @@ impl From<crate::W<COMP1_SPEC>> for W {
     }
 }
 #[doc = "Field `COMP1` reader - Compare Value 1"]
-pub struct COMP1_R(crate::FieldReader<u32, u32>);
-impl COMP1_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        COMP1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMP1_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COMP1_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `COMP1` writer - Compare Value 1"]
-pub struct COMP1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMP1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type COMP1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, COMP1_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Compare Value 1"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Compare Value 1"]
     #[inline(always)]
-    pub fn comp1(&mut self) -> COMP1_W {
-        COMP1_W { w: self }
+    pub fn comp1(&mut self) -> COMP1_W<0> {
+        COMP1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,145 +35,49 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `OF` reader - Overflow Interrupt Enable"]
-pub struct OF_R(crate::FieldReader<bool, bool>);
-impl OF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OF_R = crate::BitReader<bool>;
 #[doc = "Field `OF` writer - Overflow Interrupt Enable"]
-pub struct OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `COMP0` reader - Compare Match 0 Interrupt Enable"]
-pub struct COMP0_R(crate::FieldReader<bool, bool>);
-impl COMP0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COMP0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMP0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COMP0_R = crate::BitReader<bool>;
 #[doc = "Field `COMP0` writer - Compare Match 0 Interrupt Enable"]
-pub struct COMP0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMP0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type COMP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `COMP1` reader - Compare Match 1 Interrupt Enable"]
-pub struct COMP1_R(crate::FieldReader<bool, bool>);
-impl COMP1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COMP1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMP1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COMP1_R = crate::BitReader<bool>;
 #[doc = "Field `COMP1` writer - Compare Match 1 Interrupt Enable"]
-pub struct COMP1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMP1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type COMP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn of(&self) -> OF_R {
-        OF_R::new((self.bits & 0x01) != 0)
+        OF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Compare Match 0 Interrupt Enable"]
     #[inline(always)]
     pub fn comp0(&self) -> COMP0_R {
-        COMP0_R::new(((self.bits >> 1) & 0x01) != 0)
+        COMP0_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Compare Match 1 Interrupt Enable"]
     #[inline(always)]
     pub fn comp1(&self) -> COMP1_R {
-        COMP1_R::new(((self.bits >> 2) & 0x01) != 0)
+        COMP1_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn of(&mut self) -> OF_W {
-        OF_W { w: self }
+    pub fn of(&mut self) -> OF_W<0> {
+        OF_W::new(self)
     }
     #[doc = "Bit 1 - Compare Match 0 Interrupt Enable"]
     #[inline(always)]
-    pub fn comp0(&mut self) -> COMP0_W {
-        COMP0_W { w: self }
+    pub fn comp0(&mut self) -> COMP0_W<1> {
+        COMP0_W::new(self)
     }
     #[doc = "Bit 2 - Compare Match 1 Interrupt Enable"]
     #[inline(always)]
-    pub fn comp1(&mut self) -> COMP1_W {
-        COMP1_W { w: self }
+    pub fn comp1(&mut self) -> COMP1_W<2> {
+        COMP1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

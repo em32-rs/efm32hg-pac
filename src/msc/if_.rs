@@ -14,81 +14,33 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `ERASE` reader - Erase Done Interrupt Read Flag"]
-pub struct ERASE_R(crate::FieldReader<bool, bool>);
-impl ERASE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ERASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERASE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERASE_R = crate::BitReader<bool>;
 #[doc = "Field `WRITE` reader - Write Done Interrupt Read Flag"]
-pub struct WRITE_R(crate::FieldReader<bool, bool>);
-impl WRITE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WRITE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WRITE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WRITE_R = crate::BitReader<bool>;
 #[doc = "Field `CHOF` reader - Cache Hits Overflow Interrupt Flag"]
-pub struct CHOF_R(crate::FieldReader<bool, bool>);
-impl CHOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHOF_R = crate::BitReader<bool>;
 #[doc = "Field `CMOF` reader - Cache Misses Overflow Interrupt Flag"]
-pub struct CMOF_R(crate::FieldReader<bool, bool>);
-impl CMOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMOF_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Erase Done Interrupt Read Flag"]
     #[inline(always)]
     pub fn erase(&self) -> ERASE_R {
-        ERASE_R::new((self.bits & 0x01) != 0)
+        ERASE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Write Done Interrupt Read Flag"]
     #[inline(always)]
     pub fn write(&self) -> WRITE_R {
-        WRITE_R::new(((self.bits >> 1) & 0x01) != 0)
+        WRITE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Cache Hits Overflow Interrupt Flag"]
     #[inline(always)]
     pub fn chof(&self) -> CHOF_R {
-        CHOF_R::new(((self.bits >> 2) & 0x01) != 0)
+        CHOF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Cache Misses Overflow Interrupt Flag"]
     #[inline(always)]
     pub fn cmof(&self) -> CMOF_R {
-        CMOF_R::new(((self.bits >> 3) & 0x01) != 0)
+        CMOF_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 #[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](index.html) module"]

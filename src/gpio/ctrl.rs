@@ -35,53 +35,21 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EM4RET` reader - Enable EM4 retention"]
-pub struct EM4RET_R(crate::FieldReader<bool, bool>);
-impl EM4RET_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EM4RET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EM4RET_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EM4RET_R = crate::BitReader<bool>;
 #[doc = "Field `EM4RET` writer - Enable EM4 retention"]
-pub struct EM4RET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM4RET_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EM4RET_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Enable EM4 retention"]
     #[inline(always)]
     pub fn em4ret(&self) -> EM4RET_R {
-        EM4RET_R::new((self.bits & 0x01) != 0)
+        EM4RET_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable EM4 retention"]
     #[inline(always)]
-    pub fn em4ret(&mut self) -> EM4RET_W {
-        EM4RET_W { w: self }
+    pub fn em4ret(&mut self) -> EM4RET_W<0> {
+        EM4RET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

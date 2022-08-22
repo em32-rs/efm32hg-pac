@@ -14,61 +14,13 @@ impl From<crate::R<IDAC0CAL0_SPEC>> for R {
     }
 }
 #[doc = "Field `RANGE0` reader - Current range 0 tuning value for IDAC0"]
-pub struct RANGE0_R(crate::FieldReader<u8, u8>);
-impl RANGE0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RANGE0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RANGE0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RANGE0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RANGE1` reader - Current range 1 tuning value for IDAC0"]
-pub struct RANGE1_R(crate::FieldReader<u8, u8>);
-impl RANGE1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RANGE1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RANGE1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RANGE1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RANGE2` reader - Current range 2 tuning value for IDAC0"]
-pub struct RANGE2_R(crate::FieldReader<u8, u8>);
-impl RANGE2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RANGE2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RANGE2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RANGE2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RANGE3` reader - Current range 3 tuning value for IDAC0"]
-pub struct RANGE3_R(crate::FieldReader<u8, u8>);
-impl RANGE3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RANGE3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RANGE3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RANGE3_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Current range 0 tuning value for IDAC0"]
     #[inline(always)]

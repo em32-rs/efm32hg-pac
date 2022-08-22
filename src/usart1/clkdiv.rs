@@ -35,62 +35,18 @@ impl From<crate::W<CLKDIV_SPEC>> for W {
     }
 }
 #[doc = "Field `DIVEXT` reader - Extended Fractional Clock Divider"]
-pub struct DIVEXT_R(crate::FieldReader<u8, u8>);
-impl DIVEXT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DIVEXT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIVEXT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIVEXT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIVEXT` writer - Extended Fractional Clock Divider"]
-pub struct DIVEXT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVEXT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 3)) | ((value as u32 & 0x07) << 3);
-        self.w
-    }
-}
+pub type DIVEXT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u8, u8, 3, O>;
 #[doc = "Field `DIV` reader - Fractional Clock Divider"]
-pub struct DIV_R(crate::FieldReader<u16, u16>);
-impl DIV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIV_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DIV` writer - Fractional Clock Divider"]
-pub struct DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7fff << 6)) | ((value as u32 & 0x7fff) << 6);
-        self.w
-    }
-}
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 3:5 - Extended Fractional Clock Divider"]
     #[inline(always)]
     pub fn divext(&self) -> DIVEXT_R {
-        DIVEXT_R::new(((self.bits >> 3) & 0x07) as u8)
+        DIVEXT_R::new(((self.bits >> 3) & 7) as u8)
     }
     #[doc = "Bits 6:20 - Fractional Clock Divider"]
     #[inline(always)]
@@ -101,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 3:5 - Extended Fractional Clock Divider"]
     #[inline(always)]
-    pub fn divext(&mut self) -> DIVEXT_W {
-        DIVEXT_W { w: self }
+    pub fn divext(&mut self) -> DIVEXT_W<3> {
+        DIVEXT_W::new(self)
     }
     #[doc = "Bits 6:20 - Fractional Clock Divider"]
     #[inline(always)]
-    pub fn div(&mut self) -> DIV_W {
-        DIV_W { w: self }
+    pub fn div(&mut self) -> DIV_W<6> {
+        DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

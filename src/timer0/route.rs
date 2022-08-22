@@ -35,221 +35,31 @@ impl From<crate::W<ROUTE_SPEC>> for W {
     }
 }
 #[doc = "Field `CC0PEN` reader - CC Channel 0 Pin Enable"]
-pub struct CC0PEN_R(crate::FieldReader<bool, bool>);
-impl CC0PEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC0PEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CC0PEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CC0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC0PEN` writer - CC Channel 0 Pin Enable"]
-pub struct CC0PEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC0PEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CC0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CC1PEN` reader - CC Channel 1 Pin Enable"]
-pub struct CC1PEN_R(crate::FieldReader<bool, bool>);
-impl CC1PEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1PEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CC1PEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CC1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC1PEN` writer - CC Channel 1 Pin Enable"]
-pub struct CC1PEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1PEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CC1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CC2PEN` reader - CC Channel 2 Pin Enable"]
-pub struct CC2PEN_R(crate::FieldReader<bool, bool>);
-impl CC2PEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC2PEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CC2PEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CC2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC2PEN` writer - CC Channel 2 Pin Enable"]
-pub struct CC2PEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC2PEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CC2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CDTI0PEN` reader - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
-pub struct CDTI0PEN_R(crate::FieldReader<bool, bool>);
-impl CDTI0PEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CDTI0PEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CDTI0PEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CDTI0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CDTI0PEN` writer - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
-pub struct CDTI0PEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDTI0PEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type CDTI0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CDTI1PEN` reader - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
-pub struct CDTI1PEN_R(crate::FieldReader<bool, bool>);
-impl CDTI1PEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CDTI1PEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CDTI1PEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CDTI1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CDTI1PEN` writer - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
-pub struct CDTI1PEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDTI1PEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type CDTI1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CDTI2PEN` reader - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
-pub struct CDTI2PEN_R(crate::FieldReader<bool, bool>);
-impl CDTI2PEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CDTI2PEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CDTI2PEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CDTI2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CDTI2PEN` writer - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
-pub struct CDTI2PEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDTI2PEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type CDTI2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
+#[doc = "Field `LOCATION` reader - I/O Location"]
+pub type LOCATION_R = crate::FieldReader<u8, LOCATION_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -275,13 +85,8 @@ impl From<LOCATION_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LOCATION` reader - I/O Location"]
-pub struct LOCATION_R(crate::FieldReader<u8, LOCATION_A>);
 impl LOCATION_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LOCATION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LOCATION_A> {
         match self.bits {
@@ -298,56 +103,43 @@ impl LOCATION_R {
     #[doc = "Checks if the value of the field is `LOC0`"]
     #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        **self == LOCATION_A::LOC0
+        *self == LOCATION_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
     #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        **self == LOCATION_A::LOC1
+        *self == LOCATION_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
     #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        **self == LOCATION_A::LOC2
+        *self == LOCATION_A::LOC2
     }
     #[doc = "Checks if the value of the field is `LOC3`"]
     #[inline(always)]
     pub fn is_loc3(&self) -> bool {
-        **self == LOCATION_A::LOC3
+        *self == LOCATION_A::LOC3
     }
     #[doc = "Checks if the value of the field is `LOC4`"]
     #[inline(always)]
     pub fn is_loc4(&self) -> bool {
-        **self == LOCATION_A::LOC4
+        *self == LOCATION_A::LOC4
     }
     #[doc = "Checks if the value of the field is `LOC5`"]
     #[inline(always)]
     pub fn is_loc5(&self) -> bool {
-        **self == LOCATION_A::LOC5
+        *self == LOCATION_A::LOC5
     }
     #[doc = "Checks if the value of the field is `LOC6`"]
     #[inline(always)]
     pub fn is_loc6(&self) -> bool {
-        **self == LOCATION_A::LOC6
-    }
-}
-impl core::ops::Deref for LOCATION_R {
-    type Target = crate::FieldReader<u8, LOCATION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCATION_A::LOC6
     }
 }
 #[doc = "Field `LOCATION` writer - I/O Location"]
-pub struct LOCATION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCATION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOCATION_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LOCATION_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTE_SPEC, u8, LOCATION_A, 3, O>;
+impl<'a, const O: u8> LOCATION_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -383,85 +175,79 @@ impl<'a> LOCATION_W<'a> {
     pub fn loc6(self) -> &'a mut W {
         self.variant(LOCATION_A::LOC6)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - CC Channel 0 Pin Enable"]
     #[inline(always)]
     pub fn cc0pen(&self) -> CC0PEN_R {
-        CC0PEN_R::new((self.bits & 0x01) != 0)
+        CC0PEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - CC Channel 1 Pin Enable"]
     #[inline(always)]
     pub fn cc1pen(&self) -> CC1PEN_R {
-        CC1PEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        CC1PEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - CC Channel 2 Pin Enable"]
     #[inline(always)]
     pub fn cc2pen(&self) -> CC2PEN_R {
-        CC2PEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        CC2PEN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 8 - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
     pub fn cdti0pen(&self) -> CDTI0PEN_R {
-        CDTI0PEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        CDTI0PEN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
     pub fn cdti1pen(&self) -> CDTI1PEN_R {
-        CDTI1PEN_R::new(((self.bits >> 9) & 0x01) != 0)
+        CDTI1PEN_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
     pub fn cdti2pen(&self) -> CDTI2PEN_R {
-        CDTI2PEN_R::new(((self.bits >> 10) & 0x01) != 0)
+        CDTI2PEN_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bits 16:18 - I/O Location"]
     #[inline(always)]
     pub fn location(&self) -> LOCATION_R {
-        LOCATION_R::new(((self.bits >> 16) & 0x07) as u8)
+        LOCATION_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - CC Channel 0 Pin Enable"]
     #[inline(always)]
-    pub fn cc0pen(&mut self) -> CC0PEN_W {
-        CC0PEN_W { w: self }
+    pub fn cc0pen(&mut self) -> CC0PEN_W<0> {
+        CC0PEN_W::new(self)
     }
     #[doc = "Bit 1 - CC Channel 1 Pin Enable"]
     #[inline(always)]
-    pub fn cc1pen(&mut self) -> CC1PEN_W {
-        CC1PEN_W { w: self }
+    pub fn cc1pen(&mut self) -> CC1PEN_W<1> {
+        CC1PEN_W::new(self)
     }
     #[doc = "Bit 2 - CC Channel 2 Pin Enable"]
     #[inline(always)]
-    pub fn cc2pen(&mut self) -> CC2PEN_W {
-        CC2PEN_W { w: self }
+    pub fn cc2pen(&mut self) -> CC2PEN_W<2> {
+        CC2PEN_W::new(self)
     }
     #[doc = "Bit 8 - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
-    pub fn cdti0pen(&mut self) -> CDTI0PEN_W {
-        CDTI0PEN_W { w: self }
+    pub fn cdti0pen(&mut self) -> CDTI0PEN_W<8> {
+        CDTI0PEN_W::new(self)
     }
     #[doc = "Bit 9 - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
-    pub fn cdti1pen(&mut self) -> CDTI1PEN_W {
-        CDTI1PEN_W { w: self }
+    pub fn cdti1pen(&mut self) -> CDTI1PEN_W<9> {
+        CDTI1PEN_W::new(self)
     }
     #[doc = "Bit 10 - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
-    pub fn cdti2pen(&mut self) -> CDTI2PEN_W {
-        CDTI2PEN_W { w: self }
+    pub fn cdti2pen(&mut self) -> CDTI2PEN_W<10> {
+        CDTI2PEN_W::new(self)
     }
     #[doc = "Bits 16:18 - I/O Location"]
     #[inline(always)]
-    pub fn location(&mut self) -> LOCATION_W {
-        LOCATION_W { w: self }
+    pub fn location(&mut self) -> LOCATION_W<16> {
+        LOCATION_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

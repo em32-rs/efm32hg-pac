@@ -14,24 +14,12 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `DONE` reader - Encryption/Decryption Done Interrupt Flag"]
-pub struct DONE_R(crate::FieldReader<bool, bool>);
-impl DONE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DONE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Encryption/Decryption Done Interrupt Flag"]
     #[inline(always)]
     pub fn done(&self) -> DONE_R {
-        DONE_R::new((self.bits & 0x01) != 0)
+        DONE_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](index.html) module"]

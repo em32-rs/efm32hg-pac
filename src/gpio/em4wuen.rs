@@ -34,6 +34,8 @@ impl From<crate::W<EM4WUEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EM4WUEN` reader - EM4 Wake-up enable"]
+pub type EM4WUEN_R = crate::FieldReader<u8, EM4WUEN_A>;
 #[doc = "EM4 Wake-up enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -57,13 +59,8 @@ impl From<EM4WUEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EM4WUEN` reader - EM4 Wake-up enable"]
-pub struct EM4WUEN_R(crate::FieldReader<u8, EM4WUEN_A>);
 impl EM4WUEN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EM4WUEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EM4WUEN_A> {
         match self.bits {
@@ -79,51 +76,38 @@ impl EM4WUEN_R {
     #[doc = "Checks if the value of the field is `A0`"]
     #[inline(always)]
     pub fn is_a0(&self) -> bool {
-        **self == EM4WUEN_A::A0
+        *self == EM4WUEN_A::A0
     }
     #[doc = "Checks if the value of the field is `C9`"]
     #[inline(always)]
     pub fn is_c9(&self) -> bool {
-        **self == EM4WUEN_A::C9
+        *self == EM4WUEN_A::C9
     }
     #[doc = "Checks if the value of the field is `F1`"]
     #[inline(always)]
     pub fn is_f1(&self) -> bool {
-        **self == EM4WUEN_A::F1
+        *self == EM4WUEN_A::F1
     }
     #[doc = "Checks if the value of the field is `F2`"]
     #[inline(always)]
     pub fn is_f2(&self) -> bool {
-        **self == EM4WUEN_A::F2
+        *self == EM4WUEN_A::F2
     }
     #[doc = "Checks if the value of the field is `E13`"]
     #[inline(always)]
     pub fn is_e13(&self) -> bool {
-        **self == EM4WUEN_A::E13
+        *self == EM4WUEN_A::E13
     }
     #[doc = "Checks if the value of the field is `C4`"]
     #[inline(always)]
     pub fn is_c4(&self) -> bool {
-        **self == EM4WUEN_A::C4
-    }
-}
-impl core::ops::Deref for EM4WUEN_R {
-    type Target = crate::FieldReader<u8, EM4WUEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EM4WUEN_A::C4
     }
 }
 #[doc = "Field `EM4WUEN` writer - EM4 Wake-up enable"]
-pub struct EM4WUEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM4WUEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EM4WUEN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type EM4WUEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EM4WUEN_SPEC, u8, EM4WUEN_A, 7, O>;
+impl<'a, const O: u8> EM4WUEN_W<'a, O> {
     #[doc = "Enable em4 wakeup on pin A0"]
     #[inline(always)]
     pub fn a0(self) -> &'a mut W {
@@ -154,12 +138,6 @@ impl<'a> EM4WUEN_W<'a> {
     pub fn c4(self) -> &'a mut W {
         self.variant(EM4WUEN_A::C4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:6 - EM4 Wake-up enable"]
@@ -171,8 +149,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - EM4 Wake-up enable"]
     #[inline(always)]
-    pub fn em4wuen(&mut self) -> EM4WUEN_W {
-        EM4WUEN_W { w: self }
+    pub fn em4wuen(&mut self) -> EM4WUEN_W<0> {
+        EM4WUEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

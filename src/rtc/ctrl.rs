@@ -35,145 +35,49 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - RTC Enable"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - RTC Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub struct DEBUGRUN_R(crate::FieldReader<bool, bool>);
-impl DEBUGRUN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DEBUGRUN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEBUGRUN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEBUGRUN_R = crate::BitReader<bool>;
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub struct DEBUGRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUGRUN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `COMP0TOP` reader - Compare Channel 0 is Top Value"]
-pub struct COMP0TOP_R(crate::FieldReader<bool, bool>);
-impl COMP0TOP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COMP0TOP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMP0TOP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COMP0TOP_R = crate::BitReader<bool>;
 #[doc = "Field `COMP0TOP` writer - Compare Channel 0 is Top Value"]
-pub struct COMP0TOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMP0TOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type COMP0TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - RTC Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Debug Mode Run Enable"]
     #[inline(always)]
     pub fn debugrun(&self) -> DEBUGRUN_R {
-        DEBUGRUN_R::new(((self.bits >> 1) & 0x01) != 0)
+        DEBUGRUN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Compare Channel 0 is Top Value"]
     #[inline(always)]
     pub fn comp0top(&self) -> COMP0TOP_R {
-        COMP0TOP_R::new(((self.bits >> 2) & 0x01) != 0)
+        COMP0TOP_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - RTC Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
-        DEBUGRUN_W { w: self }
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<1> {
+        DEBUGRUN_W::new(self)
     }
     #[doc = "Bit 2 - Compare Channel 0 is Top Value"]
     #[inline(always)]
-    pub fn comp0top(&mut self) -> COMP0TOP_W {
-        COMP0TOP_W { w: self }
+    pub fn comp0top(&mut self) -> COMP0TOP_W<2> {
+        COMP0TOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

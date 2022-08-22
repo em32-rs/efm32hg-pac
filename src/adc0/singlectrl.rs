@@ -35,113 +35,19 @@ impl From<crate::W<SINGLECTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `REP` reader - Single Sample Repetitive Mode"]
-pub struct REP_R(crate::FieldReader<bool, bool>);
-impl REP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        REP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REP_R = crate::BitReader<bool>;
 #[doc = "Field `REP` writer - Single Sample Repetitive Mode"]
-pub struct REP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type REP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
 #[doc = "Field `DIFF` reader - Single Sample Differential Mode"]
-pub struct DIFF_R(crate::FieldReader<bool, bool>);
-impl DIFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF` writer - Single Sample Differential Mode"]
-pub struct DIFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DIFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
 #[doc = "Field `ADJ` reader - Single Sample Result Adjustment"]
-pub struct ADJ_R(crate::FieldReader<bool, bool>);
-impl ADJ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADJ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADJ_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADJ_R = crate::BitReader<bool>;
 #[doc = "Field `ADJ` writer - Single Sample Result Adjustment"]
-pub struct ADJ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADJ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ADJ_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
+#[doc = "Field `RES` reader - Single Sample Resolution Select"]
+pub type RES_R = crate::FieldReader<u8, RES_A>;
 #[doc = "Single Sample Resolution Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -161,13 +67,8 @@ impl From<RES_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RES` reader - Single Sample Resolution Select"]
-pub struct RES_R(crate::FieldReader<u8, RES_A>);
 impl RES_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RES_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RES_A {
         match self.bits {
@@ -181,41 +82,27 @@ impl RES_R {
     #[doc = "Checks if the value of the field is `_12BIT`"]
     #[inline(always)]
     pub fn is_12bit(&self) -> bool {
-        **self == RES_A::_12BIT
+        *self == RES_A::_12BIT
     }
     #[doc = "Checks if the value of the field is `_8BIT`"]
     #[inline(always)]
     pub fn is_8bit(&self) -> bool {
-        **self == RES_A::_8BIT
+        *self == RES_A::_8BIT
     }
     #[doc = "Checks if the value of the field is `_6BIT`"]
     #[inline(always)]
     pub fn is_6bit(&self) -> bool {
-        **self == RES_A::_6BIT
+        *self == RES_A::_6BIT
     }
     #[doc = "Checks if the value of the field is `OVS`"]
     #[inline(always)]
     pub fn is_ovs(&self) -> bool {
-        **self == RES_A::OVS
-    }
-}
-impl core::ops::Deref for RES_R {
-    type Target = crate::FieldReader<u8, RES_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RES_A::OVS
     }
 }
 #[doc = "Field `RES` writer - Single Sample Resolution Select"]
-pub struct RES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RES_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RES_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SINGLECTRL_SPEC, u8, RES_A, 2, O>;
+impl<'a, const O: u8> RES_W<'a, O> {
     #[doc = "12-bit resolution"]
     #[inline(always)]
     pub fn _12bit(self) -> &'a mut W {
@@ -236,39 +123,13 @@ impl<'a> RES_W<'a> {
     pub fn ovs(self) -> &'a mut W {
         self.variant(RES_A::OVS)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
 #[doc = "Field `INPUTSEL` reader - Single Sample Input Selection"]
-pub struct INPUTSEL_R(crate::FieldReader<u8, u8>);
-impl INPUTSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        INPUTSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INPUTSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INPUTSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INPUTSEL` writer - Single Sample Input Selection"]
-pub struct INPUTSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INPUTSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type INPUTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `REF` reader - Single Sample Reference Selection"]
+pub type REF_R = crate::FieldReader<u8, REF_A>;
 #[doc = "Single Sample Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -294,13 +155,8 @@ impl From<REF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REF` reader - Single Sample Reference Selection"]
-pub struct REF_R(crate::FieldReader<u8, REF_A>);
 impl REF_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<REF_A> {
         match self.bits {
@@ -317,56 +173,42 @@ impl REF_R {
     #[doc = "Checks if the value of the field is `_1V25`"]
     #[inline(always)]
     pub fn is_1v25(&self) -> bool {
-        **self == REF_A::_1V25
+        *self == REF_A::_1V25
     }
     #[doc = "Checks if the value of the field is `_2V5`"]
     #[inline(always)]
     pub fn is_2v5(&self) -> bool {
-        **self == REF_A::_2V5
+        *self == REF_A::_2V5
     }
     #[doc = "Checks if the value of the field is `VDD`"]
     #[inline(always)]
     pub fn is_vdd(&self) -> bool {
-        **self == REF_A::VDD
+        *self == REF_A::VDD
     }
     #[doc = "Checks if the value of the field is `_5VDIFF`"]
     #[inline(always)]
     pub fn is_5vdiff(&self) -> bool {
-        **self == REF_A::_5VDIFF
+        *self == REF_A::_5VDIFF
     }
     #[doc = "Checks if the value of the field is `EXTSINGLE`"]
     #[inline(always)]
     pub fn is_extsingle(&self) -> bool {
-        **self == REF_A::EXTSINGLE
+        *self == REF_A::EXTSINGLE
     }
     #[doc = "Checks if the value of the field is `_2XEXTDIFF`"]
     #[inline(always)]
     pub fn is_2xextdiff(&self) -> bool {
-        **self == REF_A::_2XEXTDIFF
+        *self == REF_A::_2XEXTDIFF
     }
     #[doc = "Checks if the value of the field is `_2XVDD`"]
     #[inline(always)]
     pub fn is_2xvdd(&self) -> bool {
-        **self == REF_A::_2XVDD
-    }
-}
-impl core::ops::Deref for REF_R {
-    type Target = crate::FieldReader<u8, REF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REF_A::_2XVDD
     }
 }
 #[doc = "Field `REF` writer - Single Sample Reference Selection"]
-pub struct REF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REF_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type REF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, REF_A, 3, O>;
+impl<'a, const O: u8> REF_W<'a, O> {
     #[doc = "Internal 1.25 V reference"]
     #[inline(always)]
     pub fn _1v25(self) -> &'a mut W {
@@ -402,13 +244,9 @@ impl<'a> REF_W<'a> {
     pub fn _2xvdd(self) -> &'a mut W {
         self.variant(REF_A::_2XVDD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
 }
+#[doc = "Field `AT` reader - Single Sample Acquisition Time"]
+pub type AT_R = crate::FieldReader<u8, AT_A>;
 #[doc = "Single Sample Acquisition Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -438,13 +276,8 @@ impl From<AT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AT` reader - Single Sample Acquisition Time"]
-pub struct AT_R(crate::FieldReader<u8, AT_A>);
 impl AT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        AT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<AT_A> {
         match self.bits {
@@ -463,66 +296,52 @@ impl AT_R {
     #[doc = "Checks if the value of the field is `_1CYCLE`"]
     #[inline(always)]
     pub fn is_1cycle(&self) -> bool {
-        **self == AT_A::_1CYCLE
+        *self == AT_A::_1CYCLE
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
     #[inline(always)]
     pub fn is_2cycles(&self) -> bool {
-        **self == AT_A::_2CYCLES
+        *self == AT_A::_2CYCLES
     }
     #[doc = "Checks if the value of the field is `_4CYCLES`"]
     #[inline(always)]
     pub fn is_4cycles(&self) -> bool {
-        **self == AT_A::_4CYCLES
+        *self == AT_A::_4CYCLES
     }
     #[doc = "Checks if the value of the field is `_8CYCLES`"]
     #[inline(always)]
     pub fn is_8cycles(&self) -> bool {
-        **self == AT_A::_8CYCLES
+        *self == AT_A::_8CYCLES
     }
     #[doc = "Checks if the value of the field is `_16CYCLES`"]
     #[inline(always)]
     pub fn is_16cycles(&self) -> bool {
-        **self == AT_A::_16CYCLES
+        *self == AT_A::_16CYCLES
     }
     #[doc = "Checks if the value of the field is `_32CYCLES`"]
     #[inline(always)]
     pub fn is_32cycles(&self) -> bool {
-        **self == AT_A::_32CYCLES
+        *self == AT_A::_32CYCLES
     }
     #[doc = "Checks if the value of the field is `_64CYCLES`"]
     #[inline(always)]
     pub fn is_64cycles(&self) -> bool {
-        **self == AT_A::_64CYCLES
+        *self == AT_A::_64CYCLES
     }
     #[doc = "Checks if the value of the field is `_128CYCLES`"]
     #[inline(always)]
     pub fn is_128cycles(&self) -> bool {
-        **self == AT_A::_128CYCLES
+        *self == AT_A::_128CYCLES
     }
     #[doc = "Checks if the value of the field is `_256CYCLES`"]
     #[inline(always)]
     pub fn is_256cycles(&self) -> bool {
-        **self == AT_A::_256CYCLES
-    }
-}
-impl core::ops::Deref for AT_R {
-    type Target = crate::FieldReader<u8, AT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AT_A::_256CYCLES
     }
 }
 #[doc = "Field `AT` writer - Single Sample Acquisition Time"]
-pub struct AT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type AT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, AT_A, 4, O>;
+impl<'a, const O: u8> AT_W<'a, O> {
     #[doc = "1 ADC_CLK cycle acquisition time for single sample"]
     #[inline(always)]
     pub fn _1cycle(self) -> &'a mut W {
@@ -568,49 +387,13 @@ impl<'a> AT_W<'a> {
     pub fn _256cycles(self) -> &'a mut W {
         self.variant(AT_A::_256CYCLES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | ((value as u32 & 0x0f) << 20);
-        self.w
-    }
 }
 #[doc = "Field `PRSEN` reader - Single Sample PRS Trigger Enable"]
-pub struct PRSEN_R(crate::FieldReader<bool, bool>);
-impl PRSEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRSEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRSEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `PRSEN` writer - Single Sample PRS Trigger Enable"]
-pub struct PRSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
+#[doc = "Field `PRSSEL` reader - Single Sample PRS Trigger Select"]
+pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
 #[doc = "Single Sample PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -634,13 +417,8 @@ impl From<PRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRSSEL` reader - Single Sample PRS Trigger Select"]
-pub struct PRSSEL_R(crate::FieldReader<u8, PRSSEL_A>);
 impl PRSSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRSSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PRSSEL_A> {
         match self.bits {
@@ -656,51 +434,38 @@ impl PRSSEL_R {
     #[doc = "Checks if the value of the field is `PRSCH0`"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        **self == PRSSEL_A::PRSCH0
+        *self == PRSSEL_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        **self == PRSSEL_A::PRSCH1
+        *self == PRSSEL_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        **self == PRSSEL_A::PRSCH2
+        *self == PRSSEL_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        **self == PRSSEL_A::PRSCH3
+        *self == PRSSEL_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        **self == PRSSEL_A::PRSCH4
+        *self == PRSSEL_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        **self == PRSSEL_A::PRSCH5
-    }
-}
-impl core::ops::Deref for PRSSEL_R {
-    type Target = crate::FieldReader<u8, PRSSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRSSEL_A::PRSCH5
     }
 }
 #[doc = "Field `PRSSEL` writer - Single Sample PRS Trigger Select"]
-pub struct PRSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, PRSSEL_A, 3, O>;
+impl<'a, const O: u8> PRSSEL_W<'a, O> {
     #[doc = "PRS ch 0 triggers single sample"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -731,33 +496,27 @@ impl<'a> PRSSEL_W<'a> {
     pub fn prsch5(self) -> &'a mut W {
         self.variant(PRSSEL_A::PRSCH5)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Single Sample Repetitive Mode"]
     #[inline(always)]
     pub fn rep(&self) -> REP_R {
-        REP_R::new((self.bits & 0x01) != 0)
+        REP_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Single Sample Differential Mode"]
     #[inline(always)]
     pub fn diff(&self) -> DIFF_R {
-        DIFF_R::new(((self.bits >> 1) & 0x01) != 0)
+        DIFF_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Single Sample Result Adjustment"]
     #[inline(always)]
     pub fn adj(&self) -> ADJ_R {
-        ADJ_R::new(((self.bits >> 2) & 0x01) != 0)
+        ADJ_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Single Sample Resolution Select"]
     #[inline(always)]
     pub fn res(&self) -> RES_R {
-        RES_R::new(((self.bits >> 4) & 0x03) as u8)
+        RES_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:11 - Single Sample Input Selection"]
     #[inline(always)]
@@ -767,7 +526,7 @@ impl R {
     #[doc = "Bits 16:18 - Single Sample Reference Selection"]
     #[inline(always)]
     pub fn ref_(&self) -> REF_R {
-        REF_R::new(((self.bits >> 16) & 0x07) as u8)
+        REF_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:23 - Single Sample Acquisition Time"]
     #[inline(always)]
@@ -777,59 +536,59 @@ impl R {
     #[doc = "Bit 24 - Single Sample PRS Trigger Enable"]
     #[inline(always)]
     pub fn prsen(&self) -> PRSEN_R {
-        PRSEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        PRSEN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bits 28:30 - Single Sample PRS Trigger Select"]
     #[inline(always)]
     pub fn prssel(&self) -> PRSSEL_R {
-        PRSSEL_R::new(((self.bits >> 28) & 0x07) as u8)
+        PRSSEL_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Single Sample Repetitive Mode"]
     #[inline(always)]
-    pub fn rep(&mut self) -> REP_W {
-        REP_W { w: self }
+    pub fn rep(&mut self) -> REP_W<0> {
+        REP_W::new(self)
     }
     #[doc = "Bit 1 - Single Sample Differential Mode"]
     #[inline(always)]
-    pub fn diff(&mut self) -> DIFF_W {
-        DIFF_W { w: self }
+    pub fn diff(&mut self) -> DIFF_W<1> {
+        DIFF_W::new(self)
     }
     #[doc = "Bit 2 - Single Sample Result Adjustment"]
     #[inline(always)]
-    pub fn adj(&mut self) -> ADJ_W {
-        ADJ_W { w: self }
+    pub fn adj(&mut self) -> ADJ_W<2> {
+        ADJ_W::new(self)
     }
     #[doc = "Bits 4:5 - Single Sample Resolution Select"]
     #[inline(always)]
-    pub fn res(&mut self) -> RES_W {
-        RES_W { w: self }
+    pub fn res(&mut self) -> RES_W<4> {
+        RES_W::new(self)
     }
     #[doc = "Bits 8:11 - Single Sample Input Selection"]
     #[inline(always)]
-    pub fn inputsel(&mut self) -> INPUTSEL_W {
-        INPUTSEL_W { w: self }
+    pub fn inputsel(&mut self) -> INPUTSEL_W<8> {
+        INPUTSEL_W::new(self)
     }
     #[doc = "Bits 16:18 - Single Sample Reference Selection"]
     #[inline(always)]
-    pub fn ref_(&mut self) -> REF_W {
-        REF_W { w: self }
+    pub fn ref_(&mut self) -> REF_W<16> {
+        REF_W::new(self)
     }
     #[doc = "Bits 20:23 - Single Sample Acquisition Time"]
     #[inline(always)]
-    pub fn at(&mut self) -> AT_W {
-        AT_W { w: self }
+    pub fn at(&mut self) -> AT_W<20> {
+        AT_W::new(self)
     }
     #[doc = "Bit 24 - Single Sample PRS Trigger Enable"]
     #[inline(always)]
-    pub fn prsen(&mut self) -> PRSEN_W {
-        PRSEN_W { w: self }
+    pub fn prsen(&mut self) -> PRSEN_W<24> {
+        PRSEN_W::new(self)
     }
     #[doc = "Bits 28:30 - Single Sample PRS Trigger Select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
-        PRSSEL_W { w: self }
+    pub fn prssel(&mut self) -> PRSSEL_W<28> {
+        PRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

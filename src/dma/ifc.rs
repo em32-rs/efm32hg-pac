@@ -20,194 +20,54 @@ impl From<crate::W<IFC_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0DONE` writer - DMA Channel 0 Complete Interrupt Flag Clear"]
-pub struct CH0DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `CH1DONE` writer - DMA Channel 1 Complete Interrupt Flag Clear"]
-pub struct CH1DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `CH2DONE` writer - DMA Channel 2 Complete Interrupt Flag Clear"]
-pub struct CH2DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `CH3DONE` writer - DMA Channel 3 Complete Interrupt Flag Clear"]
-pub struct CH3DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `CH4DONE` writer - DMA Channel 4 Complete Interrupt Flag Clear"]
-pub struct CH4DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `CH5DONE` writer - DMA Channel 5 Complete Interrupt Flag Clear"]
-pub struct CH5DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `ERR` writer - DMA Error Interrupt Flag Clear"]
-pub struct ERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type ERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - DMA Channel 0 Complete Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn ch0done(&mut self) -> CH0DONE_W {
-        CH0DONE_W { w: self }
+    pub fn ch0done(&mut self) -> CH0DONE_W<0> {
+        CH0DONE_W::new(self)
     }
     #[doc = "Bit 1 - DMA Channel 1 Complete Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn ch1done(&mut self) -> CH1DONE_W {
-        CH1DONE_W { w: self }
+    pub fn ch1done(&mut self) -> CH1DONE_W<1> {
+        CH1DONE_W::new(self)
     }
     #[doc = "Bit 2 - DMA Channel 2 Complete Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn ch2done(&mut self) -> CH2DONE_W {
-        CH2DONE_W { w: self }
+    pub fn ch2done(&mut self) -> CH2DONE_W<2> {
+        CH2DONE_W::new(self)
     }
     #[doc = "Bit 3 - DMA Channel 3 Complete Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn ch3done(&mut self) -> CH3DONE_W {
-        CH3DONE_W { w: self }
+    pub fn ch3done(&mut self) -> CH3DONE_W<3> {
+        CH3DONE_W::new(self)
     }
     #[doc = "Bit 4 - DMA Channel 4 Complete Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn ch4done(&mut self) -> CH4DONE_W {
-        CH4DONE_W { w: self }
+    pub fn ch4done(&mut self) -> CH4DONE_W<4> {
+        CH4DONE_W::new(self)
     }
     #[doc = "Bit 5 - DMA Channel 5 Complete Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn ch5done(&mut self) -> CH5DONE_W {
-        CH5DONE_W { w: self }
+    pub fn ch5done(&mut self) -> CH5DONE_W<5> {
+        CH5DONE_W::new(self)
     }
     #[doc = "Bit 31 - DMA Error Interrupt Flag Clear"]
     #[inline(always)]
-    pub fn err(&mut self) -> ERR_W {
-        ERR_W { w: self }
+    pub fn err(&mut self) -> ERR_W<31> {
+        ERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

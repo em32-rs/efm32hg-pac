@@ -35,31 +35,9 @@ impl From<crate::W<CAL_SPEC>> for W {
     }
 }
 #[doc = "Field `TUNING` reader - Tune the current to given accuracy"]
-pub struct TUNING_R(crate::FieldReader<u8, u8>);
-impl TUNING_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TUNING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TUNING_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TUNING` writer - Tune the current to given accuracy"]
-pub struct TUNING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TUNING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 0:6 - Tune the current to given accuracy"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Tune the current to given accuracy"]
     #[inline(always)]
-    pub fn tuning(&mut self) -> TUNING_W {
-        TUNING_W { w: self }
+    pub fn tuning(&mut self) -> TUNING_W<0> {
+        TUNING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

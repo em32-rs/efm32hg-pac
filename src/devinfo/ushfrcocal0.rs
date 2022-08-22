@@ -14,61 +14,13 @@ impl From<crate::R<USHFRCOCAL0_SPEC>> for R {
     }
 }
 #[doc = "Field `BAND24_TUNING` reader - 24 MHz TUNING value for USFRCO"]
-pub struct BAND24_TUNING_R(crate::FieldReader<u8, u8>);
-impl BAND24_TUNING_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BAND24_TUNING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BAND24_TUNING_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BAND24_TUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BAND24_FINETUNING` reader - 24 MHz FINETUNING value for USFRCO"]
-pub struct BAND24_FINETUNING_R(crate::FieldReader<u8, u8>);
-impl BAND24_FINETUNING_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BAND24_FINETUNING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BAND24_FINETUNING_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BAND24_FINETUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BAND48_TUNING` reader - 24 MHz TUNING value for USFRCO"]
-pub struct BAND48_TUNING_R(crate::FieldReader<u8, u8>);
-impl BAND48_TUNING_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BAND48_TUNING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BAND48_TUNING_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BAND48_TUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BAND48_FINETUNING` reader - 24 MHz FINETUNING value for USFRCO"]
-pub struct BAND48_FINETUNING_R(crate::FieldReader<u8, u8>);
-impl BAND48_FINETUNING_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BAND48_FINETUNING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BAND48_FINETUNING_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BAND48_FINETUNING_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:6 - 24 MHz TUNING value for USFRCO"]
     #[inline(always)]

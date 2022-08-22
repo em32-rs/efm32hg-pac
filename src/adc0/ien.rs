@@ -35,191 +35,63 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLE` reader - Single Conversion Complete Interrupt Enable"]
-pub struct SINGLE_R(crate::FieldReader<bool, bool>);
-impl SINGLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SINGLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SINGLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SINGLE_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLE` writer - Single Conversion Complete Interrupt Enable"]
-pub struct SINGLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SINGLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCAN` reader - Scan Conversion Complete Interrupt Enable"]
-pub struct SCAN_R(crate::FieldReader<bool, bool>);
-impl SCAN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SCAN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCAN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCAN_R = crate::BitReader<bool>;
 #[doc = "Field `SCAN` writer - Scan Conversion Complete Interrupt Enable"]
-pub struct SCAN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCAN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SCAN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SINGLEOF` reader - Single Result Overflow Interrupt Enable"]
-pub struct SINGLEOF_R(crate::FieldReader<bool, bool>);
-impl SINGLEOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SINGLEOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SINGLEOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SINGLEOF_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLEOF` writer - Single Result Overflow Interrupt Enable"]
-pub struct SINGLEOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLEOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type SINGLEOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCANOF` reader - Scan Result Overflow Interrupt Enable"]
-pub struct SCANOF_R(crate::FieldReader<bool, bool>);
-impl SCANOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SCANOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCANOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCANOF_R = crate::BitReader<bool>;
 #[doc = "Field `SCANOF` writer - Scan Result Overflow Interrupt Enable"]
-pub struct SCANOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCANOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type SCANOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Single Conversion Complete Interrupt Enable"]
     #[inline(always)]
     pub fn single(&self) -> SINGLE_R {
-        SINGLE_R::new((self.bits & 0x01) != 0)
+        SINGLE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Scan Conversion Complete Interrupt Enable"]
     #[inline(always)]
     pub fn scan(&self) -> SCAN_R {
-        SCAN_R::new(((self.bits >> 1) & 0x01) != 0)
+        SCAN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 8 - Single Result Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn singleof(&self) -> SINGLEOF_R {
-        SINGLEOF_R::new(((self.bits >> 8) & 0x01) != 0)
+        SINGLEOF_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Scan Result Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn scanof(&self) -> SCANOF_R {
-        SCANOF_R::new(((self.bits >> 9) & 0x01) != 0)
+        SCANOF_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Single Conversion Complete Interrupt Enable"]
     #[inline(always)]
-    pub fn single(&mut self) -> SINGLE_W {
-        SINGLE_W { w: self }
+    pub fn single(&mut self) -> SINGLE_W<0> {
+        SINGLE_W::new(self)
     }
     #[doc = "Bit 1 - Scan Conversion Complete Interrupt Enable"]
     #[inline(always)]
-    pub fn scan(&mut self) -> SCAN_W {
-        SCAN_W { w: self }
+    pub fn scan(&mut self) -> SCAN_W<1> {
+        SCAN_W::new(self)
     }
     #[doc = "Bit 8 - Single Result Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn singleof(&mut self) -> SINGLEOF_W {
-        SINGLEOF_W { w: self }
+    pub fn singleof(&mut self) -> SINGLEOF_W<8> {
+        SINGLEOF_W::new(self)
     }
     #[doc = "Bit 9 - Scan Result Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn scanof(&mut self) -> SCANOF_W {
-        SCANOF_W { w: self }
+    pub fn scanof(&mut self) -> SCANOF_W<9> {
+        SCANOF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

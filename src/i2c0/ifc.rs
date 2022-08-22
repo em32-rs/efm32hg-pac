@@ -20,410 +20,110 @@ impl From<crate::W<IFC_SPEC>> for W {
     }
 }
 #[doc = "Field `START` writer - Clear START Interrupt Flag"]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `RSTART` writer - Clear Repeated START Interrupt Flag"]
-pub struct RSTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSTART_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `ADDR` writer - Clear Address Interrupt Flag"]
-pub struct ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ADDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `TXC` writer - Clear Transfer Completed Interrupt Flag"]
-pub struct TXC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type TXC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `ACK` writer - Clear Acknowledge Received Interrupt Flag"]
-pub struct ACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `NACK` writer - Clear Not Acknowledge Received Interrupt Flag"]
-pub struct NACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type NACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `MSTOP` writer - Clear MSTOP Interrupt Flag"]
-pub struct MSTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type MSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `ARBLOST` writer - Clear Arbitration Lost Interrupt Flag"]
-pub struct ARBLOST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ARBLOST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type ARBLOST_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `BUSERR` writer - Clear Bus Error Interrupt Flag"]
-pub struct BUSERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUSERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type BUSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `BUSHOLD` writer - Clear Bus Held Interrupt Flag"]
-pub struct BUSHOLD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUSHOLD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type BUSHOLD_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `TXOF` writer - Clear Transmit Buffer Overflow Interrupt Flag"]
-pub struct TXOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type TXOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `RXUF` writer - Clear Receive Buffer Underflow Interrupt Flag"]
-pub struct RXUF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXUF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type RXUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `BITO` writer - Clear Bus Idle Timeout Interrupt Flag"]
-pub struct BITO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BITO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type BITO_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `CLTO` writer - Clear Clock Low Interrupt Flag"]
-pub struct CLTO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLTO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type CLTO_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `SSTOP` writer - Clear SSTOP Interrupt Flag"]
-pub struct SSTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SSTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type SSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear START Interrupt Flag"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    pub fn start(&mut self) -> START_W<0> {
+        START_W::new(self)
     }
     #[doc = "Bit 1 - Clear Repeated START Interrupt Flag"]
     #[inline(always)]
-    pub fn rstart(&mut self) -> RSTART_W {
-        RSTART_W { w: self }
+    pub fn rstart(&mut self) -> RSTART_W<1> {
+        RSTART_W::new(self)
     }
     #[doc = "Bit 2 - Clear Address Interrupt Flag"]
     #[inline(always)]
-    pub fn addr(&mut self) -> ADDR_W {
-        ADDR_W { w: self }
+    pub fn addr(&mut self) -> ADDR_W<2> {
+        ADDR_W::new(self)
     }
     #[doc = "Bit 3 - Clear Transfer Completed Interrupt Flag"]
     #[inline(always)]
-    pub fn txc(&mut self) -> TXC_W {
-        TXC_W { w: self }
+    pub fn txc(&mut self) -> TXC_W<3> {
+        TXC_W::new(self)
     }
     #[doc = "Bit 6 - Clear Acknowledge Received Interrupt Flag"]
     #[inline(always)]
-    pub fn ack(&mut self) -> ACK_W {
-        ACK_W { w: self }
+    pub fn ack(&mut self) -> ACK_W<6> {
+        ACK_W::new(self)
     }
     #[doc = "Bit 7 - Clear Not Acknowledge Received Interrupt Flag"]
     #[inline(always)]
-    pub fn nack(&mut self) -> NACK_W {
-        NACK_W { w: self }
+    pub fn nack(&mut self) -> NACK_W<7> {
+        NACK_W::new(self)
     }
     #[doc = "Bit 8 - Clear MSTOP Interrupt Flag"]
     #[inline(always)]
-    pub fn mstop(&mut self) -> MSTOP_W {
-        MSTOP_W { w: self }
+    pub fn mstop(&mut self) -> MSTOP_W<8> {
+        MSTOP_W::new(self)
     }
     #[doc = "Bit 9 - Clear Arbitration Lost Interrupt Flag"]
     #[inline(always)]
-    pub fn arblost(&mut self) -> ARBLOST_W {
-        ARBLOST_W { w: self }
+    pub fn arblost(&mut self) -> ARBLOST_W<9> {
+        ARBLOST_W::new(self)
     }
     #[doc = "Bit 10 - Clear Bus Error Interrupt Flag"]
     #[inline(always)]
-    pub fn buserr(&mut self) -> BUSERR_W {
-        BUSERR_W { w: self }
+    pub fn buserr(&mut self) -> BUSERR_W<10> {
+        BUSERR_W::new(self)
     }
     #[doc = "Bit 11 - Clear Bus Held Interrupt Flag"]
     #[inline(always)]
-    pub fn bushold(&mut self) -> BUSHOLD_W {
-        BUSHOLD_W { w: self }
+    pub fn bushold(&mut self) -> BUSHOLD_W<11> {
+        BUSHOLD_W::new(self)
     }
     #[doc = "Bit 12 - Clear Transmit Buffer Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn txof(&mut self) -> TXOF_W {
-        TXOF_W { w: self }
+    pub fn txof(&mut self) -> TXOF_W<12> {
+        TXOF_W::new(self)
     }
     #[doc = "Bit 13 - Clear Receive Buffer Underflow Interrupt Flag"]
     #[inline(always)]
-    pub fn rxuf(&mut self) -> RXUF_W {
-        RXUF_W { w: self }
+    pub fn rxuf(&mut self) -> RXUF_W<13> {
+        RXUF_W::new(self)
     }
     #[doc = "Bit 14 - Clear Bus Idle Timeout Interrupt Flag"]
     #[inline(always)]
-    pub fn bito(&mut self) -> BITO_W {
-        BITO_W { w: self }
+    pub fn bito(&mut self) -> BITO_W<14> {
+        BITO_W::new(self)
     }
     #[doc = "Bit 15 - Clear Clock Low Interrupt Flag"]
     #[inline(always)]
-    pub fn clto(&mut self) -> CLTO_W {
-        CLTO_W { w: self }
+    pub fn clto(&mut self) -> CLTO_W<15> {
+        CLTO_W::new(self)
     }
     #[doc = "Bit 16 - Clear SSTOP Interrupt Flag"]
     #[inline(always)]
-    pub fn sstop(&mut self) -> SSTOP_W {
-        SSTOP_W { w: self }
+    pub fn sstop(&mut self) -> SSTOP_W<16> {
+        SSTOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

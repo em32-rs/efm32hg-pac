@@ -35,375 +35,119 @@ impl From<crate::W<DAINTMSK_SPEC>> for W {
     }
 }
 #[doc = "Field `INEPMSK0` reader - IN Endpoint 0 Interrupt mask Bit"]
-pub struct INEPMSK0_R(crate::FieldReader<bool, bool>);
-impl INEPMSK0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INEPMSK0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPMSK0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPMSK0_R = crate::BitReader<bool>;
 #[doc = "Field `INEPMSK0` writer - IN Endpoint 0 Interrupt mask Bit"]
-pub struct INEPMSK0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPMSK0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type INEPMSK0_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAINTMSK_SPEC, bool, O>;
 #[doc = "Field `INEPMSK1` reader - IN Endpoint 1 Interrupt mask Bit"]
-pub struct INEPMSK1_R(crate::FieldReader<bool, bool>);
-impl INEPMSK1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INEPMSK1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPMSK1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPMSK1_R = crate::BitReader<bool>;
 #[doc = "Field `INEPMSK1` writer - IN Endpoint 1 Interrupt mask Bit"]
-pub struct INEPMSK1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPMSK1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type INEPMSK1_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAINTMSK_SPEC, bool, O>;
 #[doc = "Field `INEPMSK2` reader - IN Endpoint 2 Interrupt mask Bit"]
-pub struct INEPMSK2_R(crate::FieldReader<bool, bool>);
-impl INEPMSK2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INEPMSK2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPMSK2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPMSK2_R = crate::BitReader<bool>;
 #[doc = "Field `INEPMSK2` writer - IN Endpoint 2 Interrupt mask Bit"]
-pub struct INEPMSK2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPMSK2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type INEPMSK2_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAINTMSK_SPEC, bool, O>;
 #[doc = "Field `INEPMSK3` reader - IN Endpoint 3 Interrupt mask Bit"]
-pub struct INEPMSK3_R(crate::FieldReader<bool, bool>);
-impl INEPMSK3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INEPMSK3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPMSK3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPMSK3_R = crate::BitReader<bool>;
 #[doc = "Field `INEPMSK3` writer - IN Endpoint 3 Interrupt mask Bit"]
-pub struct INEPMSK3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPMSK3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type INEPMSK3_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAINTMSK_SPEC, bool, O>;
 #[doc = "Field `OUTEPMSK0` reader - OUT Endpoint 0 Interrupt mask Bit"]
-pub struct OUTEPMSK0_R(crate::FieldReader<bool, bool>);
-impl OUTEPMSK0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OUTEPMSK0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTEPMSK0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTEPMSK0_R = crate::BitReader<bool>;
 #[doc = "Field `OUTEPMSK0` writer - OUT Endpoint 0 Interrupt mask Bit"]
-pub struct OUTEPMSK0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTEPMSK0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type OUTEPMSK0_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAINTMSK_SPEC, bool, O>;
 #[doc = "Field `OUTEPMSK1` reader - OUT Endpoint 1 Interrupt mask Bit"]
-pub struct OUTEPMSK1_R(crate::FieldReader<bool, bool>);
-impl OUTEPMSK1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OUTEPMSK1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTEPMSK1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTEPMSK1_R = crate::BitReader<bool>;
 #[doc = "Field `OUTEPMSK1` writer - OUT Endpoint 1 Interrupt mask Bit"]
-pub struct OUTEPMSK1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTEPMSK1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type OUTEPMSK1_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAINTMSK_SPEC, bool, O>;
 #[doc = "Field `OUTEPMSK2` reader - OUT Endpoint 2 Interrupt mask Bit"]
-pub struct OUTEPMSK2_R(crate::FieldReader<bool, bool>);
-impl OUTEPMSK2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OUTEPMSK2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTEPMSK2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTEPMSK2_R = crate::BitReader<bool>;
 #[doc = "Field `OUTEPMSK2` writer - OUT Endpoint 2 Interrupt mask Bit"]
-pub struct OUTEPMSK2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTEPMSK2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type OUTEPMSK2_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAINTMSK_SPEC, bool, O>;
 #[doc = "Field `OUTEPMSK3` reader - OUT Endpoint 3 Interrupt mask Bit"]
-pub struct OUTEPMSK3_R(crate::FieldReader<bool, bool>);
-impl OUTEPMSK3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OUTEPMSK3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTEPMSK3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTEPMSK3_R = crate::BitReader<bool>;
 #[doc = "Field `OUTEPMSK3` writer - OUT Endpoint 3 Interrupt mask Bit"]
-pub struct OUTEPMSK3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTEPMSK3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type OUTEPMSK3_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAINTMSK_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - IN Endpoint 0 Interrupt mask Bit"]
     #[inline(always)]
     pub fn inepmsk0(&self) -> INEPMSK0_R {
-        INEPMSK0_R::new((self.bits & 0x01) != 0)
+        INEPMSK0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - IN Endpoint 1 Interrupt mask Bit"]
     #[inline(always)]
     pub fn inepmsk1(&self) -> INEPMSK1_R {
-        INEPMSK1_R::new(((self.bits >> 1) & 0x01) != 0)
+        INEPMSK1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - IN Endpoint 2 Interrupt mask Bit"]
     #[inline(always)]
     pub fn inepmsk2(&self) -> INEPMSK2_R {
-        INEPMSK2_R::new(((self.bits >> 2) & 0x01) != 0)
+        INEPMSK2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - IN Endpoint 3 Interrupt mask Bit"]
     #[inline(always)]
     pub fn inepmsk3(&self) -> INEPMSK3_R {
-        INEPMSK3_R::new(((self.bits >> 3) & 0x01) != 0)
+        INEPMSK3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 16 - OUT Endpoint 0 Interrupt mask Bit"]
     #[inline(always)]
     pub fn outepmsk0(&self) -> OUTEPMSK0_R {
-        OUTEPMSK0_R::new(((self.bits >> 16) & 0x01) != 0)
+        OUTEPMSK0_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - OUT Endpoint 1 Interrupt mask Bit"]
     #[inline(always)]
     pub fn outepmsk1(&self) -> OUTEPMSK1_R {
-        OUTEPMSK1_R::new(((self.bits >> 17) & 0x01) != 0)
+        OUTEPMSK1_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - OUT Endpoint 2 Interrupt mask Bit"]
     #[inline(always)]
     pub fn outepmsk2(&self) -> OUTEPMSK2_R {
-        OUTEPMSK2_R::new(((self.bits >> 18) & 0x01) != 0)
+        OUTEPMSK2_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - OUT Endpoint 3 Interrupt mask Bit"]
     #[inline(always)]
     pub fn outepmsk3(&self) -> OUTEPMSK3_R {
-        OUTEPMSK3_R::new(((self.bits >> 19) & 0x01) != 0)
+        OUTEPMSK3_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - IN Endpoint 0 Interrupt mask Bit"]
     #[inline(always)]
-    pub fn inepmsk0(&mut self) -> INEPMSK0_W {
-        INEPMSK0_W { w: self }
+    pub fn inepmsk0(&mut self) -> INEPMSK0_W<0> {
+        INEPMSK0_W::new(self)
     }
     #[doc = "Bit 1 - IN Endpoint 1 Interrupt mask Bit"]
     #[inline(always)]
-    pub fn inepmsk1(&mut self) -> INEPMSK1_W {
-        INEPMSK1_W { w: self }
+    pub fn inepmsk1(&mut self) -> INEPMSK1_W<1> {
+        INEPMSK1_W::new(self)
     }
     #[doc = "Bit 2 - IN Endpoint 2 Interrupt mask Bit"]
     #[inline(always)]
-    pub fn inepmsk2(&mut self) -> INEPMSK2_W {
-        INEPMSK2_W { w: self }
+    pub fn inepmsk2(&mut self) -> INEPMSK2_W<2> {
+        INEPMSK2_W::new(self)
     }
     #[doc = "Bit 3 - IN Endpoint 3 Interrupt mask Bit"]
     #[inline(always)]
-    pub fn inepmsk3(&mut self) -> INEPMSK3_W {
-        INEPMSK3_W { w: self }
+    pub fn inepmsk3(&mut self) -> INEPMSK3_W<3> {
+        INEPMSK3_W::new(self)
     }
     #[doc = "Bit 16 - OUT Endpoint 0 Interrupt mask Bit"]
     #[inline(always)]
-    pub fn outepmsk0(&mut self) -> OUTEPMSK0_W {
-        OUTEPMSK0_W { w: self }
+    pub fn outepmsk0(&mut self) -> OUTEPMSK0_W<16> {
+        OUTEPMSK0_W::new(self)
     }
     #[doc = "Bit 17 - OUT Endpoint 1 Interrupt mask Bit"]
     #[inline(always)]
-    pub fn outepmsk1(&mut self) -> OUTEPMSK1_W {
-        OUTEPMSK1_W { w: self }
+    pub fn outepmsk1(&mut self) -> OUTEPMSK1_W<17> {
+        OUTEPMSK1_W::new(self)
     }
     #[doc = "Bit 18 - OUT Endpoint 2 Interrupt mask Bit"]
     #[inline(always)]
-    pub fn outepmsk2(&mut self) -> OUTEPMSK2_W {
-        OUTEPMSK2_W { w: self }
+    pub fn outepmsk2(&mut self) -> OUTEPMSK2_W<18> {
+        OUTEPMSK2_W::new(self)
     }
     #[doc = "Bit 19 - OUT Endpoint 3 Interrupt mask Bit"]
     #[inline(always)]
-    pub fn outepmsk3(&mut self) -> OUTEPMSK3_W {
-        OUTEPMSK3_W { w: self }
+    pub fn outepmsk3(&mut self) -> OUTEPMSK3_W<19> {
+        OUTEPMSK3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

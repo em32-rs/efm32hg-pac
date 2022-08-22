@@ -34,6 +34,8 @@ impl From<crate::W<DTLOCK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LOCKKEY` reader - DTI Lock Key"]
+pub type LOCKKEY_R = crate::FieldReader<u16, LOCKKEY_A>;
 #[doc = "DTI Lock Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u16)]
@@ -49,13 +51,8 @@ impl From<LOCKKEY_A> for u16 {
         variant as _
     }
 }
-#[doc = "Field `LOCKKEY` reader - DTI Lock Key"]
-pub struct LOCKKEY_R(crate::FieldReader<u16, LOCKKEY_A>);
 impl LOCKKEY_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        LOCKKEY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LOCKKEY_A> {
         match self.bits {
@@ -67,31 +64,18 @@ impl LOCKKEY_R {
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        **self == LOCKKEY_A::UNLOCKED
+        *self == LOCKKEY_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        **self == LOCKKEY_A::LOCKED
-    }
-}
-impl core::ops::Deref for LOCKKEY_R {
-    type Target = crate::FieldReader<u16, LOCKKEY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCKKEY_A::LOCKED
     }
 }
 #[doc = "Field `LOCKKEY` writer - DTI Lock Key"]
-pub struct LOCKKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCKKEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOCKKEY_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LOCKKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DTLOCK_SPEC, u16, LOCKKEY_A, 16, O>;
+impl<'a, const O: u8> LOCKKEY_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
@@ -101,12 +85,6 @@ impl<'a> LOCKKEY_W<'a> {
     #[inline(always)]
     pub fn locked(self) -> &'a mut W {
         self.variant(LOCKKEY_A::LOCKED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
     }
 }
 impl R {
@@ -119,8 +97,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - DTI Lock Key"]
     #[inline(always)]
-    pub fn lockkey(&mut self) -> LOCKKEY_W {
-        LOCKKEY_W { w: self }
+    pub fn lockkey(&mut self) -> LOCKKEY_W<0> {
+        LOCKKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

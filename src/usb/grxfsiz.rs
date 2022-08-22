@@ -35,31 +35,9 @@ impl From<crate::W<GRXFSIZ_SPEC>> for W {
     }
 }
 #[doc = "Field `RXFDEP` reader - RxFIFO Depth"]
-pub struct RXFDEP_R(crate::FieldReader<u16, u16>);
-impl RXFDEP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RXFDEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXFDEP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXFDEP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RXFDEP` writer - RxFIFO Depth"]
-pub struct RXFDEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXFDEP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type RXFDEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GRXFSIZ_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9 - RxFIFO Depth"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - RxFIFO Depth"]
     #[inline(always)]
-    pub fn rxfdep(&mut self) -> RXFDEP_W {
-        RXFDEP_W { w: self }
+    pub fn rxfdep(&mut self) -> RXFDEP_W<0> {
+        RXFDEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

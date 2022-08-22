@@ -14,24 +14,12 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `RUNNING` reader - AES Running"]
-pub struct RUNNING_R(crate::FieldReader<bool, bool>);
-impl RUNNING_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RUNNING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RUNNING_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RUNNING_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - AES Running"]
     #[inline(always)]
     pub fn running(&self) -> RUNNING_R {
-        RUNNING_R::new((self.bits & 0x01) != 0)
+        RUNNING_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]

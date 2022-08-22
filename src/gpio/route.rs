@@ -35,99 +35,35 @@ impl From<crate::W<ROUTE_SPEC>> for W {
     }
 }
 #[doc = "Field `SWCLKPEN` reader - Serial Wire Clock Pin Enable"]
-pub struct SWCLKPEN_R(crate::FieldReader<bool, bool>);
-impl SWCLKPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SWCLKPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SWCLKPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SWCLKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWCLKPEN` writer - Serial Wire Clock Pin Enable"]
-pub struct SWCLKPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWCLKPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SWCLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `SWDIOPEN` reader - Serial Wire Data Pin Enable"]
-pub struct SWDIOPEN_R(crate::FieldReader<bool, bool>);
-impl SWDIOPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SWDIOPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SWDIOPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SWDIOPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWDIOPEN` writer - Serial Wire Data Pin Enable"]
-pub struct SWDIOPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWDIOPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SWDIOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Serial Wire Clock Pin Enable"]
     #[inline(always)]
     pub fn swclkpen(&self) -> SWCLKPEN_R {
-        SWCLKPEN_R::new((self.bits & 0x01) != 0)
+        SWCLKPEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Serial Wire Data Pin Enable"]
     #[inline(always)]
     pub fn swdiopen(&self) -> SWDIOPEN_R {
-        SWDIOPEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        SWDIOPEN_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Serial Wire Clock Pin Enable"]
     #[inline(always)]
-    pub fn swclkpen(&mut self) -> SWCLKPEN_W {
-        SWCLKPEN_W { w: self }
+    pub fn swclkpen(&mut self) -> SWCLKPEN_W<0> {
+        SWCLKPEN_W::new(self)
     }
     #[doc = "Bit 1 - Serial Wire Data Pin Enable"]
     #[inline(always)]
-    pub fn swdiopen(&mut self) -> SWDIOPEN_W {
-        SWDIOPEN_W { w: self }
+    pub fn swdiopen(&mut self) -> SWDIOPEN_W<1> {
+        SWDIOPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

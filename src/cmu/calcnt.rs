@@ -35,31 +35,9 @@ impl From<crate::W<CALCNT_SPEC>> for W {
     }
 }
 #[doc = "Field `CALCNT` reader - Calibration Counter"]
-pub struct CALCNT_R(crate::FieldReader<u32, u32>);
-impl CALCNT_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        CALCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALCNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALCNT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CALCNT` writer - Calibration Counter"]
-pub struct CALCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type CALCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALCNT_SPEC, u32, u32, 20, O>;
 impl R {
     #[doc = "Bits 0:19 - Calibration Counter"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:19 - Calibration Counter"]
     #[inline(always)]
-    pub fn calcnt(&mut self) -> CALCNT_W {
-        CALCNT_W { w: self }
+    pub fn calcnt(&mut self) -> CALCNT_W<0> {
+        CALCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

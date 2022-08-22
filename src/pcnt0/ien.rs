@@ -35,237 +35,77 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `UF` reader - Underflow Interrupt Enable"]
-pub struct UF_R(crate::FieldReader<bool, bool>);
-impl UF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UF_R = crate::BitReader<bool>;
 #[doc = "Field `UF` writer - Underflow Interrupt Enable"]
-pub struct UF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `OF` reader - Overflow Interrupt Enable"]
-pub struct OF_R(crate::FieldReader<bool, bool>);
-impl OF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OF_R = crate::BitReader<bool>;
 #[doc = "Field `OF` writer - Overflow Interrupt Enable"]
-pub struct OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `DIRCNG` reader - Direction Change Detect Interrupt Enable"]
-pub struct DIRCNG_R(crate::FieldReader<bool, bool>);
-impl DIRCNG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIRCNG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIRCNG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIRCNG_R = crate::BitReader<bool>;
 #[doc = "Field `DIRCNG` writer - Direction Change Detect Interrupt Enable"]
-pub struct DIRCNG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIRCNG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DIRCNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `AUXOF` reader - Auxiliary Overflow Interrupt Enable"]
-pub struct AUXOF_R(crate::FieldReader<bool, bool>);
-impl AUXOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUXOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AUXOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AUXOF_R = crate::BitReader<bool>;
 #[doc = "Field `AUXOF` writer - Auxiliary Overflow Interrupt Enable"]
-pub struct AUXOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUXOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type AUXOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `TCC` reader - Triggered compare Interrupt Enable"]
-pub struct TCC_R(crate::FieldReader<bool, bool>);
-impl TCC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TCC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TCC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TCC_R = crate::BitReader<bool>;
 #[doc = "Field `TCC` writer - Triggered compare Interrupt Enable"]
-pub struct TCC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type TCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Underflow Interrupt Enable"]
     #[inline(always)]
     pub fn uf(&self) -> UF_R {
-        UF_R::new((self.bits & 0x01) != 0)
+        UF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn of(&self) -> OF_R {
-        OF_R::new(((self.bits >> 1) & 0x01) != 0)
+        OF_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Direction Change Detect Interrupt Enable"]
     #[inline(always)]
     pub fn dircng(&self) -> DIRCNG_R {
-        DIRCNG_R::new(((self.bits >> 2) & 0x01) != 0)
+        DIRCNG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Auxiliary Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn auxof(&self) -> AUXOF_R {
-        AUXOF_R::new(((self.bits >> 3) & 0x01) != 0)
+        AUXOF_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Triggered compare Interrupt Enable"]
     #[inline(always)]
     pub fn tcc(&self) -> TCC_R {
-        TCC_R::new(((self.bits >> 4) & 0x01) != 0)
+        TCC_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Underflow Interrupt Enable"]
     #[inline(always)]
-    pub fn uf(&mut self) -> UF_W {
-        UF_W { w: self }
+    pub fn uf(&mut self) -> UF_W<0> {
+        UF_W::new(self)
     }
     #[doc = "Bit 1 - Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn of(&mut self) -> OF_W {
-        OF_W { w: self }
+    pub fn of(&mut self) -> OF_W<1> {
+        OF_W::new(self)
     }
     #[doc = "Bit 2 - Direction Change Detect Interrupt Enable"]
     #[inline(always)]
-    pub fn dircng(&mut self) -> DIRCNG_W {
-        DIRCNG_W { w: self }
+    pub fn dircng(&mut self) -> DIRCNG_W<2> {
+        DIRCNG_W::new(self)
     }
     #[doc = "Bit 3 - Auxiliary Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn auxof(&mut self) -> AUXOF_W {
-        AUXOF_W { w: self }
+    pub fn auxof(&mut self) -> AUXOF_W<3> {
+        AUXOF_W::new(self)
     }
     #[doc = "Bit 4 - Triggered compare Interrupt Enable"]
     #[inline(always)]
-    pub fn tcc(&mut self) -> TCC_W {
-        TCC_W { w: self }
+    pub fn tcc(&mut self) -> TCC_W<4> {
+        TCC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -14,81 +14,33 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `SINGLE` reader - Single Conversion Complete Interrupt Flag"]
-pub struct SINGLE_R(crate::FieldReader<bool, bool>);
-impl SINGLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SINGLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SINGLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SINGLE_R = crate::BitReader<bool>;
 #[doc = "Field `SCAN` reader - Scan Conversion Complete Interrupt Flag"]
-pub struct SCAN_R(crate::FieldReader<bool, bool>);
-impl SCAN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SCAN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCAN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCAN_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLEOF` reader - Single Result Overflow Interrupt Flag"]
-pub struct SINGLEOF_R(crate::FieldReader<bool, bool>);
-impl SINGLEOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SINGLEOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SINGLEOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SINGLEOF_R = crate::BitReader<bool>;
 #[doc = "Field `SCANOF` reader - Scan Result Overflow Interrupt Flag"]
-pub struct SCANOF_R(crate::FieldReader<bool, bool>);
-impl SCANOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SCANOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCANOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCANOF_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Single Conversion Complete Interrupt Flag"]
     #[inline(always)]
     pub fn single(&self) -> SINGLE_R {
-        SINGLE_R::new((self.bits & 0x01) != 0)
+        SINGLE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Scan Conversion Complete Interrupt Flag"]
     #[inline(always)]
     pub fn scan(&self) -> SCAN_R {
-        SCAN_R::new(((self.bits >> 1) & 0x01) != 0)
+        SCAN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 8 - Single Result Overflow Interrupt Flag"]
     #[inline(always)]
     pub fn singleof(&self) -> SINGLEOF_R {
-        SINGLEOF_R::new(((self.bits >> 8) & 0x01) != 0)
+        SINGLEOF_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Scan Result Overflow Interrupt Flag"]
     #[inline(always)]
     pub fn scanof(&self) -> SCANOF_R {
-        SCANOF_R::new(((self.bits >> 9) & 0x01) != 0)
+        SCANOF_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 #[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](index.html) module"]

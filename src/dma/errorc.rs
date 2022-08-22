@@ -35,53 +35,21 @@ impl From<crate::W<ERRORC_SPEC>> for W {
     }
 }
 #[doc = "Field `ERRORC` reader - Bus Error Clear"]
-pub struct ERRORC_R(crate::FieldReader<bool, bool>);
-impl ERRORC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ERRORC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERRORC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERRORC_R = crate::BitReader<bool>;
 #[doc = "Field `ERRORC` writer - Bus Error Clear"]
-pub struct ERRORC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERRORC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ERRORC_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERRORC_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Bus Error Clear"]
     #[inline(always)]
     pub fn errorc(&self) -> ERRORC_R {
-        ERRORC_R::new((self.bits & 0x01) != 0)
+        ERRORC_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Bus Error Clear"]
     #[inline(always)]
-    pub fn errorc(&mut self) -> ERRORC_W {
-        ERRORC_W { w: self }
+    pub fn errorc(&mut self) -> ERRORC_W<0> {
+        ERRORC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

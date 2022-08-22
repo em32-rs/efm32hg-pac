@@ -35,31 +35,9 @@ impl From<crate::W<EXTIRISE_SPEC>> for W {
     }
 }
 #[doc = "Field `EXTIRISE` reader - External Interrupt n Rising Edge Trigger Enable"]
-pub struct EXTIRISE_R(crate::FieldReader<u16, u16>);
-impl EXTIRISE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        EXTIRISE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTIRISE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXTIRISE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `EXTIRISE` writer - External Interrupt n Rising Edge Trigger Enable"]
-pub struct EXTIRISE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTIRISE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type EXTIRISE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTIRISE_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - External Interrupt n Rising Edge Trigger Enable"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - External Interrupt n Rising Edge Trigger Enable"]
     #[inline(always)]
-    pub fn extirise(&mut self) -> EXTIRISE_W {
-        EXTIRISE_W { w: self }
+    pub fn extirise(&mut self) -> EXTIRISE_W<0> {
+        EXTIRISE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

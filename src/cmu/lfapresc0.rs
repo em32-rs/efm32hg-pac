@@ -34,6 +34,8 @@ impl From<crate::W<LFAPRESC0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RTC` reader - Real-Time Counter Prescaler"]
+pub type RTC_R = crate::FieldReader<u8, RTC_A>;
 #[doc = "Real-Time Counter Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -77,13 +79,8 @@ impl From<RTC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RTC` reader - Real-Time Counter Prescaler"]
-pub struct RTC_R(crate::FieldReader<u8, RTC_A>);
 impl RTC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RTC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTC_A {
         match self.bits {
@@ -109,101 +106,87 @@ impl RTC_R {
     #[doc = "Checks if the value of the field is `DIV1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == RTC_A::DIV1
+        *self == RTC_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == RTC_A::DIV2
+        *self == RTC_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == RTC_A::DIV4
+        *self == RTC_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == RTC_A::DIV8
+        *self == RTC_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == RTC_A::DIV16
+        *self == RTC_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
     #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        **self == RTC_A::DIV32
+        *self == RTC_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
     #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        **self == RTC_A::DIV64
+        *self == RTC_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
     #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        **self == RTC_A::DIV128
+        *self == RTC_A::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
     #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        **self == RTC_A::DIV256
+        *self == RTC_A::DIV256
     }
     #[doc = "Checks if the value of the field is `DIV512`"]
     #[inline(always)]
     pub fn is_div512(&self) -> bool {
-        **self == RTC_A::DIV512
+        *self == RTC_A::DIV512
     }
     #[doc = "Checks if the value of the field is `DIV1024`"]
     #[inline(always)]
     pub fn is_div1024(&self) -> bool {
-        **self == RTC_A::DIV1024
+        *self == RTC_A::DIV1024
     }
     #[doc = "Checks if the value of the field is `DIV2048`"]
     #[inline(always)]
     pub fn is_div2048(&self) -> bool {
-        **self == RTC_A::DIV2048
+        *self == RTC_A::DIV2048
     }
     #[doc = "Checks if the value of the field is `DIV4096`"]
     #[inline(always)]
     pub fn is_div4096(&self) -> bool {
-        **self == RTC_A::DIV4096
+        *self == RTC_A::DIV4096
     }
     #[doc = "Checks if the value of the field is `DIV8192`"]
     #[inline(always)]
     pub fn is_div8192(&self) -> bool {
-        **self == RTC_A::DIV8192
+        *self == RTC_A::DIV8192
     }
     #[doc = "Checks if the value of the field is `DIV16384`"]
     #[inline(always)]
     pub fn is_div16384(&self) -> bool {
-        **self == RTC_A::DIV16384
+        *self == RTC_A::DIV16384
     }
     #[doc = "Checks if the value of the field is `DIV32768`"]
     #[inline(always)]
     pub fn is_div32768(&self) -> bool {
-        **self == RTC_A::DIV32768
-    }
-}
-impl core::ops::Deref for RTC_R {
-    type Target = crate::FieldReader<u8, RTC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTC_A::DIV32768
     }
 }
 #[doc = "Field `RTC` writer - Real-Time Counter Prescaler"]
-pub struct RTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RTC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RTC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, LFAPRESC0_SPEC, u8, RTC_A, 4, O>;
+impl<'a, const O: u8> RTC_W<'a, O> {
     #[doc = "LFACLKRTC = LFACLK"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -284,12 +267,6 @@ impl<'a> RTC_W<'a> {
     pub fn div32768(self) -> &'a mut W {
         self.variant(RTC_A::DIV32768)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Real-Time Counter Prescaler"]
@@ -301,8 +278,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Real-Time Counter Prescaler"]
     #[inline(always)]
-    pub fn rtc(&mut self) -> RTC_W {
-        RTC_W { w: self }
+    pub fn rtc(&mut self) -> RTC_W<0> {
+        RTC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

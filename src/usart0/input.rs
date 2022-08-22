@@ -34,6 +34,8 @@ impl From<crate::W<INPUT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RXPRSSEL` reader - RX PRS Channel Select"]
+pub type RXPRSSEL_R = crate::FieldReader<u8, RXPRSSEL_A>;
 #[doc = "RX PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -57,13 +59,8 @@ impl From<RXPRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RXPRSSEL` reader - RX PRS Channel Select"]
-pub struct RXPRSSEL_R(crate::FieldReader<u8, RXPRSSEL_A>);
 impl RXPRSSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXPRSSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RXPRSSEL_A> {
         match self.bits {
@@ -79,51 +76,38 @@ impl RXPRSSEL_R {
     #[doc = "Checks if the value of the field is `PRSCH0`"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        **self == RXPRSSEL_A::PRSCH0
+        *self == RXPRSSEL_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        **self == RXPRSSEL_A::PRSCH1
+        *self == RXPRSSEL_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        **self == RXPRSSEL_A::PRSCH2
+        *self == RXPRSSEL_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        **self == RXPRSSEL_A::PRSCH3
+        *self == RXPRSSEL_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        **self == RXPRSSEL_A::PRSCH4
+        *self == RXPRSSEL_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        **self == RXPRSSEL_A::PRSCH5
-    }
-}
-impl core::ops::Deref for RXPRSSEL_R {
-    type Target = crate::FieldReader<u8, RXPRSSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXPRSSEL_A::PRSCH5
     }
 }
 #[doc = "Field `RXPRSSEL` writer - RX PRS Channel Select"]
-pub struct RXPRSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXPRSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXPRSSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type RXPRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, INPUT_SPEC, u8, RXPRSSEL_A, 3, O>;
+impl<'a, const O: u8> RXPRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -154,71 +138,33 @@ impl<'a> RXPRSSEL_W<'a> {
     pub fn prsch5(self) -> &'a mut W {
         self.variant(RXPRSSEL_A::PRSCH5)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 #[doc = "Field `RXPRS` reader - PRS RX Enable"]
-pub struct RXPRS_R(crate::FieldReader<bool, bool>);
-impl RXPRS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXPRS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXPRS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXPRS_R = crate::BitReader<bool>;
 #[doc = "Field `RXPRS` writer - PRS RX Enable"]
-pub struct RXPRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXPRS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RXPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUT_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - RX PRS Channel Select"]
     #[inline(always)]
     pub fn rxprssel(&self) -> RXPRSSEL_R {
-        RXPRSSEL_R::new((self.bits & 0x07) as u8)
+        RXPRSSEL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 4 - PRS RX Enable"]
     #[inline(always)]
     pub fn rxprs(&self) -> RXPRS_R {
-        RXPRS_R::new(((self.bits >> 4) & 0x01) != 0)
+        RXPRS_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - RX PRS Channel Select"]
     #[inline(always)]
-    pub fn rxprssel(&mut self) -> RXPRSSEL_W {
-        RXPRSSEL_W { w: self }
+    pub fn rxprssel(&mut self) -> RXPRSSEL_W<0> {
+        RXPRSSEL_W::new(self)
     }
     #[doc = "Bit 4 - PRS RX Enable"]
     #[inline(always)]
-    pub fn rxprs(&mut self) -> RXPRS_W {
-        RXPRS_W { w: self }
+    pub fn rxprs(&mut self) -> RXPRS_W<4> {
+        RXPRS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

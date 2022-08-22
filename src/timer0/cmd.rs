@@ -20,59 +20,19 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `START` writer - Start Timer"]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `STOP` writer - Stop Timer"]
-pub struct STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Start Timer"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    pub fn start(&mut self) -> START_W<0> {
+        START_W::new(self)
     }
     #[doc = "Bit 1 - Stop Timer"]
     #[inline(always)]
-    pub fn stop(&mut self) -> STOP_W {
-        STOP_W { w: self }
+    pub fn stop(&mut self) -> STOP_W<1> {
+        STOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

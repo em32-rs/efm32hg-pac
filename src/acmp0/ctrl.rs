@@ -35,149 +35,23 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Analog Comparator Enable"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Analog Comparator Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `MUXEN` reader - Input Mux Enable"]
-pub struct MUXEN_R(crate::FieldReader<bool, bool>);
-impl MUXEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MUXEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MUXEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MUXEN_R = crate::BitReader<bool>;
 #[doc = "Field `MUXEN` writer - Input Mux Enable"]
-pub struct MUXEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MUXEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type MUXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `INACTVAL` reader - Inactive Value"]
-pub struct INACTVAL_R(crate::FieldReader<bool, bool>);
-impl INACTVAL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INACTVAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INACTVAL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INACTVAL_R = crate::BitReader<bool>;
 #[doc = "Field `INACTVAL` writer - Inactive Value"]
-pub struct INACTVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INACTVAL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type INACTVAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `GPIOINV` reader - Comparator GPIO Output Invert"]
-pub struct GPIOINV_R(crate::FieldReader<bool, bool>);
-impl GPIOINV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GPIOINV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GPIOINV_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GPIOINV_R = crate::BitReader<bool>;
 #[doc = "Field `GPIOINV` writer - Comparator GPIO Output Invert"]
-pub struct GPIOINV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIOINV_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type GPIOINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `HYSTSEL` reader - Hysteresis Select"]
+pub type HYSTSEL_R = crate::FieldReader<u8, HYSTSEL_A>;
 #[doc = "Hysteresis Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -205,13 +79,8 @@ impl From<HYSTSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HYSTSEL` reader - Hysteresis Select"]
-pub struct HYSTSEL_R(crate::FieldReader<u8, HYSTSEL_A>);
 impl HYSTSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HYSTSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HYSTSEL_A {
         match self.bits {
@@ -229,61 +98,48 @@ impl HYSTSEL_R {
     #[doc = "Checks if the value of the field is `HYST0`"]
     #[inline(always)]
     pub fn is_hyst0(&self) -> bool {
-        **self == HYSTSEL_A::HYST0
+        *self == HYSTSEL_A::HYST0
     }
     #[doc = "Checks if the value of the field is `HYST1`"]
     #[inline(always)]
     pub fn is_hyst1(&self) -> bool {
-        **self == HYSTSEL_A::HYST1
+        *self == HYSTSEL_A::HYST1
     }
     #[doc = "Checks if the value of the field is `HYST2`"]
     #[inline(always)]
     pub fn is_hyst2(&self) -> bool {
-        **self == HYSTSEL_A::HYST2
+        *self == HYSTSEL_A::HYST2
     }
     #[doc = "Checks if the value of the field is `HYST3`"]
     #[inline(always)]
     pub fn is_hyst3(&self) -> bool {
-        **self == HYSTSEL_A::HYST3
+        *self == HYSTSEL_A::HYST3
     }
     #[doc = "Checks if the value of the field is `HYST4`"]
     #[inline(always)]
     pub fn is_hyst4(&self) -> bool {
-        **self == HYSTSEL_A::HYST4
+        *self == HYSTSEL_A::HYST4
     }
     #[doc = "Checks if the value of the field is `HYST5`"]
     #[inline(always)]
     pub fn is_hyst5(&self) -> bool {
-        **self == HYSTSEL_A::HYST5
+        *self == HYSTSEL_A::HYST5
     }
     #[doc = "Checks if the value of the field is `HYST6`"]
     #[inline(always)]
     pub fn is_hyst6(&self) -> bool {
-        **self == HYSTSEL_A::HYST6
+        *self == HYSTSEL_A::HYST6
     }
     #[doc = "Checks if the value of the field is `HYST7`"]
     #[inline(always)]
     pub fn is_hyst7(&self) -> bool {
-        **self == HYSTSEL_A::HYST7
-    }
-}
-impl core::ops::Deref for HYSTSEL_R {
-    type Target = crate::FieldReader<u8, HYSTSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HYSTSEL_A::HYST7
     }
 }
 #[doc = "Field `HYSTSEL` writer - Hysteresis Select"]
-pub struct HYSTSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HYSTSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HYSTSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type HYSTSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, HYSTSEL_A, 3, O>;
+impl<'a, const O: u8> HYSTSEL_W<'a, O> {
     #[doc = "No hysteresis."]
     #[inline(always)]
     pub fn hyst0(self) -> &'a mut W {
@@ -324,13 +180,9 @@ impl<'a> HYSTSEL_W<'a> {
     pub fn hyst7(self) -> &'a mut W {
         self.variant(HYSTSEL_A::HYST7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
-    }
 }
+#[doc = "Field `WARMTIME` reader - Warm-up Time"]
+pub type WARMTIME_R = crate::FieldReader<u8, WARMTIME_A>;
 #[doc = "Warm-up Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -358,13 +210,8 @@ impl From<WARMTIME_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WARMTIME` reader - Warm-up Time"]
-pub struct WARMTIME_R(crate::FieldReader<u8, WARMTIME_A>);
 impl WARMTIME_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WARMTIME_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WARMTIME_A {
         match self.bits {
@@ -382,61 +229,48 @@ impl WARMTIME_R {
     #[doc = "Checks if the value of the field is `_4CYCLES`"]
     #[inline(always)]
     pub fn is_4cycles(&self) -> bool {
-        **self == WARMTIME_A::_4CYCLES
+        *self == WARMTIME_A::_4CYCLES
     }
     #[doc = "Checks if the value of the field is `_8CYCLES`"]
     #[inline(always)]
     pub fn is_8cycles(&self) -> bool {
-        **self == WARMTIME_A::_8CYCLES
+        *self == WARMTIME_A::_8CYCLES
     }
     #[doc = "Checks if the value of the field is `_16CYCLES`"]
     #[inline(always)]
     pub fn is_16cycles(&self) -> bool {
-        **self == WARMTIME_A::_16CYCLES
+        *self == WARMTIME_A::_16CYCLES
     }
     #[doc = "Checks if the value of the field is `_32CYCLES`"]
     #[inline(always)]
     pub fn is_32cycles(&self) -> bool {
-        **self == WARMTIME_A::_32CYCLES
+        *self == WARMTIME_A::_32CYCLES
     }
     #[doc = "Checks if the value of the field is `_64CYCLES`"]
     #[inline(always)]
     pub fn is_64cycles(&self) -> bool {
-        **self == WARMTIME_A::_64CYCLES
+        *self == WARMTIME_A::_64CYCLES
     }
     #[doc = "Checks if the value of the field is `_128CYCLES`"]
     #[inline(always)]
     pub fn is_128cycles(&self) -> bool {
-        **self == WARMTIME_A::_128CYCLES
+        *self == WARMTIME_A::_128CYCLES
     }
     #[doc = "Checks if the value of the field is `_256CYCLES`"]
     #[inline(always)]
     pub fn is_256cycles(&self) -> bool {
-        **self == WARMTIME_A::_256CYCLES
+        *self == WARMTIME_A::_256CYCLES
     }
     #[doc = "Checks if the value of the field is `_512CYCLES`"]
     #[inline(always)]
     pub fn is_512cycles(&self) -> bool {
-        **self == WARMTIME_A::_512CYCLES
-    }
-}
-impl core::ops::Deref for WARMTIME_R {
-    type Target = crate::FieldReader<u8, WARMTIME_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WARMTIME_A::_512CYCLES
     }
 }
 #[doc = "Field `WARMTIME` writer - Warm-up Time"]
-pub struct WARMTIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WARMTIME_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WARMTIME_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type WARMTIME_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, WARMTIME_A, 3, O>;
+impl<'a, const O: u8> WARMTIME_W<'a, O> {
     #[doc = "4 HFPERCLK cycles."]
     #[inline(always)]
     pub fn _4cycles(self) -> &'a mut W {
@@ -477,223 +311,67 @@ impl<'a> WARMTIME_W<'a> {
     pub fn _512cycles(self) -> &'a mut W {
         self.variant(WARMTIME_A::_512CYCLES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
 #[doc = "Field `IRISE` reader - Rising Edge Interrupt Sense"]
-pub struct IRISE_R(crate::FieldReader<bool, bool>);
-impl IRISE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IRISE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IRISE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IRISE_R = crate::BitReader<bool>;
 #[doc = "Field `IRISE` writer - Rising Edge Interrupt Sense"]
-pub struct IRISE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRISE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type IRISE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `IFALL` reader - Falling Edge Interrupt Sense"]
-pub struct IFALL_R(crate::FieldReader<bool, bool>);
-impl IFALL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IFALL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IFALL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IFALL_R = crate::BitReader<bool>;
 #[doc = "Field `IFALL` writer - Falling Edge Interrupt Sense"]
-pub struct IFALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IFALL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type IFALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `BIASPROG` reader - Bias Configuration"]
-pub struct BIASPROG_R(crate::FieldReader<u8, u8>);
-impl BIASPROG_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BIASPROG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BIASPROG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BIASPROG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BIASPROG` writer - Bias Configuration"]
-pub struct BIASPROG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIASPROG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type BIASPROG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `HALFBIAS` reader - Half Bias Current"]
-pub struct HALFBIAS_R(crate::FieldReader<bool, bool>);
-impl HALFBIAS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HALFBIAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HALFBIAS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HALFBIAS_R = crate::BitReader<bool>;
 #[doc = "Field `HALFBIAS` writer - Half Bias Current"]
-pub struct HALFBIAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HALFBIAS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type HALFBIAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `FULLBIAS` reader - Full Bias Current"]
-pub struct FULLBIAS_R(crate::FieldReader<bool, bool>);
-impl FULLBIAS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FULLBIAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FULLBIAS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FULLBIAS_R = crate::BitReader<bool>;
 #[doc = "Field `FULLBIAS` writer - Full Bias Current"]
-pub struct FULLBIAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FULLBIAS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type FULLBIAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Analog Comparator Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Input Mux Enable"]
     #[inline(always)]
     pub fn muxen(&self) -> MUXEN_R {
-        MUXEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        MUXEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Inactive Value"]
     #[inline(always)]
     pub fn inactval(&self) -> INACTVAL_R {
-        INACTVAL_R::new(((self.bits >> 2) & 0x01) != 0)
+        INACTVAL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Comparator GPIO Output Invert"]
     #[inline(always)]
     pub fn gpioinv(&self) -> GPIOINV_R {
-        GPIOINV_R::new(((self.bits >> 3) & 0x01) != 0)
+        GPIOINV_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:6 - Hysteresis Select"]
     #[inline(always)]
     pub fn hystsel(&self) -> HYSTSEL_R {
-        HYSTSEL_R::new(((self.bits >> 4) & 0x07) as u8)
+        HYSTSEL_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 8:10 - Warm-up Time"]
     #[inline(always)]
     pub fn warmtime(&self) -> WARMTIME_R {
-        WARMTIME_R::new(((self.bits >> 8) & 0x07) as u8)
+        WARMTIME_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bit 16 - Rising Edge Interrupt Sense"]
     #[inline(always)]
     pub fn irise(&self) -> IRISE_R {
-        IRISE_R::new(((self.bits >> 16) & 0x01) != 0)
+        IRISE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Falling Edge Interrupt Sense"]
     #[inline(always)]
     pub fn ifall(&self) -> IFALL_R {
-        IFALL_R::new(((self.bits >> 17) & 0x01) != 0)
+        IFALL_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bits 24:27 - Bias Configuration"]
     #[inline(always)]
@@ -703,69 +381,69 @@ impl R {
     #[doc = "Bit 30 - Half Bias Current"]
     #[inline(always)]
     pub fn halfbias(&self) -> HALFBIAS_R {
-        HALFBIAS_R::new(((self.bits >> 30) & 0x01) != 0)
+        HALFBIAS_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Full Bias Current"]
     #[inline(always)]
     pub fn fullbias(&self) -> FULLBIAS_R {
-        FULLBIAS_R::new(((self.bits >> 31) & 0x01) != 0)
+        FULLBIAS_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Analog Comparator Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Input Mux Enable"]
     #[inline(always)]
-    pub fn muxen(&mut self) -> MUXEN_W {
-        MUXEN_W { w: self }
+    pub fn muxen(&mut self) -> MUXEN_W<1> {
+        MUXEN_W::new(self)
     }
     #[doc = "Bit 2 - Inactive Value"]
     #[inline(always)]
-    pub fn inactval(&mut self) -> INACTVAL_W {
-        INACTVAL_W { w: self }
+    pub fn inactval(&mut self) -> INACTVAL_W<2> {
+        INACTVAL_W::new(self)
     }
     #[doc = "Bit 3 - Comparator GPIO Output Invert"]
     #[inline(always)]
-    pub fn gpioinv(&mut self) -> GPIOINV_W {
-        GPIOINV_W { w: self }
+    pub fn gpioinv(&mut self) -> GPIOINV_W<3> {
+        GPIOINV_W::new(self)
     }
     #[doc = "Bits 4:6 - Hysteresis Select"]
     #[inline(always)]
-    pub fn hystsel(&mut self) -> HYSTSEL_W {
-        HYSTSEL_W { w: self }
+    pub fn hystsel(&mut self) -> HYSTSEL_W<4> {
+        HYSTSEL_W::new(self)
     }
     #[doc = "Bits 8:10 - Warm-up Time"]
     #[inline(always)]
-    pub fn warmtime(&mut self) -> WARMTIME_W {
-        WARMTIME_W { w: self }
+    pub fn warmtime(&mut self) -> WARMTIME_W<8> {
+        WARMTIME_W::new(self)
     }
     #[doc = "Bit 16 - Rising Edge Interrupt Sense"]
     #[inline(always)]
-    pub fn irise(&mut self) -> IRISE_W {
-        IRISE_W { w: self }
+    pub fn irise(&mut self) -> IRISE_W<16> {
+        IRISE_W::new(self)
     }
     #[doc = "Bit 17 - Falling Edge Interrupt Sense"]
     #[inline(always)]
-    pub fn ifall(&mut self) -> IFALL_W {
-        IFALL_W { w: self }
+    pub fn ifall(&mut self) -> IFALL_W<17> {
+        IFALL_W::new(self)
     }
     #[doc = "Bits 24:27 - Bias Configuration"]
     #[inline(always)]
-    pub fn biasprog(&mut self) -> BIASPROG_W {
-        BIASPROG_W { w: self }
+    pub fn biasprog(&mut self) -> BIASPROG_W<24> {
+        BIASPROG_W::new(self)
     }
     #[doc = "Bit 30 - Half Bias Current"]
     #[inline(always)]
-    pub fn halfbias(&mut self) -> HALFBIAS_W {
-        HALFBIAS_W { w: self }
+    pub fn halfbias(&mut self) -> HALFBIAS_W<30> {
+        HALFBIAS_W::new(self)
     }
     #[doc = "Bit 31 - Full Bias Current"]
     #[inline(always)]
-    pub fn fullbias(&mut self) -> FULLBIAS_W {
-        FULLBIAS_W { w: self }
+    pub fn fullbias(&mut self) -> FULLBIAS_W<31> {
+        FULLBIAS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

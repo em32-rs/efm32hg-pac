@@ -35,31 +35,11 @@ impl From<crate::W<HFRCOCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TUNING` reader - HFRCO Tuning Value"]
-pub struct TUNING_R(crate::FieldReader<u8, u8>);
-impl TUNING_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TUNING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TUNING_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TUNING` writer - HFRCO Tuning Value"]
-pub struct TUNING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TUNING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `BAND` reader - HFRCO Band Select"]
+pub type BAND_R = crate::FieldReader<u8, BAND_A>;
 #[doc = "HFRCO Band Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -81,13 +61,8 @@ impl From<BAND_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BAND` reader - HFRCO Band Select"]
-pub struct BAND_R(crate::FieldReader<u8, BAND_A>);
 impl BAND_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BAND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<BAND_A> {
         match self.bits {
@@ -102,46 +77,32 @@ impl BAND_R {
     #[doc = "Checks if the value of the field is `_1MHZ`"]
     #[inline(always)]
     pub fn is_1mhz(&self) -> bool {
-        **self == BAND_A::_1MHZ
+        *self == BAND_A::_1MHZ
     }
     #[doc = "Checks if the value of the field is `_7MHZ`"]
     #[inline(always)]
     pub fn is_7mhz(&self) -> bool {
-        **self == BAND_A::_7MHZ
+        *self == BAND_A::_7MHZ
     }
     #[doc = "Checks if the value of the field is `_11MHZ`"]
     #[inline(always)]
     pub fn is_11mhz(&self) -> bool {
-        **self == BAND_A::_11MHZ
+        *self == BAND_A::_11MHZ
     }
     #[doc = "Checks if the value of the field is `_14MHZ`"]
     #[inline(always)]
     pub fn is_14mhz(&self) -> bool {
-        **self == BAND_A::_14MHZ
+        *self == BAND_A::_14MHZ
     }
     #[doc = "Checks if the value of the field is `_21MHZ`"]
     #[inline(always)]
     pub fn is_21mhz(&self) -> bool {
-        **self == BAND_A::_21MHZ
-    }
-}
-impl core::ops::Deref for BAND_R {
-    type Target = crate::FieldReader<u8, BAND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BAND_A::_21MHZ
     }
 }
 #[doc = "Field `BAND` writer - HFRCO Band Select"]
-pub struct BAND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BAND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BAND_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type BAND_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, BAND_A, 3, O>;
+impl<'a, const O: u8> BAND_W<'a, O> {
     #[doc = "1 MHz band. NOTE: Also set the TUNING value (bits 7:0) when changing band."]
     #[inline(always)]
     pub fn _1mhz(self) -> &'a mut W {
@@ -167,39 +128,11 @@ impl<'a> BAND_W<'a> {
     pub fn _21mhz(self) -> &'a mut W {
         self.variant(BAND_A::_21MHZ)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
 #[doc = "Field `SUDELAY` reader - HFRCO Start-up Delay"]
-pub struct SUDELAY_R(crate::FieldReader<u8, u8>);
-impl SUDELAY_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SUDELAY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SUDELAY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SUDELAY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SUDELAY` writer - HFRCO Start-up Delay"]
-pub struct SUDELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUDELAY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 12)) | ((value as u32 & 0x1f) << 12);
-        self.w
-    }
-}
+pub type SUDELAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:7 - HFRCO Tuning Value"]
     #[inline(always)]
@@ -209,7 +142,7 @@ impl R {
     #[doc = "Bits 8:10 - HFRCO Band Select"]
     #[inline(always)]
     pub fn band(&self) -> BAND_R {
-        BAND_R::new(((self.bits >> 8) & 0x07) as u8)
+        BAND_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 12:16 - HFRCO Start-up Delay"]
     #[inline(always)]
@@ -220,18 +153,18 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - HFRCO Tuning Value"]
     #[inline(always)]
-    pub fn tuning(&mut self) -> TUNING_W {
-        TUNING_W { w: self }
+    pub fn tuning(&mut self) -> TUNING_W<0> {
+        TUNING_W::new(self)
     }
     #[doc = "Bits 8:10 - HFRCO Band Select"]
     #[inline(always)]
-    pub fn band(&mut self) -> BAND_W {
-        BAND_W { w: self }
+    pub fn band(&mut self) -> BAND_W<8> {
+        BAND_W::new(self)
     }
     #[doc = "Bits 12:16 - HFRCO Start-up Delay"]
     #[inline(always)]
-    pub fn sudelay(&mut self) -> SUDELAY_W {
-        SUDELAY_W { w: self }
+    pub fn sudelay(&mut self) -> SUDELAY_W<12> {
+        SUDELAY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

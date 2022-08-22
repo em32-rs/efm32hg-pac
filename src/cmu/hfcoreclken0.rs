@@ -35,237 +35,77 @@ impl From<crate::W<HFCORECLKEN0_SPEC>> for W {
     }
 }
 #[doc = "Field `AES` reader - Advanced Encryption Standard Accelerator Clock Enable"]
-pub struct AES_R(crate::FieldReader<bool, bool>);
-impl AES_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AES_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AES_R = crate::BitReader<bool>;
 #[doc = "Field `AES` writer - Advanced Encryption Standard Accelerator Clock Enable"]
-pub struct AES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type AES_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFCORECLKEN0_SPEC, bool, O>;
 #[doc = "Field `DMA` reader - Direct Memory Access Controller Clock Enable"]
-pub struct DMA_R(crate::FieldReader<bool, bool>);
-impl DMA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_R = crate::BitReader<bool>;
 #[doc = "Field `DMA` writer - Direct Memory Access Controller Clock Enable"]
-pub struct DMA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFCORECLKEN0_SPEC, bool, O>;
 #[doc = "Field `LE` reader - Low Energy Peripheral Interface Clock Enable"]
-pub struct LE_R(crate::FieldReader<bool, bool>);
-impl LE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LE_R = crate::BitReader<bool>;
 #[doc = "Field `LE` writer - Low Energy Peripheral Interface Clock Enable"]
-pub struct LE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type LE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFCORECLKEN0_SPEC, bool, O>;
 #[doc = "Field `USBC` reader - Universal Serial Bus Interface Core Clock Enable"]
-pub struct USBC_R(crate::FieldReader<bool, bool>);
-impl USBC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USBC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USBC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USBC_R = crate::BitReader<bool>;
 #[doc = "Field `USBC` writer - Universal Serial Bus Interface Core Clock Enable"]
-pub struct USBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type USBC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFCORECLKEN0_SPEC, bool, O>;
 #[doc = "Field `USB` reader - Universal Serial Bus Interface Clock Enable"]
-pub struct USB_R(crate::FieldReader<bool, bool>);
-impl USB_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USB_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USB_R = crate::BitReader<bool>;
 #[doc = "Field `USB` writer - Universal Serial Bus Interface Clock Enable"]
-pub struct USB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type USB_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFCORECLKEN0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Advanced Encryption Standard Accelerator Clock Enable"]
     #[inline(always)]
     pub fn aes(&self) -> AES_R {
-        AES_R::new((self.bits & 0x01) != 0)
+        AES_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Direct Memory Access Controller Clock Enable"]
     #[inline(always)]
     pub fn dma(&self) -> DMA_R {
-        DMA_R::new(((self.bits >> 1) & 0x01) != 0)
+        DMA_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Low Energy Peripheral Interface Clock Enable"]
     #[inline(always)]
     pub fn le(&self) -> LE_R {
-        LE_R::new(((self.bits >> 2) & 0x01) != 0)
+        LE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Universal Serial Bus Interface Core Clock Enable"]
     #[inline(always)]
     pub fn usbc(&self) -> USBC_R {
-        USBC_R::new(((self.bits >> 3) & 0x01) != 0)
+        USBC_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Universal Serial Bus Interface Clock Enable"]
     #[inline(always)]
     pub fn usb(&self) -> USB_R {
-        USB_R::new(((self.bits >> 4) & 0x01) != 0)
+        USB_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Advanced Encryption Standard Accelerator Clock Enable"]
     #[inline(always)]
-    pub fn aes(&mut self) -> AES_W {
-        AES_W { w: self }
+    pub fn aes(&mut self) -> AES_W<0> {
+        AES_W::new(self)
     }
     #[doc = "Bit 1 - Direct Memory Access Controller Clock Enable"]
     #[inline(always)]
-    pub fn dma(&mut self) -> DMA_W {
-        DMA_W { w: self }
+    pub fn dma(&mut self) -> DMA_W<1> {
+        DMA_W::new(self)
     }
     #[doc = "Bit 2 - Low Energy Peripheral Interface Clock Enable"]
     #[inline(always)]
-    pub fn le(&mut self) -> LE_W {
-        LE_W { w: self }
+    pub fn le(&mut self) -> LE_W<2> {
+        LE_W::new(self)
     }
     #[doc = "Bit 3 - Universal Serial Bus Interface Core Clock Enable"]
     #[inline(always)]
-    pub fn usbc(&mut self) -> USBC_W {
-        USBC_W { w: self }
+    pub fn usbc(&mut self) -> USBC_W<3> {
+        USBC_W::new(self)
     }
     #[doc = "Bit 4 - Universal Serial Bus Interface Clock Enable"]
     #[inline(always)]
-    pub fn usb(&mut self) -> USB_W {
-        USB_W { w: self }
+    pub fn usb(&mut self) -> USB_W<4> {
+        USB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

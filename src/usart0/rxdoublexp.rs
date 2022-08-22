@@ -14,89 +14,17 @@ impl From<crate::R<RXDOUBLEXP_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATAP0` reader - RX Data 0 Peek"]
-pub struct RXDATAP0_R(crate::FieldReader<u16, u16>);
-impl RXDATAP0_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RXDATAP0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATAP0_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATAP0_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PERRP0` reader - Data Parity Error 0 Peek"]
-pub struct PERRP0_R(crate::FieldReader<bool, bool>);
-impl PERRP0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PERRP0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERRP0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERRP0_R = crate::BitReader<bool>;
 #[doc = "Field `FERRP0` reader - Data Framing Error 0 Peek"]
-pub struct FERRP0_R(crate::FieldReader<bool, bool>);
-impl FERRP0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FERRP0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FERRP0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FERRP0_R = crate::BitReader<bool>;
 #[doc = "Field `RXDATAP1` reader - RX Data 1 Peek"]
-pub struct RXDATAP1_R(crate::FieldReader<u16, u16>);
-impl RXDATAP1_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RXDATAP1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATAP1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATAP1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PERRP1` reader - Data Parity Error 1 Peek"]
-pub struct PERRP1_R(crate::FieldReader<bool, bool>);
-impl PERRP1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PERRP1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERRP1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERRP1_R = crate::BitReader<bool>;
 #[doc = "Field `FERRP1` reader - Data Framing Error 1 Peek"]
-pub struct FERRP1_R(crate::FieldReader<bool, bool>);
-impl FERRP1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FERRP1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FERRP1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FERRP1_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:8 - RX Data 0 Peek"]
     #[inline(always)]
@@ -106,12 +34,12 @@ impl R {
     #[doc = "Bit 14 - Data Parity Error 0 Peek"]
     #[inline(always)]
     pub fn perrp0(&self) -> PERRP0_R {
-        PERRP0_R::new(((self.bits >> 14) & 0x01) != 0)
+        PERRP0_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Data Framing Error 0 Peek"]
     #[inline(always)]
     pub fn ferrp0(&self) -> FERRP0_R {
-        FERRP0_R::new(((self.bits >> 15) & 0x01) != 0)
+        FERRP0_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:24 - RX Data 1 Peek"]
     #[inline(always)]
@@ -121,12 +49,12 @@ impl R {
     #[doc = "Bit 30 - Data Parity Error 1 Peek"]
     #[inline(always)]
     pub fn perrp1(&self) -> PERRP1_R {
-        PERRP1_R::new(((self.bits >> 30) & 0x01) != 0)
+        PERRP1_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Data Framing Error 1 Peek"]
     #[inline(always)]
     pub fn ferrp1(&self) -> FERRP1_R {
-        FERRP1_R::new(((self.bits >> 31) & 0x01) != 0)
+        FERRP1_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "RX Buffer Double Data Extended Peek Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdoublexp](index.html) module"]

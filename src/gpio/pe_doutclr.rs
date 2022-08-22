@@ -20,22 +20,12 @@ impl From<crate::W<PE_DOUTCLR_SPEC>> for W {
     }
 }
 #[doc = "Field `DOUTCLR` writer - Data Out Clear"]
-pub struct DOUTCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DOUTCLR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type DOUTCLR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PE_DOUTCLR_SPEC, u16, u16, 16, O>;
 impl W {
     #[doc = "Bits 0:15 - Data Out Clear"]
     #[inline(always)]
-    pub fn doutclr(&mut self) -> DOUTCLR_W {
-        DOUTCLR_W { w: self }
+    pub fn doutclr(&mut self) -> DOUTCLR_W<0> {
+        DOUTCLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

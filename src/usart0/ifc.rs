@@ -20,302 +20,82 @@ impl From<crate::W<IFC_SPEC>> for W {
     }
 }
 #[doc = "Field `TXC` writer - Clear TX Complete Interrupt Flag"]
-pub struct TXC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TXC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `RXFULL` writer - Clear RX Buffer Full Interrupt Flag"]
-pub struct RXFULL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXFULL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type RXFULL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `RXOF` writer - Clear RX Overflow Interrupt Flag"]
-pub struct RXOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RXOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `RXUF` writer - Clear RX Underflow Interrupt Flag"]
-pub struct RXUF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXUF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type RXUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `TXOF` writer - Clear TX Overflow Interrupt Flag"]
-pub struct TXOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type TXOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `TXUF` writer - Clear TX Underflow Interrupt Flag"]
-pub struct TXUF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXUF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type TXUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `PERR` writer - Clear Parity Error Interrupt Flag"]
-pub struct PERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type PERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `FERR` writer - Clear Framing Error Interrupt Flag"]
-pub struct FERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type FERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `MPAF` writer - Clear Multi-Processor Address Frame Interrupt Flag"]
-pub struct MPAF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MPAF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type MPAF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `SSM` writer - Clear Slave-Select In Master Mode Interrupt Flag"]
-pub struct SSM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SSM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type SSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `CCF` writer - Clear Collision Check Fail Interrupt Flag"]
-pub struct CCF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type CCF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear TX Complete Interrupt Flag"]
     #[inline(always)]
-    pub fn txc(&mut self) -> TXC_W {
-        TXC_W { w: self }
+    pub fn txc(&mut self) -> TXC_W<0> {
+        TXC_W::new(self)
     }
     #[doc = "Bit 3 - Clear RX Buffer Full Interrupt Flag"]
     #[inline(always)]
-    pub fn rxfull(&mut self) -> RXFULL_W {
-        RXFULL_W { w: self }
+    pub fn rxfull(&mut self) -> RXFULL_W<3> {
+        RXFULL_W::new(self)
     }
     #[doc = "Bit 4 - Clear RX Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn rxof(&mut self) -> RXOF_W {
-        RXOF_W { w: self }
+    pub fn rxof(&mut self) -> RXOF_W<4> {
+        RXOF_W::new(self)
     }
     #[doc = "Bit 5 - Clear RX Underflow Interrupt Flag"]
     #[inline(always)]
-    pub fn rxuf(&mut self) -> RXUF_W {
-        RXUF_W { w: self }
+    pub fn rxuf(&mut self) -> RXUF_W<5> {
+        RXUF_W::new(self)
     }
     #[doc = "Bit 6 - Clear TX Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn txof(&mut self) -> TXOF_W {
-        TXOF_W { w: self }
+    pub fn txof(&mut self) -> TXOF_W<6> {
+        TXOF_W::new(self)
     }
     #[doc = "Bit 7 - Clear TX Underflow Interrupt Flag"]
     #[inline(always)]
-    pub fn txuf(&mut self) -> TXUF_W {
-        TXUF_W { w: self }
+    pub fn txuf(&mut self) -> TXUF_W<7> {
+        TXUF_W::new(self)
     }
     #[doc = "Bit 8 - Clear Parity Error Interrupt Flag"]
     #[inline(always)]
-    pub fn perr(&mut self) -> PERR_W {
-        PERR_W { w: self }
+    pub fn perr(&mut self) -> PERR_W<8> {
+        PERR_W::new(self)
     }
     #[doc = "Bit 9 - Clear Framing Error Interrupt Flag"]
     #[inline(always)]
-    pub fn ferr(&mut self) -> FERR_W {
-        FERR_W { w: self }
+    pub fn ferr(&mut self) -> FERR_W<9> {
+        FERR_W::new(self)
     }
     #[doc = "Bit 10 - Clear Multi-Processor Address Frame Interrupt Flag"]
     #[inline(always)]
-    pub fn mpaf(&mut self) -> MPAF_W {
-        MPAF_W { w: self }
+    pub fn mpaf(&mut self) -> MPAF_W<10> {
+        MPAF_W::new(self)
     }
     #[doc = "Bit 11 - Clear Slave-Select In Master Mode Interrupt Flag"]
     #[inline(always)]
-    pub fn ssm(&mut self) -> SSM_W {
-        SSM_W { w: self }
+    pub fn ssm(&mut self) -> SSM_W<11> {
+        SSM_W::new(self)
     }
     #[doc = "Bit 12 - Clear Collision Check Fail Interrupt Flag"]
     #[inline(always)]
-    pub fn ccf(&mut self) -> CCF_W {
-        CCF_W { w: self }
+    pub fn ccf(&mut self) -> CCF_W<12> {
+        CCF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,113 +20,33 @@ impl From<crate::W<DTFAULTC_SPEC>> for W {
     }
 }
 #[doc = "Field `DTPRS0FC` writer - DTI PRS0 Fault Clear"]
-pub struct DTPRS0FC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTPRS0FC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DTPRS0FC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFAULTC_SPEC, bool, O>;
 #[doc = "Field `DTPRS1FC` writer - DTI PRS1 Fault Clear"]
-pub struct DTPRS1FC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTPRS1FC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DTPRS1FC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFAULTC_SPEC, bool, O>;
 #[doc = "Field `DTDBGFC` writer - DTI Debugger Fault Clear"]
-pub struct DTDBGFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTDBGFC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DTDBGFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFAULTC_SPEC, bool, O>;
 #[doc = "Field `TLOCKUPFC` writer - DTI Lockup Fault Clear"]
-pub struct TLOCKUPFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TLOCKUPFC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type TLOCKUPFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFAULTC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - DTI PRS0 Fault Clear"]
     #[inline(always)]
-    pub fn dtprs0fc(&mut self) -> DTPRS0FC_W {
-        DTPRS0FC_W { w: self }
+    pub fn dtprs0fc(&mut self) -> DTPRS0FC_W<0> {
+        DTPRS0FC_W::new(self)
     }
     #[doc = "Bit 1 - DTI PRS1 Fault Clear"]
     #[inline(always)]
-    pub fn dtprs1fc(&mut self) -> DTPRS1FC_W {
-        DTPRS1FC_W { w: self }
+    pub fn dtprs1fc(&mut self) -> DTPRS1FC_W<1> {
+        DTPRS1FC_W::new(self)
     }
     #[doc = "Bit 2 - DTI Debugger Fault Clear"]
     #[inline(always)]
-    pub fn dtdbgfc(&mut self) -> DTDBGFC_W {
-        DTDBGFC_W { w: self }
+    pub fn dtdbgfc(&mut self) -> DTDBGFC_W<2> {
+        DTDBGFC_W::new(self)
     }
     #[doc = "Bit 3 - DTI Lockup Fault Clear"]
     #[inline(always)]
-    pub fn tlockupfc(&mut self) -> TLOCKUPFC_W {
-        TLOCKUPFC_W { w: self }
+    pub fn tlockupfc(&mut self) -> TLOCKUPFC_W<3> {
+        TLOCKUPFC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

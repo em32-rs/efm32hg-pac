@@ -14,33 +14,9 @@ impl From<crate::R<ADC0CAL2_SPEC>> for R {
     }
 }
 #[doc = "Field `2XVDDVSS_OFFSET` reader - Offset for 2XVDDVSS reference"]
-pub struct _2XVDDVSS_OFFSET_R(crate::FieldReader<u8, u8>);
-impl _2XVDDVSS_OFFSET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        _2XVDDVSS_OFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for _2XVDDVSS_OFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type _2XVDDVSS_OFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TEMP1V25` reader - Temperature reading at 1V25 reference"]
-pub struct TEMP1V25_R(crate::FieldReader<u16, u16>);
-impl TEMP1V25_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TEMP1V25_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TEMP1V25_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TEMP1V25_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:6 - Offset for 2XVDDVSS reference"]
     #[inline(always)]

@@ -20,221 +20,61 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `START` writer - Send start condition"]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `STOP` writer - Send stop condition"]
-pub struct STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `ACK` writer - Send ACK"]
-pub struct ACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `NACK` writer - Send NACK"]
-pub struct NACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type NACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CONT` writer - Continue transmission"]
-pub struct CONT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CONT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `ABORT` writer - Abort transmission"]
-pub struct ABORT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ABORT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ABORT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CLEARTX` writer - Clear TX"]
-pub struct CLEARTX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLEARTX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CLEARTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CLEARPC` writer - Clear Pending Commands"]
-pub struct CLEARPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLEARPC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type CLEARPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Send start condition"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    pub fn start(&mut self) -> START_W<0> {
+        START_W::new(self)
     }
     #[doc = "Bit 1 - Send stop condition"]
     #[inline(always)]
-    pub fn stop(&mut self) -> STOP_W {
-        STOP_W { w: self }
+    pub fn stop(&mut self) -> STOP_W<1> {
+        STOP_W::new(self)
     }
     #[doc = "Bit 2 - Send ACK"]
     #[inline(always)]
-    pub fn ack(&mut self) -> ACK_W {
-        ACK_W { w: self }
+    pub fn ack(&mut self) -> ACK_W<2> {
+        ACK_W::new(self)
     }
     #[doc = "Bit 3 - Send NACK"]
     #[inline(always)]
-    pub fn nack(&mut self) -> NACK_W {
-        NACK_W { w: self }
+    pub fn nack(&mut self) -> NACK_W<3> {
+        NACK_W::new(self)
     }
     #[doc = "Bit 4 - Continue transmission"]
     #[inline(always)]
-    pub fn cont(&mut self) -> CONT_W {
-        CONT_W { w: self }
+    pub fn cont(&mut self) -> CONT_W<4> {
+        CONT_W::new(self)
     }
     #[doc = "Bit 5 - Abort transmission"]
     #[inline(always)]
-    pub fn abort(&mut self) -> ABORT_W {
-        ABORT_W { w: self }
+    pub fn abort(&mut self) -> ABORT_W<5> {
+        ABORT_W::new(self)
     }
     #[doc = "Bit 6 - Clear TX"]
     #[inline(always)]
-    pub fn cleartx(&mut self) -> CLEARTX_W {
-        CLEARTX_W { w: self }
+    pub fn cleartx(&mut self) -> CLEARTX_W<6> {
+        CLEARTX_W::new(self)
     }
     #[doc = "Bit 7 - Clear Pending Commands"]
     #[inline(always)]
-    pub fn clearpc(&mut self) -> CLEARPC_W {
-        CLEARPC_W { w: self }
+    pub fn clearpc(&mut self) -> CLEARPC_W<7> {
+        CLEARPC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

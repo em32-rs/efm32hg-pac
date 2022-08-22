@@ -34,6 +34,8 @@ impl From<crate::W<ROUTE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LOCATION` reader - I/O Location"]
+pub type LOCATION_R = crate::FieldReader<u8, LOCATION_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -55,13 +57,8 @@ impl From<LOCATION_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LOCATION` reader - I/O Location"]
-pub struct LOCATION_R(crate::FieldReader<u8, LOCATION_A>);
 impl LOCATION_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LOCATION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LOCATION_A> {
         match self.bits {
@@ -76,46 +73,33 @@ impl LOCATION_R {
     #[doc = "Checks if the value of the field is `LOC0`"]
     #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        **self == LOCATION_A::LOC0
+        *self == LOCATION_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
     #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        **self == LOCATION_A::LOC1
+        *self == LOCATION_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
     #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        **self == LOCATION_A::LOC2
+        *self == LOCATION_A::LOC2
     }
     #[doc = "Checks if the value of the field is `LOC3`"]
     #[inline(always)]
     pub fn is_loc3(&self) -> bool {
-        **self == LOCATION_A::LOC3
+        *self == LOCATION_A::LOC3
     }
     #[doc = "Checks if the value of the field is `LOC4`"]
     #[inline(always)]
     pub fn is_loc4(&self) -> bool {
-        **self == LOCATION_A::LOC4
-    }
-}
-impl core::ops::Deref for LOCATION_R {
-    type Target = crate::FieldReader<u8, LOCATION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCATION_A::LOC4
     }
 }
 #[doc = "Field `LOCATION` writer - I/O Location"]
-pub struct LOCATION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCATION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOCATION_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LOCATION_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTE_SPEC, u8, LOCATION_A, 3, O>;
+impl<'a, const O: u8> LOCATION_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -141,25 +125,19 @@ impl<'a> LOCATION_W<'a> {
     pub fn loc4(self) -> &'a mut W {
         self.variant(LOCATION_A::LOC4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 8:10 - I/O Location"]
     #[inline(always)]
     pub fn location(&self) -> LOCATION_R {
-        LOCATION_R::new(((self.bits >> 8) & 0x07) as u8)
+        LOCATION_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 8:10 - I/O Location"]
     #[inline(always)]
-    pub fn location(&mut self) -> LOCATION_W {
-        LOCATION_W { w: self }
+    pub fn location(&mut self) -> LOCATION_W<8> {
+        LOCATION_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

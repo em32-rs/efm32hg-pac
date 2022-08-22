@@ -35,99 +35,35 @@ impl From<crate::W<USBCRCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Clock Recovery Enable"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Clock Recovery Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBCRCTRL_SPEC, bool, O>;
 #[doc = "Field `LSMODE` reader - Low Speed Clock Recovery Mode"]
-pub struct LSMODE_R(crate::FieldReader<bool, bool>);
-impl LSMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSMODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LSMODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LSMODE_R = crate::BitReader<bool>;
 #[doc = "Field `LSMODE` writer - Low Speed Clock Recovery Mode"]
-pub struct LSMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSMODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type LSMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBCRCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Clock Recovery Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Low Speed Clock Recovery Mode"]
     #[inline(always)]
     pub fn lsmode(&self) -> LSMODE_R {
-        LSMODE_R::new(((self.bits >> 1) & 0x01) != 0)
+        LSMODE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Clock Recovery Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Low Speed Clock Recovery Mode"]
     #[inline(always)]
-    pub fn lsmode(&mut self) -> LSMODE_W {
-        LSMODE_W { w: self }
+    pub fn lsmode(&mut self) -> LSMODE_W<1> {
+        LSMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

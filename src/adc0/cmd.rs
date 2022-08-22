@@ -20,113 +20,33 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLESTART` writer - Single Conversion Start"]
-pub struct SINGLESTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLESTART_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SINGLESTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SINGLESTOP` writer - Single Conversion Stop"]
-pub struct SINGLESTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLESTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SINGLESTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SCANSTART` writer - Scan Sequence Start"]
-pub struct SCANSTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCANSTART_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SCANSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SCANSTOP` writer - Scan Sequence Stop"]
-pub struct SCANSTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCANSTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SCANSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Single Conversion Start"]
     #[inline(always)]
-    pub fn singlestart(&mut self) -> SINGLESTART_W {
-        SINGLESTART_W { w: self }
+    pub fn singlestart(&mut self) -> SINGLESTART_W<0> {
+        SINGLESTART_W::new(self)
     }
     #[doc = "Bit 1 - Single Conversion Stop"]
     #[inline(always)]
-    pub fn singlestop(&mut self) -> SINGLESTOP_W {
-        SINGLESTOP_W { w: self }
+    pub fn singlestop(&mut self) -> SINGLESTOP_W<1> {
+        SINGLESTOP_W::new(self)
     }
     #[doc = "Bit 2 - Scan Sequence Start"]
     #[inline(always)]
-    pub fn scanstart(&mut self) -> SCANSTART_W {
-        SCANSTART_W { w: self }
+    pub fn scanstart(&mut self) -> SCANSTART_W<2> {
+        SCANSTART_W::new(self)
     }
     #[doc = "Bit 3 - Scan Sequence Stop"]
     #[inline(always)]
-    pub fn scanstop(&mut self) -> SCANSTOP_W {
-        SCANSTOP_W { w: self }
+    pub fn scanstop(&mut self) -> SCANSTOP_W<3> {
+        SCANSTOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

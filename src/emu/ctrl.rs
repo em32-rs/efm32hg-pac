@@ -35,135 +35,49 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EMVREG` reader - Energy Mode Voltage Regulator Control"]
-pub struct EMVREG_R(crate::FieldReader<bool, bool>);
-impl EMVREG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EMVREG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EMVREG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EMVREG_R = crate::BitReader<bool>;
 #[doc = "Field `EMVREG` writer - Energy Mode Voltage Regulator Control"]
-pub struct EMVREG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EMVREG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EMVREG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM2BLOCK` reader - Energy Mode 2 Block"]
-pub struct EM2BLOCK_R(crate::FieldReader<bool, bool>);
-impl EM2BLOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EM2BLOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EM2BLOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EM2BLOCK_R = crate::BitReader<bool>;
 #[doc = "Field `EM2BLOCK` writer - Energy Mode 2 Block"]
-pub struct EM2BLOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM2BLOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type EM2BLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM4CTRL` reader - Energy Mode 4 Control"]
-pub struct EM4CTRL_R(crate::FieldReader<u8, u8>);
-impl EM4CTRL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EM4CTRL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EM4CTRL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EM4CTRL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EM4CTRL` writer - Energy Mode 4 Control"]
-pub struct EM4CTRL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM4CTRL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
-}
+pub type EM4CTRL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 0 - Energy Mode Voltage Regulator Control"]
     #[inline(always)]
     pub fn emvreg(&self) -> EMVREG_R {
-        EMVREG_R::new((self.bits & 0x01) != 0)
+        EMVREG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Energy Mode 2 Block"]
     #[inline(always)]
     pub fn em2block(&self) -> EM2BLOCK_R {
-        EM2BLOCK_R::new(((self.bits >> 1) & 0x01) != 0)
+        EM2BLOCK_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - Energy Mode 4 Control"]
     #[inline(always)]
     pub fn em4ctrl(&self) -> EM4CTRL_R {
-        EM4CTRL_R::new(((self.bits >> 2) & 0x03) as u8)
+        EM4CTRL_R::new(((self.bits >> 2) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Energy Mode Voltage Regulator Control"]
     #[inline(always)]
-    pub fn emvreg(&mut self) -> EMVREG_W {
-        EMVREG_W { w: self }
+    pub fn emvreg(&mut self) -> EMVREG_W<0> {
+        EMVREG_W::new(self)
     }
     #[doc = "Bit 1 - Energy Mode 2 Block"]
     #[inline(always)]
-    pub fn em2block(&mut self) -> EM2BLOCK_W {
-        EM2BLOCK_W { w: self }
+    pub fn em2block(&mut self) -> EM2BLOCK_W<1> {
+        EM2BLOCK_W::new(self)
     }
     #[doc = "Bits 2:3 - Energy Mode 4 Control"]
     #[inline(always)]
-    pub fn em4ctrl(&mut self) -> EM4CTRL_W {
-        EM4CTRL_W { w: self }
+    pub fn em4ctrl(&mut self) -> EM4CTRL_W<2> {
+        EM4CTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -20,157 +20,47 @@ impl From<crate::W<TXDATAX_SPEC>> for W {
     }
 }
 #[doc = "Field `TXDATAX` writer - TX Data"]
-pub struct TXDATAX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDATAX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type TXDATAX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXDATAX_SPEC, u16, u16, 9, O>;
 #[doc = "Field `UBRXAT` writer - Unblock RX After Transmission"]
-pub struct UBRXAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UBRXAT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type UBRXAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXDATAX_SPEC, bool, O>;
 #[doc = "Field `TXTRIAT` writer - Set TXTRI After Transmission"]
-pub struct TXTRIAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXTRIAT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type TXTRIAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXDATAX_SPEC, bool, O>;
 #[doc = "Field `TXBREAK` writer - Transmit Data As Break"]
-pub struct TXBREAK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXBREAK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type TXBREAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXDATAX_SPEC, bool, O>;
 #[doc = "Field `TXDISAT` writer - Clear TXEN After Transmission"]
-pub struct TXDISAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDISAT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type TXDISAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXDATAX_SPEC, bool, O>;
 #[doc = "Field `RXENAT` writer - Enable RX After Transmission"]
-pub struct RXENAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXENAT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type RXENAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXDATAX_SPEC, bool, O>;
 impl W {
     #[doc = "Bits 0:8 - TX Data"]
     #[inline(always)]
-    pub fn txdatax(&mut self) -> TXDATAX_W {
-        TXDATAX_W { w: self }
+    pub fn txdatax(&mut self) -> TXDATAX_W<0> {
+        TXDATAX_W::new(self)
     }
     #[doc = "Bit 11 - Unblock RX After Transmission"]
     #[inline(always)]
-    pub fn ubrxat(&mut self) -> UBRXAT_W {
-        UBRXAT_W { w: self }
+    pub fn ubrxat(&mut self) -> UBRXAT_W<11> {
+        UBRXAT_W::new(self)
     }
     #[doc = "Bit 12 - Set TXTRI After Transmission"]
     #[inline(always)]
-    pub fn txtriat(&mut self) -> TXTRIAT_W {
-        TXTRIAT_W { w: self }
+    pub fn txtriat(&mut self) -> TXTRIAT_W<12> {
+        TXTRIAT_W::new(self)
     }
     #[doc = "Bit 13 - Transmit Data As Break"]
     #[inline(always)]
-    pub fn txbreak(&mut self) -> TXBREAK_W {
-        TXBREAK_W { w: self }
+    pub fn txbreak(&mut self) -> TXBREAK_W<13> {
+        TXBREAK_W::new(self)
     }
     #[doc = "Bit 14 - Clear TXEN After Transmission"]
     #[inline(always)]
-    pub fn txdisat(&mut self) -> TXDISAT_W {
-        TXDISAT_W { w: self }
+    pub fn txdisat(&mut self) -> TXDISAT_W<14> {
+        TXDISAT_W::new(self)
     }
     #[doc = "Bit 15 - Enable RX After Transmission"]
     #[inline(always)]
-    pub fn rxenat(&mut self) -> RXENAT_W {
-        RXENAT_W { w: self }
+    pub fn rxenat(&mut self) -> RXENAT_W<15> {
+        RXENAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

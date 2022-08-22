@@ -20,167 +20,47 @@ impl From<crate::W<CHUSEBURSTC_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0USEBURSTC` writer - Channel 0 Useburst Clear"]
-pub struct CH0USEBURSTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0USEBURSTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0USEBURSTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTC_SPEC, bool, O>;
 #[doc = "Field `CH1USEBURSTC` writer - Channel 1 Useburst Clear"]
-pub struct CH1USEBURSTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1USEBURSTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1USEBURSTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTC_SPEC, bool, O>;
 #[doc = "Field `CH2USEBURSTC` writer - Channel 2 Useburst Clear"]
-pub struct CH2USEBURSTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2USEBURSTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2USEBURSTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTC_SPEC, bool, O>;
 #[doc = "Field `CH3USEBURSTC` writer - Channel 3 Useburst Clear"]
-pub struct CH3USEBURSTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3USEBURSTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3USEBURSTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTC_SPEC, bool, O>;
 #[doc = "Field `CH4USEBURSTC` writer - Channel 4 Useburst Clear"]
-pub struct CH4USEBURSTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4USEBURSTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4USEBURSTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTC_SPEC, bool, O>;
 #[doc = "Field `CH5USEBURSTC` writer - Channel 5 Useburst Clear"]
-pub struct CH5USEBURSTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5USEBURSTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5USEBURSTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Useburst Clear"]
     #[inline(always)]
-    pub fn ch0useburstc(&mut self) -> CH0USEBURSTC_W {
-        CH0USEBURSTC_W { w: self }
+    pub fn ch0useburstc(&mut self) -> CH0USEBURSTC_W<0> {
+        CH0USEBURSTC_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Useburst Clear"]
     #[inline(always)]
-    pub fn ch1useburstc(&mut self) -> CH1USEBURSTC_W {
-        CH1USEBURSTC_W { w: self }
+    pub fn ch1useburstc(&mut self) -> CH1USEBURSTC_W<1> {
+        CH1USEBURSTC_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Useburst Clear"]
     #[inline(always)]
-    pub fn ch2useburstc(&mut self) -> CH2USEBURSTC_W {
-        CH2USEBURSTC_W { w: self }
+    pub fn ch2useburstc(&mut self) -> CH2USEBURSTC_W<2> {
+        CH2USEBURSTC_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Useburst Clear"]
     #[inline(always)]
-    pub fn ch3useburstc(&mut self) -> CH3USEBURSTC_W {
-        CH3USEBURSTC_W { w: self }
+    pub fn ch3useburstc(&mut self) -> CH3USEBURSTC_W<3> {
+        CH3USEBURSTC_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Useburst Clear"]
     #[inline(always)]
-    pub fn ch4useburstc(&mut self) -> CH4USEBURSTC_W {
-        CH4USEBURSTC_W { w: self }
+    pub fn ch4useburstc(&mut self) -> CH4USEBURSTC_W<4> {
+        CH4USEBURSTC_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Useburst Clear"]
     #[inline(always)]
-    pub fn ch5useburstc(&mut self) -> CH5USEBURSTC_W {
-        CH5USEBURSTC_W { w: self }
+    pub fn ch5useburstc(&mut self) -> CH5USEBURSTC_W<5> {
+        CH5USEBURSTC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

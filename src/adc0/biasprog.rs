@@ -35,93 +35,17 @@ impl From<crate::W<BIASPROG_SPEC>> for W {
     }
 }
 #[doc = "Field `BIASPROG` reader - Bias Programming Value"]
-pub struct BIASPROG_R(crate::FieldReader<u8, u8>);
-impl BIASPROG_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BIASPROG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BIASPROG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BIASPROG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BIASPROG` writer - Bias Programming Value"]
-pub struct BIASPROG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIASPROG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type BIASPROG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASPROG_SPEC, u8, u8, 4, O>;
 #[doc = "Field `HALFBIAS` reader - Half Bias Current"]
-pub struct HALFBIAS_R(crate::FieldReader<bool, bool>);
-impl HALFBIAS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HALFBIAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HALFBIAS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HALFBIAS_R = crate::BitReader<bool>;
 #[doc = "Field `HALFBIAS` writer - Half Bias Current"]
-pub struct HALFBIAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HALFBIAS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type HALFBIAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASPROG_SPEC, bool, O>;
 #[doc = "Field `COMPBIAS` reader - Comparator Bias Value"]
-pub struct COMPBIAS_R(crate::FieldReader<u8, u8>);
-impl COMPBIAS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        COMPBIAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMPBIAS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COMPBIAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COMPBIAS` writer - Comparator Bias Value"]
-pub struct COMPBIAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMPBIAS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type COMPBIAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASPROG_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Bias Programming Value"]
     #[inline(always)]
@@ -131,7 +55,7 @@ impl R {
     #[doc = "Bit 6 - Half Bias Current"]
     #[inline(always)]
     pub fn halfbias(&self) -> HALFBIAS_R {
-        HALFBIAS_R::new(((self.bits >> 6) & 0x01) != 0)
+        HALFBIAS_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:11 - Comparator Bias Value"]
     #[inline(always)]
@@ -142,18 +66,18 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Bias Programming Value"]
     #[inline(always)]
-    pub fn biasprog(&mut self) -> BIASPROG_W {
-        BIASPROG_W { w: self }
+    pub fn biasprog(&mut self) -> BIASPROG_W<0> {
+        BIASPROG_W::new(self)
     }
     #[doc = "Bit 6 - Half Bias Current"]
     #[inline(always)]
-    pub fn halfbias(&mut self) -> HALFBIAS_W {
-        HALFBIAS_W { w: self }
+    pub fn halfbias(&mut self) -> HALFBIAS_W<6> {
+        HALFBIAS_W::new(self)
     }
     #[doc = "Bits 8:11 - Comparator Bias Value"]
     #[inline(always)]
-    pub fn compbias(&mut self) -> COMPBIAS_W {
-        COMPBIAS_W { w: self }
+    pub fn compbias(&mut self) -> COMPBIAS_W<8> {
+        COMPBIAS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

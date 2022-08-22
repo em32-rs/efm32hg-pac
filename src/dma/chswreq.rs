@@ -20,167 +20,47 @@ impl From<crate::W<CHSWREQ_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0SWREQ` writer - Channel 0 Software Request"]
-pub struct CH0SWREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0SWREQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 #[doc = "Field `CH1SWREQ` writer - Channel 1 Software Request"]
-pub struct CH1SWREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1SWREQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 #[doc = "Field `CH2SWREQ` writer - Channel 2 Software Request"]
-pub struct CH2SWREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2SWREQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 #[doc = "Field `CH3SWREQ` writer - Channel 3 Software Request"]
-pub struct CH3SWREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3SWREQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 #[doc = "Field `CH4SWREQ` writer - Channel 4 Software Request"]
-pub struct CH4SWREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4SWREQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 #[doc = "Field `CH5SWREQ` writer - Channel 5 Software Request"]
-pub struct CH5SWREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5SWREQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Software Request"]
     #[inline(always)]
-    pub fn ch0swreq(&mut self) -> CH0SWREQ_W {
-        CH0SWREQ_W { w: self }
+    pub fn ch0swreq(&mut self) -> CH0SWREQ_W<0> {
+        CH0SWREQ_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Software Request"]
     #[inline(always)]
-    pub fn ch1swreq(&mut self) -> CH1SWREQ_W {
-        CH1SWREQ_W { w: self }
+    pub fn ch1swreq(&mut self) -> CH1SWREQ_W<1> {
+        CH1SWREQ_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Software Request"]
     #[inline(always)]
-    pub fn ch2swreq(&mut self) -> CH2SWREQ_W {
-        CH2SWREQ_W { w: self }
+    pub fn ch2swreq(&mut self) -> CH2SWREQ_W<2> {
+        CH2SWREQ_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Software Request"]
     #[inline(always)]
-    pub fn ch3swreq(&mut self) -> CH3SWREQ_W {
-        CH3SWREQ_W { w: self }
+    pub fn ch3swreq(&mut self) -> CH3SWREQ_W<3> {
+        CH3SWREQ_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Software Request"]
     #[inline(always)]
-    pub fn ch4swreq(&mut self) -> CH4SWREQ_W {
-        CH4SWREQ_W { w: self }
+    pub fn ch4swreq(&mut self) -> CH4SWREQ_W<4> {
+        CH4SWREQ_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Software Request"]
     #[inline(always)]
-    pub fn ch5swreq(&mut self) -> CH5SWREQ_W {
-        CH5SWREQ_W { w: self }
+    pub fn ch5swreq(&mut self) -> CH5SWREQ_W<5> {
+        CH5SWREQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

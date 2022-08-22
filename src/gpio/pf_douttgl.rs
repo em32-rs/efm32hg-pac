@@ -20,22 +20,12 @@ impl From<crate::W<PF_DOUTTGL_SPEC>> for W {
     }
 }
 #[doc = "Field `DOUTTGL` writer - Data Out Toggle"]
-pub struct DOUTTGL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DOUTTGL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type DOUTTGL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PF_DOUTTGL_SPEC, u16, u16, 16, O>;
 impl W {
     #[doc = "Bits 0:15 - Data Out Toggle"]
     #[inline(always)]
-    pub fn douttgl(&mut self) -> DOUTTGL_W {
-        DOUTTGL_W { w: self }
+    pub fn douttgl(&mut self) -> DOUTTGL_W<0> {
+        DOUTTGL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

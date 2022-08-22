@@ -14,24 +14,12 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `DIR` reader - Current Counter Direction"]
-pub struct DIR_R(crate::FieldReader<bool, bool>);
-impl DIR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Current Counter Direction"]
     #[inline(always)]
     pub fn dir(&self) -> DIR_R {
-        DIR_R::new((self.bits & 0x01) != 0)
+        DIR_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]

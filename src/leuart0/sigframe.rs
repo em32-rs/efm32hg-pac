@@ -35,31 +35,9 @@ impl From<crate::W<SIGFRAME_SPEC>> for W {
     }
 }
 #[doc = "Field `SIGFRAME` reader - Signal Frame"]
-pub struct SIGFRAME_R(crate::FieldReader<u16, u16>);
-impl SIGFRAME_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SIGFRAME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SIGFRAME_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SIGFRAME_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SIGFRAME` writer - Signal Frame"]
-pub struct SIGFRAME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIGFRAME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type SIGFRAME_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SIGFRAME_SPEC, u16, u16, 9, O>;
 impl R {
     #[doc = "Bits 0:8 - Signal Frame"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Signal Frame"]
     #[inline(always)]
-    pub fn sigframe(&mut self) -> SIGFRAME_W {
-        SIGFRAME_W { w: self }
+    pub fn sigframe(&mut self) -> SIGFRAME_W<0> {
+        SIGFRAME_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

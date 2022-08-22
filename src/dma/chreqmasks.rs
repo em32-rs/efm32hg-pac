@@ -20,167 +20,47 @@ impl From<crate::W<CHREQMASKS_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0REQMASKS` writer - Channel 0 Request Mask Set"]
-pub struct CH0REQMASKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0REQMASKS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0REQMASKS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKS_SPEC, bool, O>;
 #[doc = "Field `CH1REQMASKS` writer - Channel 1 Request Mask Set"]
-pub struct CH1REQMASKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1REQMASKS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1REQMASKS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKS_SPEC, bool, O>;
 #[doc = "Field `CH2REQMASKS` writer - Channel 2 Request Mask Set"]
-pub struct CH2REQMASKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2REQMASKS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2REQMASKS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKS_SPEC, bool, O>;
 #[doc = "Field `CH3REQMASKS` writer - Channel 3 Request Mask Set"]
-pub struct CH3REQMASKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3REQMASKS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3REQMASKS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKS_SPEC, bool, O>;
 #[doc = "Field `CH4REQMASKS` writer - Channel 4 Request Mask Set"]
-pub struct CH4REQMASKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4REQMASKS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4REQMASKS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKS_SPEC, bool, O>;
 #[doc = "Field `CH5REQMASKS` writer - Channel 5 Request Mask Set"]
-pub struct CH5REQMASKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5REQMASKS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5REQMASKS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Request Mask Set"]
     #[inline(always)]
-    pub fn ch0reqmasks(&mut self) -> CH0REQMASKS_W {
-        CH0REQMASKS_W { w: self }
+    pub fn ch0reqmasks(&mut self) -> CH0REQMASKS_W<0> {
+        CH0REQMASKS_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Request Mask Set"]
     #[inline(always)]
-    pub fn ch1reqmasks(&mut self) -> CH1REQMASKS_W {
-        CH1REQMASKS_W { w: self }
+    pub fn ch1reqmasks(&mut self) -> CH1REQMASKS_W<1> {
+        CH1REQMASKS_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Request Mask Set"]
     #[inline(always)]
-    pub fn ch2reqmasks(&mut self) -> CH2REQMASKS_W {
-        CH2REQMASKS_W { w: self }
+    pub fn ch2reqmasks(&mut self) -> CH2REQMASKS_W<2> {
+        CH2REQMASKS_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Request Mask Set"]
     #[inline(always)]
-    pub fn ch3reqmasks(&mut self) -> CH3REQMASKS_W {
-        CH3REQMASKS_W { w: self }
+    pub fn ch3reqmasks(&mut self) -> CH3REQMASKS_W<3> {
+        CH3REQMASKS_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Request Mask Set"]
     #[inline(always)]
-    pub fn ch4reqmasks(&mut self) -> CH4REQMASKS_W {
-        CH4REQMASKS_W { w: self }
+    pub fn ch4reqmasks(&mut self) -> CH4REQMASKS_W<4> {
+        CH4REQMASKS_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Request Mask Set"]
     #[inline(always)]
-    pub fn ch5reqmasks(&mut self) -> CH5REQMASKS_W {
-        CH5REQMASKS_W { w: self }
+    pub fn ch5reqmasks(&mut self) -> CH5REQMASKS_W<5> {
+        CH5REQMASKS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

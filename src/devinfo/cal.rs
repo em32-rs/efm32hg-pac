@@ -14,33 +14,9 @@ impl From<crate::R<CAL_SPEC>> for R {
     }
 }
 #[doc = "Field `CRC` reader - Integrity CRC checksum"]
-pub struct CRC_R(crate::FieldReader<u16, u16>);
-impl CRC_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRC_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TEMP` reader - Calibration temperature, DegC"]
-pub struct TEMP_R(crate::FieldReader<u8, u8>);
-impl TEMP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TEMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TEMP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TEMP_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:15 - Integrity CRC checksum"]
     #[inline(always)]

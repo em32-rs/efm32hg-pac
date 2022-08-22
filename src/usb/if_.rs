@@ -14,43 +14,19 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `VREGOSH` reader - VREGO Sense High Interrupt Flag"]
-pub struct VREGOSH_R(crate::FieldReader<bool, bool>);
-impl VREGOSH_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VREGOSH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VREGOSH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VREGOSH_R = crate::BitReader<bool>;
 #[doc = "Field `VREGOSL` reader - VREGO Sense Low Interrupt Flag"]
-pub struct VREGOSL_R(crate::FieldReader<bool, bool>);
-impl VREGOSL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VREGOSL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VREGOSL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VREGOSL_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - VREGO Sense High Interrupt Flag"]
     #[inline(always)]
     pub fn vregosh(&self) -> VREGOSH_R {
-        VREGOSH_R::new((self.bits & 0x01) != 0)
+        VREGOSH_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - VREGO Sense Low Interrupt Flag"]
     #[inline(always)]
     pub fn vregosl(&self) -> VREGOSL_R {
-        VREGOSL_R::new(((self.bits >> 1) & 0x01) != 0)
+        VREGOSL_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](index.html) module"]

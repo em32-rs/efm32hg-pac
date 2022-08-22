@@ -14,19 +14,7 @@ impl From<crate::R<CACHEHITS_SPEC>> for R {
     }
 }
 #[doc = "Field `CACHEHITS` reader - Cache hits since last performance counter start command."]
-pub struct CACHEHITS_R(crate::FieldReader<u32, u32>);
-impl CACHEHITS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        CACHEHITS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CACHEHITS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CACHEHITS_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:19 - Cache hits since last performance counter start command."]
     #[inline(always)]

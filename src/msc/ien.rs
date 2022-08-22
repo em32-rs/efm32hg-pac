@@ -35,191 +35,63 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASE` reader - Erase Done Interrupt Enable"]
-pub struct ERASE_R(crate::FieldReader<bool, bool>);
-impl ERASE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ERASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERASE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERASE_R = crate::BitReader<bool>;
 #[doc = "Field `ERASE` writer - Erase Done Interrupt Enable"]
-pub struct ERASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `WRITE` reader - Write Done Interrupt Enable"]
-pub struct WRITE_R(crate::FieldReader<bool, bool>);
-impl WRITE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WRITE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WRITE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WRITE_R = crate::BitReader<bool>;
 #[doc = "Field `WRITE` writer - Write Done Interrupt Enable"]
-pub struct WRITE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CHOF` reader - Cache Hits Overflow Interrupt Enable"]
-pub struct CHOF_R(crate::FieldReader<bool, bool>);
-impl CHOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHOF_R = crate::BitReader<bool>;
 #[doc = "Field `CHOF` writer - Cache Hits Overflow Interrupt Enable"]
-pub struct CHOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CHOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CMOF` reader - Cache Misses Overflow Interrupt Enable"]
-pub struct CMOF_R(crate::FieldReader<bool, bool>);
-impl CMOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMOF_R = crate::BitReader<bool>;
 #[doc = "Field `CMOF` writer - Cache Misses Overflow Interrupt Enable"]
-pub struct CMOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CMOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Erase Done Interrupt Enable"]
     #[inline(always)]
     pub fn erase(&self) -> ERASE_R {
-        ERASE_R::new((self.bits & 0x01) != 0)
+        ERASE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Write Done Interrupt Enable"]
     #[inline(always)]
     pub fn write(&self) -> WRITE_R {
-        WRITE_R::new(((self.bits >> 1) & 0x01) != 0)
+        WRITE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Cache Hits Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn chof(&self) -> CHOF_R {
-        CHOF_R::new(((self.bits >> 2) & 0x01) != 0)
+        CHOF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Cache Misses Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn cmof(&self) -> CMOF_R {
-        CMOF_R::new(((self.bits >> 3) & 0x01) != 0)
+        CMOF_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Erase Done Interrupt Enable"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
-        ERASE_W { w: self }
+    pub fn erase(&mut self) -> ERASE_W<0> {
+        ERASE_W::new(self)
     }
     #[doc = "Bit 1 - Write Done Interrupt Enable"]
     #[inline(always)]
-    pub fn write(&mut self) -> WRITE_W {
-        WRITE_W { w: self }
+    pub fn write(&mut self) -> WRITE_W<1> {
+        WRITE_W::new(self)
     }
     #[doc = "Bit 2 - Cache Hits Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn chof(&mut self) -> CHOF_W {
-        CHOF_W { w: self }
+    pub fn chof(&mut self) -> CHOF_W<2> {
+        CHOF_W::new(self)
     }
     #[doc = "Bit 3 - Cache Misses Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn cmof(&mut self) -> CMOF_W {
-        CMOF_W { w: self }
+    pub fn cmof(&mut self) -> CMOF_W<3> {
+        CMOF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,283 +35,91 @@ impl From<crate::W<CHUSEBURSTS_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0USEBURSTS` reader - Channel 0 Useburst Set"]
-pub struct CH0USEBURSTS_R(crate::FieldReader<bool, bool>);
-impl CH0USEBURSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH0USEBURSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH0USEBURSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH0USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH0USEBURSTS` writer - Channel 0 Useburst Set"]
-pub struct CH0USEBURSTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0USEBURSTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 #[doc = "Field `CH1USEBURSTS` reader - Channel 1 Useburst Set"]
-pub struct CH1USEBURSTS_R(crate::FieldReader<bool, bool>);
-impl CH1USEBURSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH1USEBURSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH1USEBURSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH1USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH1USEBURSTS` writer - Channel 1 Useburst Set"]
-pub struct CH1USEBURSTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1USEBURSTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 #[doc = "Field `CH2USEBURSTS` reader - Channel 2 Useburst Set"]
-pub struct CH2USEBURSTS_R(crate::FieldReader<bool, bool>);
-impl CH2USEBURSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH2USEBURSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH2USEBURSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH2USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH2USEBURSTS` writer - Channel 2 Useburst Set"]
-pub struct CH2USEBURSTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2USEBURSTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 #[doc = "Field `CH3USEBURSTS` reader - Channel 3 Useburst Set"]
-pub struct CH3USEBURSTS_R(crate::FieldReader<bool, bool>);
-impl CH3USEBURSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH3USEBURSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH3USEBURSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH3USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH3USEBURSTS` writer - Channel 3 Useburst Set"]
-pub struct CH3USEBURSTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3USEBURSTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 #[doc = "Field `CH4USEBURSTS` reader - Channel 4 Useburst Set"]
-pub struct CH4USEBURSTS_R(crate::FieldReader<bool, bool>);
-impl CH4USEBURSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH4USEBURSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH4USEBURSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH4USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH4USEBURSTS` writer - Channel 4 Useburst Set"]
-pub struct CH4USEBURSTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4USEBURSTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CH4USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 #[doc = "Field `CH5USEBURSTS` reader - Channel 5 Useburst Set"]
-pub struct CH5USEBURSTS_R(crate::FieldReader<bool, bool>);
-impl CH5USEBURSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH5USEBURSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH5USEBURSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH5USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH5USEBURSTS` writer - Channel 5 Useburst Set"]
-pub struct CH5USEBURSTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5USEBURSTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CH5USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Channel 0 Useburst Set"]
     #[inline(always)]
     pub fn ch0usebursts(&self) -> CH0USEBURSTS_R {
-        CH0USEBURSTS_R::new((self.bits & 0x01) != 0)
+        CH0USEBURSTS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Channel 1 Useburst Set"]
     #[inline(always)]
     pub fn ch1usebursts(&self) -> CH1USEBURSTS_R {
-        CH1USEBURSTS_R::new(((self.bits >> 1) & 0x01) != 0)
+        CH1USEBURSTS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Channel 2 Useburst Set"]
     #[inline(always)]
     pub fn ch2usebursts(&self) -> CH2USEBURSTS_R {
-        CH2USEBURSTS_R::new(((self.bits >> 2) & 0x01) != 0)
+        CH2USEBURSTS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Channel 3 Useburst Set"]
     #[inline(always)]
     pub fn ch3usebursts(&self) -> CH3USEBURSTS_R {
-        CH3USEBURSTS_R::new(((self.bits >> 3) & 0x01) != 0)
+        CH3USEBURSTS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Channel 4 Useburst Set"]
     #[inline(always)]
     pub fn ch4usebursts(&self) -> CH4USEBURSTS_R {
-        CH4USEBURSTS_R::new(((self.bits >> 4) & 0x01) != 0)
+        CH4USEBURSTS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Channel 5 Useburst Set"]
     #[inline(always)]
     pub fn ch5usebursts(&self) -> CH5USEBURSTS_R {
-        CH5USEBURSTS_R::new(((self.bits >> 5) & 0x01) != 0)
+        CH5USEBURSTS_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Channel 0 Useburst Set"]
     #[inline(always)]
-    pub fn ch0usebursts(&mut self) -> CH0USEBURSTS_W {
-        CH0USEBURSTS_W { w: self }
+    pub fn ch0usebursts(&mut self) -> CH0USEBURSTS_W<0> {
+        CH0USEBURSTS_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Useburst Set"]
     #[inline(always)]
-    pub fn ch1usebursts(&mut self) -> CH1USEBURSTS_W {
-        CH1USEBURSTS_W { w: self }
+    pub fn ch1usebursts(&mut self) -> CH1USEBURSTS_W<1> {
+        CH1USEBURSTS_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Useburst Set"]
     #[inline(always)]
-    pub fn ch2usebursts(&mut self) -> CH2USEBURSTS_W {
-        CH2USEBURSTS_W { w: self }
+    pub fn ch2usebursts(&mut self) -> CH2USEBURSTS_W<2> {
+        CH2USEBURSTS_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Useburst Set"]
     #[inline(always)]
-    pub fn ch3usebursts(&mut self) -> CH3USEBURSTS_W {
-        CH3USEBURSTS_W { w: self }
+    pub fn ch3usebursts(&mut self) -> CH3USEBURSTS_W<3> {
+        CH3USEBURSTS_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Useburst Set"]
     #[inline(always)]
-    pub fn ch4usebursts(&mut self) -> CH4USEBURSTS_W {
-        CH4USEBURSTS_W { w: self }
+    pub fn ch4usebursts(&mut self) -> CH4USEBURSTS_W<4> {
+        CH4USEBURSTS_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Useburst Set"]
     #[inline(always)]
-    pub fn ch5usebursts(&mut self) -> CH5USEBURSTS_W {
-        CH5USEBURSTS_W { w: self }
+    pub fn ch5usebursts(&mut self) -> CH5USEBURSTS_W<5> {
+        CH5USEBURSTS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

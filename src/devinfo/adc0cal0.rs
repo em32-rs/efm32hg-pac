@@ -14,61 +14,13 @@ impl From<crate::R<ADC0CAL0_SPEC>> for R {
     }
 }
 #[doc = "Field `1V25_OFFSET` reader - Offset for 1V25 reference"]
-pub struct _1V25_OFFSET_R(crate::FieldReader<u8, u8>);
-impl _1V25_OFFSET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        _1V25_OFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for _1V25_OFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type _1V25_OFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `1V25_GAIN` reader - Gain for 1V25 reference"]
-pub struct _1V25_GAIN_R(crate::FieldReader<u8, u8>);
-impl _1V25_GAIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        _1V25_GAIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for _1V25_GAIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type _1V25_GAIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `2V5_OFFSET` reader - Offset for 2V5 reference"]
-pub struct _2V5_OFFSET_R(crate::FieldReader<u8, u8>);
-impl _2V5_OFFSET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        _2V5_OFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for _2V5_OFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type _2V5_OFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `2V5_GAIN` reader - Gain for 2V5 reference"]
-pub struct _2V5_GAIN_R(crate::FieldReader<u8, u8>);
-impl _2V5_GAIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        _2V5_GAIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for _2V5_GAIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type _2V5_GAIN_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:6 - Offset for 1V25 reference"]
     #[inline(always)]

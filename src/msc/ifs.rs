@@ -20,113 +20,33 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASE` writer - Erase Done Interrupt Set"]
-pub struct ERASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `WRITE` writer - Write Done Interrupt Set"]
-pub struct WRITE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `CHOF` writer - Cache Hits Overflow Interrupt Set"]
-pub struct CHOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CHOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `CMOF` writer - Cache Misses Overflow Interrupt Set"]
-pub struct CMOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CMOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Erase Done Interrupt Set"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
-        ERASE_W { w: self }
+    pub fn erase(&mut self) -> ERASE_W<0> {
+        ERASE_W::new(self)
     }
     #[doc = "Bit 1 - Write Done Interrupt Set"]
     #[inline(always)]
-    pub fn write(&mut self) -> WRITE_W {
-        WRITE_W { w: self }
+    pub fn write(&mut self) -> WRITE_W<1> {
+        WRITE_W::new(self)
     }
     #[doc = "Bit 2 - Cache Hits Overflow Interrupt Set"]
     #[inline(always)]
-    pub fn chof(&mut self) -> CHOF_W {
-        CHOF_W { w: self }
+    pub fn chof(&mut self) -> CHOF_W<2> {
+        CHOF_W::new(self)
     }
     #[doc = "Bit 3 - Cache Misses Overflow Interrupt Set"]
     #[inline(always)]
-    pub fn cmof(&mut self) -> CMOF_W {
-        CMOF_W { w: self }
+    pub fn cmof(&mut self) -> CMOF_W<3> {
+        CMOF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

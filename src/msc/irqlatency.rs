@@ -35,31 +35,9 @@ impl From<crate::W<IRQLATENCY_SPEC>> for W {
     }
 }
 #[doc = "Field `IRQLATENCY` reader - Irq Latency Register"]
-pub struct IRQLATENCY_R(crate::FieldReader<u8, u8>);
-impl IRQLATENCY_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IRQLATENCY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IRQLATENCY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IRQLATENCY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IRQLATENCY` writer - Irq Latency Register"]
-pub struct IRQLATENCY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRQLATENCY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type IRQLATENCY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IRQLATENCY_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Irq Latency Register"]
     #[inline(always)]
@@ -70,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Irq Latency Register"]
     #[inline(always)]
-    pub fn irqlatency(&mut self) -> IRQLATENCY_W {
-        IRQLATENCY_W { w: self }
+    pub fn irqlatency(&mut self) -> IRQLATENCY_W<0> {
+        IRQLATENCY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

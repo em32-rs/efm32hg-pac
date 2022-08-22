@@ -14,62 +14,26 @@ impl From<crate::R<SYNCBUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `CTRL` reader - CTRL Register Busy"]
-pub struct CTRL_R(crate::FieldReader<bool, bool>);
-impl CTRL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CTRL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CTRL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CTRL_R = crate::BitReader<bool>;
 #[doc = "Field `CMD` reader - CMD Register Busy"]
-pub struct CMD_R(crate::FieldReader<bool, bool>);
-impl CMD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMD_R = crate::BitReader<bool>;
 #[doc = "Field `TOPB` reader - TOPB Register Busy"]
-pub struct TOPB_R(crate::FieldReader<bool, bool>);
-impl TOPB_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TOPB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOPB_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOPB_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - CTRL Register Busy"]
     #[inline(always)]
     pub fn ctrl(&self) -> CTRL_R {
-        CTRL_R::new((self.bits & 0x01) != 0)
+        CTRL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - CMD Register Busy"]
     #[inline(always)]
     pub fn cmd(&self) -> CMD_R {
-        CMD_R::new(((self.bits >> 1) & 0x01) != 0)
+        CMD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - TOPB Register Busy"]
     #[inline(always)]
     pub fn topb(&self) -> TOPB_R {
-        TOPB_R::new(((self.bits >> 2) & 0x01) != 0)
+        TOPB_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 #[doc = "Synchronization Busy Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [syncbusy](index.html) module"]
