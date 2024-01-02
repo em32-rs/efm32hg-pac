@@ -19,7 +19,7 @@ jobs:
         cargo install svdtools
         make all
     - name: Verify no additional changes
-      uses: tj-actions/verify-changed-files@v10.1
+      uses: tj-actions/verify-changed-files@v17
       id: verify-changes
       with:
         files: |
